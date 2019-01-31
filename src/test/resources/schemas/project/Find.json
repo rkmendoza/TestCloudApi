@@ -1,0 +1,121 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "results": {
+      "$id": "#/properties/results",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/results/items",
+        "type": "object",
+        "required": [
+          "collaborators",
+          "creator",
+          "created",
+          "tags"
+        ],
+        "properties": {
+          "name": {
+            "$id": "#/properties/results/items/properties/name",
+            "type": ["string","null"],
+            "pattern": "^(.*)$"
+          },
+          "collaborators": {
+            "$id": "#/properties/results/items/properties/collaborators",
+            "type": "array"
+          },
+          "links": {
+            "$id": "#/properties/results/items/properties/links",
+            "type": "object",
+            "properties": {
+              "artifact": {
+                "$id": "#/properties/results/items/properties/links/properties/artifact",
+                "type": "string",
+                "pattern": "^(.*)$"
+              },
+              "self": {
+                "$id": "#/properties/results/items/properties/links/properties/self",
+                "type": "string",
+                "pattern": "^(.*)$"
+              },
+              "tag": {
+                "$id": "#/properties/results/items/properties/links/properties/tag",
+                "type": "string",
+                "pattern": "^(.*)$"
+              }
+            }
+          },
+          "active": {
+            "$id": "#/properties/results/items/properties/active",
+            "type": "boolean",
+            "enum": [true,false]
+          },
+          "creator": {
+            "$id": "#/properties/results/items/properties/creator",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "created": {
+            "$id": "#/properties/results/items/properties/created",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "subscribers": {
+            "$id": "#/properties/results/items/properties/subscribers",
+            "type": "array",
+            "items": {
+              "$id": "#/properties/results/items/properties/subscribers/items",
+              "type": "string",
+              "pattern": "^(.*)$"
+            }
+          },
+          "guid": {
+            "$id": "#/properties/results/items/properties/guid",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "tags": {
+            "$id": "#/properties/results/items/properties/tags",
+            "type": "array",
+            "items": {
+              "$id": "#/properties/results/items/properties/tags/items",
+              "type": "string",
+              "pattern": "^(.*)$"
+            }
+          },
+          "visibility": {
+            "$id": "#/properties/results/items/properties/visibility",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "organization": {
+            "$id": "#/properties/results/items/properties/organization",
+            "type": ["string", "null"],
+            "pattern": "^(.*)$"
+          },
+          "owner": {
+            "$id": "#/properties/results/items/properties/owner",
+            "type": ["string","null"],
+            "pattern": "^(.*)$"
+          },
+          "featured": {
+            "$id": "#/properties/results/items/properties/featured",
+            "type": "boolean",
+            "enum": [true,false]
+          },
+          "description": {
+            "$id": "#/properties/results/items/properties/description",
+            "type": "string",
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    },
+    "success": {
+      "$id": "#/properties/success",
+      "type": "boolean",
+      "enum": [true,false]
+    }
+  }
+}
