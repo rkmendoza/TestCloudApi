@@ -23,11 +23,15 @@ pipeline {
             }
         }
 
-        stage ('Download Project') {
+        stage('checkout') {
+            git credentialsId: 'git-credentials', url: 'https://mauro-icox@bitbucket.org/riskiq/test-cloud.git', branch: 'master'
+        }
+
+        /*stage ('Download Project') {
             steps {
                 git url: 'https://mauro-icox@bitbucket.org/riskiq/test-cloud.git'
             }
-        }
+        }*/
 
         stage ('Test') {
             steps  {
