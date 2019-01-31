@@ -25,7 +25,7 @@ pipeline {
 
         stage ('Download Project') {
             steps {
-                git url: 'https://github.com/icoxwebconsulting/java-test-cloud.git'
+                git url: 'https://mauro-icox@bitbucket.org/riskiq/test-cloud.git'
             }
         }
 
