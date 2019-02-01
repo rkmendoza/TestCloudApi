@@ -83,7 +83,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     Given a valid user and key from riskIQ platform
     When users want to get information of the all project
     Then the api should response with code 200
-   # And Check JSON schema "project/Find.json"
+    And Check JSON schema "project/FindObject.json"
 
   @Find
   Scenario: Check the response of find project when i search a project that exist in riskIQ platform is a 200 and
@@ -98,7 +98,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
       | project      | ##guid                 |
     Then the api should response with code 200
     And the number of projects should be equal to 1
-   # And Check JSON schema "project/Find.json"
+   And Check JSON schema "project/Find.json"
 
 
   @Find
@@ -143,7 +143,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
       | key          | value                  |
       | owner        | ##owner                |
     Then the api should response with code 200
-  #  And Check JSON schema "project/Find.json"
+    And Check JSON schema "project/Find.json"
 
   #debe dar 400 pero da 200
   @Find
@@ -157,7 +157,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
       | key          | value                  |
       | owner        | ##wrongOwner           |
     Then the api should response with code 400
-   # And Check JSON schema "project/Find.json"
+    And Check JSON schema "project/Find.json"
 
   @Find
   Scenario: Check when i send an specific Creator project, the response retrieve all the information related with the project searched
@@ -184,7 +184,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
       | creator      | ##creator              |
     Then the api should response with code 200
     And the number of projects should be greater than 1
-  #  And Check JSON schema "project/Find.json"
+    And Check JSON schema "project/Find.json"
 
   #debe dar 400 pero da 200
   @Find
@@ -198,7 +198,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
       | key          | value                  |
       | creator      | ##wrongCreator         |
     Then the api should response with code 400
-   # And Check JSON schema "project/Find.json"
+    And Check JSON schema "project/Find.json"
 
   @Find
   Scenario: Check when i send an specific organization, the response retrieve all the information related with the project searched
@@ -223,7 +223,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
       | key          | value                  |
       | organization | ##organization         |
     Then the api should response with code 200
-   # And Check JSON schema "project/Find.json"
+    And Check JSON schema "project/Find.json"
 
   #debe dar 400 pero da 200
   @Find
@@ -237,7 +237,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
       | key          | value                  |
       | organization | ##wrongOrganization    |
     Then the api should response with code 400
-   # And Check JSON schema "project/Find.json"
+    And Check JSON schema "project/Find.json"
 
   @Find
   Scenario: Check when i send an public visibility param, the response retrieve all the information related with the project searched
@@ -251,8 +251,6 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
       | visibility   | ##visibility           |
     Then the api should response with code 200
 
-
-  #Falla con el esquema find, sin el esquema si funciona
   @Find
   Scenario: Check when i send an public visibility param, the response retrieve all the information related with the project searched and check with json schema
     Given a valid user and key from riskIQ platform
@@ -264,7 +262,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
       | key          | value                  |
       | visibility   | ##visibility           |
     Then the api should response with code 200
-    #And Check JSON schema "project/Find.json"
+    And Check JSON schema "project/FindObject.json"
 
   @Find
   Scenario: Check when i send an invalid visibility, the response retrieve error message and code error and check with json schema
@@ -277,7 +275,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
       | key          | value                  |
       | visibility   | ##wrongVisibility      |
     Then the api should response with code 400
-  #  And Check JSON schema "project/Find.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @Find
   Scenario: Check when i send featured: true, the response retrieve all the information related with the project searched
@@ -305,7 +303,6 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
       | featured     | ##featured             |
     Then the api should response with code 200
 
-  #Falla con el esquema find, sin el esquema si funciona
   @Find
   Scenario: Check when i send featured: false, the response retrieve all the information related with the project searched and check with json schema
     Given a valid user and key from riskIQ platform
@@ -317,7 +314,8 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     When users want to get information on the project with the values
       | key          | value                  |
       | featured     | ##featured             |
-  #  And Check JSON schema "project/Find.json"
+    Then the api should response with code 200
+    And the number of projects should be greater than 1
 
   #Falla con el esquema find, sin el esquema si funciona
   @Find
@@ -331,7 +329,8 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     When users want to get information on the project with the values
       | key          | value                  |
       | featured     | ##featured             |
-    #And Check JSON schema "project/Find.json"
+    Then the api should response with code 200
+    And the number of projects should be greater than 1
 
   @Find
   Scenario: Check when i send an private visibility param, the response retrieve all the information related with the project searched
@@ -358,7 +357,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     And Response includes the following
       | key          | value                  |
       | visibility   | private                |
-   # And Check JSON schema "project/Find.json"
+    And Check JSON schema "project/Find.json"
 
 
   @Find
