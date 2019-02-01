@@ -14,12 +14,25 @@ public class DeleteSteps extends FlowData {
   @When("^users want to delete project with the values$")
   public void usersWantToDeleteProjectWithTheValues(DataTable dataTable) {
     response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).delete("/project"));
+  }
+
+  @When("^other users of organization A want to delete project with the values$")
+  public void  otherUsersOfOrganizationWantToDeleteProjectWithTheValues(DataTable dataTable) {
+    rs.set(RestAssured.given().auth().preemptive().basic(Hooks.userName2, Hooks.userPw2));
+    response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).delete("/project"));
 
   }
 
   @When("^user A want to delete project created by user B$")
   public void userAWantToDeleteProjectCreatedByUserB(DataTable dataTable) {
     rs.set(RestAssured.given().auth().preemptive().basic(Hooks.userName2, Hooks.userPw2));
+    response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).delete("/project"));
+
+  }
+
+  @When("^user B want to delete project created by user A$")
+  public void userBWantToDeleteProjectCreatedByUserA(DataTable dataTable) {
+    rs.set(RestAssured.given().auth().preemptive().basic(Hooks.userName4, Hooks.userPw4));
     response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).delete("/project"));
 
   }
