@@ -2,6 +2,8 @@ package com.riskiq.api.v2.stepdefinitions.project;
 
 
 
+import com.riskiq.api.v2.stepdefinitions.Hooks;
+import cucumber.api.java.en.Given;
 import io.restassured.RestAssured;
 
 import com.riskiq.api.v2.FlowData;
@@ -14,6 +16,8 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 import java.util.Collections;
+
+import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.nullValue;
@@ -21,7 +25,11 @@ import static org.hamcrest.core.Is.is;
 
 public class CreateSteps extends FlowData  {
 
+    @Given("^user whit valid credentials and quota to create project is exceeded$")
+    public void aValidUserFromRiskIQPlatform() {
+        rs.set(given().auth().preemptive().basic(Hooks.userName3, Hooks.userPw3));
 
+    }
 
     @When("^users want to get information of the all project$")
     public void users_want_to_get_information_of_the_all_project() throws Throwable {
@@ -48,8 +56,7 @@ public class CreateSteps extends FlowData  {
 
     @And("^a created project with values$")
     public void aCreatedProjectWithValues(DataTable dataTable) throws Throwable {
-       // rs.set(RestAssured.given().auth().preemptive().basic("mauro@icox.com", "316bf07182644307e9e5b459f3389b6f46de7efe29386c74857a13afd8aad9af"));
-        rs.set(RestAssured.given().auth().preemptive().basic(System.getProperty("username"), System.getProperty("password")));
+        rs.set(RestAssured.given().auth().preemptive().basic(Hooks.userName1, Hooks.userPw1));
         response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).put("/project"));
         owner.set(response.get().path("owner"));
         projectId.set(response.get().path("guid"));
@@ -68,9 +75,9 @@ public class CreateSteps extends FlowData  {
     }
 
 
-    @And("^a created project with values by user B$")
+    @And("^a created project with values by user of organization B$")
     public void aCreatedProjectWithValuesByUserB(DataTable dataTable) throws Throwable {
-        rs.set(RestAssured.given().auth().preemptive().basic("robertm@icox.com", "434f651ed6a208d9cdedd7ab8d057d4214122cd64045a9d08d8768402f16749a"));
+        rs.set(RestAssured.given().auth().preemptive().basic(Hooks.userName4, Hooks.userPw4));
         projectId.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).put("/project").then().extract().path("guid"));
 
     }

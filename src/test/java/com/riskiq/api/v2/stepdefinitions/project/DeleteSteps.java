@@ -2,6 +2,7 @@ package com.riskiq.api.v2.stepdefinitions.project;
 
 import com.riskiq.api.v2.FlowData;
 import com.riskiq.api.v2.impl.BodyElement;
+import com.riskiq.api.v2.stepdefinitions.Hooks;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.When;
 import io.restassured.RestAssured;
@@ -13,11 +14,12 @@ public class DeleteSteps extends FlowData {
   @When("^users want to delete project with the values$")
   public void usersWantToDeleteProjectWithTheValues(DataTable dataTable) {
     response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).delete("/project"));
+
   }
 
   @When("^user A want to delete project created by user B$")
   public void userAWantToDeleteProjectCreatedByUserB(DataTable dataTable) {
-    rs.set(RestAssured.given().auth().preemptive().basic("alejandrodavidsalazar@gmail.com", "316bf07182644307e9e5b459f3389b6f46de7efe29386c74857a13afd8aad9af"));
+    rs.set(RestAssured.given().auth().preemptive().basic(Hooks.userName2, Hooks.userPw2));
     response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).delete("/project"));
 
   }

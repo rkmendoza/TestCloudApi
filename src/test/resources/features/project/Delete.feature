@@ -90,9 +90,9 @@ Feature: As a user of riskIQ platform I want to delete a project
     And Check JSON schema "project/ErrorMessage.json"
 
   @Delete
-  Scenario: Check when a user A want to delete a project created by user B,response retrieve error message and code 403
-  error and check with Json schema
-    Given a created project with values by user B
+  Scenario: Check when a user of organization A want to delete a project created by user of organization B,
+  response retrieve error message and code 403 error and check with Json schema
+    Given a created project with values by user of organization B
       | key        | value        |
       | name       | @@namerandom |
       | visibility | public       |

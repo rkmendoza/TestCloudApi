@@ -102,3 +102,14 @@ Feature: As a user of riskIQ platform I want to create a project
       | visibility  | public                       |
     Then the api should response with code 400
     And Check JSON schema "project/ErrorMessage.json"
+
+  @Create
+  Scenario: Check when i send an list of valid params, with valid credentials and quota to create project is exceeded
+  the response retrieve error message and code 402 error and check with Json schema
+    Given user whit valid credentials and quota to create project is exceeded
+    When users want to create project with the values
+      | key         | value                        |
+      | name        | @@namerandom                 |
+      | visibility  | public                       |
+    Then the api should response with code 402
+    And Check JSON schema "project/Error.json"
