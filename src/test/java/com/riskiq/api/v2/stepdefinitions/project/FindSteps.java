@@ -26,11 +26,11 @@ public class FindSteps extends FlowData  {
         response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).get("/project"));
     }
 
+
     @When("^users in the same organization want to get information on the project with the values$")
     public void users_in_the_same_organization_want_to_get_information_on_the_project_with_the_values(DataTable dataTable) {
         rs.set(RestAssured.given().auth().preemptive().basic(Hooks.userName2, Hooks.userPw2));
         response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).get("/project"));
-
     }
 
     @When("^users not in the same organization want to get information on the project with the values$")

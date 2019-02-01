@@ -42,7 +42,7 @@ public class Utils {
     }
 
 
-    // TODO refactorizar este metodo con la finalidad de separar los condicionales en funciones mas pequeñas de manera tal que sea mantenible en el tiempo
+    // TODO refactoring this method with the purpose of separating the conditionals into smaller functions in a way that is maintainable over time
     public synchronized static AtomicReference<String> createJson(BodyElement bodyElement, Boolean isLast, AtomicReference<String> bodyJson) {
         //type of boolean
         if ((bodyElement.getValue().equals("true") || bodyElement.getValue().equals("false"))) {

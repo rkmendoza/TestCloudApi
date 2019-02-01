@@ -1,0 +1,122 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "success",
+    "results"
+  ],
+  "properties": {
+    "success": {
+      "$id": "#/properties/success",
+      "type": "boolean"
+    },
+    "results": {
+      "$id": "#/properties/results",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/results/items",
+        "type": "object",
+        "required": [
+          "can_edit",
+          "featured",
+          "visibility",
+          "creator",
+          "subscribers",
+          "name",
+          "owner",
+          "guid",
+          "links",
+          "tags",
+          "active",
+          "collaborators",
+          "description",
+          "created",
+          "organization"
+        ],
+        "properties": {
+          "can_edit": {
+            "$id": "#/properties/results/items/properties/can_edit",
+            "type": "boolean"
+          },
+          "featured": {
+            "$id": "#/properties/results/items/properties/featured",
+            "type": "boolean"
+          },
+          "visibility": {
+            "$id": "#/properties/results/items/properties/visibility",
+            "type": "string"
+          },
+          "creator": {
+            "$id": "#/properties/results/items/properties/creator",
+            "type": "string"
+          },
+          "subscribers": {
+            "$id": "#/properties/results/items/properties/subscribers",
+            "type": "array",
+            "items": {
+              "$id": "#/properties/results/items/properties/subscribers/items",
+              "type": ["string","null"]
+            }
+          },
+          "name": {
+            "$id": "#/properties/results/items/properties/name",
+            "type": "string"
+          },
+          "owner": {
+            "$id": "#/properties/results/items/properties/owner",
+            "type": "string"
+          },
+          "guid": {
+            "$id": "#/properties/results/items/properties/guid",
+            "type": "string"
+          },
+          "links": {
+            "$id": "#/properties/results/items/properties/links",
+            "type": "object",
+            "properties": {
+              "tag": {
+                "$id": "#/properties/results/items/properties/links/properties/tag",
+                "type": ["string","null"]
+              },
+              "self": {
+                "$id": "#/properties/results/items/properties/links/properties/self",
+                "type": ["string","null"]
+              },
+              "artifact": {
+                "$id": "#/properties/results/items/properties/links/properties/artifact",
+                "type": ["string","null"]
+              }
+            }
+          },
+          "tags": {
+            "$id": "#/properties/results/items/properties/tags",
+            "type": "array"
+          },
+          "active": {
+            "$id": "#/properties/results/items/properties/active",
+            "type": "boolean"
+          },
+          "collaborators": {
+            "$id": "#/properties/results/items/properties/collaborators",
+            "type": "array"
+          },
+          "description": {
+            "$id": "#/properties/results/items/properties/description",
+            "type": ["string","null"]
+          },
+          "created": {
+            "$id": "#/properties/results/items/properties/created",
+            "type": "string"
+          },
+          "organization": {
+            "$id": "#/properties/results/items/properties/organization",
+            "type": ["string","null"]
+          }
+        }
+      }
+    }
+  }
+}
