@@ -5,6 +5,7 @@ import com.riskiq.api.v2.impl.BodyElement;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import io.restassured.RestAssured;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Assert;
 
@@ -23,6 +24,7 @@ public class CommonSteps extends FlowData {
     @Given("^a valid user and key from riskIQ platform$")
     public void aValidUserFromRiskIQPlatform() {
       rs.set(given().auth().preemptive().basic(Hooks.userName1, Hooks.userPw1));
+     // rs.set(RestAssured.given().auth().preemptive().basic(Hooks.userName1, Hooks.userPw1));
     }
 
     @Given("^a invalid user and invalid key from riskIQ platform$")

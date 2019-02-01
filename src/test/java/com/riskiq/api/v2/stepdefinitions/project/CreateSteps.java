@@ -56,7 +56,7 @@ public class CreateSteps extends FlowData  {
 
     @And("^a created project with values$")
     public void aCreatedProjectWithValues(DataTable dataTable) throws Throwable {
-        rs.set(RestAssured.given().auth().preemptive().basic(Hooks.userName1, Hooks.userPw1));
+        rs.set(RestAssured.given().auth().preemptive().basic(Hooks.userName2, Hooks.userPw2));
         response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).put("/project"));
         owner.set(response.get().path("owner"));
         projectId.set(response.get().path("guid"));
@@ -65,7 +65,6 @@ public class CreateSteps extends FlowData  {
         organization.set(response.get().path("organization"));
         featured.set(response.get().path("featured"));
     }
-
 
 
     @When("^a created project with values with invalid credentials$")
@@ -78,6 +77,13 @@ public class CreateSteps extends FlowData  {
     @And("^a created project with values by user of organization B$")
     public void aCreatedProjectWithValuesByUserB(DataTable dataTable) throws Throwable {
         rs.set(RestAssured.given().auth().preemptive().basic(Hooks.userName4, Hooks.userPw4));
+        projectId.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).put("/project").then().extract().path("guid"));
+
+    }
+
+    @And("^a created project with values by user of organization A$")
+    public void aCreatedProjectWithValuesByUserA(DataTable dataTable) throws Throwable {
+        rs.set(RestAssured.given().auth().preemptive().basic(Hooks.userName1, Hooks.userPw1));
         projectId.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).put("/project").then().extract().path("guid"));
 
     }
