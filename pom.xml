@@ -22,7 +22,7 @@
                 <version>3.0.0-M3</version>
                 <configuration>
                     <parallel>all</parallel>
-                    <threadCount>20</threadCount>
+                    <threadCount>10</threadCount>
                     <includes>
                         <include>**/Parallel*IT.class</include>
                     </includes>
