@@ -98,24 +98,10 @@ Feature: As a user of riskIQ platform I want to delete a project
       | visibility | public       |
     And a valid user and key from riskIQ platform
     When users want to delete project with the values
-      | key     | value |
-      | project |  ##guid     |
+      | key     | value  |
+      | project | ##guid |
     Then the api should response with code 403
     And Check JSON schema "project/ErrorMessage.json"
-
-  @Delete
-  Scenario: Check when a user of organization A want to delete a project created by other user of organization A of type public,
-  response retrieve error message and code 200 error and check with Json schema
-    Given a created project with values by user of organization A
-      | key        | value        |
-      | name       | @@namerandom |
-      | visibility | public       |
-    And a valid user and key from riskIQ platform
-    When users want to delete project with the values
-      | key     | value |
-      | project |  ##guid     |
-    Then the api should response with code 200
-    And Check JSON schema "project/Delete.json"
 
   @Delete1
   Scenario: Check when a user of organization A want to delete a project created by other user of organization A of type public,
@@ -125,9 +111,120 @@ Feature: As a user of riskIQ platform I want to delete a project
       | name       | @@namerandom |
       | visibility | public       |
     And a valid user and key from riskIQ platform
-    When users want to delete project with the values
-      | key     | value |
-      | project |  ##guid     |
+    When other users of organization A want to delete project with the values
+      | key     | value  |
+      | project | ##guid |
     Then the api should response with code 200
     And Check JSON schema "project/Delete.json"
 
+  @Delete
+  Scenario: Check when a user of organization A want to delete a project created by  user of organization B of type public,
+  response retrieve error message and code 200 error and check with Json schema
+    Given a created project with values by user of organization B
+      | key        | value        |
+      | name       | @@namerandom |
+      | visibility | public       |
+    And a valid user and key from riskIQ platform
+    When users want to delete project with the values
+      | key     | value  |
+      | project | ##guid |
+    Then the api should response with code 403
+    And Check JSON schema "project/ErrorMessage.json"
+
+  @Delete
+  Scenario: Check when a user of organization A want to delete a project created by him of type public,
+  response retrieve error message and code 200 error and check with Json schema
+    Given a created project with values by user of organization A
+      | key        | value        |
+      | name       | @@namerandom |
+      | visibility | public      |
+    And a valid user and key from riskIQ platform
+    When users want to delete project with the values
+      | key     | value  |
+      | project | ##guid |
+    Then the api should response with code 200
+    And Check JSON schema "project/Delete.json"
+
+  @Delete
+  Scenario: Check when a user of organization A want to delete a project created by other user of organization A of type private,
+  response retrieve error message and code 200 error and check with Json schema
+    Given a created project with values by user of organization A
+      | key        | value        |
+      | name       | @@namerandom |
+      | visibility | private      |
+    And a valid user and key from riskIQ platform
+    When other users of organization A want to delete project with the values
+      | key     | value  |
+      | project | ##guid |
+    Then the api should response with code 200
+    And Check JSON schema "project/Delete.json"
+
+  @Delete2
+  Scenario: Check when a user of organization A want to delete a project created by him of type private,
+  response retrieve error message and code 200 error and check with Json schema
+    Given a created project with values by user of organization A
+      | key        | value        |
+      | name       | @@namerandom |
+      | visibility | private      |
+    And a valid user and key from riskIQ platform
+    When users want to delete project with the values
+      | key     | value  |
+      | project | ##guid |
+    Then the api should response with code 200
+    And Check JSON schema "project/Delete.json"
+
+  @Delete
+  Scenario: Check when a user of organization B want to delete a project created by other user of organization A of type private,
+  response retrieve error message and code 200 error and check with Json schema
+    Given a created project with values by user of organization A
+      | key        | value        |
+      | name       | @@namerandom |
+      | visibility | private      |
+    And a valid user and key from riskIQ platform
+    When user B want to delete project created by user A
+      | key     | value  |
+      | project | ##guid |
+    Then the api should response with code 403
+    And Check JSON schema "project/ErrorMessage.json"
+
+  @Delete
+  Scenario: Check when a user of organization A want to delete a project created by other user of organization A of type Analyst,
+  response retrieve error message and code 200 error and check with Json schema
+    Given a created project with values by user of organization A
+      | key        | value        |
+      | name       | @@namerandom |
+      | visibility | analyst      |
+    And a valid user and key from riskIQ platform
+    When other users of organization A want to delete project with the values
+      | key     | value  |
+      | project | ##guid |
+    Then the api should response with code 403
+    And Check JSON schema "project/ErrorMessage.json"
+
+  @Delete
+  Scenario: Check when a user of organization A want to delete a project created by other user of organization B of type Analyst,
+  response retrieve error message and code 200 error and check with Json schema
+    Given a created project with values by user of organization B
+      | key        | value        |
+      | name       | @@namerandom |
+      | visibility | analyst      |
+    And a valid user and key from riskIQ platform
+    When users want to delete project with the values
+      | key     | value  |
+      | project | ##guid |
+    Then the api should response with code 403
+    And Check JSON schema "project/ErrorMessage.json"
+
+  @Delete
+  Scenario: Check when a user of organization A want to delete a project created by him of type Analyst,
+  response retrieve error message and code 200 error and check with Json schema
+    Given a created project with values by user of organization A
+      | key        | value        |
+      | name       | @@namerandom |
+      | visibility | analyst      |
+    And a valid user and key from riskIQ platform
+    When users want to delete project with the values
+      | key     | value  |
+      | project | ##guid |
+    Then the api should response with code 200
+    And Check JSON schema "project/Delete.json"
