@@ -1,4 +1,4 @@
-Feature: As a user of riskIQ platform I want to see a project or projects using search criteria
+Feature: As a user of riskIQ platform I want to find a project or projects using search criteria
 
   @Find
   Scenario: Check the response of find all projects, with wrong credentials the response retrieve error message and code 401 error and check with json schema
