@@ -17,136 +17,97 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
 
 
   @Alerts
-  Scenario: Check the response of find all projects when that exist in riskIQ platform is a 200
+  Scenario: Check the response of find all alerts when that exist in riskIQ platform is a 200
     Given a valid user and key from riskIQ platform
     When users want to get information of alerts without params
     Then the api should response with code 200
     # And Check JSON schema "project/GetAlert.json"
 
   @Alerts
-  Scenario: Check when i send project, the response retrieve all the information related with the project searched
-    Given a created project with values
-      | key        | value        |
-      | name       | @@namerandom |
-      | visibility | public       |
-    And a valid user and key from riskIQ platform
-    And a created artifact with values
-      | key     | value       |
-      | project | ##guid      |
-      | query   | example.org |
+  Scenario: Check when i send project, the response retrieve all alerts related with the project searched
+    Given a valid user belonging to the organization of the project to be searched
     When users want to get information of alerts with the values
-      | key     | value  |
-      | project | ##guid |
+      | key     | value                                |
+      | project | 75179a95-22b2-7681-90b4-3ae44703e0df |
     Then the api should response with code 200
-    #And Response includes the following
-     # | project | ##guid      |
-     # | query   | example.org |
+    And the number of alerts should be greater than 1
+
+  @Alerts
+  Scenario: Check when i send project, the response retrieve all alerts related with the project searched
+    Given a valid user not belonging to the organization of the project to be searched
+    When users want to get information of alerts with the values
+      | key     | value                                |
+      | project | 75179a95-22b2-7681-90b4-3ae44703e0df |
+    Then the api should response with code 403
 
   @Alerts
   Scenario: Check when i send project, the response retrieve all the information related with the project searched and check with json schema
-    Given a valid user and key from riskIQ platform
-    And a created artifact with values
-      | key       | value             |
-      | artifacts | @@ValuesArtifacts |
-      | project   | @@guid            |
-      | query     | @@ValueQuery      |
-    When users want to get information of the project with the values
-      | key     | value  |
-      | project | @@guid |
+    Given a valid user belonging to the organization of the project to be searched
+    When users want to get information of alerts with the values
+      | key     | value                                |
+      | project | 75179a95-22b2-7681-90b4-3ae44703e0df |
     Then the api should response with code 200
     And Response includes the following
-      | project | @@guid       |
-      | query   | @@ValueQuery |
-    And Check JSON schema "project/GetAlert.json"
+      | project | 75179a95-22b2-7681-90b4-3ae44703e0df |
+    #  | query   | @@ValueQuery |
+   # And Check JSON schema "project/GetAlert.json"
 
   @Alerts
-  Scenario: Check when i send wrong value project, tthe response retrieve error message and code error and check with Json schema
-    Given a valid user and key from riskIQ platform
-    And a created artifact with values
-      | key       | value             |
-      | artifacts | @@ValuesArtifacts |
-      | project   | @@guid            |
-      | query     | @@ValueQuery      |
-    When users want to get information of the project with the values
-      | key     | value   |
-      | project | @@wrong |
-    Then the api should response with code 404
-    And Check JSON schema "project/GetAlert.json"
-
-  @Alerts
-  Scenario: Check when i send invalid format project, the response retrieve error message and code error and check with Json schema
-    Given a valid user and key from riskIQ platform
-    And a created artifact with values
-      | key       | value             |
-      | artifacts | @@ValuesArtifacts |
-      | project   | @@guid            |
-      | query     | @@ValueQuery      |
-    When users want to get information of the project with the values
-      | key     | value               |
-      | project | @@InvalidFormatGuid |
+  Scenario: Check when i send invalid format value project, tthe response retrieve error message and code error and check with Json schema
+    Given a valid user belonging to the organization of the project to be searched
+    When users want to get information of alerts with the values
+      | key     | value       |
+      | project | ##wrongGuid |
     Then the api should response with code 400
-    And Check JSON schema "project/GetAlert.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
+  @Alerts
+  Scenario: Check when i send a not exist value project, the response retrieve error message and code 400 error and
+  check with Json schema
+    Given a valid user belonging to the organization of the project to be searched
+    When users want to get information of alerts with the values
+      | key     | value         |
+      | project | ##noExistGuid |
+    Then the api should response with code 404
+    And Check JSON schema "project/ErrorMessage.json"
+
+  #replace artifact
   @Alerts
   Scenario: Check when i send an artifact, the response retrieve all the information related with the artifact searched
-    Given a valid user and key from riskIQ platform
-    And a created artifact with values
-      | key       | value             |
-      | artifacts | @@ValuesArtifacts |
-      | project   | @@guid            |
-      | query     | @@ValueQuery      |
-    When users want to get information of the artifact with the values
-      | key      | value      |
-      | artifact | @@artifact |
+    Given a valid user belonging to the organization of the project to be searched
+    When users want to get information of alerts with the values
+      | key      | value                                |
+      | artifact | 75179a95-22b2-7681-90b4-3ae44703e0df |
     Then the api should response with code 200
-    And Response includes the following
-      | artifact | @@guid       |
-      | query    | @@ValueQuery |
 
+      #replace artifact
   @Alerts
   Scenario: Check when i send artifact, the response retrieve all the information related with the artifact searched and check with json schema
-    Given a valid user and key from riskIQ platform
-    And a created artifact with values
-      | key       | value             |
-      | artifacts | @@ValuesArtifacts |
-      | project   | @@guid            |
-      | query     | @@ValueQuery      |
-    When users want to get information of the artifact with the values
-      | key      | value      |
-      | artifact | @@artifact |
+    Given a valid user belonging to the organization of the project to be searched
+    When users want to get information of alerts with the values
+      | key      | value                                |
+      | artifact | 75179a95-22b2-7681-90b4-3ae44703e0df |
     Then the api should response with code 200
-    And Response includes the following
-      | project | @@guid       |
-      | query   | @@ValueQuery |
-    And Check JSON schema "project/GetAlert.json"
+    #And Check JSON schema "project/GetAlert.json"
 
+  #replace artifact
   @Alerts
-  Scenario: Check when i send wrong value artifact, the response retrieve error message and code error and check with Json schema
-    Given a valid user and key from riskIQ platform
-    And a created artifact with values
-      | key       | value             |
-      | artifacts | @@ValuesArtifacts |
-      | project   | @@guid            |
-      | query     | @@ValueQuery      |
-    When users want to get information of the artifact with the values
+  Scenario: Check when i send a not exist value artifact, the response retrieve error message and code error and check with Json schema
+    Given a valid user belonging to the organization of the project to be searched
+    When users want to get information of alerts with the values
       | key      | value           |
-      | artifact | @@wrongartifact |
+      | artifact | 75179a95-22b2-7681-90b4-3ae44703e0dfdd |
     Then the api should response with code 404
-    And Check JSON schema "project/GetAlert.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @Alerts
   Scenario: Check when i send invalid format artifact, the response retrieve error message and code error and check with Json schema
-    Given a valid user and key from riskIQ platform
-    And a created artifact with values
-      | key       | value             |
-      | artifacts | @@ValuesArtifacts |
-      | project   | @@guid            |
-      | query     | @@ValueQuery      |
-    When users want to get information of the artifact with the values
-      | key      | value                   |
-      | artifact | @@InvalidFormatArtifact |
+    Given a valid user belonging to the organization of the project to be searched
+    When users want to get information of alerts with the values
+      | key      | value           |
+      | artifact | 75179a95-22b2-7681-90b4-3ae44703e0dfdd |
     Then the api should response with code 400
-    And Check JSON schema "project/GetAlert.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @Alerts
   Scenario: Check when i send an start date, the response retrieve all the information related with the artifact searched
