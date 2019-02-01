@@ -4,9 +4,11 @@ import com.riskiq.api.v2.FlowData;
 import com.riskiq.api.v2.impl.BodyElement;
 
 
+import com.riskiq.api.v2.stepdefinitions.Hooks;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 
 
@@ -22,8 +24,26 @@ public class FindSteps extends FlowData  {
     @When("^users want to get information on the project with the values$")
     public void usersWantToGetInformationOnTheProjectWithId(DataTable dataTable) {
         response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).get("/project"));
+    }
 
 
+    @When("^users in the same organization want to get information on the project with the values$")
+    public void users_in_the_same_organization_want_to_get_information_on_the_project_with_the_values(DataTable dataTable) {
+        rs.set(RestAssured.given().auth().preemptive().basic(Hooks.userName2, Hooks.userPw2));
+        response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).get("/project"));
+    }
+
+    @When("^users not in the same organization want to get information on the project with the values$")
+    public void users_not_in_the_same_organization_want_to_get_information_on_the_project_with_the_values(DataTable dataTable) {
+        rs.set(RestAssured.given().auth().preemptive().basic(Hooks.userName3, Hooks.userPw3));
+        response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).get("/project"));
+
+    }
+
+    @When("^The user who created the project wants to obtain information about the project with the values\\.$")
+    public void the_user_who_created_the_project_wants_to_obtain_information_about_the_project_with_the_values(DataTable dataTable) {
+        rs.set(RestAssured.given().auth().preemptive().basic(Hooks.userName2, Hooks.userPw2));
+        response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).get("/project"));
     }
 
 

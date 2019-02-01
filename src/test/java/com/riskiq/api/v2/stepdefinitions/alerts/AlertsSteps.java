@@ -3,8 +3,10 @@ package com.riskiq.api.v2.stepdefinitions.alerts;
 
 import com.riskiq.api.v2.FlowData;
 import com.riskiq.api.v2.impl.BodyElement;
+import com.riskiq.api.v2.stepdefinitions.Hooks;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.restassured.RestAssured;
@@ -22,29 +24,35 @@ import static org.hamcrest.core.Is.is;
 
 public class AlertsSteps extends FlowData  {
 
+    @Given("^a valid user belonging to the organization of the project to be searched$")
+    public void aValidUserBelongingToTheOrganizationOfTheProjectToBeSearched() {
+        rs.set(given().auth().preemptive().basic(Hooks.userName1, Hooks.userPw1));
+    }
+
+    @Given("^a valid user not belonging to the organization of the project to be searched$")
+    public void aValidUserNotBelongingToTheOrganizationOfTheProjectToBeSearched() {
+        rs.set(given().auth().preemptive().basic(Hooks.userName1, Hooks.userPw1));
+    }
+
     @When("^users want to get information of alerts without params$")
     public void usersWantToDeleteProjectWithoutValues() {
         response.set(rs.get().contentType(ContentType.JSON).get("/monitor"));
     }
 
 
-    @And("^a created artifact with values$")
-    public void aCreatedArtifactWithValues(DataTable dataTable) throws Throwable {
-        rs.set(RestAssured.given().auth().preemptive().basic("alejandrodavidsalazar@gmail.com", "316bf07182644307e9e5b459f3389b6f46de7efe29386c74857a13afd8aad9af"));
-        String data = dataTableToJson(dataTable.asList(BodyElement.class));
-        JSONParser parser = new JSONParser();
-        JSONObject jsonData = (JSONObject) parser.parse(data);
-        query.set((String) jsonData.get("query"));
-        System.out.println(jsonData);
-        response.set(rs.get().contentType(ContentType.JSON).body(data).put("/artifact"));
-
+    @And("^the number of alerts should be greater than (\\d+)$")
+    public void theNumberOfProjectsShouldBeEqualTo(int numberOfProjects) throws Throwable {
+        if (numberOfProjects == 1) {
+            response.get().then().body("results", is(nullValue()));
+        } else if (numberOfProjects > 1) {
+            response.get().then().body("results.size()", equalTo(numberOfProjects));
+        }
     }
 
     @When("^users want to get information of alerts with the values$")
     public void usersWantToGetInformationOnTheProjectWithId(DataTable dataTable) {
         response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).get("/monitor"));
-        System.out.println("============= RESPUIESTA===============");
-        System.out.println(response.get().getBody().prettyPrint());
+System.out.println(response.get().getBody().prettyPrint());
     }
 
 }
