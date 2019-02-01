@@ -317,6 +317,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     When users want to get information on the project with the values
       | key          | value                  |
       | featured     | ##featured             |
+    Then the api should response with code 200
   #  And Check JSON schema "project/Find.json"
 
   #Falla con el esquema find, sin el esquema si funciona
@@ -333,61 +334,76 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
       | featured     | ##featured             |
     #And Check JSON schema "project/Find.json"
 
+  #YA CORRE
   @Find
-  Scenario: Check when i send an private visibility param, the response retrieve all the information related with the project searched
+  Scenario: Check when i send an private visibility param, and users in the same organization want  to get information on the project, the response retrieve all the information related with the project searched and check with json schema
     Given a valid user and key from riskIQ platform
     And a created project with values
       | key          | value                  |
       | name         | @@namerandom           |
       | visibility   | private                |
-    When users want to get information of the project by id
-    Then the api should response with code 200
-    And Response includes the following
+    When users in the same organization want to get information on the project with the values
       | key          | value                  |
-      | visibility   | private                |
+      | project      | ##guid                 |
+      | visibility   | ##visibility           |
+    Then the api should response with code 200
+    # And Check JSON schema "project/Find.json"
 
+  #YA CORRE
   @Find
-  Scenario: Check when i send an private visibility param, the response retrieve all the information related with the project searched and check with json schema
+  Scenario: Check when i send an private visibility param, and users not in the same organization want to get information on the project, the response retrieve error message and code error and check with json schema
     Given a valid user and key from riskIQ platform
     And a created project with values
       | key          | value                  |
       | name         | @@namerandom           |
       | visibility   | private                |
-    When users want to get information of the project by id
-    Then the api should response with code 200
-    And Response includes the following
+    When users not in the same organization want to get information on the project with the values
       | key          | value                  |
-      | visibility   | private                |
-   # And Check JSON schema "project/Find.json"
+      | project      | ##guid                 |
+      | visibility   | ##visibility           |
+    Then the api should response with code 404
+    And Check JSON schema "project/ErrorMessage.json"
 
-
-  @Find
-  Scenario: Check when i send an analyst visibility param, the response retrieve all the information related with the project searched
+  #falla en la creacion del proyecto y responde 400
+  Scenario: Check when I send a parameter of visibility of analysts, and the user who created the project wants to obtain information, the response retrieves all the information related to the searched project and verifies with the json scheme.
     Given a valid user and key from riskIQ platform
     And a created project with values
       | key          | value                  |
       | name         | @@namerandom           |
       | visibility   | analyst                |
-    When users want to get information of the project by id
-    Then the api should response with code 200
-    And Response includes the following
+    When The user who created the project wants to obtain information about the project with the values.
       | key          | value                  |
-      | visibility   | analyst                |
+      | project      | ##guid                 |
+      | visibility   | ##visibility           |
+    Then the api should response with code 400
+    # And Check JSON schema "project/Find.json"
 
+  #falla en la creacion del proyecto y responde 400
   @Find
-  Scenario: Check when i send an analyst visibility param, the response retrieve all the information related with the project searched and check with json schema
+  Scenario: Check when i send an analyst visibility param, and users in the same organization want to get information on the project, the response retrieve error message and code error and check with json schema
     Given a valid user and key from riskIQ platform
     And a created project with values
       | key          | value                  |
       | name         | @@namerandom           |
       | visibility   | analyst                |
-    When users want to get information of the project by id
-    Then the api should response with code 200
-    And Response includes the following
+    When users in the same organization want to get information on the project with the values
       | key          | value                  |
+      | project      | ##guid                 |
+      | visibility   | ##visibility           |
+    Then the api should response with code 400
+    # And Check JSON schema "project/Find.json"
+
+  #falla en la creacion del proyecto y responde 400
+  @Find
+  Scenario: Check when i send an analyst visibility param, and users not in the same organization want to get information on the project, the response retrieve error message and code error and check with json schema
+    Given a valid user and key from riskIQ platform
+    And a created project with values
+      | key          | value                  |
+      | name         | @@namerandom           |
       | visibility   | analyst                |
-#    And Check JSON schema "project/Find.json"
-
-
-
-
+    When users not in the same organization want to get information on the project with the values
+      | key          | value                  |
+      | project      | ##guid                 |
+      | visibility   | ##visibility           |
+    Then the api should response with code 400
+    # And Check JSON schema "project/Find.json"
