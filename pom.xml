@@ -23,6 +23,7 @@
                 <configuration>
                     <forkCount>10</forkCount>
                     <reuseForks>true</reuseForks>
+                    <parallel>all</parallel>
                     <includes>
                         <include>**/Parallel*IT.class</include>
                     </includes>
