@@ -81,6 +81,13 @@ public class CreateSteps extends FlowData  {
 
     }
 
+    @And("^a created project with values by user of organization A$")
+    public void aCreatedProjectWithValuesByUserA(DataTable dataTable) throws Throwable {
+        rs.set(RestAssured.given().auth().preemptive().basic(Hooks.userName1, Hooks.userPw1));
+        projectId.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).put("/project").then().extract().path("guid"));
+
+    }
+
     @When("^users want to get information of the project by id$")
     public void usersWantToGetInformationOnTheProject() throws Throwable {
         response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(Collections.singletonList(BodyElement.builder().key("project").value(projectId.get()).build()))).get("/project"));
