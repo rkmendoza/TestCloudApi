@@ -2,6 +2,7 @@ package com.riskiq.api.v2;
 
 import com.riskiq.api.v2.impl.BodyElement;
 import com.riskiq.api.v2.stepdefinitions.project.impl.Project;
+import cucumber.api.Scenario;
 import gherkin.deps.com.google.gson.Gson;
 import gherkin.deps.com.google.gson.GsonBuilder;
 import io.restassured.response.Response;
@@ -18,6 +19,7 @@ import static com.riskiq.api.v2.misc.Utils.generateRandomString;
 
 public class FlowData  {
 
+    public static InheritableThreadLocal<Scenario> scenario = new InheritableThreadLocal<>();
     protected static InheritableThreadLocal<RequestSpecification> rs = new InheritableThreadLocal<>();
     protected static InheritableThreadLocal<Response> response = new InheritableThreadLocal<>();
     protected static ValidatableResponse json;
@@ -193,5 +195,9 @@ public class FlowData  {
 
         return String.format("{  \"artifacts\": [ { %s  }  ] }", bodyJson.get());
 
+    }
+
+    public static void writeInReport(String value){
+        scenario.get().write(value);
     }
 }

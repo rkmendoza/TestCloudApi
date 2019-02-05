@@ -1,5 +1,8 @@
 package com.riskiq.api.v2.stepdefinitions;
 
+import com.riskiq.api.v2.FlowData;
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import io.restassured.RestAssured;
 
@@ -23,11 +26,10 @@ public class Hooks {
     public static String userInvalidName = "";
     public static String userInvalidPw = "";
 
-    public void beforeScenario(){
-
-        getConfigVars();
-
-        // RestAssured.baseURI = "https://249fe275-c053-4f67-94b0-15b46cf73cd9.mock.pstmn.io/project";
+    /* Need to capture the scenario object in the instance to access it * in the step definition methods. */
+    @Before
+    public void before(Scenario scenario){
+        FlowData.scenario.set(scenario);
     }
 
     @Before
@@ -42,7 +44,6 @@ public class Hooks {
             Properties properties = new Properties();
             properties.load(fileInput);
             fileInput.close();
-
             userName1 = properties.getProperty("userName1");
             userPw1 = properties.getProperty("userPw1");
             userName2 = properties.getProperty("userName2");
@@ -54,6 +55,7 @@ public class Hooks {
             userInvalidName = properties.getProperty("userInvalidName");
             userInvalidPw = properties.getProperty("userInvalidPw");
             RestAssured.baseURI = properties.getProperty("baseURI");
+
 
         } catch (FileNotFoundException ex) {
 
@@ -69,6 +71,11 @@ public class Hooks {
 
         }
 
+    }
+
+    @After
+    public static void after(Scenario scenario){
+        scenario.write("test");
     }
 }
 
