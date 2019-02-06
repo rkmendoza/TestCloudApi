@@ -9,6 +9,8 @@ import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.PrintStream;
+import java.io.StringWriter;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
@@ -18,7 +20,11 @@ import static com.riskiq.api.v2.misc.Utils.generateRandomString;
 
 public class FlowData  {
 
-    public static InheritableThreadLocal<Scenario> scenario = new InheritableThreadLocal<>();
+    protected static InheritableThreadLocal<String> userCurl = new InheritableThreadLocal<>();
+    protected static InheritableThreadLocal<String> passCurl = new InheritableThreadLocal<>();
+    protected static InheritableThreadLocal<String> endPoint = new InheritableThreadLocal<>();
+    protected static InheritableThreadLocal<String> method = new InheritableThreadLocal<>();
+    protected static InheritableThreadLocal<Scenario> scenario = new InheritableThreadLocal<>();
     protected static InheritableThreadLocal<RequestSpecification> rs = new InheritableThreadLocal<>();
     protected static InheritableThreadLocal<Response> response = new InheritableThreadLocal<>();
     protected static ValidatableResponse json;
@@ -31,12 +37,15 @@ public class FlowData  {
     protected static InheritableThreadLocal<Boolean> featured = new InheritableThreadLocal<>();
 
 
+
     protected static InheritableThreadLocal<String> wrongGuid = new InheritableThreadLocal<>();
     protected static InheritableThreadLocal<String> noExistGuid = new InheritableThreadLocal<>();
     protected static InheritableThreadLocal<String> wrongOwner = new InheritableThreadLocal<>();
     protected static InheritableThreadLocal<String> wrongCreator = new InheritableThreadLocal<>();
     protected static InheritableThreadLocal<String> wrongOrganization = new InheritableThreadLocal<>();
     protected static InheritableThreadLocal<String> wrongVisibility = new InheritableThreadLocal<>();
+
+
 
 
     protected static AtomicReference<String> bodyJson = new AtomicReference<>("");

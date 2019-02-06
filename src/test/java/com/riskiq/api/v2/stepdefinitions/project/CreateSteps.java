@@ -16,6 +16,9 @@ import io.restassured.http.ContentType;
 
 import java.util.Collections;
 
+import static com.riskiq.api.v2.misc.Utils.PUT;
+import static com.riskiq.api.v2.misc.Utils.setCredentials;
+import static com.riskiq.api.v2.misc.Utils.setMethodAndEndPoint;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.greaterThan;
@@ -26,7 +29,7 @@ public class CreateSteps extends FlowData  {
 
     @Given("^user whit valid credentials and quota to create project is exceeded$")
     public void aValidUserFromRiskIQPlatform() {
-        rs.set(given().auth().preemptive().basic(Hooks.userName3, Hooks.userPw3));
+        rs.set(setCredentials(Hooks.userName3,Hooks.userPw3));
 
     }
 
@@ -38,7 +41,7 @@ public class CreateSteps extends FlowData  {
 
     @When("^users want to create project with the values$")
     public void usersWantToCreateProjectWithTheValues(DataTable dataTable) {
-        response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).put("/project"));
+        response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,"project")));
         owner.set(response.get().path("owner"));
         projectId.set(response.get().path("guid"));
         creator.set(response.get().path("creator"));
@@ -50,7 +53,7 @@ public class CreateSteps extends FlowData  {
     @And("^a created project with values$")
     public void aCreatedProjectWithValues(DataTable dataTable) throws Throwable {
         rs.set(RestAssured.given().auth().preemptive().basic(Hooks.userName2, Hooks.userPw2));
-        response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).put("/project"));
+        response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,"project")));
         owner.set(response.get().path("owner"));
         projectId.set(response.get().path("guid"));
         creator.set(response.get().path("creator"));
@@ -62,7 +65,7 @@ public class CreateSteps extends FlowData  {
 
     @When("^a created project with values with invalid credentials$")
     public void aCreatedProjectWithInvalidCredentials(DataTable dataTable) throws Throwable {
-        response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).put("/project"));
+        response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,"project")));
 
     }
 
@@ -70,20 +73,20 @@ public class CreateSteps extends FlowData  {
     @And("^a created project with values by user of organization B$")
     public void aCreatedProjectWithValuesByUserB(DataTable dataTable) throws Throwable {
         rs.set(RestAssured.given().auth().preemptive().basic(Hooks.userName4, Hooks.userPw4));
-        projectId.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).put("/project").then().extract().path("guid"));
+        projectId.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,"project")).then().extract().path("guid"));
 
     }
 
     @And("^a created project with values by user of organization A$")
     public void aCreatedProjectWithValuesByUserA(DataTable dataTable) throws Throwable {
         rs.set(RestAssured.given().auth().preemptive().basic(Hooks.userName1, Hooks.userPw1));
-        projectId.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).put("/project").then().extract().path("guid"));
+        projectId.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,"project")).then().extract().path("guid"));
 
     }
 
     @When("^users want to get information of the project by id$")
     public void usersWantToGetInformationOnTheProject() throws Throwable {
-        response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(Collections.singletonList(BodyElement.builder().key("project").value(projectId.get()).build()))).get("/project"));
+        response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(Collections.singletonList(BodyElement.builder().key("project").value(projectId.get()).build()))).get(setMethodAndEndPoint(PUT,"project")));
     }
 
     @And("^the number of projects should be greater than (\\d+)$")

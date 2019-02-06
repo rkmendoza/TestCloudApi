@@ -25,15 +25,9 @@ pipeline {
 
         stage('checkout') {
             steps {
-                git credentialsId: 'git-credentials', url: 'https://mauro-icox@bitbucket.org/riskiq/test-cloud.git', branch: 'master'
+                git credentialsId: 'git-credentials', url: 'https://mauro-icox@bitbucket.org/riskiq/test-cloud.git', branch: 'develop'
             }
         }
-
-        /*stage ('Download Project') {
-            steps {
-                git url: 'https://mauro-icox@bitbucket.org/riskiq/test-cloud.git'
-            }
-        }*/
 
         stage ('Test') {
             steps  {
@@ -56,18 +50,7 @@ pipeline {
                              jsonReportDirectory: 'target/cucumber-parallel'
                 }
             }
-            /*post {
-                always {
-                    publishHTML (target: [
-                            allowMissing: false,
-                            alwaysLinkToLastBuild: true,
-                            keepAll: true,
-                            reportDir: 'target/test-report',
-                            reportFiles: 'index.html',
-                            reportName: "Executive Report"
-                    ])
-                }
-            }*/
+
         }
 
     }

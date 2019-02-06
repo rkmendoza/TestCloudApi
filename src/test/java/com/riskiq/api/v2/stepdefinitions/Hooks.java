@@ -5,18 +5,18 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import io.restassured.RestAssured;
-import io.restassured.config.RestAssuredConfig;
-import io.restassured.specification.RequestSpecification;
+import io.restassured.config.LogConfig;
+import io.restassured.filter.log.RequestLoggingFilter;
+import org.apache.commons.io.output.WriterOutputStream;
+import org.mortbay.io.EndPoint;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.Properties;
 
+import static com.riskiq.api.v2.misc.Utils.generateCurl;
 import static io.restassured.RestAssured.given;
 
-public class Hooks {
+public class Hooks extends FlowData{
 
     private static String sfile = "src/test/resources/config.properties";
     public static String userName1 = "";
@@ -29,13 +29,16 @@ public class Hooks {
     public static String userPw4 = "";
     public static String userInvalidName = "";
     public static String userInvalidPw = "";
-    public static String bodyJson = "";
+    //public static InheritableThreadLocal<StringWriter> writer = new InheritableThreadLocal<>();
 
     /* Need to capture the scenario object in the instance to access it * in the step definition methods. */
     @Before
     public void before(Scenario scenario){
 
         FlowData.scenario.set(scenario);
+        //writer.set(new StringWriter());
+        //PrintStream captor = new PrintStream(new WriterOutputStream(writer.get()), true);
+        //RestAssured.requestSpecification= RestAssured.given().config(RestAssured.config().logConfig(new LogConfig(captor,true)));
     }
 
     @Before
@@ -78,21 +81,17 @@ public class Hooks {
 
     }
 
-    @After(order=0)
-    public static void afterScenarioFinish(){
-        bodyJson = "";
-    }
-
-    @After(order=1)
+    @After
     public static void afterScenario(Scenario scenario){
-        String url_string = given().log().all().toString();
-        //String body  = given().log().body().get().toString();
 
-        String curl       = "$ curl -u $USERNAME:$KEY " +
-                            "'"+url_string+"' -XDELETE -H " +
-                            "'Content-Type: application/json' " +
-                            "--data '{"+bodyJson+"}'";
-        scenario.write(curl);
+        String url       = RestAssured.baseURI+"/"+endPoint.get();
+        String body      = bodyJson.toString();
+        String user      = userCurl.get();
+        String password  = passCurl.get();
+        String methodDef = method.get();
+
+        scenario.write(generateCurl(url, methodDef, body, user, password));
+
     }
 }
 

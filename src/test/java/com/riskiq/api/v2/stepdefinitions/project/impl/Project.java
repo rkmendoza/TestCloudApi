@@ -16,9 +16,4 @@ public class Project {
 
     public InheritableThreadLocal<String> guid;
 
-
-
-
-
-
 }

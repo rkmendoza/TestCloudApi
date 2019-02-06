@@ -1,9 +1,15 @@
 package com.riskiq.api.v2.misc;
 
+import com.riskiq.api.v2.FlowData;
 import com.riskiq.api.v2.impl.BodyElement;
+import com.riskiq.api.v2.stepdefinitions.Hooks;
+import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
+import io.restassured.specification.RequestSenderOptions;
+import io.restassured.specification.RequestSpecification;
 import org.apache.commons.lang3.StringUtils;
 
+import java.security.PublicKey;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,11 +17,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
+import static io.restassured.RestAssured.get;
+import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.collection.IsEmptyCollection.empty;
 import static org.hamcrest.core.Is.is;
 
-public class Utils {
+public class Utils extends FlowData{
+
+    public static String POST = "POST";
+    public static String PUT = "PUT";
+    public static String DELETE = "DELETE";
+    public static String GET = "GET";
 
 
     public synchronized static ValidatableResponse matchJsonValue(Map.Entry<String, String> field, ValidatableResponse json) {
@@ -101,7 +114,27 @@ public class Utils {
     }
 
 
+    public static  String generateCurl(String url, String method, String body, String username, String password){
+        String curl = "$ curl -u "+username+":"+password+" \n" +
+                      "'"+url+"' \n" +
+                      "-X"+method+" -H \"Content-Type: application/json\" \n" +
+                      "--data '{"+body+"}' \n";
+        return curl;
+    }
 
+    public static RequestSpecification setCredentials(String userDef, String passwordDef){
+
+        userCurl.set(userDef);
+        passCurl.set(passwordDef);
+
+        return given().auth().preemptive().basic(userCurl.get(), passCurl.get());
+    }
+
+    public static String setMethodAndEndPoint(String methodDef, String value){
+        endPoint.set(value);
+        method.set(methodDef);
+        return "/"+endPoint.get();
+    }
 
 }
 

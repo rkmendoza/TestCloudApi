@@ -5,6 +5,8 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import io.restassured.RestAssured;
+
+import io.restassured.filter.log.RequestLoggingFilter;
 import lombok.extern.log4j.Log4j;
 import org.apache.commons.lang3.StringUtils;
 
@@ -12,6 +14,7 @@ import java.util.AbstractMap;
 import java.util.Map;
 
 import static com.riskiq.api.v2.misc.Utils.matchJsonValue;
+import static com.riskiq.api.v2.misc.Utils.setCredentials;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
@@ -22,13 +25,12 @@ public class CommonSteps extends FlowData {
 
     @Given("^a valid user and key from riskIQ platform$")
     public void aValidUserFromRiskIQPlatform() {
-      rs.set(given().auth().preemptive().basic(Hooks.userName1, Hooks.userPw1));
-     // rs.set(RestAssured.given().auth().preemptive().basic(Hooks.userName1, Hooks.userPw1));
+      rs.set(setCredentials(Hooks.userName1,Hooks.userPw1));
     }
 
     @Given("^a invalid user and invalid key from riskIQ platform$")
     public void aInvalidUserFromRiskIQPlatform() {
-        rs.set(given().auth().preemptive().basic(Hooks.userInvalidName, Hooks.userInvalidPw));
+        rs.set(setCredentials(Hooks.userInvalidName,Hooks.userInvalidPw));
     }
 
 
