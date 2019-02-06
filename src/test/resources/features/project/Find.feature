@@ -1,6 +1,6 @@
 Feature: As a user of riskIQ platform I want to find a project or projects using search criteria
 
-  @Find1
+  @Find
   Scenario: Check the response of find all projects, with wrong credentials the response retrieve error message and code 401 error and check with json schema
     Given a invalid user and invalid key from riskIQ platform
     When users want to get information of the all project
@@ -76,7 +76,6 @@ Feature: As a user of riskIQ platform I want to find a project or projects using
     When users want to get information of the all project
     Then the api should response with code 200
 
-  #Falla por el esquema
   @Find
   Scenario: Check the response of find all projects when i search all project that exist in riskIQ platform is a 200 and check
   with json schema
@@ -85,7 +84,7 @@ Feature: As a user of riskIQ platform I want to find a project or projects using
     Then the api should response with code 200
     And Check JSON schema "project/FindObject.json"
 
-  @Find
+  @Find1
   Scenario: Check the response of find project when i search a project that exist in riskIQ platform is a 200 and
   the number of projects should be equal to 1 and check with json schema
     Given a valid user and key from riskIQ platform
@@ -145,7 +144,6 @@ Feature: As a user of riskIQ platform I want to find a project or projects using
     Then the api should response with code 200
     And Check JSON schema "project/Find.json"
 
-  #debe dar 400 pero da 200
   @Find
   Scenario: Check when i send an invalid Owner project, the response retrieve error message and code error and check with json schema
     Given a valid user and key from riskIQ platform
@@ -186,7 +184,6 @@ Feature: As a user of riskIQ platform I want to find a project or projects using
     And the number of projects should be greater than 1
     And Check JSON schema "project/Find.json"
 
-  #debe dar 400 pero da 200
   @Find
   Scenario: Check when i send an invalid Creator project, the response retrieve error message and code 400 error and check with json schema
     Given a valid user and key from riskIQ platform
@@ -225,7 +222,6 @@ Feature: As a user of riskIQ platform I want to find a project or projects using
     Then the api should response with code 200
     And Check JSON schema "project/Find.json"
 
-  #debe dar 400 pero da 200
   @Find
   Scenario: Check when i send an invalid organization, the response retrieve error message and code 400 error and check with json schema
     Given a valid user and key from riskIQ platform

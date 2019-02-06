@@ -3,8 +3,7 @@ package com.riskiq.api.v2;
 import com.riskiq.api.v2.impl.BodyElement;
 import com.riskiq.api.v2.stepdefinitions.project.impl.Project;
 import cucumber.api.Scenario;
-import gherkin.deps.com.google.gson.Gson;
-import gherkin.deps.com.google.gson.GsonBuilder;
+import io.restassured.config.RestAssuredConfig;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
@@ -190,8 +189,6 @@ public class FlowData  {
 
 
         });
-
-        //  System.out.println(String.format("{ %s }", bodyJson.get() ));
 
         return String.format("{  \"artifacts\": [ { %s  }  ] }", bodyJson.get());
 

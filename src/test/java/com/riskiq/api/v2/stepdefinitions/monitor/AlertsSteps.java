@@ -1,4 +1,4 @@
-package com.riskiq.api.v2.stepdefinitions.alerts;
+package com.riskiq.api.v2.stepdefinitions.monitor;
 
 
 import com.riskiq.api.v2.FlowData;
@@ -7,16 +7,8 @@ import com.riskiq.api.v2.stepdefinitions.Hooks;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-
-import java.util.Collections;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;

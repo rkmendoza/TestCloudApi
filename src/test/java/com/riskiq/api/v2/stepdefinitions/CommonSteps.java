@@ -1,30 +1,20 @@
 package com.riskiq.api.v2.stepdefinitions;
 
 import com.riskiq.api.v2.FlowData;
-import com.riskiq.api.v2.impl.BodyElement;
-import cucumber.api.Scenario;
-import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import io.restassured.RestAssured;
 import lombok.extern.log4j.Log4j;
-import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.BasicConfigurator;
-import org.junit.Assert;
 
 import java.util.AbstractMap;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import static com.riskiq.api.v2.misc.Utils.matchJsonValue;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
-import static org.hamcrest.Matchers.equalTo;
-import org.apache.log4j.Logger;
-import utilities.Log;
+
 
 
 @Log4j
@@ -63,8 +53,6 @@ public class CommonSteps extends FlowData {
 
         }
     }
-
-
 
 
     @And("Check JSON schema \"([^\"}]*)\"$")

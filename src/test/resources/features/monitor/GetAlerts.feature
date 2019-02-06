@@ -8,7 +8,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     Then the api should response with code 401
     And Check JSON schema "project/ErrorMessage.json"
 
-#reporting in jira
+  #reporting in jira
   @Alerts
   Scenario: Check the response of find all alerts when that exist in riskIQ platform is a 200
     Given a valid user and key from riskIQ platform

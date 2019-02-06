@@ -10,10 +10,9 @@ import com.riskiq.api.v2.FlowData;
 import com.riskiq.api.v2.impl.BodyElement;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
-import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
+
 
 import java.util.Collections;
 
@@ -46,12 +45,6 @@ public class CreateSteps extends FlowData  {
         visibility.set(response.get().path("visibility"));
         organization.set(response.get().path("organization"));
         featured.set(response.get().path("featured"));
-    }
-
-    @Then("^the requested data match with the schema \"([^\"]*)\"$")
-    public void theRequestedDataMatchWithTheSchema(String schema) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        //throw new PendingException();
     }
 
     @And("^a created project with values$")

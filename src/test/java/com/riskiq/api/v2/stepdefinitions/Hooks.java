@@ -5,12 +5,16 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import io.restassured.RestAssured;
+import io.restassured.config.RestAssuredConfig;
+import io.restassured.specification.RequestSpecification;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
+
+import static io.restassured.RestAssured.given;
 
 public class Hooks {
 
@@ -25,10 +29,12 @@ public class Hooks {
     public static String userPw4 = "";
     public static String userInvalidName = "";
     public static String userInvalidPw = "";
+    public static String bodyJson = "";
 
     /* Need to capture the scenario object in the instance to access it * in the step definition methods. */
     @Before
     public void before(Scenario scenario){
+
         FlowData.scenario.set(scenario);
     }
 
@@ -56,7 +62,6 @@ public class Hooks {
             userInvalidPw = properties.getProperty("userInvalidPw");
             RestAssured.baseURI = properties.getProperty("baseURI");
 
-
         } catch (FileNotFoundException ex) {
 
             ex.printStackTrace();
@@ -73,9 +78,21 @@ public class Hooks {
 
     }
 
-    @After
-    public static void after(Scenario scenario){
-        scenario.write("test");
+    @After(order=0)
+    public static void afterScenarioFinish(){
+        bodyJson = "";
+    }
+
+    @After(order=1)
+    public static void afterScenario(Scenario scenario){
+        String url_string = given().log().all().toString();
+        //String body  = given().log().body().get().toString();
+
+        String curl       = "$ curl -u $USERNAME:$KEY " +
+                            "'"+url_string+"' -XDELETE -H " +
+                            "'Content-Type: application/json' " +
+                            "--data '{"+bodyJson+"}'";
+        scenario.write(curl);
     }
 }
 

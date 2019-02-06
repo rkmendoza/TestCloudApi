@@ -159,7 +159,7 @@ Feature: As a user of riskIQ platform I want to delete a project
     Then the api should response with code 200
     And Check JSON schema "project/Delete.json"
 
-  @Delete2
+  @Delete
   Scenario: Check when a user of organization A want to delete a project created by him of type private,
   response retrieve error message and code 200 error and check with Json schema
     Given a created project with values by user of organization A
