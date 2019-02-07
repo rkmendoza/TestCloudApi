@@ -67,7 +67,7 @@ Feature: As a user of riskIQ platform I want to Set project tags
       | project     | ##guid                 |
       | tags        | @@randomTags3          |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/tags.json"
 
   @SetTags
   Scenario: Check the response of Set project tags with user of the same organization, and the visibility is private, the response retrieve all the information related with the project updated and check with json schema
@@ -82,7 +82,7 @@ Feature: As a user of riskIQ platform I want to Set project tags
       | project     | ##guid                 |
       | tags        | @@randomTags3          |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/tags.json"
 
   @SetTags
   Scenario: Check the response of Set project tags with user of the same organization, and the visibility is analyst, the response retrieve error message and code 400 error and check with json schema
@@ -112,7 +112,7 @@ Feature: As a user of riskIQ platform I want to Set project tags
       | project     | ##guid                 |
       | tags        | @@randomTags3          |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/tag.json"
 
 
   @SetTags
