@@ -15,7 +15,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     When users want to get information of alerts without params
     Then the api should response with code 200
 
-
+  #reporting in jira
   @Alerts
   Scenario: Check the response of find all alerts when that exist in riskIQ platform is a 200
     Given a valid user and key from riskIQ platform
