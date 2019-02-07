@@ -71,7 +71,7 @@ Feature: As a user of riskIQ platform I want to update a project or projects
       | featured    | false                  |
       | tags        | @@randomTags3          |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/Update.json"
 
   @Update
   Scenario: Check the response of update project by GUID with user of the same organization, and the visibility is private, the response retrieve all the information related with the project updated and check with json schema
@@ -92,7 +92,7 @@ Feature: As a user of riskIQ platform I want to update a project or projects
       | featured    | false                  |
       | tags        | @@randomTags3          |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/Update.json"
 
   @Update
   Scenario: Check the response of update project by GUID with user of the same organization, and the visibility is analyst, the response retrieve error message and code 400 error and check with json schema
@@ -113,7 +113,7 @@ Feature: As a user of riskIQ platform I want to update a project or projects
       | featured    | false                  |
       | tags        | @@randomTags3          |
     Then the api should response with code 400
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/Update.json"
 
   @Update
   Scenario: Check the response of update project by GUID with user of the same organization and the user created the project, and the visibility is analyst, the response retrieve all the information related with the project updated and check with json schema
@@ -134,7 +134,7 @@ Feature: As a user of riskIQ platform I want to update a project or projects
       | featured    | false                  |
       | tags        | @@randomTags3          |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/Update.json"
 
 
   @Update
@@ -156,7 +156,7 @@ Feature: As a user of riskIQ platform I want to update a project or projects
       | featured    | false                  |
       | tags        | @@randomTags3          |
     Then the api should response with code 403
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/Update.json"
 
   @Update
   Scenario: Check the response of update project by GUID with user not in the same organization, and the visibility is private, the response retrieve error message and code 403 error and check with json schema
@@ -177,7 +177,7 @@ Feature: As a user of riskIQ platform I want to update a project or projects
       | featured    | false                  |
       | tags        | @@randomTags3          |
     Then the api should response with code 403
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/Update.json"
 
   @Update
   Scenario: Check the response of update project by GUID with user not in the same organization, and the visibility is analyst, the response retrieve error message and code 403 error and check with json schema
@@ -198,7 +198,7 @@ Feature: As a user of riskIQ platform I want to update a project or projects
       | featured    | false                  |
       | tags        | @@randomTags3          |
     Then the api should response with code 403
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/Update.json"
 
 
 
