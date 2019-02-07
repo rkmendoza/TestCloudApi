@@ -6,7 +6,9 @@ import lombok.Setter;
 
 @Data
 @Builder(builderMethodName = "with", buildMethodName = "create")
-public class UserCredentials {
-    public @Setter String username;
-    public @Setter String password;
+public class EndPoint {
+
+    public @Setter String endpoint;
+    public @Setter String method;
+
 }

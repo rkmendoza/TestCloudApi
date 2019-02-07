@@ -1,19 +1,26 @@
 package com.riskiq.api.v2.stepdefinitions.project.impl;
 
-import com.riskiq.api.v2.impl.BodyElement;
-import gherkin.deps.com.google.gson.Gson;
-import gherkin.deps.com.google.gson.GsonBuilder;
 import lombok.Builder;
 import lombok.Data;
-import static com.riskiq.api.v2.misc.Utils.createJson;
+import lombok.Setter;
 
-import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
-
-@Builder
 @Data
+@Builder (builderMethodName = "with", buildMethodName = "create")
 public class Project {
 
-    public InheritableThreadLocal<String> guid;
+    private String guid;
+    public @Setter String owner;
+    public @Setter String creator;
+    public @Setter String visibility;
+    public @Setter String organization;
+    public @Setter Boolean featured;
+    public @Builder.Default String wrongGuid = "279abfa2-9e97-0cb9-d2bb995bca7c5";
+    public @Builder.Default String noExistGuid = "279bbfb2-9e97-0cb9-d2bb-995bca7c5909";
+    public @Builder.Default String wrongOwner = "OtherOwner";
+    public @Builder.Default String wrongCreator = "OtherCreator";
+    public @Builder.Default String wrongOrganization = "OtherOrganization";
+    public @Builder.Default String wrongVisibility = "OtherVisibility";
+
+
 
 }
