@@ -169,21 +169,21 @@ public class Utils extends FlowData{
 
     public static RequestSpecification setCredentials(String userDef, String passwordDef){
 
-        userCredentials.set(UserCredentials.with()
+        setUserCredentials(UserCredentials.with()
                 .username(userDef)
                 .password(passwordDef)
                 .create());
 
-        return given().auth().preemptive().basic(userCredentials.get().username, userCredentials.get().password);
+        return given().auth().preemptive().basic(getUserCredentials().getUsername(), getUserCredentials().getPassword());
     }
 
     public static String setMethodAndEndPoint(String methodDef, String value){
-        endPoint.set(EndPoint.with()
+        setEndPoint(EndPoint.with()
                 .endpoint(value)
                 .method(methodDef)
                 .create()
         );
-        return "/"+endPoint.get().endpoint;
+        return "/"+getEndPoint().getEndpoint();
     }
 
 }

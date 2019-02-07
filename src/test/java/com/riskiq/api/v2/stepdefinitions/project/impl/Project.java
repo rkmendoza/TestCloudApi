@@ -8,18 +8,18 @@ import lombok.Setter;
 @Builder (builderMethodName = "with", buildMethodName = "create")
 public class Project {
 
-    private String guid;
-    public @Setter String owner;
-    public @Setter String creator;
-    public @Setter String visibility;
-    public @Setter String organization;
-    public @Setter Boolean featured;
-    public @Builder.Default String wrongGuid = "279abfa2-9e97-0cb9-d2bb995bca7c5";
-    public @Builder.Default String noExistGuid = "279bbfb2-9e97-0cb9-d2bb-995bca7c5909";
-    public @Builder.Default String wrongOwner = "OtherOwner";
-    public @Builder.Default String wrongCreator = "OtherCreator";
-    public @Builder.Default String wrongOrganization = "OtherOrganization";
-    public @Builder.Default String wrongVisibility = "OtherVisibility";
+    private  String  guid;
+    private  String  owner;
+    private  String  creator;
+    private  String  visibility;
+    private  String  organization;
+    private  Boolean featured;
+    private @Builder.Default String wrongGuid = "279abfa2-9e97-0cb9-d2bb995bca7c5";
+    private @Builder.Default String noExistGuid = "279bbfb2-9e97-0cb9-d2bb-995bca7c5909";
+    private @Builder.Default String wrongOwner = "OtherOwner";
+    private @Builder.Default String wrongCreator = "OtherCreator";
+    private @Builder.Default String wrongOrganization = "OtherOrganization";
+    private @Builder.Default String wrongVisibility = "OtherVisibility";
 
 
 

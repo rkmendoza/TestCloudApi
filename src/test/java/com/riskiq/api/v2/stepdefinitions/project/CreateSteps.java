@@ -40,7 +40,7 @@ public class CreateSteps extends FlowData  {
     @When("^users want to create project with the values$")
     public void usersWantToCreateProjectWithTheValues(DataTable dataTable) {
         response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,"project")));
-        project.set(Project.with()
+        setProject(Project.with()
                 .guid(response.get().path("guid").toString())
                 .owner(response.get().path("owner"))
                 .creator(response.get().path("creator"))
@@ -54,7 +54,7 @@ public class CreateSteps extends FlowData  {
     public void aCreatedProjectWithValues(DataTable dataTable) throws Throwable {
         rs.set(RestAssured.given().auth().preemptive().basic(userName2, userPw2));
         response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,"project")));
-        project.set(Project.with()
+        setProject(Project.with()
                 .guid(response.get().path("guid").toString())
                 .owner(response.get().path("owner"))
                 .creator(response.get().path("creator"))
@@ -75,7 +75,7 @@ public class CreateSteps extends FlowData  {
     @And("^a created project with values by user of organization B$")
     public void aCreatedProjectWithValuesByUserB(DataTable dataTable) throws Throwable {
         rs.set(RestAssured.given().auth().preemptive().basic(userName4, userPw4));
-        project.set(Project.with()
+        setProject(Project.with()
         .guid(rs.get().contentType(ContentType.JSON)
               .body(dataTableToJson(dataTable.asList(BodyElement.class)))
               .put(setMethodAndEndPoint(PUT,"project"))
@@ -86,7 +86,7 @@ public class CreateSteps extends FlowData  {
     @And("^a created project with values by user of organization A$")
     public void aCreatedProjectWithValuesByUserA(DataTable dataTable) throws Throwable {
         rs.set(RestAssured.given().auth().preemptive().basic(userName1, userPw1));
-        project.set(Project.with()
+        setProject(Project.with()
         .guid(rs.get().contentType(ContentType.JSON)
               .body(dataTableToJson(dataTable.asList(BodyElement.class)))
               .put(setMethodAndEndPoint(PUT,"project"))
@@ -100,7 +100,7 @@ public class CreateSteps extends FlowData  {
         response.set(rs.get()
         .contentType(ContentType.JSON)
         .body(dataTableToJson(Collections.singletonList(BodyElement.builder()
-                              .key("project").value(project.get().getGuid())
+                              .key("project").value(getProject().getGuid())
                               .build())))
         .get(setMethodAndEndPoint(GET,"project")));
     }
