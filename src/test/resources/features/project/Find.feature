@@ -84,7 +84,7 @@ Feature: As a user of riskIQ platform I want to find a project or projects using
     Then the api should response with code 200
     And Check JSON schema "project/FindObject.json"
 
-  @Find1
+  @Find
   Scenario: Check the response of find project when i search a project that exist in riskIQ platform is a 200 and
   the number of projects should be equal to 1 and check with json schema
     Given a valid user and key from riskIQ platform

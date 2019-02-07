@@ -1,6 +1,8 @@
 package com.riskiq.api.v2;
 
 import com.riskiq.api.v2.impl.BodyElement;
+import com.riskiq.api.v2.impl.EndPoint;
+import com.riskiq.api.v2.impl.UserCredentials;
 import com.riskiq.api.v2.stepdefinitions.project.impl.Project;
 import cucumber.api.Scenario;
 import io.restassured.config.RestAssuredConfig;
@@ -9,6 +11,8 @@ import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.PrintStream;
+import java.io.StringWriter;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
@@ -18,17 +22,13 @@ import static com.riskiq.api.v2.misc.Utils.generateRandomString;
 
 public class FlowData  {
 
-    public static InheritableThreadLocal<Scenario> scenario = new InheritableThreadLocal<>();
+    protected static InheritableThreadLocal<Scenario> scenario = new InheritableThreadLocal<>();
     protected static InheritableThreadLocal<RequestSpecification> rs = new InheritableThreadLocal<>();
     protected static InheritableThreadLocal<Response> response = new InheritableThreadLocal<>();
     protected static ValidatableResponse json;
-    protected static InheritableThreadLocal<String> projectId = new InheritableThreadLocal<>();
-    protected static InheritableThreadLocal<Project> project = new InheritableThreadLocal<>();
-    protected static InheritableThreadLocal<String> owner = new InheritableThreadLocal<>();
-    protected static InheritableThreadLocal<String> creator = new InheritableThreadLocal<>();
-    protected static InheritableThreadLocal<String> visibility = new InheritableThreadLocal<>();
-    protected static InheritableThreadLocal<String> organization = new InheritableThreadLocal<>();
-    protected static InheritableThreadLocal<Boolean> featured = new InheritableThreadLocal<>();
+    protected static InheritableThreadLocal<Project> projectInfo = new InheritableThreadLocal<>();
+    protected static InheritableThreadLocal<UserCredentials> userCredentialsInfo = new InheritableThreadLocal<>();
+    protected static InheritableThreadLocal<EndPoint> endPointInfo = new InheritableThreadLocal<>();
 
 
     protected static InheritableThreadLocal<String> wrongGuid = new InheritableThreadLocal<>();
@@ -38,6 +38,22 @@ public class FlowData  {
     protected static InheritableThreadLocal<String> wrongOrganization = new InheritableThreadLocal<>();
     protected static InheritableThreadLocal<String> wrongVisibility = new InheritableThreadLocal<>();
     protected static InheritableThreadLocal<String> integerTag = new InheritableThreadLocal<>();
+
+    /* crear para todas las clases set y get*/
+    public static Project getProject(){
+        return projectInfo.get();
+    }
+    public static void setProject(Project project) {
+        projectInfo.set(project);
+    }
+    public static UserCredentials getUserCredentials(){return userCredentialsInfo.get();}
+    public static void setUserCredentials(UserCredentials userCredentials) {
+        userCredentialsInfo.set(userCredentials);
+    }
+    public static EndPoint getEndPoint(){return endPointInfo.get();}
+    public static void setEndPoint(EndPoint endPoint) {
+        endPointInfo.set(endPoint);
+    }
 
 
     protected static AtomicReference<String> bodyJson = new AtomicReference<>("");
@@ -99,40 +115,40 @@ public class FlowData  {
 
         switch (key) {
             case "guid":
-                bodyElement.setValue(String.valueOf(projectId.get()));
+                bodyElement.setValue(String.valueOf(getProject().getGuid()));
                 break;
             case "owner":
-                bodyElement.setValue(String.valueOf(owner.get()));
+                bodyElement.setValue(String.valueOf(getProject().getOwner()));
                 break;
             case "creator":
-                bodyElement.setValue(String.valueOf(creator.get()));
+                bodyElement.setValue(String.valueOf(getProject().getCreator()));
                 break;
             case "visibility":
-                bodyElement.setValue(String.valueOf(visibility.get()));
+                bodyElement.setValue(String.valueOf(getProject().getVisibility()));
                 break;
             case "organization":
-                bodyElement.setValue(String.valueOf(organization.get()));
+                bodyElement.setValue(String.valueOf(getProject().getOrganization()));
                 break;
             case "featured":
-                bodyElement.setValue(String.valueOf(featured.get()));
+                bodyElement.setValue(String.valueOf(getProject().getFeatured()));
                 break;
             case "wrongGuid":
-                bodyElement.setValue(String.valueOf("279abfa2-9e97-0cb9-d2bb995bca7c5"));
+                bodyElement.setValue(String.valueOf(getProject().getWrongGuid()));
                 break;
             case "noExistGuid":
-                bodyElement.setValue(String.valueOf("279bbfb2-9e97-0cb9-d2bb-995bca7c5909"));
+                bodyElement.setValue(String.valueOf(getProject().getNoExistGuid()));
                 break;
             case "wrongOwner":
-                bodyElement.setValue(String.valueOf("OtherOwner"));
+                bodyElement.setValue(String.valueOf(getProject().getWrongOwner()));
                 break;
             case "wrongCreator":
-                bodyElement.setValue(String.valueOf("OtherCreator"));
+                bodyElement.setValue(String.valueOf(getProject().getWrongCreator()));
                 break;
             case "wrongOrganization":
-                bodyElement.setValue(String.valueOf("OtherOrganization"));
+                bodyElement.setValue(String.valueOf(getProject().getWrongOrganization()));
                 break;
             case "wrongVisibility":
-                bodyElement.setValue(String.valueOf("OtherVisibility"));
+                bodyElement.setValue(String.valueOf(getProject().getWrongVisibility()));
                 break;
             case "integerTag":
                 bodyElement.setValue(String.valueOf(1));
@@ -154,13 +170,13 @@ public class FlowData  {
         System.out.println(key);
         switch (key) {
             case "guid":
-                field.setValue(projectId.get());
+                field.setValue(getProject().getGuid());
                 break;
             case "owner":
-                field.setValue(String.valueOf(owner.get()));
+                field.setValue(String.valueOf(getProject().getWrongOwner()));
                 break;
             case "creator":
-                field.setValue(String.valueOf(creator.get()));
+                field.setValue(String.valueOf(getProject().getCreator()));
                 break;
             default:
                 field.setValue("");

@@ -23,7 +23,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     Then the api should response with code 200
     # And Check JSON schema "project/GetAlert.json"
 
-  @Alerts
+  @Alerts1
   Scenario: Check when i send project, the response retrieve all alerts related with the project searched
     Given a valid user belonging to the organization of the project to be searched
     When users want to get information of alerts with the values
