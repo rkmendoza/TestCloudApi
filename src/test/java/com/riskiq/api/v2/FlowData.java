@@ -37,6 +37,7 @@ public class FlowData  {
     protected static InheritableThreadLocal<String> wrongCreator = new InheritableThreadLocal<>();
     protected static InheritableThreadLocal<String> wrongOrganization = new InheritableThreadLocal<>();
     protected static InheritableThreadLocal<String> wrongVisibility = new InheritableThreadLocal<>();
+    protected static InheritableThreadLocal<String> integerTag = new InheritableThreadLocal<>();
 
 
     protected static AtomicReference<String> bodyJson = new AtomicReference<>("");
@@ -132,6 +133,9 @@ public class FlowData  {
                 break;
             case "wrongVisibility":
                 bodyElement.setValue(String.valueOf("OtherVisibility"));
+                break;
+            case "integerTag":
+                bodyElement.setValue(String.valueOf(1));
                 break;
             default:
                 bodyElement.setValue("");
