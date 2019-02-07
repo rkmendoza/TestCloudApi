@@ -14,12 +14,12 @@ public class Project {
     private  String  visibility;
     private  String  organization;
     private  Boolean featured;
-    private @Builder.Default String wrongGuid = "279abfa2-9e97-0cb9-d2bb995bca7c5";
-    private @Builder.Default String noExistGuid = "279bbfb2-9e97-0cb9-d2bb-995bca7c5909";
-    private @Builder.Default String wrongOwner = "OtherOwner";
-    private @Builder.Default String wrongCreator = "OtherCreator";
-    private @Builder.Default String wrongOrganization = "OtherOrganization";
-    private @Builder.Default String wrongVisibility = "OtherVisibility";
+    public static String wrongGuid = "279abfa2-9e97-0cb9-d2bb995bca7c5";
+    public static String noExistGuid = "279bbfb2-9e97-0cb9-d2bb-995bca7c5909";
+    public static String wrongOwner = "OtherOwner";
+    public static String wrongCreator = "OtherCreator";
+    public static String wrongOrganization = "OtherOrganization";
+    public static String wrongVisibility = "OtherVisibility";
 
 
 

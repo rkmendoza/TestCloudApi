@@ -132,22 +132,22 @@ public class FlowData  {
                 bodyElement.setValue(String.valueOf(getProject().getFeatured()));
                 break;
             case "wrongGuid":
-                bodyElement.setValue(String.valueOf(getProject().getWrongGuid()));
+                bodyElement.setValue(String.valueOf(getProject().wrongGuid));
                 break;
             case "noExistGuid":
-                bodyElement.setValue(String.valueOf(getProject().getNoExistGuid()));
+                bodyElement.setValue(String.valueOf(getProject().noExistGuid));
                 break;
             case "wrongOwner":
-                bodyElement.setValue(String.valueOf(getProject().getWrongOwner()));
+                bodyElement.setValue(String.valueOf(getProject().wrongOwner));
                 break;
             case "wrongCreator":
-                bodyElement.setValue(String.valueOf(getProject().getWrongCreator()));
+                bodyElement.setValue(String.valueOf(getProject().wrongCreator));
                 break;
             case "wrongOrganization":
-                bodyElement.setValue(String.valueOf(getProject().getWrongOrganization()));
+                bodyElement.setValue(String.valueOf(getProject().wrongOrganization));
                 break;
             case "wrongVisibility":
-                bodyElement.setValue(String.valueOf(getProject().getWrongVisibility()));
+                bodyElement.setValue(String.valueOf(getProject().wrongVisibility));
                 break;
             default:
                 bodyElement.setValue("");
@@ -169,7 +169,7 @@ public class FlowData  {
                 field.setValue(getProject().getGuid());
                 break;
             case "owner":
-                field.setValue(String.valueOf(getProject().getWrongOwner()));
+                field.setValue(String.valueOf(getProject().wrongOwner));
                 break;
             case "creator":
                 field.setValue(String.valueOf(getProject().getCreator()));
