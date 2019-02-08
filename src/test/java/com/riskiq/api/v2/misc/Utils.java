@@ -36,6 +36,8 @@ public class Utils extends FlowData{
     public static String userPw3 = "";
     public static String userName4 = "";
     public static String userPw4 = "";
+    public static String userName5 = "";
+    public static String userPw5 = "";
     public static String userInvalidName = "";
     public static String userInvalidPw = "";
 
@@ -69,6 +71,8 @@ public class Utils extends FlowData{
         userPw3 = properties.getProperty("userPw3");
         userName4 = properties.getProperty("userName4");
         userPw4 = properties.getProperty("userPw4");
+        userName5 = properties.getProperty("userName5");
+        userPw5 = properties.getProperty("userPw5");
         userInvalidName = properties.getProperty("userInvalidName");
         userInvalidPw = properties.getProperty("userInvalidPw");
         RestAssured.baseURI = properties.getProperty("baseURI");
