@@ -51,7 +51,7 @@
               },
               "tags": {
                 "$id": "#/properties/results/properties/a9969326-4310-175d-d422-e83a36edaae0/items/properties/tags",
-                "type": "array",
+                "type": "array"
               },
               "change": {
                 "$id": "#/properties/results/properties/a9969326-4310-175d-d422-e83a36edaae0/items/properties/change",
