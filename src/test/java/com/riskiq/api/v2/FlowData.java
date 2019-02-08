@@ -19,6 +19,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import static com.riskiq.api.v2.misc.Utils.createJson;
 import static com.riskiq.api.v2.misc.Utils.generateRandomString;
+import static com.riskiq.api.v2.stepdefinitions.project.impl.Project.integerTag;
 
 public class FlowData  {
 
@@ -37,7 +38,7 @@ public class FlowData  {
     protected static InheritableThreadLocal<String> wrongCreator = new InheritableThreadLocal<>();
     protected static InheritableThreadLocal<String> wrongOrganization = new InheritableThreadLocal<>();
     protected static InheritableThreadLocal<String> wrongVisibility = new InheritableThreadLocal<>();
-    protected static InheritableThreadLocal<String> integerTag = new InheritableThreadLocal<>();
+
 
     /* crear para todas las clases set y get*/
     public static Project getProject(){
@@ -88,7 +89,7 @@ public class FlowData  {
         if(!bodyElement.getKey().equalsIgnoreCase("tags") ){
             String[] value = bodyElement.getValue().split("@@");
            String random =  value[1];
-            random += "_"+generateRandomString();
+            random += "."+generateRandomString();
             bodyElement.setValue(random);
         }else{
 
@@ -97,9 +98,9 @@ public class FlowData  {
             String random =  "";
             for(int i=0; i<numberTags; i++ ){
                 if(numberTags > 1 && i != numberTags-1){
-                    random += "Tag_"+generateRandomString() + " , ";
+                    random += "tag."+generateRandomString() + " , ";
                 }else{
-                    random += "Tag_"+generateRandomString();
+                    random += "tag."+generateRandomString();
                 }
 
             }
@@ -132,6 +133,15 @@ public class FlowData  {
             case "featured":
                 bodyElement.setValue(String.valueOf(getProject().getFeatured()));
                 break;
+            case "tags":
+                bodyElement.setValue(String.valueOf(getProject().getTags()));
+                break;
+            case "query":
+                bodyElement.setValue(String.valueOf(getProject().getQuery()));
+                break;
+            case "type":
+                bodyElement.setValue(String.valueOf(getProject().getType()));
+                break;
             case "wrongGuid":
                 bodyElement.setValue(String.valueOf(getProject().wrongGuid));
                 break;
@@ -151,7 +161,7 @@ public class FlowData  {
                 bodyElement.setValue(String.valueOf(getProject().wrongVisibility));
                 break;
             case "integerTag":
-                bodyElement.setValue(String.valueOf(1));
+                bodyElement.setValue(String.valueOf(getProject().integerTag));
                 break;
             default:
                 bodyElement.setValue("");

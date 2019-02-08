@@ -3,22 +3,26 @@ package com.riskiq.api.v2.stepdefinitions.project;
 import com.riskiq.api.v2.FlowData;
 import com.riskiq.api.v2.impl.BodyElement;
 import com.riskiq.api.v2.stepdefinitions.Hooks;
+import com.riskiq.api.v2.stepdefinitions.project.impl.Project;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.When;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import static com.riskiq.api.v2.misc.Utils.*;
 
 
 public class AddTagsSteps extends FlowData  {
 
   public void response(DataTable dataTable){
     response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).post("/project/tag"));
-    owner.set(response.get().path("owner"));
-    projectId.set(response.get().path("guid"));
-    creator.set(response.get().path("creator"));
-    visibility.set(response.get().path("visibility"));
-    organization.set(response.get().path("organization"));
-    featured.set(response.get().path("featured"));
+    setProject(Project.with()
+      .guid(response.get().path("guid"))
+      .owner(response.get().path("owner"))
+      .creator(response.get().path("creator"))
+      .visibility(response.get().path("visibility"))
+      .organization(response.get().path("organization"))
+      .featured(response.get().path("featured"))
+      .create());
   }
 
   @When("^users want to Add project tags with the values$")
@@ -28,7 +32,7 @@ public class AddTagsSteps extends FlowData  {
 
   @When("^users in the same organization want Add project tags with the values$")
   public void users_in_the_same_organization_want_Add_project_tags_with_the_values(DataTable dataTable) {
-    rs.set(RestAssured.given().auth().preemptive().basic(Hooks.userName1, Hooks.userPw1));
+    rs.set(RestAssured.given().auth().preemptive().basic(userName1, userPw1));
     response(dataTable);
   }
 
@@ -39,7 +43,7 @@ public class AddTagsSteps extends FlowData  {
 
   @When("^users not in the same organization want Add project tags with the values$")
   public void users_not_in_the_same_organization_want_Add_project_tags_with_the_values(DataTable dataTable) {
-    rs.set(RestAssured.given().auth().preemptive().basic(Hooks.userName3, Hooks.userPw3));
+    rs.set(RestAssured.given().auth().preemptive().basic(userName3, userPw3));
     response(dataTable);
   }
 

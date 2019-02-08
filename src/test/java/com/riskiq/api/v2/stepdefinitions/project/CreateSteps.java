@@ -51,16 +51,15 @@ public class CreateSteps extends FlowData  {
     }
 
     @And("^a created project with values$")
-    public void aCreatedProjectWithValues(DataTable dataTable) throws Throwable {
+    public void aCreatedProjectWithValues(DataTable dataTable) {
         rs.set(RestAssured.given().auth().preemptive().basic(userName2, userPw2));
-        response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,"project")));
+        response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,"project")));
         setProject(Project.with()
-                .guid(response.get().path("guid").toString())
+                .guid(response.get().path("guid"))
                 .owner(response.get().path("owner"))
                 .creator(response.get().path("creator"))
                 .visibility(response.get().path("visibility"))
                 .organization(response.get().path("organization"))
-                .featured(response.get().path("featured"))
                 .create());
     }
 
