@@ -1,0 +1,84 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "required": [
+    "results",
+    "error",
+    "success",
+    "totalRecords"
+  ],
+  "properties": {
+    "results": {
+      "$id": "#/properties/results",
+      "type": "object",
+      "additionalProperties": {
+          "$id": "#/properties/results/properties/a9969326-4310-175d-d422-e83a36edaae0",
+          "type": "array",
+          "items": {
+            "$id": "#/properties/results/properties/a9969326-4310-175d-d422-e83a36edaae0/items",
+            "type": "object",
+            "required": [
+              "type",
+              "result",
+              "query",
+              "datetime",
+              "tags",
+              "change",
+              "project"
+            ],
+            "properties": {
+              "type": {
+                "$id": "#/properties/results/properties/a9969326-4310-175d-d422-e83a36edaae0/items/properties/type",
+                "type": "string",
+                "pattern": "^(.*)$"
+              },
+              "result": {
+                "$id": "#/properties/results/properties/a9969326-4310-175d-d422-e83a36edaae0/items/properties/result",
+                "type": "string",
+                "pattern": "^(.*)$"
+              },
+              "query": {
+                "$id": "#/properties/results/properties/a9969326-4310-175d-d422-e83a36edaae0/items/properties/query",
+                "type": "string",
+                "pattern": "^(.*)$"
+              },
+              "datetime": {
+                "$id": "#/properties/results/properties/a9969326-4310-175d-d422-e83a36edaae0/items/properties/datetime",
+                "type": "string",
+                "pattern": "^(.*)$"
+              },
+              "tags": {
+                "$id": "#/properties/results/properties/a9969326-4310-175d-d422-e83a36edaae0/items/properties/tags",
+                "type": "array",
+              },
+              "change": {
+                "$id": "#/properties/results/properties/a9969326-4310-175d-d422-e83a36edaae0/items/properties/change",
+                "type": "string",
+                "pattern": "^(.*)$"
+              },
+              "project": {
+                "$id": "#/properties/results/properties/a9969326-4310-175d-d422-e83a36edaae0/items/properties/project",
+                "type": "string",
+                "pattern": "^(.*)$"
+              }
+            }
+          }
+        }
+    },
+    "error": {
+      "$id": "#/properties/error",
+      "type": ["string","null"]
+    },
+    "success": {
+      "$id": "#/properties/success",
+      "type": "boolean",
+      "enum": [true,false]
+    },
+    "totalRecords": {
+      "$id": "#/properties/totalRecords",
+      "type": "integer"
+    }
+  }
+}

@@ -1,5 +1,6 @@
 Feature: As a user of riskIQ platform I want to see a project or projects using search criteria
 
+  #verificado ok
   @Alerts
   Scenario: Check the response of find all alerts when that exist in riskIQ platform,
   with wrong credentials the response retrieve error message and code error and check with Json schema
@@ -8,6 +9,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     Then the api should response with code 401
     And Check JSON schema "project/ErrorMessage.json"
 
+
   #reporting in jira
   @Alerts
   Scenario: Check the response of find all alerts when that exist in riskIQ platform is a 200
@@ -21,7 +23,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     Given a valid user and key from riskIQ platform
     When users want to get information of alerts without params
     Then the api should response with code 200
-    # And Check JSON schema "project/GetAlert.json"
+    And Check JSON schema "monitor/GetAlert.json"
 
   @Alerts1
   Scenario: Check when i send project, the response retrieve all alerts related with the project searched
