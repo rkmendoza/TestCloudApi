@@ -4,12 +4,14 @@ package com.riskiq.api.v2.stepdefinitions.monitor;
 import com.riskiq.api.v2.FlowData;
 import com.riskiq.api.v2.impl.BodyElement;
 import cucumber.api.DataTable;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import io.restassured.http.ContentType;
 
 import static com.riskiq.api.v2.misc.Utils.*;
+import static org.hamcrest.core.Is.is;
 import static org.mortbay.jetty.HttpMethods.*;
 
 import static org.hamcrest.Matchers.*;
@@ -33,8 +35,13 @@ public class AlertsSteps extends FlowData  {
 
 
     @And("^the number of alerts should be greater than (\\d+)$")
-    public void theNumberOfProjectsShouldBeEqualTo(int numberOfAlert) throws Throwable {
+    public void theNumberOfAlertsShouldBeGreaterThan(int numberOfAlert) throws Throwable {
         response.get().then().body("totalRecords", greaterThan(numberOfAlert));
+    }
+
+    @And("^the number of alerts should be equal to (\\d+)$")
+    public void theNumberOfAlertsShouldBeEqualTo(int numberOfAlert) throws Throwable {
+        response.get().then().body("totalRecords", equalTo(numberOfAlert));
     }
 
     @When("^users want to get information of alerts with the values$")
@@ -42,4 +49,8 @@ public class AlertsSteps extends FlowData  {
         response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).get(setMethodAndEndPoint(GET,"monitor")));
     }
 
+    @And("^Response includes the following key \"([^\"]*)\"$")
+    public void responseIncludesTheFollowingKey(String key) throws Throwable {
+        response.get().then().body("results",hasKey(key));
+    }
 }
