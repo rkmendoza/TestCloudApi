@@ -51,6 +51,9 @@ public class AlertsSteps extends FlowData  {
 
     @And("^Response includes the following key \"([^\"]*)\"$")
     public void responseIncludesTheFollowingKey(String key) throws Throwable {
-        response.get().then().body("results",hasKey(key));
+        String[] value = key.split("%%");
+        String keyValue =  value[1];
+        String KeyData  = properties.getProperty(keyValue);
+        response.get().then().body("results",hasKey(KeyData));
     }
 }
