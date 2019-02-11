@@ -27,6 +27,7 @@ import static org.hamcrest.core.Is.is;
 
 public class Utils extends FlowData{
 
+    public static Properties properties = new Properties();
     private static String sfile = "src/test/resources/config.properties";
     public static String userName1 = "";
     public static String userPw1 = "";
@@ -36,6 +37,8 @@ public class Utils extends FlowData{
     public static String userPw3 = "";
     public static String userName4 = "";
     public static String userPw4 = "";
+    public static String userName5 = "";
+    public static String userPw5 = "";
     public static String userInvalidName = "";
     public static String userInvalidPw = "";
 
@@ -47,7 +50,6 @@ public class Utils extends FlowData{
 
             File file = new File(sfile);
             FileInputStream fileInput = new FileInputStream(file);
-            Properties properties = new Properties();
             properties.load(fileInput);
             fileInput.close();
             setParameters(properties);
@@ -69,6 +71,8 @@ public class Utils extends FlowData{
         userPw3 = properties.getProperty("userPw3");
         userName4 = properties.getProperty("userName4");
         userPw4 = properties.getProperty("userPw4");
+        userName5 = properties.getProperty("userName5");
+        userPw5 = properties.getProperty("userPw5");
         userInvalidName = properties.getProperty("userInvalidName");
         userInvalidPw = properties.getProperty("userInvalidPw");
         RestAssured.baseURI = properties.getProperty("baseURI");
@@ -186,5 +190,113 @@ public class Utils extends FlowData{
         return "/"+getEndPoint().getEndpoint();
     }
 
+    public static BodyElement validateRandomValue(BodyElement bodyElement){
+
+        if(!bodyElement.getKey().equalsIgnoreCase("tags") ){
+            String[] value = bodyElement.getValue().split("@@");
+            String random =  value[1];
+            random += "_"+generateRandomString();
+            bodyElement.setValue(random);
+        }else{
+
+            String[] value = bodyElement.getValue().split("@@randomTags");
+            int numberTags = Integer.valueOf(value[1]);
+            String random =  "";
+            for(int i=0; i<numberTags; i++ ){
+                if(numberTags > 1 && i != numberTags-1){
+                    random += "Tag_"+generateRandomString() + " , ";
+                }else{
+                    random += "Tag_"+generateRandomString();
+                }
+
+            }
+            bodyElement.setValue(random);
+        }
+        return bodyElement;
+    }
+
+    public static BodyElement validateSpecificValue(BodyElement bodyElement){
+
+        String[] value = bodyElement.getValue().split("##");
+        String key =  value[1];
+
+        switch (key) {
+            case "guid":
+                bodyElement.setValue(String.valueOf(getProject().getGuid()));
+                break;
+            case "owner":
+                bodyElement.setValue(String.valueOf(getProject().getOwner()));
+                break;
+            case "creator":
+                bodyElement.setValue(String.valueOf(getProject().getCreator()));
+                break;
+            case "visibility":
+                bodyElement.setValue(String.valueOf(getProject().getVisibility()));
+                break;
+            case "organization":
+                bodyElement.setValue(String.valueOf(getProject().getOrganization()));
+                break;
+            case "featured":
+                bodyElement.setValue(String.valueOf(getProject().getFeatured()));
+                break;
+            case "wrongGuid":
+                bodyElement.setValue(String.valueOf(getProject().wrongGuid));
+                break;
+            case "noExistGuid":
+                bodyElement.setValue(String.valueOf(getProject().noExistGuid));
+                break;
+            case "wrongOwner":
+                bodyElement.setValue(String.valueOf(getProject().wrongOwner));
+                break;
+            case "wrongCreator":
+                bodyElement.setValue(String.valueOf(getProject().wrongCreator));
+                break;
+            case "wrongOrganization":
+                bodyElement.setValue(String.valueOf(getProject().wrongOrganization));
+                break;
+            case "wrongVisibility":
+                bodyElement.setValue(String.valueOf(getProject().wrongVisibility));
+                break;
+            default:
+                bodyElement.setValue("");
+                break;
+        }
+
+        return bodyElement;
+    }
+
+    public static Map.Entry<String, String>  validateSpecificValue(Map.Entry<String, String> field){
+
+        String[] value = field.getValue().split("##");
+        String key =  value[1];
+        System.out.println("========FIELD========");
+        System.out.println(key);
+        switch (key) {
+            case "guid":
+                field.setValue(getProject().getGuid());
+                break;
+            case "owner":
+                field.setValue(String.valueOf(getProject().wrongOwner));
+                break;
+            case "creator":
+                field.setValue(String.valueOf(getProject().getCreator()));
+                break;
+            default:
+                field.setValue("");
+                break;
+        }
+
+        System.out.println("========FIELD========");
+        System.out.println(field);
+        return field;
+    }
+
+    public static BodyElement getValueProperties(BodyElement bodyElement){
+        String[] value = bodyElement.getValue().split("%%");
+        String key =  value[1];
+        bodyElement.setValue(String.valueOf(properties.getProperty(key)));
+
+        return bodyElement;
+    }
 }
 
