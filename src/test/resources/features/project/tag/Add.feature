@@ -12,7 +12,7 @@ Feature: As a user of riskIQ platform I want to Add project tags
       | key          | value                  |
       | project      | ##guid                 |
     Then the api should response with code 401
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @AddTags
   Scenario: Check the response of Add project tags with wrong GUID the response retrieve error message and code 400 error and check with json schema
@@ -25,7 +25,7 @@ Feature: As a user of riskIQ platform I want to Add project tags
       | key          | value                  |
       | project      | ##wrongGuid            |
     Then the api should response with code 400
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @AddTags
   Scenario: Check the response of Add project tags with an not exist GUID the response retrieve error message and code 404 error and check with json schema
@@ -38,7 +38,7 @@ Feature: As a user of riskIQ platform I want to Add project tags
       | key          | value                  |
       | project      | ##noExistGuid          |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @AddTags
   Scenario: Check the response of Add project tags by an integer value in the tags field the response retrieve error message and code 400 error and check with json schema
@@ -52,7 +52,7 @@ Feature: As a user of riskIQ platform I want to Add project tags
       | project      | ##guid                 |
       | tags         | ##integerTag           |
     Then the api should response with code 400
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @AddTags
   Scenario: Check the response of Add project tags with user of the same organization, and the visibility is public, the response retrieve all the information related with the project updated and check with json schema
@@ -67,7 +67,7 @@ Feature: As a user of riskIQ platform I want to Add project tags
       | project     | ##guid                 |
       | tags        | @@randomTags3          |
     Then the api should response with code 200
-    #And Check JSON schema "project/tag.json"
+    And Check JSON schema "project/tags/tags.json"
 
   @AddTags1
   Scenario: Check the response of Add project tags with user of the same organization, and the visibility is private, the response retrieve all the information related with the project updated and check with json schema
@@ -82,7 +82,7 @@ Feature: As a user of riskIQ platform I want to Add project tags
       | project     | ##guid                 |
       | tags        | @@randomTags3          |
     Then the api should response with code 200
-    #And Check JSON schema "project/tag.json"
+    And Check JSON schema "project/tags/tags.json"
 
   @AddTags
   Scenario: Check the response of Add project tags with user of the same organization, and the visibility is analyst, the response retrieve error message and code 400 error and check with json schema
@@ -97,7 +97,7 @@ Feature: As a user of riskIQ platform I want to Add project tags
       | project     | ##guid                 |
       | tags        | @@randomTags1          |
     Then the api should response with code 400
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @AddTags
   Scenario: Check the response of Add project tags with user of the same organization and the user created the project, and the visibility is analyst, the response retrieve all the information related with the project updated and check with json schema
@@ -112,7 +112,7 @@ Feature: As a user of riskIQ platform I want to Add project tags
       | project     | ##guid                 |
       | tags        | @@randomTags3          |
     Then the api should response with code 200
-    #And Check JSON schema "project/tag.json"
+    And Check JSON schema "project/tags/tag.json"
 
 
   @AddTags
@@ -128,7 +128,7 @@ Feature: As a user of riskIQ platform I want to Add project tags
       | project     | ##guid                 |
       | tags        | @@randomTags3          |
     Then the api should response with code 403
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @AddTags
   Scenario: Check the response of Add project tags with user not in the same organization, and the visibility is private, the response retrieve error message and code 403 error and check with json schema
@@ -143,7 +143,7 @@ Feature: As a user of riskIQ platform I want to Add project tags
       | project     | ##guid                 |
       | tags        | @@randomTags3          |
     Then the api should response with code 403
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @AddTags
   Scenario: Check the response of Add project tags with user not in the same organization, and the visibility is analyst, the response retrieve error message and code 403 error and check with json schema
@@ -158,7 +158,7 @@ Feature: As a user of riskIQ platform I want to Add project tags
       | project     | ##guid                 |
       | tags        | @@randomTags3          |
     Then the api should response with code 403
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
 
 
