@@ -70,7 +70,6 @@ public class Project {
                 .delete(setMethodAndEndPoint(DELETE,"project")));
 
         if (status.equals(response.get().statusCode())) {
-            System.out.println("Project Delete: "+guid);
             value = true;
         }
 
