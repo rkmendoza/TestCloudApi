@@ -21,7 +21,8 @@ public class Project {
     public static String noExistGuid = "279bbcb2-9e97-0cc9-d2cc-995bca7c5909";
     public static String wrongOwner = "OtherOwner";
     public static String wrongCreator = "OtherCreator";
-    public static String wrongOrganization = "OtherOrganization";
+    public static String wrongOrganization = "testcloud22";
+    public static String deleteOrganization = "testcloud";
     public static String wrongVisibility = "OtherVisibility";
     public static int integerTag = 100;
 

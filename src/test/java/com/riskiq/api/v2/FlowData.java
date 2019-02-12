@@ -89,7 +89,7 @@ public class FlowData  {
         if(!bodyElement.getKey().equalsIgnoreCase("tags") ){
             String[] value = bodyElement.getValue().split("@@");
            String random =  value[1];
-            random += "."+generateRandomString();
+            random += "_"+generateRandomString();
             bodyElement.setValue(random);
         }else{
 
@@ -98,9 +98,9 @@ public class FlowData  {
             String random =  "";
             for(int i=0; i<numberTags; i++ ){
                 if(numberTags > 1 && i != numberTags-1){
-                    random += "tag."+generateRandomString() + " , ";
+                    random += "tag_"+generateRandomString() + " , ";
                 }else{
-                    random += "tag."+generateRandomString();
+                    random += "tag_"+generateRandomString();
                 }
 
             }
@@ -160,9 +160,6 @@ public class FlowData  {
             case "wrongVisibility":
                 bodyElement.setValue(String.valueOf(getProject().wrongVisibility));
                 break;
-            case "integerTag":
-                bodyElement.setValue(String.valueOf(getProject().integerTag));
-                break;
             default:
                 bodyElement.setValue("");
                 break;
@@ -183,10 +180,28 @@ public class FlowData  {
                 field.setValue(getProject().getGuid());
                 break;
             case "owner":
-                field.setValue(String.valueOf(getProject().wrongOwner));
+                field.setValue(String.valueOf(getProject().getOwner()));
                 break;
             case "creator":
                 field.setValue(String.valueOf(getProject().getCreator()));
+                break;
+            case "visibility":
+                field.setValue(String.valueOf(getProject().getVisibility()));
+                break;
+            case "organization":
+                field.setValue(String.valueOf(getProject().getOrganization()));
+                break;
+            case "featured":
+                field.setValue(String.valueOf(getProject().getFeatured()));
+                break;
+            case "tags":
+                field.setValue(String.valueOf(getProject().getTags()));
+                break;
+            case "query":
+                field.setValue(String.valueOf(getProject().getQuery()));
+                break;
+            case "type":
+                field.setValue(String.valueOf(getProject().getType()));
                 break;
             default:
                 field.setValue("");
@@ -197,7 +212,6 @@ public class FlowData  {
         System.out.println(field);
         return field;
     }
-
 
 
     public  String dataTableToJsonBulkArtifact(List<BodyElement> bodyElements) {
