@@ -131,7 +131,7 @@ Feature: As a user of riskIQ platform I want to find a project or projects using
     Then the api should response with code 200
     And the number of projects should be greater than 1
 
-  @Find1
+  @Find
   Scenario: Check when i send an specific Owner project, the response retrieve all the information related with the project searched and check with json schema
     Given a valid user and key from riskIQ platform
     And a created project with values

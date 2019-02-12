@@ -15,8 +15,7 @@ import java.util.List;
 
 import static com.riskiq.api.v2.misc.Utils.*;
 import static com.riskiq.api.v2.stepdefinitions.Hooks.getConfigVars;
-import static org.mortbay.jetty.HttpMethods.DELETE;
-import static org.mortbay.jetty.HttpMethods.GET;
+import static org.mortbay.jetty.HttpMethods.*;
 
 @Data
 @Builder (builderMethodName = "with", buildMethodName = "create")
@@ -74,6 +73,19 @@ public class Project {
         }
 
         return value;
+    }
+
+    public static void updateProject(DataTable dataTable){
+        response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).post(setMethodAndEndPoint(POST,"project")));
+        setProject(Project.with()
+                .guid(response.get().path("guid"))
+                .owner(response.get().path("owner"))
+                .creator(response.get().path("creator"))
+                .visibility(response.get().path("visibility"))
+                .organization(response.get().path("organization"))
+                .featured(response.get().path("featured"))
+                .isCreated(true)
+                .create());
     }
 
     public static void setProjectTac(DataTable dataTable){
