@@ -47,6 +47,7 @@ public class CreateSteps extends FlowData  {
                 .visibility(response.get().path("visibility"))
                 .organization(response.get().path("organization"))
                 .featured(response.get().path("featured"))
+                .isCreated(true)
                 .create());
     }
 
@@ -60,6 +61,7 @@ public class CreateSteps extends FlowData  {
                 .creator(response.get().path("creator"))
                 .visibility(response.get().path("visibility"))
                 .organization(response.get().path("organization"))
+                .isCreated(true)
                 .create());
     }
 
@@ -79,6 +81,7 @@ public class CreateSteps extends FlowData  {
               .body(dataTableToJson(dataTable.asList(BodyElement.class)))
               .put(setMethodAndEndPoint(PUT,"project"))
               .then().extract().path("guid"))
+        .isCreated(true)
         .create());
     }
 
@@ -90,6 +93,7 @@ public class CreateSteps extends FlowData  {
               .body(dataTableToJson(dataTable.asList(BodyElement.class)))
               .put(setMethodAndEndPoint(PUT,"project"))
               .then().extract().path("guid"))
+        .isCreated(true)
         .create());
 
     }

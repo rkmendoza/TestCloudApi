@@ -1,4 +1,4 @@
-package com.riskiq.api.v2.stepdefinitions.project;
+package com.riskiq.api.v2.stepdefinitions.artifact;
 
 
 import com.riskiq.api.v2.FlowData;
@@ -13,12 +13,13 @@ import static com.riskiq.api.v2.misc.Utils.*;
 import static org.mortbay.jetty.HttpMethods.PUT;
 
 
-public class CreateArtifactSteps extends FlowData  {
+public class CreateSteps extends FlowData  {
 
   public void response(DataTable dataTable){
     response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,"artifact")));
     setProject(Project.with()
       .guid(response.get().path("guid"))
+      .isCreated(true)
       .create());
   }
 

@@ -25,6 +25,9 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
 import static com.riskiq.api.v2.stepdefinitions.Hooks.getConfigVars;
+import static com.riskiq.api.v2.stepdefinitions.project.impl.Project.deleteProjectByGuid;
+import static com.riskiq.api.v2.stepdefinitions.project.impl.Project.findAllGuidProject;
+import static com.riskiq.api.v2.stepdefinitions.project.impl.Project.guidProjectAlert;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.collection.IsEmptyCollection.empty;
@@ -305,46 +308,6 @@ public class Utils extends FlowData{
 
         return bodyElement;
     }
-    @Test
-    public void deleteAllProyect() throws Throwable{
-
-
-        //hacer busqueda de todos los proyectos por organization
-        getConfigVars();
-        rs.set(RestAssured.given().auth().preemptive().basic(userName2, userPw2));
-        response.set(rs.get()
-          .contentType(ContentType.JSON)
-          .body(dataTableToJson(Collections.singletonList(BodyElement.builder()
-            .key("organization").value(getProject().deleteOrganization)
-            .build())))
-          .get(setMethodAndEndPoint(GET,"project")));
-
-
-
-        int statusCode = response.get().statusCode();
-        System.out.println("The status code recieved: " + statusCode);
-        //System.out.println("Response body: " + response.get().body().prettyPrint());
-        System.out.println("Response body guid: " + response.get().body().print());
-
-        //Llenar lista de Guid
-
-        //hacer un bucle para borrar cada proyecto
-
-        //Inicio del bucle de lista Guid --> WHILE, FOR, ETC
-        response.set(rs.get()
-          .contentType(ContentType.JSON)
-          .body(dataTableToJson(Collections.singletonList(BodyElement.builder()
-            .key("project").value("AQUI VA EL GUID")
-            .build())))
-          .delete(setMethodAndEndPoint(DELETE,"project")));
-        //Fin del bucle
-
-
-    }
-
-
-
-
 
 }
 
