@@ -68,6 +68,7 @@ public class FlowData  {
                 bodyJson =   createJson(bodyElement , isLast, bodyJson);
             }
         });
+        System.out.println(bodyJson.toString());
         return String.format("{ %s }", bodyJson.get() );
     }
 

@@ -16,6 +16,7 @@ import io.restassured.http.ContentType;
 import java.util.Collections;
 
 import static com.riskiq.api.v2.misc.Utils.*;
+import static io.restassured.RestAssured.given;
 import static org.mortbay.jetty.HttpMethods.*;
 
 import static org.hamcrest.Matchers.equalTo;
@@ -53,8 +54,9 @@ public class CreateSteps extends FlowData  {
 
     @And("^a created project with values$")
     public void aCreatedProjectWithValues(DataTable dataTable) {
-        rs.set(RestAssured.given().auth().preemptive().basic(userName2, userPw2));
+        rs.set(given().auth().preemptive().basic(userName2, userPw2));
         response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,"project")));
+        System.out.println(response.get().getBody().prettyPrint());
         setProject(Project.with()
                 .guid(response.get().path("guid"))
                 .owner(response.get().path("owner"))

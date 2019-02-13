@@ -202,10 +202,15 @@ public class Utils extends FlowData{
 
     public static BodyElement validateRandomValue(BodyElement bodyElement){
 
-        if(!bodyElement.getKey().equalsIgnoreCase("tags") ){
+        if(!bodyElement.getKey().equalsIgnoreCase("tags") && !bodyElement.getKey().equalsIgnoreCase("query")) {
             String[] value = bodyElement.getValue().split("@@");
-            String random =  value[1];
-            random += "_"+generateRandomString();
+            String random = value[1];
+            random += "_" + generateRandomString();
+            bodyElement.setValue(random);
+        }else if(bodyElement.getKey().equalsIgnoreCase("query")){
+            String[] value = bodyElement.getValue().split("@@");
+            String random = value[1];
+            random += "_" + generateRandomString()+".org";
             bodyElement.setValue(random);
         }else{
 

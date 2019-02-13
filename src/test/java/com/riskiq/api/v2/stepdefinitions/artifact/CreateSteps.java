@@ -10,6 +10,8 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 
 import static com.riskiq.api.v2.misc.Utils.*;
+import static com.riskiq.api.v2.misc.Utils.userPw2;
+import static io.restassured.RestAssured.given;
 import static org.mortbay.jetty.HttpMethods.PUT;
 
 
@@ -17,6 +19,7 @@ public class CreateSteps extends FlowData  {
 
   public void response(DataTable dataTable){
     response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,"artifact")));
+    System.out.println(response.get().getBody().prettyPrint());
     setProject(Project.with()
       .guid(response.get().path("guid"))
       .isCreated(true)
@@ -30,7 +33,7 @@ public class CreateSteps extends FlowData  {
 
   @When("^users in the same organization want Create artifact with the values$")
   public void users_in_the_same_organization_want_Create_artifact_with_the_values(DataTable dataTable) {
-    rs.set(RestAssured.given().auth().preemptive().basic(userName2, userName2));
+    rs.set(setCredentials(userName2, userPw2));
     response(dataTable);
   }
 
@@ -41,7 +44,7 @@ public class CreateSteps extends FlowData  {
 
   @When("^users not in the same organization want Create artifact with the values$")
   public void users_not_in_the_same_organization_want_Create_artifact_with_the_values(DataTable dataTable) {
-    rs.set(RestAssured.given().auth().preemptive().basic(userName3, userPw3));
+    rs.set(setCredentials(userName3, userPw3));
     response(dataTable);
   }
 

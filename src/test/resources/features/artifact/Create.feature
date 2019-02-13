@@ -39,7 +39,7 @@ Feature: As a user of riskIQ platform I want to Create artifact
       | query        | @@query                |
     Then the api should response with code 404
     And Check JSON schema "project/ErrorMessage.json"
-
+  #ver que pasa con este scenario
   @CreateArtifact
   Scenario: Check the response of Create artifact by an integer value in the tags field the response retrieve error message and code 400 error and check with json schema
     Given a created project with values
@@ -53,7 +53,7 @@ Feature: As a user of riskIQ platform I want to Create artifact
     Then the api should response with code 400
     And Check JSON schema "project/ErrorMessage.json"
 
-  @CreateArtifact
+  @CreateArtifact1
   Scenario: Check the response of Create artifact with user of the same organization, and the visibility is public, the response retrieve all the information related with the project updated and check with json schema
     Given a valid user and key from riskIQ platform
     And a created project with values
@@ -64,10 +64,10 @@ Feature: As a user of riskIQ platform I want to Create artifact
       | key         | value                  |
       | project     | ##guid                 |
       | query       | @@query                |
-      | type        | @@type                 |      
+      | type        | component                 |
       | tags        | @@randomTags2          |
     Then the api should response with code 200
-    And Check JSON schema "project/artifact.json"
+    And Check JSON schema "artifact/Create.json"
 
   @CreateArtifact
   Scenario: Check the response of Create artifact with user of the same organization, and the visibility is private, the response retrieve all the information related with the project updated and check with json schema
