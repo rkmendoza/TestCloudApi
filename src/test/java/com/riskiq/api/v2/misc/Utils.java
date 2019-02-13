@@ -214,9 +214,9 @@ public class Utils extends FlowData{
             String random =  "";
             for(int i=0; i<numberTags; i++ ){
                 if(numberTags > 1 && i != numberTags-1){
-                    random += "Tag_"+generateRandomString() + " , ";
+                    random += "Tag."+generateRandomString() + " , ";
                 }else{
-                    random += "Tag_"+generateRandomString();
+                    random += "Tag."+generateRandomString();
                 }
 
             }

@@ -69,7 +69,7 @@ Feature: As a user of riskIQ platform I want to Add project tags
     Then the api should response with code 200
     And Check JSON schema "project/tags/tags.json"
 
-  @AddTags1
+  @AddTags
   Scenario: Check the response of Add project tags with user of the same organization, and the visibility is private, the response retrieve all the information related with the project updated and check with json schema
     Given a valid user and key from riskIQ platform
     And a created project with values

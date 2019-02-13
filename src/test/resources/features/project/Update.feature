@@ -61,16 +61,16 @@ Feature: As a user of riskIQ platform I want to update a project or projects
       | name        | @@namerandom           |
       | visibility  | public                 |
       | description | @@description          |
-      #| featured    | true                   |
-      #| tags        | @@randomTags2          |
+      | featured    | true                   |
+      | tags        | @@randomTags2          |
     When users in the same organization want to update the project with the values
       | key         | value                  |
       | project     | ##guid                 |
       | name        | @@namerandom           |
       | visibility  | private                |
       | description | @@description          |
-      #| featured    | false                  |
-      #| tags        | @@randomTags3          |
+      | featured    | false                  |
+      | tags        | @@randomTags3          |
     Then the api should response with code 200
     And Check JSON schema "project/Update.json"
 
@@ -82,16 +82,16 @@ Feature: As a user of riskIQ platform I want to update a project or projects
       | name        | @@namerandom           |
       | visibility  | private                |
       | description | @@description          |
-      #| featured    | true                   |
-      #| tags        | @@randomTags2          |
+      | featured    | true                   |
+      | tags        | @@randomTags2          |
     When users in the same organization want to update the project with the values
       | key         | value                  |
       | project     | ##guid                 |
       | name        | @@namerandom           |
       | visibility  | public                 |
       | description | @@description          |
-      #| featured    | true                  |
-      #| tags        | @@randomTags3          |
+      | featured    | true                  |
+      | tags        | @@randomTags3          |
     Then the api should response with code 200
     And Check JSON schema "project/Update.json"
 
@@ -103,16 +103,16 @@ Feature: As a user of riskIQ platform I want to update a project or projects
       | name        | @@namerandom           |
       | visibility  | analyst                |
       | description | @@description          |
-      #| featured    | true                   |
-      #| tags        | @@randomTags2          |
+      | featured    | true                   |
+      | tags        | @@randomTags2          |
     When users in the same organization want to update the project with the values
       | key         | value                  |
       | project     | ##guid                 |
       | name        | @@namerandom           |
       | visibility  | private                |
       | description | @@description          |
-      #| featured    | false                  |
-      #| tags        | @@randomTags3          |
+      | featured    | false                  |
+      | tags        | @@randomTags3          |
     Then the api should response with code 400
     And Check JSON schema "project/ErrorMessage.json"
 
@@ -124,16 +124,16 @@ Feature: As a user of riskIQ platform I want to update a project or projects
       | name        | @@namerandom           |
       | visibility  | analyst                |
       | description | @@description          |
-      #| featured    | true                   |
-      #| tags        | @@randomTags2          |
+      | featured    | true                   |
+      | tags        | @@randomTags2          |
     When Users of the same organization that created the project want to update the project with the values
       | key         | value                  |
       | project     | ##guid                 |
       | name        | @@namerandom           |
       | visibility  | private                |
       | description | @@description          |
-      #| featured    | true                  |
-      #| tags        | @@randomTags3          |
+      | featured    | true                  |
+      | tags        | @@randomTags3          |
     Then the api should response with code 200
     And Check JSON schema "project/Update.json"
 
@@ -146,16 +146,16 @@ Feature: As a user of riskIQ platform I want to update a project or projects
       | name        | @@namerandom           |
       | visibility  | public                 |
       | description | @@description          |
-      #| featured    | true                   |
-      #| tags        | @@randomTags2          |
+      | featured    | true                   |
+      | tags        | @@randomTags2          |
     When users not in the same organization want to update the project with the values
       | key         | value                  |
       | project     | ##guid                 |
       | name        | @@namerandom           |
       | visibility  | private                |
       | description | @@description          |
-      #| featured    | true                  |
-      #| tags        | @@randomTags3          |
+      | featured    | true                  |
+      | tags        | @@randomTags3          |
     Then the api should response with code 403
     And Check JSON schema "project/ErrorMessage.json"
 
@@ -167,16 +167,16 @@ Feature: As a user of riskIQ platform I want to update a project or projects
       | name        | @@namerandom           |
       | visibility  | private                |
       | description | @@description          |
-      #| featured    | true                   |
-      #| tags        | @@randomTags2          |
+      | featured    | true                   |
+      | tags        | @@randomTags2          |
     When users not in the same organization want to update the project with the values
       | key         | value                  |
       | project     | ##guid                 |
       | name        | @@namerandom           |
       | visibility  | public                 |
       | description | @@description          |
-      #| featured    | false                  |
-      #| tags        | @@randomTags3          |
+      | featured    | false                  |
+      | tags        | @@randomTags3          |
     Then the api should response with code 403
     And Check JSON schema "project/ErrorMessage.json"
 
@@ -188,16 +188,16 @@ Feature: As a user of riskIQ platform I want to update a project or projects
       | name        | @@namerandom           |
       | visibility  | analyst                |
       | description | @@description          |
-      #| featured    | true                   |
-      #| tags        | @@randomTags2          |
+      | featured    | true                   |
+      | tags        | @@randomTags2          |
     When users not in the same organization want to update the project with the values
       | key         | value                  |
       | project     | ##guid                 |
       | name        | @@namerandom           |
       | visibility  | public                 |
       | description | @@description          |
-      #| featured    | false                  |
-      #| tags        | @@randomTags3          |
+      | featured    | false                  |
+      | tags        | @@randomTags3          |
     Then the api should response with code 403
     And Check JSON schema "project/ErrorMessage.json"
 
