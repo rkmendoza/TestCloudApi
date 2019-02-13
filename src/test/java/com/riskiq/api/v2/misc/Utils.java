@@ -160,7 +160,7 @@ public class Utils extends FlowData{
 
 
     public static String generateRandomString() {
-        String letters = "abcdefghjkmnpqrstuvwxyzABCDEFGHJKMNPQRSTUVWXYZ23456789";
+        String letters = "abcdefghjkmnpqrstuvwxyz23456789";
 
         String random = "";
         for (int i = 0; i < 8; i++) {
@@ -219,9 +219,9 @@ public class Utils extends FlowData{
             String random =  "";
             for(int i=0; i<numberTags; i++ ){
                 if(numberTags > 1 && i != numberTags-1){
-                    random += "Tag."+generateRandomString() + " , ";
+                    random += "tag."+generateRandomString() + " , ";
                 }else{
-                    random += "Tag."+generateRandomString();
+                    random += "tag."+generateRandomString();
                 }
 
             }
