@@ -146,7 +146,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     Then the api should response with code 200
     And the number of alerts should be greater than 1
     And Check JSON schema "monitor/GetAlert.json"
-  #verificado ok
+
   @Alerts
   Scenario: Check when i send wrong value end date, the response retrieve all the information related with the project and totalRecords is 0 and check with Json schema
     Given a valid user belonging to the organization of the project to be searched

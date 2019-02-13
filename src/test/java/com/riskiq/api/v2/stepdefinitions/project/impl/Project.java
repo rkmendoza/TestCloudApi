@@ -30,7 +30,7 @@ public class Project {
     private  String  tags;
     private  String  query;
     private  String  type;
-    private  Boolean isCreated = false;
+    private  Boolean isCreated;
     public static String wrongGuid =   "279abfa2-9e97-0cb9-d2bb995bca7c5";
     public static String noExistGuid = "279bbcb2-9e97-0cc9-d2cc-995bca7c5909";
     public static String wrongOwner = "OtherOwner";
