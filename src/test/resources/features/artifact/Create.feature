@@ -39,19 +39,6 @@ Feature: As a user of riskIQ platform I want to Create artifact
       | query        | @@query                |
     Then the api should response with code 404
     And Check JSON schema "project/ErrorMessage.json"
-  #ver que pasa con este scenario
-  @CreateArtifact
-  Scenario: Check the response of Create artifact by an integer value in the tags field the response retrieve error message and code 400 error and check with json schema
-    Given a created project with values
-      | key          | value                  |
-      | name         | @@namerandom           |
-      | visibility   | public                 |
-    When users in the same organization want Create artifact with the values
-      | key          | value                  |
-      | project      | ##guid                 |
-      | query        | @@query                |
-    Then the api should response with code 400
-    And Check JSON schema "project/ErrorMessage.json"
 
   @CreateArtifact
   Scenario: Check the response of Create artifact with user of the same organization, and the visibility is public, the response retrieve all the information related with the project updated and check with json schema
