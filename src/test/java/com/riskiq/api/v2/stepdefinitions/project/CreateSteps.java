@@ -56,7 +56,6 @@ public class CreateSteps extends FlowData  {
     public void aCreatedProjectWithValues(DataTable dataTable) {
         rs.set(given().auth().preemptive().basic(userName2, userPw2));
         response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,"project")));
-        System.out.println(response.get().getBody().prettyPrint());
         setProject(Project.with()
                 .guid(response.get().path("guid"))
                 .owner(response.get().path("owner"))

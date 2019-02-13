@@ -19,7 +19,6 @@ public class CreateSteps extends FlowData  {
 
   public void response(DataTable dataTable){
     response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,"artifact")));
-    System.out.println(response.get().getBody().prettyPrint());
     setProject(Project.with()
       .guid(response.get().path("guid"))
       .isCreated(true)
