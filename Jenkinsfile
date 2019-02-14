@@ -4,7 +4,7 @@ pipeline {
 
     parameters {
         choice( name: 'Scenario',
-                choices: "Project\nCreate\nDelete\nFind\nAlert",
+                choices: "All\nCreateProject\nDeleteProject\nFindProject\nGetAlert",
                 description: '')
     }
 
@@ -32,7 +32,7 @@ pipeline {
         stage ('Test') {
             steps  {
                 script {
-                    if ("${Scenario}" == 'Project') {
+                    if ("${Scenario}" == 'All') {
                         withCredentials([usernamePassword(credentialsId: 'mauro', passwordVariable: 'password', usernameVariable: 'username')]) {
                             sh "mvn -Dusername=$username -Dpassword=$password clean test"
                         }
