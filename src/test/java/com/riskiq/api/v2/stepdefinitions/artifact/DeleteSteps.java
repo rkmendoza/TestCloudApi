@@ -5,6 +5,7 @@ import com.riskiq.api.v2.FlowData;
 import com.riskiq.api.v2.impl.BodyElement;
 import com.riskiq.api.v2.stepdefinitions.project.impl.Project;
 import cucumber.api.DataTable;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
 import io.restassured.http.ContentType;
 
@@ -17,6 +18,14 @@ public class DeleteSteps extends FlowData  {
 
   public void response(DataTable dataTable){
     response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).delete(setMethodAndEndPoint(DELETE,"artifact")));
+    setProject(Project.with()
+      .guid(response.get().path("guid"))
+      .isCreated(true)
+      .create());
+  }
+
+  public void responseCreate(DataTable dataTable){
+    response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,"artifact")));
     setProject(Project.with()
       .guid(response.get().path("guid"))
       .isCreated(true)
@@ -43,6 +52,12 @@ public class DeleteSteps extends FlowData  {
   public void users_not_in_the_same_organization_want_Delete_artifact_with_the_values(DataTable dataTable) {
     rs.set(setCredentials(userName3, userPw3));
     response(dataTable);
+  }
+
+  @And("^a created artifact with the values$")
+  public void a_created_artifact_with_the_values(DataTable dataTable) {
+    rs.set(setCredentials(userName2, userPw2));
+    responseCreate(dataTable);
   }
 
 }
