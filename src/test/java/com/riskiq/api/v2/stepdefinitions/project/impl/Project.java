@@ -116,6 +116,20 @@ public class Project {
           .create());
     }
 
+    public static void removeProjectTac(DataTable dataTable){
+        //TODO change method by endpoint
+        response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).delete(setMethodAndEndPoint(DELETE,"project/tag")));
+        setProject(Project.with()
+          .guid(response.get().path("guid"))
+          .owner(response.get().path("owner"))
+          .creator(response.get().path("creator"))
+          .visibility(response.get().path("visibility"))
+          .organization(response.get().path("organization"))
+          .featured(response.get().path("featured"))
+          .isCreated(true)
+          .create());
+    }
+
 
     public static void deleteAllProject() throws Throwable{
         List<String> allGuid = findAllGuidProject();

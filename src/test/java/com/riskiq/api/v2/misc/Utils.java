@@ -134,6 +134,19 @@ public class Utils extends FlowData{
                 }
                 bodyJson.set(String.join("", bodyJson.get(), String.format("\"%s\": %s,\n", bodyElement.getKey(), bodyElement.getValue())));
             }
+        }else if ((bodyElement.getKey().equals("tagsint"))) {
+            bodyElement.setKey("tags");
+            if(isLast){
+                if(bodyElement.getValue() != null && !bodyElement.getValue().isEmpty() && !bodyElement.getValue().equals("[]")){
+                    bodyElement.setValue(String.format("[%s]", bodyElement.getValue()));
+                }
+                bodyJson.set(String.join("", bodyJson.get(), String.format("\"%s\": %s\n", bodyElement.getKey(), bodyElement.getValue())));
+            }else{
+                if (bodyElement.getValue() != null && !bodyElement.getValue().isEmpty() && !bodyElement.getValue().equals("[]")) {
+                    bodyElement.setValue(String.format("[ %s ]", bodyElement.getValue().replace(",", " , ")));
+                }
+                bodyJson.set(String.join("", bodyJson.get(), String.format("\"%s\": %s,\n", bodyElement.getKey(), bodyElement.getValue())));
+            }
         }//type of int
         else if (bodyElement.getValue().matches("\\d+")) {
             int value = Integer.valueOf(bodyElement.getValue());
@@ -144,8 +157,8 @@ public class Utils extends FlowData{
                 bodyJson.set(String.join("", bodyJson.get(), String.format("\"%s\": %s, \n", bodyElement.getKey(), value)));
             }
         }
-            //type of string
-         else if ((!bodyElement.getValue().equals("true") && !bodyElement.getValue().equals("false")) ) {
+        //type of string
+        else if ((!bodyElement.getValue().equals("true") && !bodyElement.getValue().equals("false")) ) {
             //   json.set(String.join("", json.get(), String.format("\"%s\": \"%s\"", bodyElement.getKey(), project.get().getGuid())));
             if(isLast){
                 bodyJson.set(String.join("", bodyJson.get(), String.format("\"%s\": \"%s\"", bodyElement.getKey(), bodyElement.getValue())));
@@ -241,6 +254,9 @@ public class Utils extends FlowData{
                 break;
             case "owner":
                 bodyElement.setValue(String.valueOf(getProject().getOwner()));
+                break;
+            case "tags":
+                bodyElement.setValue(String.valueOf(getProject().getTags()));
                 break;
             case "creator":
                 bodyElement.setValue(String.valueOf(getProject().getCreator()));
