@@ -23,7 +23,7 @@ public class SetSteps extends FlowData  {
 
   @When("^users in the same organization want Set project tags with the values$")
   public void users_in_the_same_organization_want_Set_project_tags_with_the_values(DataTable dataTable) {
-    rs.set(RestAssured.given().auth().preemptive().basic(userName1, userName1));
+    rs.set(setCredentials(userName1,userPw1));
     setProjectTac(dataTable);
   }
 
@@ -34,7 +34,7 @@ public class SetSteps extends FlowData  {
 
   @When("^users not in the same organization want Set project tags with the values$")
   public void users_not_in_the_same_organization_want_Set_project_tags_with_the_values(DataTable dataTable) {
-    rs.set(RestAssured.given().auth().preemptive().basic(userName3, userPw3));
+    rs.set(setCredentials(userName3,userPw3));
     setProjectTac(dataTable);
   }
 

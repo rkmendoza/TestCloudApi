@@ -49,11 +49,11 @@ Feature: As a user of riskIQ platform I want to Remove project tags
       | key          | value                  |
       | name         | @@namerandom           |
       | visibility   | public                 |
-      | tags         | @@randomTags1          |
+      | tags         | @@randomTags2          |
     When users in the same organization want Remove project tags with the values
       | key          | value                  |
       | project      | ##guid                 |
-      | tags         | ##integerTag           |
+      | tagsint      | 100, 50, 60            |
     Then the api should response with code 400
     And Check JSON schema "project/ErrorMessage.json"
 
@@ -79,7 +79,7 @@ Feature: As a user of riskIQ platform I want to Remove project tags
       | key         | value                  |
       | name        | @@namerandom           |
       | visibility  | private                |
-      | tags        | @@randomTags1          |
+      | tags        | @@randomTags2          |
     When users in the same organization want Remove project tags with the values
       | key         | value                  |
       | project     | ##guid                 |
@@ -94,7 +94,7 @@ Feature: As a user of riskIQ platform I want to Remove project tags
       | key         | value                  |
       | name        | @@namerandom           |
       | visibility  | analyst                |
-      | tags        | @@randomTags1          |
+      | tags        | @@randomTags2          |
     When users in the same organization want Remove project tags with the values
       | key         | value                  |
       | project     | ##guid                 |
@@ -109,7 +109,7 @@ Feature: As a user of riskIQ platform I want to Remove project tags
       | key         | value                  |
       | name        | @@namerandom           |
       | visibility  | analyst                |
-      | tags        | @@randomTags1          |
+      | tags        | @@randomTags2          |
     When Users of the same organization that created the project want Remove project tags with the values
       | key         | value                  |
       | project     | ##guid                 |
