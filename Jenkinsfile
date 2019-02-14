@@ -4,7 +4,7 @@ pipeline {
 
     parameters {
         choice( name: 'Scenario',
-                choices: "All\nCreateProject\nDeleteProject\nFindProject\nGetAlert",
+                choices: "All\nCreateProject\nDeleteProject\nFindProject\nUpdateProject\nAddTags\nRemoveTags\nSetTags\nGetAlerts\nCreateArtifact\nDeleteArtifact",
                 description: '')
     }
 

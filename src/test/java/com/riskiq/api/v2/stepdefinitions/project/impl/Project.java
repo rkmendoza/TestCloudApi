@@ -76,44 +76,53 @@ public class Project {
     }
 
     public static void updateProject(DataTable dataTable){
+        Integer status = 200;
         response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).post(setMethodAndEndPoint(POST,"project")));
-        setProject(Project.with()
-                .guid(response.get().path("guid"))
-                .owner(response.get().path("owner"))
-                .creator(response.get().path("creator"))
-                .visibility(response.get().path("visibility"))
-                .organization(response.get().path("organization"))
-                .featured(response.get().path("featured"))
-                .isCreated(true)
-                .create());
+        if (status.equals(response.get().statusCode())) {
+            setProject(Project.with()
+                    .guid(response.get().path("guid"))
+                    .owner(response.get().path("owner"))
+                    .creator(response.get().path("creator"))
+                    .visibility(response.get().path("visibility"))
+                    .organization(response.get().path("organization"))
+                    .featured(response.get().path("featured"))
+                    .isCreated(true)
+                    .create());
+        }
     }
 
     public static void setProjectTac(DataTable dataTable){
+        Integer status = 200;
         //TODO change method by endpoint
         response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,"project/tag")));
-        setProject(Project.with()
-                .guid(response.get().path("guid"))
-                .owner(response.get().path("owner"))
-                .creator(response.get().path("creator"))
-                .visibility(response.get().path("visibility"))
-                .organization(response.get().path("organization"))
-                .featured(response.get().path("featured"))
-                .isCreated(true)
-                .create());
+        if (status.equals(response.get().statusCode())) {
+            setProject(Project.with()
+                    .guid(response.get().path("guid"))
+                    .owner(response.get().path("owner"))
+                    .creator(response.get().path("creator"))
+                    .visibility(response.get().path("visibility"))
+                    .organization(response.get().path("organization"))
+                    .featured(response.get().path("featured"))
+                    .isCreated(true)
+                    .create());
+        }
     }
 
     public static void addProjectTac(DataTable dataTable){
+        Integer status = 200;
         //TODO change method by endpoint
         response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).post(setMethodAndEndPoint(POST,"project/tag")));
-        setProject(Project.with()
-          .guid(response.get().path("guid"))
-          .owner(response.get().path("owner"))
-          .creator(response.get().path("creator"))
-          .visibility(response.get().path("visibility"))
-          .organization(response.get().path("organization"))
-          .featured(response.get().path("featured"))
-          .isCreated(true)
-          .create());
+        if (status.equals(response.get().statusCode())) {
+            setProject(Project.with()
+                    .guid(response.get().path("guid"))
+                    .owner(response.get().path("owner"))
+                    .creator(response.get().path("creator"))
+                    .visibility(response.get().path("visibility"))
+                    .organization(response.get().path("organization"))
+                    .featured(response.get().path("featured"))
+                    .isCreated(true)
+                    .create());
+        }
     }
 
     public static void removeProjectTac(DataTable dataTable){

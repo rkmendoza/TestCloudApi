@@ -330,5 +330,17 @@ public class Utils extends FlowData{
         return bodyElement;
     }
 
+    @Test
+    public void deleteAllProject() throws Throwable{
+        List<String> allGuid = findAllGuidProject();
+        for(String guid : allGuid)
+        {
+            if(!guidProjectAlert.contains(guid)){
+                deleteProjectByGuid(guid);
+            }
+        }
+
+    }
+
 }
 

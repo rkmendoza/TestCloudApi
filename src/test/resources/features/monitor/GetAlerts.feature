@@ -1,6 +1,6 @@
 Feature: As a user of riskIQ platform I want to see a project or projects using search criteria
 
-  @Alerts
+  @GetAlerts
   Scenario: Check the response of find all alerts when that exist in riskIQ platform,
   with wrong credentials the response retrieve error message and code error and check with Json schema
     Given a invalid user and invalid key from riskIQ platform
@@ -9,21 +9,21 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     And Check JSON schema "project/ErrorMessage.json"
 
   #reporting in jira
-  @Alerts
+  @GetAlerts
   Scenario: Check the response of find all alerts when that exist in riskIQ platform is a 200
     Given a valid user and key from riskIQ platform
     When users want to get information of alerts without params
     Then the api should response with code 200
 
   #reporting in jira
-  @Alerts
+  @GetAlerts
   Scenario: Check the response of find all alerts when that exist in riskIQ platform is a 200
     Given a valid user and key from riskIQ platform
     When users want to get information of alerts without params
     Then the api should response with code 200
     And Check JSON schema "monitor/GetAlert.json"
 
-  @Alerts
+  @GetAlerts
   Scenario: Check when i send project, the response retrieve all alerts related with the project searched
     Given a valid user belonging to the organization of the project to be searched
     When users want to get information of alerts with the values
@@ -32,7 +32,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     Then the api should response with code 200
     And the number of alerts should be greater than 1
 
-  @Alerts
+  @GetAlerts
   Scenario: Check when i send project, the response retrieve all alerts related with the project searched
     Given a valid user not belonging to the organization of the project to be searched
     When users want to get information of alerts with the values
@@ -40,7 +40,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
       | project | %%projectWithAlert |
     Then the api should response with code 403
 
-  @Alerts
+  @GetAlerts
   Scenario: Check when i send invalid format value project, tthe response retrieve error message and code error and check with Json schema
     Given a valid user belonging to the organization of the project to be searched
     When users want to get information of alerts with the values
@@ -49,7 +49,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     Then the api should response with code 400
     And Check JSON schema "project/ErrorMessage.json"
 
-  @Alerts
+  @GetAlerts
   Scenario: Check when i send a not exist value project, the response retrieve error message and code 400 error and
   check with Json schema
     Given a valid user belonging to the organization of the project to be searched
@@ -59,7 +59,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     Then the api should response with code 404
     And Check JSON schema "project/ErrorMessage.json"
 
-  @Alerts
+  @GetAlerts
   Scenario: Check when i send an artifact, the response retrieve all the information related with the artifact searched
     Given a valid user belonging to the organization of the project to be searched
     When users want to get information of alerts with the values
@@ -67,7 +67,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
       | artifact | %%artifactWithAlert |
     Then the api should response with code 200
 
-  @Alerts
+  @GetAlerts
   Scenario: Check when i send artifact, the response retrieve all the information related with the artifact searched and check with json schema
     Given a valid user belonging to the organization of the project to be searched
     When users want to get information of alerts with the values
@@ -76,7 +76,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     Then the api should response with code 200
     And Check JSON schema "monitor/GetAlert.json"
 
-  @Alerts
+  @GetAlerts
   Scenario: Check when i send artifact, the response retrieve all the information related with the artifact searched and check with json schema
     Given a valid user belonging to the organization of the project to be searched
     When users want to get information of alerts with the values
@@ -86,7 +86,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     And Response includes the following key "%%artifactWithAlert"
     And Check JSON schema "monitor/GetAlert.json"
 
-  @Alerts
+  @GetAlerts
   Scenario: Check when i send a not exist value artifact, the response retrieve error message and code error and check with Json schema
     Given a valid user belonging to the organization of the project to be searched
     When users want to get information of alerts with the values
@@ -95,7 +95,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     Then the api should response with code 400
     And Check JSON schema "project/ErrorMessage.json"
 
-  @Alerts
+  @GetAlerts
   Scenario: Check when i send invalid format artifact, the response retrieve error message and code error and check with Json schema
     Given a valid user belonging to the organization of the project to be searched
     When users want to get information of alerts with the values
@@ -104,7 +104,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     Then the api should response with code 400
     And Check JSON schema "project/ErrorMessage.json"
 
-  @Alerts
+  @GetAlerts
   Scenario: Check when i send an start date, the response retrieve all the information related with the project searched and check with json schema
     Given a valid user belonging to the organization of the project to be searched
     When users want to get information of alerts with the values
@@ -115,7 +115,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     And the number of alerts should be greater than 1
     And Check JSON schema "monitor/GetAlert.json"
 
-  @Alerts
+  @GetAlerts
   Scenario: Check when i send wrong value start date, the response retrieve all the information related with the project and totalRecords is 0 and check with Json schema
     Given a valid user belonging to the organization of the project to be searched
     When users want to get information of alerts with the values
@@ -126,7 +126,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     And the number of alerts should be equal to 0
     And Check JSON schema "monitor/GetAlert.json"
 
-  @Alerts
+  @GetAlerts
   Scenario: Check when i send invalid format start date, the response retrieve error message and code error and check with Json schema
     Given a valid user belonging to the organization of the project to be searched
     When users want to get information of alerts with the values
@@ -136,7 +136,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     Then the api should response with code 400
     And Check JSON schema "project/ErrorMessage.json"
 
-  @Alerts
+  @GetAlerts
   Scenario: Check when i send an end date, the response retrieve all the information related with the project searched and check with json schema
     Given a valid user belonging to the organization of the project to be searched
     When users want to get information of alerts with the values
@@ -147,7 +147,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     And the number of alerts should be greater than 1
     And Check JSON schema "monitor/GetAlert.json"
 
-  @Alerts
+  @GetAlerts
   Scenario: Check when i send wrong value end date, the response retrieve all the information related with the project and totalRecords is 0 and check with Json schema
     Given a valid user belonging to the organization of the project to be searched
     When users want to get information of alerts with the values
@@ -158,7 +158,7 @@ Feature: As a user of riskIQ platform I want to see a project or projects using 
     And the number of alerts should be equal to 0
     And Check JSON schema "monitor/GetAlert.json"
 
-  @Alerts
+  @GetAlerts
   Scenario: Check when i send invalid format end date, the response retrieve error message and code error and check with Json schema
     Given a valid user belonging to the organization of the project to be searched
     When users want to get information of alerts with the values

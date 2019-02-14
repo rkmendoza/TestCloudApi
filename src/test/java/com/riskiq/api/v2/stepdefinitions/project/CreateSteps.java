@@ -42,7 +42,7 @@ public class CreateSteps extends FlowData  {
     public void usersWantToCreateProjectWithTheValues(DataTable dataTable) {
         response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,"project")));
         setProject(Project.with()
-                .guid(response.get().path("guid").toString())
+                .guid(response.get().path("guid"))
                 .owner(response.get().path("owner"))
                 .creator(response.get().path("creator"))
                 .visibility(response.get().path("visibility"))
@@ -54,7 +54,7 @@ public class CreateSteps extends FlowData  {
 
     @And("^a created project with values$")
     public void aCreatedProjectWithValues(DataTable dataTable) {
-        rs.set(given().auth().preemptive().basic(userName2, userPw2));
+        rs.set(setCredentials(userName2, userPw2));
         response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,"project")));
         setProject(Project.with()
                 .guid(response.get().path("guid"))
@@ -76,7 +76,7 @@ public class CreateSteps extends FlowData  {
 
     @And("^a created project with values by user of organization B$")
     public void aCreatedProjectWithValuesByUserB(DataTable dataTable) throws Throwable {
-        rs.set(RestAssured.given().auth().preemptive().basic(userName4, userPw4));
+        rs.set(setCredentials(userName4, userPw4));
         setProject(Project.with()
         .guid(rs.get().contentType(ContentType.JSON)
               .body(dataTableToJson(dataTable.asList(BodyElement.class)))
@@ -88,7 +88,7 @@ public class CreateSteps extends FlowData  {
 
     @And("^a created project with values by user of organization A$")
     public void aCreatedProjectWithValuesByUserA(DataTable dataTable) throws Throwable {
-        rs.set(RestAssured.given().auth().preemptive().basic(userName1, userPw1));
+        rs.set(setCredentials(userName1, userPw1));
         setProject(Project.with()
         .guid(rs.get().contentType(ContentType.JSON)
               .body(dataTableToJson(dataTable.asList(BodyElement.class)))
@@ -122,9 +122,4 @@ public class CreateSteps extends FlowData  {
             response.get().then().body("results.size()", equalTo(numberOfProjects));
         }
     }
-
-
-
-
-
 }

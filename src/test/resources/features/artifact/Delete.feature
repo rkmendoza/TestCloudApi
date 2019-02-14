@@ -72,7 +72,7 @@ Feature: As a user of riskIQ platform I want to Delete artifact
       | key         | value                  |
       | artifact    | ##guid                 |
     Then the api should response with code 200
-    #And Check JSON schema "project/artifact.json"
+    And Check JSON schema "artifact/Delete.json"
 
   @DeleteArtifact
   Scenario: Check the response of Delete artifact with user of the same organization, and the visibility is private, the response retrieve all the information related with the project updated and check with json schema
@@ -91,7 +91,7 @@ Feature: As a user of riskIQ platform I want to Delete artifact
       | key         | value                  |
       | artifact    | ##guid                 |
     Then the api should response with code 200
-    #And Check JSON schema "project/artifact.json"
+    And Check JSON schema "artifact/Delete.json"
 
   @DeleteArtifact
   Scenario: Check the response of Delete artifact with user of the same organization, and the visibility is analyst, the response retrieve error message and code 400 error and check with json schema
@@ -129,7 +129,7 @@ Feature: As a user of riskIQ platform I want to Delete artifact
       | key         | value                  |
       | artifact    | ##guid                 |
     Then the api should response with code 200
-    #And Check JSON schema "project/artifact.json"
+    And Check JSON schema "artifact/Delete.json"
 
 
   @DeleteArtifact

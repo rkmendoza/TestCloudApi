@@ -25,7 +25,6 @@
     "visibility": {
       "$id": "#/properties/visibility",
       "type": "string",
-      "enum": ["public", "private", "analyst"],
       "pattern": "^(.*)$"
     },
     "owner": {
