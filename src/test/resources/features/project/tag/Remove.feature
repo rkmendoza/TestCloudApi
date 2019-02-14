@@ -88,7 +88,7 @@ Feature: As a user of riskIQ platform I want to Remove project tags
     And Check JSON schema "project/tags/tags.json"
 
   @RemoveTags
-  Scenario: Check the response of Remove project tags with user of the same organization, and the visibility is analyst, the response retrieve error message and code 400 error and check with json schema
+  Scenario: Check the response of Remove project tags with user of the same organization and the user not created the project, and the visibility is analyst, the response retrieve error message and code 400 error and check with json schema
     Given a valid user and key from riskIQ platform
     And a created project with values
       | key         | value                  |
