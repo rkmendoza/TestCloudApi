@@ -34,7 +34,7 @@ public class Hooks extends FlowData{
         if(getProject() != null &&  getProject().getIsCreated() == true && getProject().getGuid() != null){
             deleteProjectByGuid(getProject().getGuid());
         }
-        bodyJson = null;
+        bodyJson.set("");
     }
 }
 
