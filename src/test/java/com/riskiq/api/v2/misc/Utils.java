@@ -330,7 +330,7 @@ public class Utils extends FlowData{
         return bodyElement;
     }
 
-    @Test
+    /*@Test
     public void deleteAllProject() throws Throwable{
         List<String> allGuid = findAllGuidProject();
         for(String guid : allGuid)
@@ -340,7 +340,7 @@ public class Utils extends FlowData{
             }
         }
 
-    }
+    }*/
 
 }
 
