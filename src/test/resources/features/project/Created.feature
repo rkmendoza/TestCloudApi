@@ -52,7 +52,7 @@ Feature: As a user of riskIQ platform I want to create a project
       | tags        | @@randomTags2                |
     Then the api should response with code 200
 
-  @CreateProject1
+  @CreateProject
   Scenario: Check when i send an list of valid params, the response retrieve all the information related with the project created and check with Json schema
     Given a valid user and key from riskIQ platform
     When users want to create project with the values
