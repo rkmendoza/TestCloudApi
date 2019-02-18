@@ -5,6 +5,7 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import io.restassured.RestAssured;
+import org.apache.log4j.Logger;
 
 
 import static com.riskiq.api.v2.misc.Utils.generateCurl;
@@ -14,9 +15,11 @@ import static com.riskiq.api.v2.stepdefinitions.project.impl.Project.deleteProje
 
 public class Hooks extends FlowData{
 
+    static Logger log = Logger.getLogger(Hooks.class);
     /* Need to capture the scenario object in the instance to access it * in the step definition methods. */
     @Before
     public void before(Scenario scenario){
+        bodyJson.set("");
         FlowData.scenario.set(scenario);
     }
 
@@ -29,12 +32,11 @@ public class Hooks extends FlowData{
     public static void afterScenario(Scenario scenario){
         if(scenario.isFailed()) {
             String url = String.join("/", RestAssured.baseURI, getEndPoint().getEndpoint());
-            scenario.write(generateCurl(url, getEndPoint().getMethod(), bodyJson.get(), getUserCredentials().getUsername(), getUserCredentials().getPassword()));
+            scenario.write(generateCurl(url, getEndPoint().getMethod(), bodyJson.get().toString(), getUserCredentials().getUsername(), getUserCredentials().getPassword()));
         }
         if(getProject() != null &&  getProject().getIsCreated() == true && getProject().getGuid() != null){
             deleteProjectByGuid(getProject().getGuid());
         }
-        bodyJson.set("");
     }
 }
 
