@@ -16,7 +16,6 @@ import io.restassured.http.ContentType;
 import java.util.Collections;
 
 import static com.riskiq.api.v2.misc.Utils.*;
-import static io.restassured.RestAssured.given;
 import static org.mortbay.jetty.HttpMethods.*;
 
 import static org.hamcrest.Matchers.equalTo;
