@@ -21,7 +21,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19</version>
                 <configuration>
-                    <forkCount>10</forkCount>
+                    <forkCount>20</forkCount>
                     <reuseForks>true</reuseForks>
                     <!--<parallel>all</parallel>
                     <threadCount>5</threadCount>-->
