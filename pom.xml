@@ -23,8 +23,6 @@
                 <configuration>
                     <forkCount>20</forkCount>
                     <reuseForks>true</reuseForks>
-                    <!--<parallel>all</parallel>
-                    <threadCount>5</threadCount>-->
                     <includes>
                         <include>**/Parallel*IT.class</include>
                     </includes>
@@ -55,7 +53,7 @@
                             <!-- The directory, which must be in the root of the runtime classpath, containing your feature files.  -->
                             <featuresDirectory>src/test/resources/features/</featuresDirectory>
                             <!-- Directory where the cucumber report files shall be written  -->
-                            <cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>
+                            <cucumberOutputDir>target/cucumber-html-reports</cucumberOutputDir>
                             <!-- List of cucumber plugins. When none are provided the json formatter is used. For more
                                  advanced usage see section about configuring cucumber plugins -->
                             <plugins>
