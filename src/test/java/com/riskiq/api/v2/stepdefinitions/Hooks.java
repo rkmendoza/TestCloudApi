@@ -8,6 +8,8 @@ import io.restassured.RestAssured;
 import org.apache.log4j.Logger;
 
 
+import java.util.concurrent.atomic.AtomicReference;
+
 import static com.riskiq.api.v2.misc.Utils.generateCurl;
 import static com.riskiq.api.v2.misc.Utils.setParameterProperties;
 import static com.riskiq.api.v2.stepdefinitions.project.impl.Project.deleteProjectByGuid;
@@ -19,13 +21,12 @@ public class Hooks extends FlowData{
     /* Need to capture the scenario object in the instance to access it * in the step definition methods. */
     @Before
     public void before(Scenario scenario){
-        bodyJson.set("");
         FlowData.scenario.set(scenario);
     }
 
     @Before
     public static void getConfigVars() {
-            setParameterProperties();
+        setParameterProperties();
     }
 
     @After
