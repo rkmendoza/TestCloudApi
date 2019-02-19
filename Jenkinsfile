@@ -4,7 +4,7 @@ pipeline {
 
     parameters {
         choice( name: 'Scenario',
-                choices: "Project\nCreate\nDelete\nFind\nAlert",
+                choices: "All\nCreateProject\nDeleteProject\nFindProject\nUpdateProject\nAddTags\nRemoveTags\nSetTags\nGetAlerts\nCreateArtifact\nDeleteArtifact",
                 description: '')
     }
 
@@ -25,20 +25,14 @@ pipeline {
 
         stage('checkout') {
             steps {
-                git credentialsId: 'git-credentials', url: 'https://mauro-icox@bitbucket.org/riskiq/test-cloud.git', branch: 'master'
+                git credentialsId: 'git-credentials', url: 'https://mauro-icox@bitbucket.org/riskiq/test-cloud.git', branch: 'develop'
             }
         }
-
-        /*stage ('Download Project') {
-            steps {
-                git url: 'https://mauro-icox@bitbucket.org/riskiq/test-cloud.git'
-            }
-        }*/
 
         stage ('Test') {
             steps  {
                 script {
-                    if ("${Scenario}" == 'Project') {
+                    if ("${Scenario}" == 'All') {
                         withCredentials([usernamePassword(credentialsId: 'mauro', passwordVariable: 'password', usernameVariable: 'username')]) {
                             sh "mvn -Dusername=$username -Dpassword=$password clean test"
                         }
@@ -56,18 +50,7 @@ pipeline {
                              jsonReportDirectory: 'target/cucumber-parallel'
                 }
             }
-            /*post {
-                always {
-                    publishHTML (target: [
-                            allowMissing: false,
-                            alwaysLinkToLastBuild: true,
-                            keepAll: true,
-                            reportDir: 'target/test-report',
-                            reportFiles: 'index.html',
-                            reportName: "Executive Report"
-                    ])
-                }
-            }*/
+
         }
 
     }

@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Builder(builderMethodName = "with", buildMethodName = "create")
-public class UserCredentials {
-    private String username;
-    private String password;
+public class EndPoint {
+    private String endpoint;
+    private String method;
 }
