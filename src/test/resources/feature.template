@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = {"target/parallel/features/[CUCABLE:FEATURE].feature"},
-        plugin = {"json:target/cucumber-html-reports/[CUCABLE:RUNNER].json","pretty"},
+        plugin = {"json:target/cucumber-report/[CUCABLE:RUNNER].json","pretty"},
         glue = {"com.riskiq.api.v2.stepdefinitions"}
 )
 public class [CUCABLE:RUNNER] {
