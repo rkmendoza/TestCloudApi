@@ -21,10 +21,10 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M3</version>
                 <configuration>
-                    <!--<parallel>all</parallel>
-                    <threadCount>20</threadCount>-->
-                    <forkCount>200</forkCount>
+                    <parallel>all</parallel>
+                    <forkCount>2.0C</forkCount>
                     <reuseForks>true</reuseForks>
+                    <threadCount>20</threadCount>
                     <includes>
                         <include>**/Parallel*IT.class</include>
                     </includes>
@@ -55,7 +55,7 @@
                             <!-- The directory, which must be in the root of the runtime classpath, containing your feature files.  -->
                             <featuresDirectory>src/test/resources/features/</featuresDirectory>
                             <!-- Directory where the cucumber report files shall be written  -->
-                            <cucumberOutputDir>target</cucumberOutputDir>
+                            <cucumberOutputDir>target/cucumber-parallel</cucumberOutputDir>
                             <!-- List of cucumber plugins. When none are provided the json formatter is used. For more
                                  advanced usage see section about configuring cucumber plugins -->
                             <plugins>
