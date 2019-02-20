@@ -21,8 +21,10 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M3</version>
                 <configuration>
-                    <forkCount>200</forkCount>
-                    <reuseForks>true</reuseForks>
+                    <parallel>all</parallel>
+                    <threadCount>20</threadCount>
+                    <!--<forkCount>200</forkCount>
+                    <reuseForks>true</reuseForks>-->
                     <includes>
                         <include>**/Parallel*IT.class</include>
                     </includes>
