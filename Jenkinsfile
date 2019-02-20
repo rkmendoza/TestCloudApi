@@ -47,7 +47,7 @@ pipeline {
                 always{
                     cucumber fileIncludePattern: '**/*.json',
                              sortingMethod: 'ALPHABETICAL',
-                             jsonReportDirectory: 'target/cucumber-parallel'
+                             jsonReportDirectory: 'target'
                 }
             }
 
