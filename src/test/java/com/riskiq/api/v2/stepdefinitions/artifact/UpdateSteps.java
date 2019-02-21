@@ -17,9 +17,10 @@ import static org.mortbay.jetty.HttpMethods.PUT;
 public class UpdateSteps extends FlowData  {
 
   public void response(DataTable dataTable){
-    response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).post(setMethodAndEndPoint(POST,"artifact")));
+    response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).post(setMethodAndEndPoint(POST,"artifact")));
     setProject(Project.with()
       .guid(response.get().path("guid"))
+      .tags(response.get().path("tags"))
       .isCreated(true)
       .create());
   }
@@ -40,50 +41,26 @@ public class UpdateSteps extends FlowData  {
 
   @When("^users in the same organization want Update artifact with the values$")
   public void users_in_the_same_organization_want_Update_artifact_with_the_values(DataTable dataTable) throws Throwable {
-    rs.set(setCredentials(userName2, userPw2));
+    rs.set(setCredentials(userName1, userPw1));
     response(dataTable);
   }
 
   @When("^Users of the same organization, which created the project want Update artifact with the values$")
-  public void users_of_the_same_organization_which_created_the_project_want_Update_artifact_with_the_values(DataTable arg1) throws Throwable {
-
-  }
-
-  @When("^users not in the same organization want Update artifact with the values$")
-  public void users_not_in_the_same_organization_want_Update_artifact_with_the_values(DataTable arg1) throws Throwable {
-
-  }
-
-
-
-
-  /*
-  @When("^users want to Delete artifact with the values$")
-  public void users_want_to_Delete_artifact_with_the_values(DataTable dataTable) {
-    response(dataTable);
-  }
-
-  @When("^users in the same organization want Delete artifact with the values$")
-  public void users_in_the_same_organization_want_Delete_artifact_with_the_values(DataTable dataTable) {
+  public void users_of_the_same_organization_which_created_the_project_want_Update_artifact_with_the_values(DataTable dataTable) throws Throwable {
     rs.set(setCredentials(userName2, userPw2));
     response(dataTable);
   }
 
-  @When("^Users of the same organization that created the project want Delete artifact with the values$")
-  public void users_of_the_same_organization_that_created_the_project_want_Delete_artifact_with_the_values(DataTable dataTable) {
+  @When("^users in the same organization, which not created the project want Update artifact with the values$")
+  public void users_in_the_same_organization_which_not_created_the_project_want_Update_artifact_with_the_values(DataTable dataTable) throws Throwable {
+    rs.set(setCredentials(userName1, userPw1));
     response(dataTable);
   }
 
-  @When("^users not in the same organization want Delete artifact with the values$")
-  public void users_not_in_the_same_organization_want_Delete_artifact_with_the_values(DataTable dataTable) {
+  @When("^users not in the same organization want Update artifact with the values$")
+  public void users_not_in_the_same_organization_want_Update_artifact_with_the_values(DataTable dataTable) throws Throwable {
     rs.set(setCredentials(userName3, userPw3));
     response(dataTable);
   }
 
-  @And("^a created artifact with the values$")
-  public void a_created_artifact_with_the_values(DataTable dataTable) {
-    rs.set(setCredentials(userName2, userPw2));
-    responseCreate(dataTable);
-  }
-*/
 }

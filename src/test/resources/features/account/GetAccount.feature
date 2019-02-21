@@ -7,7 +7,7 @@ Feature: As a user of riskIQ platform I want to Get Account
     Then the api should response with code 401
     And Check JSON schema "project/ErrorMessage.json"
 
-  @GetAccount1
+  @GetAccount
   Scenario: Check the response to get account the response retrieve code 200 and check with json schema
     Given a valid user and key from riskIQ platform
     When users want to get account

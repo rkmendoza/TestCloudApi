@@ -1,6 +1,6 @@
 Feature: As a user of riskIQ platform I want to Update artifact
 
-  @UpdateArtifact1
+  @UpdateArtifact
   Scenario: Check the response of Update artifact with wrong credentials the response retrieve error message and code 401 error and check with json schema
     Given a created project with values
       | key          | value                  |
@@ -21,7 +21,7 @@ Feature: As a user of riskIQ platform I want to Update artifact
     Then the api should response with code 401
     #And Check JSON schema "project/ErrorMessage.json"
 
-  @UpdateArtifact1
+  @UpdateArtifact
   Scenario: Check the response of Update artifact with wrong GUID the response retrieve error message and code 400 error and check with json schema
     Given a created project with values
       | key          | value                  |
@@ -41,7 +41,7 @@ Feature: As a user of riskIQ platform I want to Update artifact
     Then the api should response with code 400
     #And Check JSON schema "project/ErrorMessage.json"
 
-  @UpdateArtifact1
+  @UpdateArtifact
   Scenario: Check the response of Update artifact with an not exist GUID the response retrieve error message and code 404 error and check with json schema
     Given a created project with values
       | key          | value                  |
@@ -61,7 +61,7 @@ Feature: As a user of riskIQ platform I want to Update artifact
     Then the api should response with code 404
     #And Check JSON schema "project/ErrorMessage.json"
 
-  @UpdateArtifact2
+  @UpdateArtifact
   Scenario: Check the response of Update artifact with user of the same organization, and the visibility is public, the response retrieve all the information related with the artifact updated and check with json schema
     Given a valid user and key from riskIQ platform
     And a created project with values
@@ -72,8 +72,6 @@ Feature: As a user of riskIQ platform I want to Update artifact
       | key         | value                  |
       | project     | ##guid                 |
       | query       | @@query                |
-      | type        | %%typeComponent        |
-      | tags        | @@randomTags2          |
     When users in the same organization want Update artifact with the values
       | key         | value                  |
       | artifact    | ##guid                 |
@@ -81,7 +79,7 @@ Feature: As a user of riskIQ platform I want to Update artifact
     Then the api should response with code 200
     #And Check JSON schema "artifact/Update.json"
 
-  @UpdateArtifact3
+  @UpdateArtifact
   Scenario: Check the response of Update artifact with user of the same organization, and the visibility is private, the response retrieve all the information related with the artifact updated and check with json schema
     Given a valid user and key from riskIQ platform
     And a created project with values
@@ -99,7 +97,7 @@ Feature: As a user of riskIQ platform I want to Update artifact
       | artifact    | ##guid                 |
       | tags        | @@randomTags2          |
     Then the api should response with code 200
-    And Check JSON schema "artifact/Update.json"
+    #And Check JSON schema "artifact/Update.json"
 
   @UpdateArtifact
   Scenario: Check the response of Update artifact with user of the same organization and the user created the project, and the visibility is analyst, the response retrieve all the information related with the artifact updated and check with json schema
@@ -120,7 +118,7 @@ Feature: As a user of riskIQ platform I want to Update artifact
       | monitor     | true                   |
       | tags        | @@randomTags2          |
     Then the api should response with code 200
-    And Check JSON schema "artifact/Update.json"
+    #And Check JSON schema "artifact/Update.json"
 
   @UpdateArtifact
   Scenario: Check the response of Update artifact with user of the same organization, the visibility is analyst, and the user not created the project, the response retrieve error message and code 400 error and check with json schema
@@ -141,7 +139,7 @@ Feature: As a user of riskIQ platform I want to Update artifact
       | monitor     | true                   |
       | tags        | @@randomTags2          |
     Then the api should response with code 400
-    And Check JSON schema "project/ErrorMessage.json"
+    #And Check JSON schema "project/ErrorMessage.json"
 
 
   @UpdateArtifact
@@ -163,7 +161,7 @@ Feature: As a user of riskIQ platform I want to Update artifact
       | monitor     | true                   |
       | tags        | @@randomTags2          |
     Then the api should response with code 403
-    And Check JSON schema "project/ErrorMessage.json"
+    #And Check JSON schema "project/ErrorMessage.json"
 
   @UpdateArtifact
   Scenario: Check the response of Update artifact with user not in the same organization, and the visibility is private, the response retrieve error message and code 403 error and check with json schema
@@ -184,7 +182,7 @@ Feature: As a user of riskIQ platform I want to Update artifact
       | monitor     | true                   |
       | tags        | @@randomTags2          |
     Then the api should response with code 403
-    And Check JSON schema "project/ErrorMessage.json"
+    #And Check JSON schema "project/ErrorMessage.json"
 
   @UpdateArtifact
   Scenario: Check the response of Update artifact with user not in the same organization, and the visibility is analyst, the response retrieve error message and code 403 error and check with json schema
@@ -205,7 +203,7 @@ Feature: As a user of riskIQ platform I want to Update artifact
       | monitor     | true                   |
       | tags        | @@randomTags2          |
     Then the api should response with code 403
-    And Check JSON schema "project/ErrorMessage.json"
+    #And Check JSON schema "project/ErrorMessage.json"
 
 
 
