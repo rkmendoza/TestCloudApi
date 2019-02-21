@@ -31,6 +31,9 @@ public class Project {
     private  String  query;
     private  String  type;
     private  Boolean isCreated;
+    public static String api = "api";
+    public static String ui = "ui";
+    public static String valuemonitor = "true";
     public static String wrongGuid =   "279abfa2-9e97-0cb9-d2bb995bca7c5";
     public static String noExistGuid = "279bbcb2-9e97-0cc9-d2cc-995bca7c5909";
     public static String wrongOwner = "OtherOwner";
@@ -38,6 +41,8 @@ public class Project {
     public static String wrongOrganization = "testcloud22";
     public static String deleteOrganization = "testcloud";
     public static String wrongVisibility = "OtherVisibility";
+    public static String wrongApi = "wrongApi";
+    public static String wrongUi = "wrongUi";
     public static int integerTag = 100;
     public static List<String> guidProjectAlert = new ArrayList<String>(Arrays.asList("09f882f8-aa40-592e-67ad-ff8d796311c1", "eb40d9c7-688a-97e5-d161-cb7c6c6d7229"));
 

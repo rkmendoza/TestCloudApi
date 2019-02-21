@@ -662,14 +662,14 @@ Feature: As a user of riskIQ platform I want to Find artifact
     Given a created project with values
       | key          | value                  |
       | name         | @@namerandom           |
-      | visibility   | private                 |
+      | visibility   | private                |
     And a created artifact with values
       | key          | value                  |
       | project      | ##guid                 |
       | query        | @@query                |
     When users in the same organization want Find artifacts whit the values
       | key          | value                  |
-      | type         | ##type                |
+      | type         | ##type                 |
     Then the api should response with code 200
     And Check JSON schema "artifact/Find.json"
 
