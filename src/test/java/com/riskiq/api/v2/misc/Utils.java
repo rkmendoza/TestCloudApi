@@ -232,11 +232,10 @@ public class Utils extends FlowData{
             String random =  "";
             for(int i=0; i<numberTags; i++ ){
                 if(numberTags > 1 && i != numberTags-1){
-                    random += "tag."+generateRandomString() + " , ";
+                    random += "tag."+generateRandomString() + ",";
                 }else{
                     random += "tag."+generateRandomString();
                 }
-
             }
             bodyElement.setValue(random);
         }
@@ -287,6 +286,36 @@ public class Utils extends FlowData{
                 break;
             case "wrongVisibility":
                 bodyElement.setValue(String.valueOf(getProject().wrongVisibility));
+                break;
+            case "wrongUiArtifact":
+                bodyElement.setValue(String.valueOf(getProject().wrongUiArtifact));
+                break;
+            case "wrongProjectArtifact":
+                bodyElement.setValue(String.valueOf(getProject().wrongProjectArtifact));
+                break;
+            case "wrongQuery":
+                bodyElement.setValue(String.valueOf(getProject().wrongQuery));
+                break;
+            case "wrongType":
+                bodyElement.setValue(String.valueOf(getProject().wrongType));
+                break;
+            case "ownerArtifact":
+                bodyElement.setValue(String.valueOf(getProject().getOwnerArtifact()));
+                break;
+            case "projectArtifact":
+                bodyElement.setValue(String.valueOf(getProject().getProjectArtifact()));
+                break;
+            case "creatorArtifact":
+                bodyElement.setValue(String.valueOf(getProject().getCreatorArtifact()));
+                break;
+            case "organizationArtifact":
+                bodyElement.setValue(String.valueOf(getProject().getOrganizationArtifact()));
+                break;
+            case "queryArtifact":
+                bodyElement.setValue(String.valueOf(getProject().getQueryArtifact()));
+                break;
+            case "typeArtifact":
+                bodyElement.setValue(String.valueOf(getProject().getTypeArtifact()));
                 break;
             default:
                 bodyElement.setValue("");
