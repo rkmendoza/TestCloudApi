@@ -154,7 +154,7 @@ Feature: As a user of riskIQ platform I want to find a project or projects using
     When users want to get information on the project with the values
       | key          | value                  |
       | owner        | ##wrongOwner           |
-    Then the api should response with code 400
+    Then the api should response with code 200
     And Check JSON schema "project/Find.json"
 
   @FindProject
@@ -185,7 +185,7 @@ Feature: As a user of riskIQ platform I want to find a project or projects using
     And Check JSON schema "project/Find.json"
 
   @FindProject
-  Scenario: Check when i send an invalid Creator project, the response retrieve error message and code 400 error and check with json schema
+  Scenario: Check when i send an invalid Creator project, the response retrieve error message and code 200 error and check with json schema
     Given a valid user and key from riskIQ platform
     And a created project with values
       | key          | value                  |
@@ -194,7 +194,7 @@ Feature: As a user of riskIQ platform I want to find a project or projects using
     When users want to get information on the project with the values
       | key          | value                  |
       | creator      | ##wrongCreator         |
-    Then the api should response with code 400
+    Then the api should response with code 200
     And Check JSON schema "project/Find.json"
 
   @FindProject
@@ -223,7 +223,7 @@ Feature: As a user of riskIQ platform I want to find a project or projects using
     And Check JSON schema "project/Find.json"
 
   @FindProject
-  Scenario: Check when i send an invalid organization, the response retrieve error message and code 400 error and check with json schema
+  Scenario: Check when i send an invalid organization, the response retrieve error message and code 200 error and check with json schema
     Given a valid user and key from riskIQ platform
     And a created project with values
       | key          | value                  |
@@ -232,7 +232,7 @@ Feature: As a user of riskIQ platform I want to find a project or projects using
     When users want to get information on the project with the values
       | key          | value                  |
       | organization | ##wrongOrganization    |
-    Then the api should response with code 400
+    Then the api should response with code 200
     And Check JSON schema "project/Find.json"
 
   @FindProject
