@@ -47,11 +47,12 @@ public class FindSteps extends FlowData  {
 
   @When("^users in the same organization want Find artifacts with the values$")
   public void users_in_the_same_organization_want_Find_artifacts_with_the_values(DataTable dataTable) {
+    rs.set(setCredentials(userName1, userPw1));
     response(dataTable);
   }
 
   @When("^user not in the same organization want Find artifacts with the values$")
-  public void user_not_in_the_same_organization_want_Find_artifacts_with_the_values(DataTable dataTable) throws Throwable {
+  public void user_not_in_the_same_organization_want_Find_artifacts_with_the_values(DataTable dataTable) {
     rs.set(setCredentials(userName3, userPw3));
     response(dataTable);
   }
