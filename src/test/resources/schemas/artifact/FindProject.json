@@ -1,0 +1,186 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "required": [
+    "artifacts",
+    "success"
+  ],
+  "properties": {
+    "artifacts": {
+      "$id": "#/properties/artifacts",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/artifacts/items",
+        "type": "object",
+        "required": [
+          "links",
+          "monitor",
+          "creator",
+          "owner",
+          "project",
+          "organization",
+          "monitorable",
+          "guid",
+          "type",
+          "created",
+          "query"
+        ],
+        "properties": {
+          "links": {
+            "$id": "#/properties/artifacts/items/properties/links",
+            "type": "object",
+            "required": [
+              "self",
+              "tag",
+              "project"
+            ],
+            "properties": {
+              "self": {
+                "$id": "#/properties/artifacts/items/properties/links/properties/self",
+                "type": "string",
+                "pattern": "^(.*)$"
+              },
+              "tag": {
+                "$id": "#/properties/artifacts/items/properties/links/properties/tag",
+                "type": "string",
+                "pattern": "^(.*)$"
+              },
+              "project": {
+                "$id": "#/properties/artifacts/items/properties/links/properties/project",
+                "type": "string",
+                "pattern": "^(.*)$"
+              }
+            }
+          },
+          "monitor": {
+            "$id": "#/properties/artifacts/items/properties/monitor",
+            "type": "boolean",
+            "enum": [true,false]
+          },
+          "system_tags": {
+            "$id": "#/properties/artifacts/items/properties/system_tags",
+            "type": "array",
+            "items": {
+              "$id": "#/properties/artifacts/items/properties/system_tags/items",
+              "type": "string",
+              "pattern": "^(.*)$"
+            }
+          },
+          "creator": {
+            "$id": "#/properties/artifacts/items/properties/creator",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "owner": {
+            "$id": "#/properties/artifacts/items/properties/owner",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "user_tags": {
+            "$id": "#/properties/artifacts/items/properties/user_tags",
+            "type": "array",
+            "items": {
+              "$id": "#/properties/artifacts/items/properties/user_tags/items",
+              "type": "string",
+              "pattern": "^(.*)$"
+            }
+          },
+          "tags": {
+            "$id": "#/properties/artifacts/items/properties/tags",
+            "type": "array",
+            "items": {
+              "$id": "#/properties/artifacts/items/properties/tags/items",
+              "type": "string",
+              "pattern": "^(.*)$"
+            }
+          },
+          "project": {
+            "$id": "#/properties/artifacts/items/properties/project",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "organization": {
+            "$id": "#/properties/artifacts/items/properties/organization",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "monitorable": {
+            "$id": "#/properties/artifacts/items/properties/monitorable",
+            "type": "boolean",
+            "enum": [true,false]
+          },
+          "guid": {
+            "$id": "#/properties/artifacts/items/properties/guid",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "type": {
+            "$id": "#/properties/artifacts/items/properties/type",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "tag_meta": {
+            "$id": "#/properties/artifacts/items/properties/tag_meta",
+            "type": "object",
+            "title": "The Tag_meta Schema",
+            "properties": {
+              "malware": {
+                "$id": "#/properties/artifacts/items/properties/tag_meta/properties/malware",
+                "type": "object",
+                "properties": {
+                  "created_at": {
+                    "$id": "#/properties/artifacts/items/properties/tag_meta/properties/malware/properties/created_at",
+                    "type": "string",
+                    "pattern": "^(.*)$"
+                  },
+                  "creator": {
+                    "$id": "#/properties/artifacts/items/properties/tag_meta/properties/malware/properties/creator",
+                    "type": "string",
+                    "pattern": "^(.*)$"
+                  }
+                }
+              },
+              "scammer": {
+                "$id": "#/properties/artifacts/items/properties/tag_meta/properties/scammer",
+                "type": "object",
+                "required": [
+                  "created_at",
+                  "creator"
+                ],
+                "properties": {
+                  "created_at": {
+                    "$id": "#/properties/artifacts/items/properties/tag_meta/properties/scammer/properties/created_at",
+                    "type": "string",
+                    "pattern": "^(.*)$"
+                  },
+                  "creator": {
+                    "$id": "#/properties/artifacts/items/properties/tag_meta/properties/scammer/properties/creator",
+                    "type": "string",
+                    "pattern": "^(.*)$"
+                  }
+                }
+              }
+            }
+          },
+          "created": {
+            "$id": "#/properties/artifacts/items/properties/created",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "query": {
+            "$id": "#/properties/artifacts/items/properties/query",
+            "type": "string",
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    },
+    "success": {
+      "$id": "#/properties/success",
+      "type": "boolean",
+      "enum": [true,false]
+    }
+  }
+}

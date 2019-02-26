@@ -287,17 +287,20 @@ public class Utils extends FlowData{
             case "wrongVisibility":
                 bodyElement.setValue(String.valueOf(getProject().wrongVisibility));
                 break;
-            case "wrongUiArtifact":
-                bodyElement.setValue(String.valueOf(getProject().wrongUiArtifact));
-                break;
-            case "wrongProjectArtifact":
-                bodyElement.setValue(String.valueOf(getProject().wrongProjectArtifact));
-                break;
             case "wrongQuery":
                 bodyElement.setValue(String.valueOf(getProject().wrongQuery));
                 break;
             case "wrongType":
                 bodyElement.setValue(String.valueOf(getProject().wrongType));
+                break;
+            case "guidArtifact":
+                bodyElement.setValue(String.valueOf(getArtifact().getGuidArtifact()));
+                break;
+            case "wrongUiArtifact":
+                bodyElement.setValue(String.valueOf(getProject().wrongUiArtifact));
+                break;
+            case "wrongProjectArtifact":
+                bodyElement.setValue(String.valueOf(getProject().wrongProjectArtifact));
                 break;
             case "ownerArtifact":
                 bodyElement.setValue(String.valueOf(getProject().getOwnerArtifact()));
@@ -340,6 +343,9 @@ public class Utils extends FlowData{
                 break;
             case "creator":
                 field.setValue(String.valueOf(getProject().getCreator()));
+                break;
+            case "guidArtifact":
+                field.setValue(String.valueOf(getArtifact().getGuidArtifact()));
                 break;
             default:
                 field.setValue("");

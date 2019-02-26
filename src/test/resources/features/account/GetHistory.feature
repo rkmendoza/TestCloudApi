@@ -19,7 +19,7 @@ Feature: As a user of riskIQ platform I want to Get History
     Given a valid user and key from riskIQ platform
     When users want to get history with the values
       | key         | value                  |
-      | source      | api                    |
+      | source      | %%api                  |
     Then the api should response with code 200
     And Check JSON schema "account/GetHistory.json"
 
@@ -28,7 +28,7 @@ Feature: As a user of riskIQ platform I want to Get History
     Given a valid user and key from riskIQ platform
     When users want to get history with the values
       | key         | value                  |
-      | source      | wrongApi               |
+      | source      | %%wrongApi             |
     Then the api should response with code 400
     And Check JSON schema "project/ErrorMessage.json"
 
@@ -37,7 +37,7 @@ Feature: As a user of riskIQ platform I want to Get History
     Given a valid user and key from riskIQ platform
     When users want to get history with the values
       | key         | value                  |
-      | source      | ui                     |
+      | source      | %%ui                     |
     Then the api should response with code 200
     And Check JSON schema "account/GetHistory.json"
 

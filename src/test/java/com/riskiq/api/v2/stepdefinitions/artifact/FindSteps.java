@@ -2,6 +2,7 @@ package com.riskiq.api.v2.stepdefinitions.artifact;
 
 import com.riskiq.api.v2.FlowData;
 import com.riskiq.api.v2.impl.BodyElement;
+import com.riskiq.api.v2.stepdefinitions.artifact.impl.Artifact;
 import com.riskiq.api.v2.stepdefinitions.project.impl.Project;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
@@ -22,15 +23,14 @@ public class FindSteps extends FlowData  {
 
   public void responseCreate(DataTable dataTable){
     response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,"artifact")));
-    setProject(Project.with()
-      .guid(response.get().path("guid"))
-      .projectArtifact(response.get().path("project"))
-      .ownerArtifact(response.get().path("owner"))
-      .creatorArtifact(response.get().path("creator"))
-      .organizationArtifact(response.get().path("organization"))
-      .queryArtifact(response.get().path("query"))
-      .typeArtifact(response.get().path("type"))
-      .isCreated(true)
+    setArtifact(Artifact.with()
+      .guidArtifact(response.get().path("guid"))
+      .project(response.get().path("project"))
+      .owner(response.get().path("owner"))
+      .creator(response.get().path("creator"))
+      .organization(response.get().path("organization"))
+      .query(response.get().path("query"))
+      .type(response.get().path("type"))
       .create());
   }
 

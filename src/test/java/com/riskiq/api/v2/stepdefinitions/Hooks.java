@@ -8,11 +8,9 @@ import io.restassured.RestAssured;
 import org.apache.log4j.Logger;
 
 
-import java.util.concurrent.atomic.AtomicReference;
-
 import static com.riskiq.api.v2.misc.Utils.generateCurl;
 import static com.riskiq.api.v2.misc.Utils.setParameterProperties;
-import static com.riskiq.api.v2.stepdefinitions.project.impl.Project.deleteProjectByGuid;
+import static com.riskiq.api.v2.stepdefinitions.project.impl.Project.*;
 
 
 public class Hooks extends FlowData{
@@ -31,13 +29,11 @@ public class Hooks extends FlowData{
 
     @After
     public static void afterScenario(Scenario scenario){
-       // if(scenario.isFailed()) {
+        if(scenario.isFailed()) {
             String url = String.join("/", RestAssured.baseURI, getEndPoint().getEndpoint());
-            scenario.write(generateCurl(url, getEndPoint().getMethod(), bodyJson.get().toString(), getUserCredentials().getUsername(), getUserCredentials().getPassword()));
-       // }
-        if(getProject() != null &&  getProject().getIsCreated() == true && getProject().getGuid() != null){
-            deleteProjectByGuid(getProject().getGuid());
+            scenario.write(generateCurl(url, getEndPoint().getMethod(), bodyJson.get(), getUserCredentials().getUsername(), getUserCredentials().getPassword()));
         }
+        deleteAllProject();
     }
 }
 

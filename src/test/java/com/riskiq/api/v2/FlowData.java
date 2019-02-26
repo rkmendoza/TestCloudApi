@@ -3,6 +3,7 @@ package com.riskiq.api.v2;
 import com.riskiq.api.v2.impl.BodyElement;
 import com.riskiq.api.v2.impl.EndPoint;
 import com.riskiq.api.v2.impl.UserCredentials;
+import com.riskiq.api.v2.stepdefinitions.artifact.impl.Artifact;
 import com.riskiq.api.v2.stepdefinitions.project.impl.Project;
 import cucumber.api.Scenario;
 import io.restassured.response.Response;
@@ -28,6 +29,7 @@ public class FlowData  {
     protected static InheritableThreadLocal<Project> projectInfo = new InheritableThreadLocal<>();
     protected static InheritableThreadLocal<UserCredentials> userCredentialsInfo = new InheritableThreadLocal<>();
     protected static InheritableThreadLocal<EndPoint> endPointInfo = new InheritableThreadLocal<>();
+    protected static InheritableThreadLocal<Artifact> artifactInfo = new InheritableThreadLocal<>();
 
 
     /*create for all classes set and get*/
@@ -36,6 +38,12 @@ public class FlowData  {
     }
     public static void setProject(Project project) {
         projectInfo.set(project);
+    }
+    public static Artifact getArtifact(){
+        return artifactInfo.get();
+    }
+    public static void setArtifact(Artifact artifact) {
+        artifactInfo.set(artifact);
     }
     public static UserCredentials getUserCredentials(){return userCredentialsInfo.get();}
     public static void setUserCredentials(UserCredentials userCredentials) {

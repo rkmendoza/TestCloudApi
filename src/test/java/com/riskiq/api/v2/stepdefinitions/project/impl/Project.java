@@ -38,9 +38,6 @@ public class Project {
     private  String  typeArtifact;
     private  String  ownerArtifact;
 
-    public static String api = "api";
-    public static String ui = "ui";
-    public static String valuemonitor = "true";
     public static String wrongGuid =   "279abfa2-9e97-0cb9-d2bb995bca7c5";
     public static String noExistGuid = "279bbcb2-9e97-0cc9-d2cc-995bca7c5909";
     public static String wrongOwner = "OtherOwner";
@@ -48,8 +45,6 @@ public class Project {
     public static String wrongOrganization = "testcloud22";
     public static String deleteOrganization = "testcloud";
     public static String wrongVisibility = "OtherVisibility";
-    public static String wrongApi = "wrongApi";
-    public static String wrongUi = "wrongUi";
     public static String wrongUiArtifact = "838439d8ee51-4e20-dec8-05c8f7f7ba57";
     public static String wrongProjectArtifact = "f083816f-976b16cb-46b0-4b389dc3ae67";
     public static String wrongQuery = "example1";
@@ -156,7 +151,7 @@ public class Project {
     }
 
 
-    public static void deleteAllProject() throws Throwable{
+    public static void deleteAllProject(){
         List<String> allGuid = findAllGuidProject();
         for(String guid : allGuid)
         {
