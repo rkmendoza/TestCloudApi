@@ -40,21 +40,21 @@ Feature: As a user of riskIQ platform I want to Bulk Create artifacts
     Then the api should response with code 404
     And Check JSON schema "project/ErrorMessage.json"
 
-  @BulkCreateArtifact
+  @BulkCreateArtifact01
   Scenario: Check the response of bulk Create artifacts with user of the same organization, and the visibility is public, the response retrieve all the information related with the project updated and check with json schema
     Given a valid user and key from riskIQ platform
-    And a list created project with values
+    And a created project with values
       | key         | value                  |
       | name        | @@namerandom           |
       | visibility  | public                 |
-    When users in the same organization want bulk Create artifacts with the values
+    When users in the same organization want bulk Create artifacts with the values and the amount of 2
       | key         | value                  |
       | project     | ##guid                 |
       | query       | @@query                |
       | type        | %%typeComponent        |
       | tags        | @@randomTags2          |
     Then the api should response with code 200
-    And Check JSON schema "artifacts/Create.json"
+    And Check JSON schema "artifact/bulkCreate.json"
 
   @BulkCreateArtifact
   Scenario: Check the response of bulk Create artifacts with user of the same organization, and the visibility is private, the response retrieve all the information related with the project updated and check with json schema
