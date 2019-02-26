@@ -303,22 +303,22 @@ public class Utils extends FlowData{
                 bodyElement.setValue(String.valueOf(getProject().wrongProjectArtifact));
                 break;
             case "ownerArtifact":
-                bodyElement.setValue(String.valueOf(getProject().getOwnerArtifact()));
+                bodyElement.setValue(String.valueOf(getArtifact().getOwner()));
                 break;
             case "projectArtifact":
-                bodyElement.setValue(String.valueOf(getProject().getProjectArtifact()));
+                bodyElement.setValue(String.valueOf(getArtifact().getProject()));
                 break;
             case "creatorArtifact":
-                bodyElement.setValue(String.valueOf(getProject().getCreatorArtifact()));
+                bodyElement.setValue(String.valueOf(getArtifact().getCreator()));
                 break;
             case "organizationArtifact":
-                bodyElement.setValue(String.valueOf(getProject().getOrganizationArtifact()));
+                bodyElement.setValue(String.valueOf(getArtifact().getOrganization()));
                 break;
             case "queryArtifact":
-                bodyElement.setValue(String.valueOf(getProject().getQueryArtifact()));
+                bodyElement.setValue(String.valueOf(getArtifact().getQuery()));
                 break;
             case "typeArtifact":
-                bodyElement.setValue(String.valueOf(getProject().getTypeArtifact()));
+                bodyElement.setValue(String.valueOf(getArtifact().getType()));
                 break;
             default:
                 bodyElement.setValue("");
