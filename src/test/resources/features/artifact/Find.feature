@@ -31,7 +31,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
     Then the api should response with code 200
     And Check JSON schema "artifact/FindProject.json"
 
-  @FindArtifact012
+  @FindArtifact01
   Scenario: Check the response of Find artifact by artifact param, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key          | value                  |
@@ -61,10 +61,10 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | artifact     | ##wrongUiArtifact      |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact01
-  Scenario: Check the response of Find artifact by artifact param, and the visibility is public with the user not in the same organization, the response retrieve code 403 and check with json schema
+  Scenario: Check the response of Find artifact by artifact param, and the visibility is public with the user not in the same organization, the response retrieve code 404 and check with json schema
     Given a created project with values
       | key          | value                  |
       | name         | @@namerandom           |
@@ -76,10 +76,10 @@ Feature: As a user of riskIQ platform I want to Find artifact
     When user not in the same organization want Find artifacts with the values
       | key          | value                  |
       | artifact     | ##guid                 |
-    Then the api should response with code 403
-    #And Check JSON schema "artifact/Find.json"
+    Then the api should response with code 404
+    And Check JSON schema "project/ErrorMessage.json"
 
-  @FindArtifact01
+  @FindArtifact012
   Scenario: Check the response of Find artifact by project param, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key          | value                  |
@@ -93,7 +93,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | project      | ##projectArtifact      |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/FindProject.json"
 
   @FindArtifact01
   Scenario: Check the response of Find artifact by wrong project param, and the visibility of project is public with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -109,7 +109,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | project      | ##wrongProjectArtifact |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact01
   Scenario: Check the response of Find artifact by project param, and the visibility is public with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -125,7 +125,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | project      | ##projectArtifact      |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/FindProject.json"
 
   @FindArtifact01
   Scenario: Check the response of Find artifact by owner param, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -141,7 +141,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | owner        | ##ownerArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/FindProject.json"
 
   @FindArtifact01
   Scenario: Check the response of Find artifact by wrong owner param, and the visibility of project is public with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -157,7 +157,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | owner        | ##wrongOwner           |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact01
   Scenario: Check the response of Find artifact by owner param, and the visibility is public with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -173,7 +173,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | owner        | ##ownerArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/FindProject.json"
 
   @FindArtifact01
   Scenario: Check the response of Find artifact by creator param, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -189,7 +189,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | creator      | ##creatorArtifact      |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/FindProject.json"
 
   @FindArtifact01
   Scenario: Check the response of Find artifact by wrong creator param, and the visibility of project is public with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -205,7 +205,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | creator      | ##wrongCreator         |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact01
   Scenario: Check the response of Find artifact by creator param, and the visibility is public with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -221,7 +221,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | creator      | ##creatorArtifact      |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/FindProject.json"
 
   @FindArtifact01
   Scenario: Check the response of Find artifact by organization param, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -237,7 +237,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | organization | ##organizationArtifact |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/FindProject.json"
 
   @FindArtifact01
   Scenario: Check the response of Find artifact by wrong organization param, and the visibility of project is public with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -253,7 +253,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | organization | ##wrongOrganization    |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact01
   Scenario: Check the response of Find artifact by organization param, and the visibility is public with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -269,7 +269,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | organization | ##organizationArtifact |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/FindProject.json"
 
   @FindArtifact01
   Scenario: Check the response of Find artifact by query param, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -285,7 +285,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | query        | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/FindProject.json"
 
   @FindArtifact01
   Scenario: Check the response of Find artifact by wrong query param, and the visibility of project is public with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -301,7 +301,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | query        | ##wrongQuery           |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact01
   Scenario: Check the response of Find artifact by query param, and the visibility is public with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -317,7 +317,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | query        | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/FindProject.json"
 
   @FindArtifact01
   Scenario: Check the response of Find artifact by type param, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -333,7 +333,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | type         | ##typeArtifact         |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/FindProject.json"
 
   @FindArtifact01
   Scenario: Check the response of Find artifact by wrong type param, and the visibility of project is public with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -349,7 +349,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | type         | ##wrongType            |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact01
   Scenario: Check the response of Find artifact by type param, and the visibility is public with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -365,7 +365,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | type         | ##typeArtifact         |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/FindProject.json"
 
 
   @FindArtifact02
@@ -382,7 +382,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | artifact     | ##guid                 |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/Find.json"
 
   @FindArtifact02
   Scenario: Check the response of Find artifact by wrong artifact param, and the visibility of project is private with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -398,7 +398,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | artifact     | ##wrongUiArtifact      |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact02
   Scenario: Check the response of Find artifact by artifact param, and the visibility is private with the user not in the same organization, the response retrieve code 400 and check with json schema
@@ -414,7 +414,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | artifact     | ##guid                 |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact02
   Scenario: Check the response of Find artifact by project param, and the visibility of project is private with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -430,7 +430,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | project      | ##projectArtifact      |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/FindProject.json"
 
   @FindArtifact02
   Scenario: Check the response of Find artifact by wrong project param, and the visibility of project is private with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -446,7 +446,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | project      | ##wrongProjectArtifact |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact02
   Scenario: Check the response of Find artifact by project param, and the visibility is private with the user not in the same organization, the response retrieve code 404 and check with json schema
@@ -462,7 +462,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | project      | ##projectArtifact      |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact02
   Scenario: Check the response of Find artifact by owner param, and the visibility of project is private with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -478,7 +478,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | owner        | ##ownerArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/FindProject.json"
 
   @FindArtifact02
   Scenario: Check the response of Find artifact by wrong owner param, and the visibility of project is private with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -494,7 +494,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | owner        | ##wrongOwner           |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact02
   Scenario: Check the response of Find artifact by owner param, and the visibility is private with the user not in the same organization, the response retrieve code 404 and check with json schema
@@ -510,7 +510,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | owner        | ##ownerArtifact        |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact02
   Scenario: Check the response of Find artifact by creator param, and the visibility of project is private with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -526,7 +526,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | creator      | ##creatorArtifact      |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/FindProject.json"
 
   @FindArtifact02
   Scenario: Check the response of Find artifact by wrong creator param, and the visibility of project is private with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -542,7 +542,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | creator      | ##wrongCreator         |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact02
   Scenario: Check the response of Find artifact by creator param, and the visibility is private with the user not in the same organization, the response retrieve code 404 and check with json schema
@@ -558,7 +558,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | creator      | ##creatorArtifact      |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact02
   Scenario: Check the response of Find artifact by organization param, and the visibility of project is private with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -574,7 +574,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | organization | ##organizationArtifact |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/FindProject.json"
 
   @FindArtifact02
   Scenario: Check the response of Find artifact by wrong organization param, and the visibility of project is private with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -590,7 +590,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | organization | ##wrongOrganization    |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact02
   Scenario: Check the response of Find artifact by organization param, and the visibility is private with the user not in the same organization, the response retrieve code 404 and check with json schema
@@ -606,7 +606,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | organization | ##organizationArtifact |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact02
   Scenario: Check the response of Find artifact by query param, and the visibility of project is private with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -622,7 +622,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | query        | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/FindProject.json"
 
   @FindArtifact02
   Scenario: Check the response of Find artifact by wrong query param, and the visibility of project is private with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -638,7 +638,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | query        | ##wrongQuery           |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact02
   Scenario: Check the response of Find artifact by query param, and the visibility is private with the user not in the same organization, the response retrieve code 404 and check with json schema
@@ -654,7 +654,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | query        | ##queryArtifact        |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact02
   Scenario: Check the response of Find artifact by type param, and the visibility of project is private with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -670,7 +670,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | type         | ##typeArtifact         |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/FindProject.json"
 
   @FindArtifact02
   Scenario: Check the response of Find artifact by wrong type param, and the visibility of project is private with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -686,7 +686,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | type         | ##wrongType            |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact02
   Scenario: Check the response of Find artifact by type param, and the visibility is private with the user not in the same organization, the response retrieve code 404 and check with json schema
@@ -702,7 +702,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | type         | ##typeArtifact         |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
    @FindArtifact03
   Scenario: Check the response of Find artifact by artifact param, and the visibility of project is analyst with the user of the same organization, and the user created the project, the response retrieve code 200 and check with json schema
@@ -718,7 +718,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | artifact     | ##guidArtifact         |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/Find.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by artifact param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -734,7 +734,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | artifact     | ##guidArtifact         |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by wrong artifact param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -750,7 +750,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | artifact     | ##wrongGuid            |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by artifact param, and the visibility is analyst with the user not in the same organization, the response retrieve code 404 and check with json schema
@@ -766,7 +766,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | artifact     | ##guidArtifact         |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
  @FindArtifact03
   Scenario: Check the response of Find artifact by project param, and the visibility of project is analyst with the user of the same organization, and the user created the project, the response retrieve code 200 and check with json schema
@@ -782,7 +782,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | project      | ##projectArtifact      |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/FindProject.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by project param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -798,7 +798,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | project      | ##projectArtifact      |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by wrong project param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -814,7 +814,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | project      | ##wrongProjectArtifact |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by project param, and the visibility is analyst with the user not in the same organization, the response retrieve code 404 and check with json schema
@@ -830,7 +830,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | project      | ##projectArtifact      |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by owner param, and the visibility of project is analyst with the user of the same organization, and the user created the project, the response retrieve code 200 and check with json schema
@@ -846,7 +846,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | owner        | ##ownerArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/FindProject.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by owner param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -862,7 +862,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | owner        | ##ownerArtifact        |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by wrong owner param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -878,7 +878,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | owner        | ##wrongOwner           |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by owner param, and the visibility is analyst with the user not in the same organization, the response retrieve code 404 and check with json schema
@@ -894,7 +894,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | owner        | ##ownerArtifact        |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by creator param, and the visibility of project is analyst with the user of the same organization, and the user created the project, the response retrieve code 200 and check with json schema
@@ -910,7 +910,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | creator      | ##creatorArtifact      |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/Findproject.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by creator param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -926,7 +926,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | creator      | ##creatorArtifact      |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by wrong creator param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -942,7 +942,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | creator      | ##wrongCreator         |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by creator param, and the visibility is analyst with the user not in the same organization, the response retrieve code 404 and check with json schema
@@ -958,7 +958,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | creator      | ##creatorArtifact      |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by organization param, and the visibility of project is analyst with the user of the same organization, and the user created the project, the response retrieve code 200 and check with json schema
@@ -974,7 +974,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | organization | ##organizationArtifact |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/FindProject.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by organization param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -990,7 +990,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | organization | ##organizationArtifact |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by wrong organization param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -1006,7 +1006,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | organization | ##wrongOrganization    |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by organization param, and the visibility is analyst with the user not in the same organization, the response retrieve code 404 and check with json schema
@@ -1022,7 +1022,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | organization | ##organizationArtifact |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by query param, and the visibility of project is analyst with the user of the same organization, and the user created the project, the response retrieve code 200 and check with json schema
@@ -1038,7 +1038,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | query        | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/FindProject.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by query param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -1054,7 +1054,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | query        | ##queryArtifact        |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by wrong query param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -1070,7 +1070,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | query        | ##wrongQuery           |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by query param, and the visibility is analyst with the user not in the same organization, the response retrieve code 404 and check with json schema
@@ -1086,7 +1086,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | query        | ##queryArtifact        |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by type param, and the visibility of project is analyst with the user of the same organization, and the user created the project, the response retrieve code 200 and check with json schema
@@ -1102,7 +1102,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | type         | ##typeArtifact         |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Find.json"
+    And Check JSON schema "artifact/FindProject.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by type param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -1118,7 +1118,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | type         | ##typeArtifact         |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by wrong type param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -1134,7 +1134,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | type         | ##wrongType            |
     Then the api should response with code 404
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact03
   Scenario: Check the response of Find artifact by type param, and the visibility is analyst with the user not in the same organization, the response retrieve code 403 and check with json schema
@@ -1150,4 +1150,4 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | key          | value                  |
       | type         | ##typeArtifact         |
     Then the api should response with code 403
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"

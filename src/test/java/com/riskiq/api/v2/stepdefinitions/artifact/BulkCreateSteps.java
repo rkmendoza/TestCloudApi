@@ -4,14 +4,8 @@ import com.riskiq.api.v2.FlowData;
 import com.riskiq.api.v2.stepdefinitions.artifact.impl.Artifact;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.When;
-import gherkin.deps.com.google.gson.JsonParser;
 import io.restassured.http.ContentType;
 
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-//import static com.riskiq.api.v2.misc.Utils.*;
 import static com.riskiq.api.v2.misc.Utils.*;
 import static org.mortbay.jetty.HttpMethods.PUT;
 
