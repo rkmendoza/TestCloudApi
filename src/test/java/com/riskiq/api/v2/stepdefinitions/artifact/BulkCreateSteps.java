@@ -20,8 +20,7 @@ public class BulkCreateSteps extends FlowData {
 
     public void response(int cant, String bodyJsonArtifact){
         response.set(rs.get().contentType(ContentType.TEXT).body(bodyJsonArtifact).put(setMethodAndEndPoint(PUT,"artifact/bulk")));
-        String json = response.get().getBody().asString();
-        List<String> ArtifactsList = getGuidBulk(cant, json);
+        List<String> ArtifactsList = getGuidBulk(cant, response.get().getBody().asString());
         setArtifact(Artifact.with()
                 .Artifacts(ArtifactsList)
                 .cant(cant)

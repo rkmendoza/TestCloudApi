@@ -376,7 +376,6 @@ public class Utils extends FlowData{
             if(m.find()){
                 parseJson = m.group(1);
                 String[] values = parseJson.split("\",");
-                System.out.println(values[0]);
                 if(values[0].length()>0)
                     artifactList.add(values[0]);
                 m = p.matcher(parseJson);
