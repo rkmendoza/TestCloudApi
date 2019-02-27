@@ -38,8 +38,8 @@ public class Project {
     private  String  typeArtifact;
     private  String  ownerArtifact;
 
-    public static String wrongGuid =   "279abfa2-9e97-0cb9-d2bb995bca7c5";
-    public static String noExistGuid = "279bbcb2-9e97-0cc9-d2cc-995bca7c5909";
+    public static String wrongGuid =   "279abfa2-9e97-0cc9-d2bb995bbbb7c5";
+    public static String noExistGuid = "279bzzb2-9e97-0cc9-d2xx-995bca7c5909";
     public static String wrongOwner = "OtherOwner";
     public static String wrongCreator = "OtherCreator@nothing.com";
     public static String wrongOrganization = "testcloud22";

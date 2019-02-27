@@ -56,6 +56,11 @@ public class FindSteps extends FlowData  {
     response(dataTable);
   }
 
+  @When("^users in the same organization, which created the project want Find artifacts with the values$")
+  public void users_in_the_same_organization_which_created_the_project_want_Find_artifacts_with_the_values(DataTable dataTable) {
+    rs.set(setCredentials(userName2, userPw2));
+    response(dataTable);
+  }
 
 
 
