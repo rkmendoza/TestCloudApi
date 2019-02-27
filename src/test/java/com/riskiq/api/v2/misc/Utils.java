@@ -23,6 +23,8 @@ import java.io.IOException;
 import java.security.SecureRandom;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static com.riskiq.api.v2.stepdefinitions.Hooks.getConfigVars;
 import static com.riskiq.api.v2.stepdefinitions.project.impl.Project.deleteProjectByGuid;
@@ -363,6 +365,24 @@ public class Utils extends FlowData{
         bodyElement.setValue(String.valueOf(properties.getProperty(key)));
 
         return bodyElement;
+    }
+
+    public static List<String> getGuidBulk(int cant, String json) {
+        List<String> artifactList = new ArrayList();
+        Pattern p = Pattern.compile("\"guid\": \"(.+)\",");
+        Matcher m = p.matcher(json);
+        String parseJson = "";
+        for (int i=1; i<=cant; i++){
+            if(m.find()){
+                parseJson = m.group(1);
+                String[] values = parseJson.split("\",");
+                System.out.println(values[0]);
+                if(values[0].length()>0)
+                    artifactList.add(values[0]);
+                m = p.matcher(parseJson);
+            }
+        }
+        return artifactList;
     }
 
     /*@Test
