@@ -15,7 +15,7 @@ Feature: As a user of riskIQ platform I want to Update artifact
     And a invalid user and invalid key from riskIQ platform
     When users want to Update artifact with the values
       | key          | value                  |
-      | artifact     | ##guid                 |
+      | artifact     | ##guidArtifact                 |
       | monitor      | true                   |
       | tags         | @@randomTags2          |
     Then the api should response with code 401
@@ -42,7 +42,7 @@ Feature: As a user of riskIQ platform I want to Update artifact
     And Check JSON schema "project/ErrorMessage.json"
 
   @UpdateArtifact
-  Scenario: Check the response of Update artifact with an not exist GUID the response retrieve error message and code 404 error and check with json schema
+  Scenario: Check the response of Update artifact with an not exist GUID the response retrieve error message and code 400 error and check with json schema
     Given a created project with values
       | key          | value                  |
       | name         | @@namerandom           |
@@ -58,7 +58,7 @@ Feature: As a user of riskIQ platform I want to Update artifact
       | artifact     | ##noExistGuid          |
       | monitor      | monitor                |
       | tags         | @@randomTags2          |
-    Then the api should response with code 404
+    Then the api should response with code 400
     And Check JSON schema "project/ErrorMessage.json"
 
   @UpdateArtifact
@@ -74,7 +74,7 @@ Feature: As a user of riskIQ platform I want to Update artifact
       | query       | @@query                |
     When users in the same organization want Update artifact with the values
       | key         | value                  |
-      | artifact    | ##guid                 |
+      | artifact    | ##guidArtifact                 |
       | tags        | @@randomTags2          |
     Then the api should response with code 200
     And Check JSON schema "artifact/Update.json"
@@ -94,7 +94,7 @@ Feature: As a user of riskIQ platform I want to Update artifact
       | tags        | @@randomTags2          |
     When users in the same organization want Update artifact with the values
       | key         | value                  |
-      | artifact    | ##guid                 |
+      | artifact    | ##guidArtifact                 |
       | tags        | @@randomTags2          |
     Then the api should response with code 200
     And Check JSON schema "artifact/Update.json"
@@ -114,7 +114,7 @@ Feature: As a user of riskIQ platform I want to Update artifact
       | tags        | @@randomTags2          |
     When Users of the same organization, which created the project want Update artifact with the values
       | key         | value                  |
-      | artifact    | ##guid                 |
+      | artifact    | ##guidArtifact                 |
       | monitor     | true                   |
       | tags        | @@randomTags2          |
     Then the api should response with code 200
@@ -135,7 +135,7 @@ Feature: As a user of riskIQ platform I want to Update artifact
       | tags        | @@randomTags2          |
     When users in the same organization, which not created the project want Update artifact with the values
       | key         | value                  |
-      | artifact    | ##guid                 |
+      | artifact    | ##guidArtifact                 |
       | monitor     | true                   |
       | tags        | @@randomTags2          |
     Then the api should response with code 400
@@ -157,7 +157,7 @@ Feature: As a user of riskIQ platform I want to Update artifact
       | tags        | @@randomTags2          |
     When users not in the same organization want Update artifact with the values
       | key         | value                  |
-      | artifact    | ##guid                 |
+      | artifact    | ##guidArtifact                 |
       | monitor     | true                   |
       | tags        | @@randomTags2          |
     Then the api should response with code 403
@@ -178,7 +178,7 @@ Feature: As a user of riskIQ platform I want to Update artifact
       | tags        | @@randomTags2          |
     When users not in the same organization want Update artifact with the values
       | key         | value                  |
-      | artifact    | ##guid                 |
+      | artifact    | ##guidArtifact                 |
       | monitor     | true                   |
       | tags        | @@randomTags2          |
     Then the api should response with code 403
@@ -199,7 +199,7 @@ Feature: As a user of riskIQ platform I want to Update artifact
       | tags        | @@randomTags2          |
     When users not in the same organization want Update artifact with the values
       | key         | value                  |
-      | artifact    | ##guid                 |
+      | artifact    | ##guidArtifact                 |
       | monitor     | true                   |
       | tags        | @@randomTags2          |
     Then the api should response with code 403

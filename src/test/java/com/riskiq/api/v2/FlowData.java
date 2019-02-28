@@ -93,14 +93,13 @@ public class FlowData  {
         return String.format("{ %s }", bodyJson.get());
     }
 
-    public String dataDeleteBulkArtifact (int cant){
+    public String dataDeleteBulkArtifact (){
         final String[] bodyArtifact = {""};
 
         getArtifact().getArtifacts().forEach((artifact)-> {
             bodyArtifact[0] += "\""+artifact+"\",";
         });
         bodyJson.set(String.format("\"artifacts\": [ %s ]", StringUtils.removeEnd(bodyArtifact[0],",")));
-        System.out.println(bodyJson.get());
         return String.format("{ %s }", bodyJson.get());
     }
 
