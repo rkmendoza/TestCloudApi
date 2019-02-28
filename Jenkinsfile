@@ -20,8 +20,8 @@ pipeline {
         stage ('Test') {
             steps  {
                 script {
-                    if (${params.Scenario} == 'All') {
-                            sh "mvn -Dusername=$username -Dpassword=$password clean test"
+                    if (params.Scenario == 'All') {
+                            sh "mvn clean test"
                     } else {
                             sh "mvn -Dcucumber.options='--tags @${params.Scenario}' clean test"
                     }
