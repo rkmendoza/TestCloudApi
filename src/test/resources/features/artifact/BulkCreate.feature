@@ -12,7 +12,7 @@ Feature: As a user of riskIQ platform I want to Bulk Create artifacts
       | project      | ##guid                 |
       | query        | @@query                |
     Then the api should response with code 401
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @BulkCreateArtifact
   Scenario: Check the response of bulk Create artifacts with wrong GUID the response retrieve error message and code 200 and check with json schema
@@ -25,7 +25,7 @@ Feature: As a user of riskIQ platform I want to Bulk Create artifacts
       | project      | ##wrongGuid            |
       | query        | @@query                |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "artifact/bulkError.json"
 
   @BulkCreateArtifact
   Scenario: Check the response of bulk Create artifacts with an not exist GUID the response retrieve error message and code 200 and check with json schema
@@ -38,7 +38,7 @@ Feature: As a user of riskIQ platform I want to Bulk Create artifacts
       | project      | ##noExistGuid          |
       | query        | @@query                |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "artifact/bulkError.json"
 
   @BulkCreateArtifact
   Scenario: Check the response of bulk Create artifacts with user of the same organization, and the visibility is public, the response retrieve all the information related with bulk Create artifacts and check with json schema
@@ -54,7 +54,7 @@ Feature: As a user of riskIQ platform I want to Bulk Create artifacts
       | type        | %%typeComponent        |
       | tags        | @@randomTags2          |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/bulkCreate.json"
+    And Check JSON schema "artifact/bulkCreate.json"
 
   @BulkCreateArtifact
   Scenario: Check the response of bulk Create artifacts with user of the same organization, and the visibility is private, the response retrieve all the information related with the bulk Create artifacts and check with json schema
@@ -68,7 +68,7 @@ Feature: As a user of riskIQ platform I want to Bulk Create artifacts
       | project     | ##guid                 |
       | query       | @@query                |
     Then the api should response with code 200
-    #And Check JSON schema "artifacts/Create.json"
+    And Check JSON schema "artifact/bulkCreate.json"
 
   @BulkCreateArtifact
   Scenario: Check the response of bulk Create artifacts with user of the same organization, and the visibility is analyst, the response retrieve error message and code 200 and check with json schema
@@ -82,7 +82,7 @@ Feature: As a user of riskIQ platform I want to Bulk Create artifacts
       | project     | ##guid                 |
       | query       | @@query                |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "artifact/bulkCreate.json"
 
   @BulkCreateArtifact
   Scenario: Check the response of bulk Create artifacts with user of the same organization and the user created the project, and the visibility is analyst, the response retrieve all the information related with bulk Create artifacts and check with json schema
@@ -96,7 +96,7 @@ Feature: As a user of riskIQ platform I want to Bulk Create artifacts
       | project     | ##guid                 |
       | query       | @@query                |
     Then the api should response with code 200
-    #And Check JSON schema "artifacts/Create.json"
+    And Check JSON schema "artifact/bulkCreate.json"
 
 
   @BulkCreateArtifact
@@ -111,7 +111,7 @@ Feature: As a user of riskIQ platform I want to Bulk Create artifacts
       | project     | ##guid                 |
       | query       | @@query                |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "artifact/bulkError.json"
 
   @BulkCreateArtifact
   Scenario: Check the response of bulk Create artifacts with user not in the same organization, and the visibility is private, the response retrieve error message and code 200 and check with json schema
@@ -125,7 +125,7 @@ Feature: As a user of riskIQ platform I want to Bulk Create artifacts
       | project     | ##guid                 |
       | query       | @@query                |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "artifact/bulkError.json"
 
   @BulkCreateArtifact
   Scenario: Check the response of bulk Create artifacts with user not in the same organization, and the visibility is analyst, the response retrieve error message and code 200 and check with json schema
@@ -139,7 +139,7 @@ Feature: As a user of riskIQ platform I want to Bulk Create artifacts
       | project     | ##guid                 |
       | query       | @@query                |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "artifact/bulkError.json"
 
 
 
