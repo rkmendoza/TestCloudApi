@@ -1,4 +1,4 @@
-Feature: see a project or projects using search criteria
+Feature: See a project or projects using search criteria
 
   @GetAlerts
   Scenario: Check the response of find all alerts when that exist in riskIQ platform,
