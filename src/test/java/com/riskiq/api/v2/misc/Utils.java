@@ -58,8 +58,6 @@ public class Utils extends FlowData{
     public static void setParameterProperties(){
 
         try {
-            System.out.println("Obteniendo configuracion from file ...");
-
             File file = new File(sfile);
             FileInputStream fileInput = new FileInputStream(file);
             properties.load(fileInput);
