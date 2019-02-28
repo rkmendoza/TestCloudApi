@@ -20,7 +20,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
     And a invalid user and invalid key from riskIQ platform
     When users in the same organization want Find artifacts with the values
       | key          | value                  |
-      | artifact     | ##guid                 |
+      | artifact     | ##guidArtifact         |
     Then the api should response with code 401
     And Check JSON schema "project/ErrorMessage.json"
 
@@ -75,7 +75,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | query        | @@query                |
     When user not in the same organization want Find artifacts with the values
       | key          | value                  |
-      | artifact     | ##guid                 |
+      | artifact     | ##guidArtifact         |
     Then the api should response with code 404
     And Check JSON schema "project/ErrorMessage.json"
 
@@ -380,7 +380,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | query        | @@query                |
     When users in the same organization want Find artifacts with the values
       | key          | value                  |
-      | artifact     | ##guid                 |
+      | artifact     | ##guidArtifact         |
     Then the api should response with code 200
     And Check JSON schema "artifact/Find.json"
 
@@ -412,7 +412,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
       | query        | @@query                |
     When user not in the same organization want Find artifacts with the values
       | key          | value                  |
-      | artifact     | ##guid                 |
+      | artifact     | ##guidArtifact         |
     Then the api should response with code 404
     And Check JSON schema "project/ErrorMessage.json"
 
