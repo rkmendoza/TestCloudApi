@@ -90,6 +90,8 @@ public class FlowData  {
         }
         bodyJson.set(String.format("\"artifacts\": [ %s ]", StringUtils.removeEnd(bodyArtifact,",")));
 
+        System.out.println(String.format("{ %s }", bodyJson.get()));
+
         return String.format("{ %s }", bodyJson.get());
     }
 

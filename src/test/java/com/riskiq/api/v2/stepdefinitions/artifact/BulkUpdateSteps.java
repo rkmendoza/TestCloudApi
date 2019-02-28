@@ -20,6 +20,8 @@ public class BulkUpdateSteps extends FlowData {
                 .Artifacts(getGuidBulk(cant, response.get().getBody().asString()))
                 .cant(cant)
                 .create());
+
+        System.out.println(getArtifact().getArtifacts());
     }
 
     public void response(int cant, String bodyJsonArtifact){

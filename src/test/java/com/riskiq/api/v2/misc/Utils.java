@@ -322,6 +322,10 @@ public class Utils extends FlowData{
             case "typeArtifact":
                 bodyElement.setValue(String.valueOf(getArtifact().getType()));
                 break;
+            case "guidBulKArtifact":
+                bodyElement.setValue(String.valueOf(getArtifact().getArtifacts().get(0)));
+                getArtifact().getArtifacts().remove(0);
+                break;
             default:
                 bodyElement.setValue("");
                 break;
