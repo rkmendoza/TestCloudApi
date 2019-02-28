@@ -14,7 +14,7 @@ Feature: As a user of riskIQ platform I want to Bulk Update artifact
       | tags        | @@randomTags2           |
     When users with wrong credentials want Bulk Update artifact with the values and the amount of 2
       | key          | value                  |
-      | artifact     | ##guid                 |
+      | artifact     | ##guidBulKArtifact     |
       | monitor      | true                   |
       | tags         | @@randomTags2          |
     Then the api should response with code 401
@@ -73,7 +73,7 @@ Feature: As a user of riskIQ platform I want to Bulk Update artifact
       | tags        | @@randomTags2          |
     When users in the same organization want Bulk Update artifact with the values and the amount of 2
       | key         | value                  |
-      | artifact    | ##guidBulKArtifact                 |
+      | artifact    | ##guidBulKArtifact     |
       | tags        | @@randomTags2          |
     Then the api should response with code 200
     And Check JSON schema "artifact/bulkUpdate.json"
@@ -93,7 +93,7 @@ Feature: As a user of riskIQ platform I want to Bulk Update artifact
       | tags        | @@randomTags2          |
     When users in the same organization want Bulk Update artifact with the values and the amount of 2
       | key         | value                  |
-      | artifact    | ##guid                 |
+      | artifact    | ##guidBulKArtifact     |
       | tags        | @@randomTags2          |
     Then the api should response with code 200
     And Check JSON schema "artifact/bulkUpdate.json"
@@ -113,7 +113,7 @@ Feature: As a user of riskIQ platform I want to Bulk Update artifact
       | tags        | @@randomTags2          |
     When Users of the same organization, which created the project want Bulk Update artifact with the values and the amount of 2
       | key         | value                  |
-      | artifact    | ##guid                 |
+      | artifact    | ##guidBulKArtifact     |
       | tags        | @@randomTags2          |
     Then the api should response with code 200
     And Check JSON schema "artifact/bulkUpdate.json"
@@ -133,7 +133,7 @@ Feature: As a user of riskIQ platform I want to Bulk Update artifact
       | tags        | @@randomTags2          |
     When users in the same organization, which not created the project want Bulk Update artifact with the values and the amount of 2
       | key         | value                  |
-      | artifact    | ##guid                 |
+      | artifact    | ##guidBulKArtifact     |
       | tags        | @@randomTags2          |
     Then the api should response with code 200
     And Check JSON schema "artifact/bulkError.json"
@@ -154,7 +154,7 @@ Feature: As a user of riskIQ platform I want to Bulk Update artifact
       | tags        | @@randomTags2          |
     When users not in the same organization want Bulk Update artifact with the values and the amount of 2
       | key         | value                  |
-      | artifact    | ##guid                 |
+      | artifact    | ##guidBulKArtifact     |
       | tags        | @@randomTags2          |
     Then the api should response with code 200
     And Check JSON schema "artifact/bulkError.json"
@@ -174,7 +174,7 @@ Feature: As a user of riskIQ platform I want to Bulk Update artifact
       | tags        | @@randomTags2          |
     When users not in the same organization want Bulk Update artifact with the values and the amount of 2
       | key         | value                  |
-      | artifact    | ##guid                 |
+      | artifact    | ##guidBulKArtifact     |
       | tags        | @@randomTags2          |
     Then the api should response with code 200
     And Check JSON schema "artifact/bulkError.json"
@@ -194,7 +194,7 @@ Feature: As a user of riskIQ platform I want to Bulk Update artifact
       | tags        | @@randomTags2          |
     When users not in the same organization want Bulk Update artifact with the values and the amount of 2
       | key         | value                  |
-      | artifact    | ##guid                 |
+      | artifact    | ##guidBulKArtifact     |
       | tags        | @@randomTags2          |
     Then the api should response with code 200
     And Check JSON schema "artifact/bulkError.json"
