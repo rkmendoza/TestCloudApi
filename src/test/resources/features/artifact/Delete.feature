@@ -1,4 +1,4 @@
-Feature: As a user of riskIQ platform I want to Delete artifact
+Feature: Delete artifact
 
   @DeleteArtifact
   Scenario: Check the response of Delete artifact with wrong credentials the response retrieve error message and code 401 error and check with json schema

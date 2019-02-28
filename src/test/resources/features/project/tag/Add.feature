@@ -1,4 +1,4 @@
-Feature: As a user of riskIQ platform I want to Add project tags
+Feature: Add project tags
 
   @AddTags
   Scenario: Check the response of Add project tags with wrong credentials the response retrieve error message and code 401 error and check with json schema

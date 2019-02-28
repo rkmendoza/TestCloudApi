@@ -1,4 +1,4 @@
-Feature: As a user of riskIQ platform I want to see a project or projects using search criteria
+Feature: see a project or projects using search criteria
 
   @GetAlerts
   Scenario: Check the response of find all alerts when that exist in riskIQ platform,

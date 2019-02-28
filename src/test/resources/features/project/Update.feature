@@ -1,4 +1,4 @@
-Feature: As a user of riskIQ platform I want to update a project or projects
+Feature: Update a project or projects
 
   @UpdateProject
   Scenario: Check the response of update project by GUID with wrong credentials the response retrieve error message and code 401 error and check with json schema
