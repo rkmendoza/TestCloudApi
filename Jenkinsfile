@@ -8,8 +8,11 @@ pipeline {
                 description: '')
     }
 
-    tools {
-        maven 'Maven3'
+    options {
+        timestamps()
+        buildDiscarder(logRotator(artifactNumToKeepStr: '30',artifactDaysToKeepStr: '14'))
+        disableConcurrentBuilds()
+        timeout(time: 1, unit: 'DAYS')
     }
 
     stages {
@@ -20,12 +23,6 @@ pipeline {
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
                 '''
-            }
-        }
-
-        stage('checkout') {
-            steps {
-                git credentialsId: 'git-credentials', url: 'https://mauro-icox@bitbucket.org/riskiq/test-cloud.git', branch: 'develop'
             }
         }
 
@@ -54,11 +51,5 @@ pipeline {
         }
 
     }
-    options {
-        timestamps()
-        buildDiscarder(logRotator(artifactNumToKeepStr: '5',artifactDaysToKeepStr: '14'))
-        disableConcurrentBuilds()
-        skipDefaultCheckout()
-        timeout(time: 1, unit: 'DAYS')
-    }
+
 }
