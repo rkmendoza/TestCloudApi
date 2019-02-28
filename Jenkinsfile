@@ -1,4 +1,9 @@
 #!groovy
+
+@Library('common')
+import com.riskiq.jenkins.Slack
+
+
 pipeline {
     agent { label 'jobs'}
 
@@ -16,6 +21,14 @@ pipeline {
     }
 
     stages {
+
+        stage ('Setup') {
+            steps {
+                script {
+                    slack = new Slack(this, env, params, '#pt-health', ':cloud:')
+                }
+            }
+        }
 
         stage ('Test') {
             steps  {
@@ -37,6 +50,20 @@ pipeline {
 
         }
 
+    }
+
+    post {
+        success {
+            script {
+                slack.success("Test cloud tests all passed!")
+            }
+        }
+        failure {
+            script {
+                slack.failure("Test cloud test(s) failed")
+            }
+
+        }
     }
 
 }
