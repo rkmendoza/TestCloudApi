@@ -110,12 +110,12 @@ Feature: As a user of riskIQ platform I want to find a project or projects using
     And Check JSON schema "project/ErrorMessage.json"
 
   @FindProject
-  Scenario: Check when i send an not exist GUID project, the response retrieve error message and code 404 error and check with json schema
+  Scenario: Check when i send an not exist GUID project, the response retrieve error message and code 400 error and check with json schema
     Given a valid user and key from riskIQ platform
     When users want to get information on the project with the values
       | key          | value                  |
       | project      | ##noExistGuid          |
-    Then the api should response with code 404
+    Then the api should response with code 400
     And Check JSON schema "project/ErrorMessage.json"
 
   @FindProject

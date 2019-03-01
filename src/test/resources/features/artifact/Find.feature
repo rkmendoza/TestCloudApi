@@ -64,7 +64,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
     And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact01
-  Scenario: Check the response of Find artifact by artifact param, and the visibility is public with the user not in the same organization, the response retrieve code 404 and check with json schema
+  Scenario: Check the response of Find artifact by artifact param, and the visibility is public with the user not in the same organization, the response retrieve code 403 and check with json schema
     Given a created project with values
       | key          | value                  |
       | name         | @@namerandom           |
@@ -76,7 +76,7 @@ Feature: As a user of riskIQ platform I want to Find artifact
     When user not in the same organization want Find artifacts with the values
       | key          | value                  |
       | artifact     | ##guidArtifact         |
-    Then the api should response with code 404
+    Then the api should response with code 403
     And Check JSON schema "project/ErrorMessage.json"
 
   @FindArtifact012

@@ -133,7 +133,7 @@ Feature: As a user of riskIQ platform I want to Delete artifact
 
 
   @DeleteArtifact
-  Scenario: Check the response of Delete artifact with user not in the same organization, and the visibility is public, the response retrieve error message and code 403 error and check with json schema
+  Scenario: Check the response of Delete artifact with user not in the same organization, and the visibility is public, the response retrieve error message and code 404 error and check with json schema
     Given a valid user and key from riskIQ platform
     And a created project with values
       | key         | value                  |
@@ -148,7 +148,7 @@ Feature: As a user of riskIQ platform I want to Delete artifact
     When users not in the same organization want Delete artifact with the values
       | key         | value                  |
       | artifact    | ##guidArtifact                 |
-    Then the api should response with code 403
+    Then the api should response with code 404
     And Check JSON schema "project/ErrorMessage.json"
 
   @DeleteArtifact
