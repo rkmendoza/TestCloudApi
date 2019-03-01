@@ -4,7 +4,7 @@ pipeline {
 
     parameters {
         choice( name: 'Scenario',
-                choices: "All\nCreateProject\nDeleteProject\nFindProject\nUpdateProject\nAddTags\nRemoveTags\nSetTags\nGetAlerts\nCreateArtifact\nDeleteArtifact",
+                choices: "All\nCreateProject\nDeleteProject\nFindProject\nUpdateProject\nAddTags\nRemoveTags\nSetTags\nGetAlerts\nCreateArtifact\nDeleteArtifact\nUpdateArtifact\nFindArtifact\nBulkCreateArtifact\nBulkUpdateArtifact\nBulkDeleteArtifact\nGetAccount\nGetHistory",
                 description: '')
     }
 
@@ -25,7 +25,7 @@ pipeline {
 
         stage('checkout') {
             steps {
-                git credentialsId: 'git-credentials', url: 'https://mauro-icox@bitbucket.org/riskiq/test-cloud.git', branch: 'develop'
+                git credentialsId: 'git-credentials', url: 'https://mauro-icox@bitbucket.org/riskiq/test-cloud.git', branch: 'Sprint3'
             }
         }
 
