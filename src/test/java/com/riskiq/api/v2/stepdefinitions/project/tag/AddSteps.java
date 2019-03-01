@@ -5,6 +5,7 @@ import com.riskiq.api.v2.impl.BodyElement;
 import com.riskiq.api.v2.stepdefinitions.Hooks;
 import com.riskiq.api.v2.stepdefinitions.project.impl.Project;
 import cucumber.api.DataTable;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.When;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;

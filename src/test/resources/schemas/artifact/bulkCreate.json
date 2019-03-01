@@ -1,0 +1,111 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "additionalProperties": {
+      "type": "object",
+      "required": [
+        "tags",
+        "system_tags",
+        "monitor",
+        "query",
+        "tag_meta",
+        "type",
+        "creator",
+        "organization",
+        "links",
+        "guid",
+        "user_tags",
+        "owner",
+        "success",
+        "project",
+        "monitorable",
+        "created"
+      ],
+      "properties": {
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(.*)$"
+          }
+        },
+        "system_tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^(.*)$"
+          }
+        },
+        "monitor": {
+          "type": "boolean",
+          "enum": [true,false]
+        },
+        "query": {
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "tag_meta": {
+          "type": "object"
+        },
+        "type": {
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "creator": {
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "organization": {
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "links": {
+          "type": "object",
+          "properties": {
+            "self": {
+              "type": "string",
+              "pattern": "^(.*)$"
+            },
+            "project": {
+              "type": "string",
+              "pattern": "^(.*)$"
+            },
+            "tag": {
+              "type": "string",
+              "pattern": "^(.*)$"
+            }
+          }
+        },
+        "guid": {
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "user_tags": {
+          "type": "array"
+        },
+        "owner": {
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "success": {
+          "type": "boolean",
+          "enum": [true,false]
+        },
+        "project": {
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "monitorable": {
+          "type": "boolean",
+          "enum": [true,false]
+        },
+        "created": {
+          "type": "string",
+          "pattern": "^(.*)$"
+        }
+      }
+    }
+  }
+}

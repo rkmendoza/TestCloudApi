@@ -1,0 +1,150 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "required": [
+    "monitor",
+    "type",
+    "owner",
+    "monitorable",
+    "system_tags",
+    "creator",
+    "guid",
+    "user_tags",
+    "project",
+    "links",
+    "created",
+    "query",
+    "organization",
+    "success",
+    "tag_meta"
+  ],
+  "properties": {
+    "monitor": {
+      "$id": "#/properties/monitor",
+      "type": "boolean",
+      "enum": [true,false]
+    },
+    "type": {
+      "$id": "#/properties/type",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "owner": {
+      "$id": "#/properties/owner",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "monitorable": {
+      "$id": "#/properties/monitorable",
+      "type": "boolean",
+      "enum": [true,false]
+    },
+    "tags": {
+      "$id": "#/properties/tags",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/tags/items",
+        "type": "string",
+        "pattern": "^(.*)$"
+      }
+    },
+    "system_tags": {
+      "$id": "#/properties/system_tags",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/system_tags/items",
+        "type": "string",
+        "pattern": "^(.*)$"
+      }
+    },
+    "creator": {
+      "$id": "#/properties/creator",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "guid": {
+      "$id": "#/properties/guid",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "user_tags": {
+      "$id": "#/properties/user_tags",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/user_tags/items",
+        "type": "string",
+        "pattern": "^(.*)$"
+      }
+    },
+    "project": {
+      "$id": "#/properties/project",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "links": {
+      "$id": "#/properties/links",
+      "type": "object",
+      "properties": {
+        "tag": {
+          "$id": "#/properties/links/properties/tag",
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "self": {
+          "$id": "#/properties/links/properties/self",
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "project": {
+          "$id": "#/properties/links/properties/project",
+          "type": "string",
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "created": {
+      "$id": "#/properties/created",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "query": {
+      "$id": "#/properties/query",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "organization": {
+      "$id": "#/properties/organization",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "success": {
+      "$id": "#/properties/success",
+      "type": "boolean",
+      "enum": [true,false]
+    },
+    "tag_meta": {
+      "$id": "#/properties/tag_meta",
+      "type": "object",
+      "properties": {
+        "foobar": {
+          "$id": "#/properties/tag_meta/properties/foobar",
+          "type": "object",
+          "properties": {
+            "creator": {
+              "$id": "#/properties/tag_meta/properties/foobar/properties/creator",
+              "type": "string",
+              "pattern": "^(.*)$"
+            },
+            "created_at": {
+              "$id": "#/properties/tag_meta/properties/foobar/properties/created_at",
+              "type": "string",
+              "pattern": "^(.*)$"
+            }
+          }
+        }
+      }
+    }
+  }
+}

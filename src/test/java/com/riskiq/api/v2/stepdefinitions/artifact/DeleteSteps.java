@@ -3,6 +3,7 @@ package com.riskiq.api.v2.stepdefinitions.artifact;
 
 import com.riskiq.api.v2.FlowData;
 import com.riskiq.api.v2.impl.BodyElement;
+import com.riskiq.api.v2.stepdefinitions.artifact.impl.Artifact;
 import com.riskiq.api.v2.stepdefinitions.project.impl.Project;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
@@ -18,17 +19,15 @@ public class DeleteSteps extends FlowData  {
 
   public void response(DataTable dataTable){
     response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).delete(setMethodAndEndPoint(DELETE,"artifact")));
-    setProject(Project.with()
-      .guid(response.get().path("guid"))
-      .isCreated(true)
+    setArtifact(Artifact.with()
+      .guidArtifact(response.get().path("guid"))
       .create());
   }
 
   public void responseCreate(DataTable dataTable){
     response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,"artifact")));
-    setProject(Project.with()
-      .guid(response.get().path("guid"))
-      .isCreated(true)
+    setArtifact(Artifact.with()
+      .guidArtifact(response.get().path("guid"))
       .create());
   }
 

@@ -30,7 +30,7 @@ Feature: As a user of riskIQ platform I want to Remove project tags
     And Check JSON schema "project/ErrorMessage.json"
 
   @RemoveTags
-  Scenario: Check the response of Remove project tags with an not exist GUID the response retrieve error message and code 404 error and check with json schema
+  Scenario: Check the response of Remove project tags with an not exist GUID the response retrieve error message and code 400 error and check with json schema
     Given a created project with values
       | key          | value                  |
       | name         | @@namerandom           |
@@ -40,11 +40,11 @@ Feature: As a user of riskIQ platform I want to Remove project tags
       | key          | value                  |
       | project      | ##noExistGuid          |
       | tags         | ##tags                 |
-    Then the api should response with code 404
+    Then the api should response with code 400
     And Check JSON schema "project/ErrorMessage.json"
 
   @RemoveTags
-  Scenario: Check the response of Remove project tags by an integer value in the tags field the response retrieve error message and code 400 error and check with json schema
+  Scenario: Check the response of Remove project tags by an integer value in the tags field the response retrieve error message and code 404 error and check with json schema
     Given a created project with values
       | key          | value                  |
       | name         | @@namerandom           |
@@ -54,7 +54,7 @@ Feature: As a user of riskIQ platform I want to Remove project tags
       | key          | value                  |
       | project      | ##guid                 |
       | tagsint      | 100, 50, 60            |
-    Then the api should response with code 400
+    Then the api should response with code 404
     And Check JSON schema "project/ErrorMessage.json"
 
   @RemoveTags

@@ -1,0 +1,67 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "history"
+  ],
+  "properties": {
+    "history": {
+      "$id": "#/properties/history",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/history/items",
+        "type": "object",
+        "required": [
+          "focus",
+          "dt",
+          "context",
+          "guid",
+          "username",
+          "source",
+          "type"
+        ],
+        "properties": {
+          "focus": {
+            "$id": "#/properties/history/items/properties/focus",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "dt": {
+            "$id": "#/properties/history/items/properties/dt",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "context": {
+            "$id": "#/properties/history/items/properties/context",
+            "type": ["string","integer"]
+          },
+          "guid": {
+            "$id": "#/properties/history/items/properties/guid",
+            "type": ["string","null"],
+            "pattern": "^(.*)$"
+          },
+          "username": {
+            "$id": "#/properties/history/items/properties/username",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "additional": {
+            "$id": "#/properties/history/items/properties/additional",
+            "type": "object"
+          },
+          "source": {
+            "$id": "#/properties/history/items/properties/source",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "type": {
+            "$id": "#/properties/history/items/properties/type",
+            "type": "string",
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}
