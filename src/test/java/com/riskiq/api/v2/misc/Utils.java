@@ -4,17 +4,10 @@ import com.riskiq.api.v2.FlowData;
 import com.riskiq.api.v2.impl.BodyElement;
 import com.riskiq.api.v2.impl.EndPoint;
 import com.riskiq.api.v2.impl.UserCredentials;
-import com.riskiq.api.v2.stepdefinitions.Hooks;
-import gherkin.ast.DataTable;
 import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
-import io.restassured.specification.RequestSenderOptions;
 import io.restassured.specification.RequestSpecification;
 import org.apache.commons.lang3.StringUtils;
-import org.json.simple.JSONObject;
-import org.junit.Test;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -26,16 +19,10 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static com.riskiq.api.v2.stepdefinitions.Hooks.getConfigVars;
-import static com.riskiq.api.v2.stepdefinitions.project.impl.Project.deleteProjectByGuid;
-import static com.riskiq.api.v2.stepdefinitions.project.impl.Project.findAllGuidProject;
-import static com.riskiq.api.v2.stepdefinitions.project.impl.Project.guidProjectAlert;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.collection.IsEmptyCollection.empty;
 import static org.hamcrest.core.Is.is;
-import static org.mortbay.jetty.HttpMethods.DELETE;
-import static org.mortbay.jetty.HttpMethods.GET;
 
 public class Utils extends FlowData{
 
@@ -56,7 +43,6 @@ public class Utils extends FlowData{
 
 
     public static void setParameterProperties(){
-
         try {
             File file = new File(sfile);
             FileInputStream fileInput = new FileInputStream(file);
