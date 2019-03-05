@@ -498,15 +498,15 @@ Feature: As a user of riskIQ platform I want to Find artifact
 
   @FindArtifact
   Scenario: Check the response of Find artifact by owner param, and the visibility is private with the user not in the same organization, the response retrieve code 404 and check with json schema
-    Given a created project with values
+    Given a created project with values with another user
       | key          | value                  |
       | name         | @@namerandom           |
       | visibility   | private                |
-    And a created artifact with values
+    And a created artifact with values with another user
       | key          | value                  |
       | project      | ##guid                 |
       | query        | @@query                |
-    When user not in the same organization want Find artifacts with the values
+    When user in different organization want Find artifacts with the values
       | key          | value                  |
       | owner        | ##ownerArtifact        |
     Then the api should response with code 404
@@ -594,15 +594,15 @@ Feature: As a user of riskIQ platform I want to Find artifact
 
   @FindArtifact
   Scenario: Check the response of Find artifact by organization param, and the visibility is private with the user not in the same organization, the response retrieve code 404 and check with json schema
-    Given a created project with values
+    Given a created project with values with another user
       | key          | value                  |
       | name         | @@namerandom           |
       | visibility   | private                |
-    And a created artifact with values
+    And a created artifact with values with another user
       | key          | value                  |
       | project      | ##guid                 |
       | query        | @@query                |
-    When user not in the same organization want Find artifacts with the values
+    When user in different organization want Find artifacts with the values
       | key          | value                  |
       | organization | ##organizationArtifact |
     Then the api should response with code 404
@@ -882,15 +882,15 @@ Feature: As a user of riskIQ platform I want to Find artifact
 
   @FindArtifact
   Scenario: Check the response of Find artifact by owner param, and the visibility is analyst with the user not in the same organization, the response retrieve code 404 and check with json schema
-    Given a created project with values
+    Given a created project with values with another user
       | key          | value                  |
       | name         | @@namerandom           |
       | visibility   | analyst                |
-    And a created artifact with values
+    And a created artifact with values with another user
       | key          | value                  |
       | project      | ##guid                 |
       | query        | @@query                |
-    When user not in the same organization want Find artifacts with the values
+    When user in different organization want Find artifacts with the values
       | key          | value                  |
       | owner        | ##ownerArtifact        |
     Then the api should response with code 404
@@ -1010,15 +1010,15 @@ Feature: As a user of riskIQ platform I want to Find artifact
 
   @FindArtifact
   Scenario: Check the response of Find artifact by organization param, and the visibility is analyst with the user not in the same organization, the response retrieve code 404 and check with json schema
-    Given a created project with values
+    Given a created project with values with another user
       | key          | value                  |
       | name         | @@namerandom           |
       | visibility   | analyst                |
-    And a created artifact with values
+    And a created artifact with values with another user
       | key          | value                  |
       | project      | ##guid                 |
       | query        | @@query                |
-    When user not in the same organization want Find artifacts with the values
+    When user in different organization want Find artifacts with the values
       | key          | value                  |
       | organization | ##organizationArtifact |
     Then the api should response with code 404

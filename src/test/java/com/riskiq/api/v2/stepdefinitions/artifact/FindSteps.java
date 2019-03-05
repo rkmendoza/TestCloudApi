@@ -2,11 +2,14 @@ package com.riskiq.api.v2.stepdefinitions.artifact;
 
 import com.riskiq.api.v2.FlowData;
 import cucumber.api.DataTable;
+import cucumber.api.PendingException;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 
 import static com.riskiq.api.v2.misc.Utils.*;
 import static com.riskiq.api.v2.stepdefinitions.artifact.impl.Artifact.*;
+import static com.riskiq.api.v2.stepdefinitions.project.impl.Project.createProject;
 import static org.mortbay.jetty.HttpMethods.GET;
 
 
@@ -40,6 +43,21 @@ public class FindSteps extends FlowData  {
     findArtifact(dataTable);
   }
 
+  @Given("^a created project with values with another user$")
+  public void aCreatedProjectWithValuesWithAnotherUser(DataTable dataTable){
+    rs.set(setCredentials(userName3, userPw3));
+    createProject(dataTable);
+  }
 
+  @And("^a created artifact with values with another user$")
+  public void aCreatedArtifactWithValuesWithAnotherUser(DataTable dataTable) {
+    rs.set(setCredentials(userName3, userPw3));
+    createArtifact(dataTable);
+  }
 
+  @When("^user in different organization want Find artifacts with the values$")
+  public void userInDifferentOrganizationWantFindArtifactsWithTheValues(DataTable dataTable) {
+    rs.set(setCredentials(userName2, userPw2));
+    findArtifact(dataTable);
+  }
 }
