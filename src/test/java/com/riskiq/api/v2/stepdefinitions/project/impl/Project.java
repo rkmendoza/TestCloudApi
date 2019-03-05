@@ -6,7 +6,6 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import lombok.Builder;
 import lombok.Data;
-import lombok.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -86,6 +85,23 @@ public class Project {
         return value;
     }
 
+    public static void createProject(DataTable dataTable){
+        Integer status = 200;
+        response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,"project")));
+        if (status.equals(response.get().statusCode())) {
+            setProject(Project.with()
+                    .guid(response.get().path("guid"))
+                    .owner(response.get().path("owner"))
+                    .creator(response.get().path("creator"))
+                    .visibility(response.get().path("visibility"))
+                    .organization(response.get().path("organization"))
+                    .featured(response.get().path("featured"))
+                    .isCreated(true)
+                    .create());
+        }
+
+    }
+
     public static void updateProject(DataTable dataTable){
         Integer status = 200;
         response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).post(setMethodAndEndPoint(POST,"project")));
@@ -100,6 +116,14 @@ public class Project {
                     .isCreated(true)
                     .create());
         }
+    }
+
+    public static void findProject(DataTable dataTable){
+        response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).get(setMethodAndEndPoint(GET,"project")));
+    }
+
+    public static void deleteProject(DataTable dataTable){
+        response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).delete(setMethodAndEndPoint(DELETE,"project")));
     }
 
     public static void setProjectTac(DataTable dataTable){

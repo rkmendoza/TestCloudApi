@@ -1,4 +1,4 @@
-Feature: As a user of riskIQ platform I want to Create artifact
+Feature: Create artifact
 
   @CreateArtifact
   Scenario: Check the response of Create artifact with wrong credentials the response retrieve error message and code 401 error and check with json schema

@@ -1,4 +1,4 @@
-Feature: As a user of riskIQ platform I want to create a project
+Feature: Create a project
 
   @CreateProject
   Scenario: Check when i send an list of valid params, with wrong credentials the response retrieve error message and code error and check with Json schema

@@ -1,4 +1,4 @@
-Feature: As a user of riskIQ platform I want to Set project tags
+Feature: Set project tags
 
   @SetTags
   Scenario: Check the response of Set project tags with wrong credentials the response retrieve error message and code 401 error and check with json schema
