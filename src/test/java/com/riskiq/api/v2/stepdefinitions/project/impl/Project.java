@@ -42,7 +42,8 @@ public class Project {
     public static String wrongOwner = "OtherOwner";
     public static String wrongCreator = "OtherCreator@nothing.com";
     public static String wrongOrganization = "testcloud22";
-    public static String deleteOrganization = "testcloud";
+    public static String deleteOrganization1 = "testcloud";
+    public static String deleteOrganization2 = "testcloud2";
     public static String wrongVisibility = "OtherVisibility";
     public static String wrongUiArtifact = "838439d8ee51-4e20-dec8-05c8f7f7ba57";
     public static String wrongProjectArtifact = "f083816f-976b16cb-46b0-4b389dc3ae67";
@@ -59,7 +60,21 @@ public class Project {
         response.set(rs.get()
                 .contentType(ContentType.JSON)
                 .body(dataTableToJson(Collections.singletonList(BodyElement.builder()
-                        .key("organization").value(deleteOrganization)
+                        .key("organization").value(deleteOrganization1)
+                        .build())))
+                .get(setMethodAndEndPoint(GET,"project")));
+
+        return response.get().jsonPath().getList("results.guid");
+
+    }
+
+    public static List<String> findAllGuidProjectTestCloud2(){
+        getConfigVars();
+        rs.set(RestAssured.given().auth().preemptive().basic(userName3, userPw3));
+        response.set(rs.get()
+                .contentType(ContentType.JSON)
+                .body(dataTableToJson(Collections.singletonList(BodyElement.builder()
+                        .key("organization").value(deleteOrganization2)
                         .build())))
                 .get(setMethodAndEndPoint(GET,"project")));
 
@@ -177,6 +192,7 @@ public class Project {
 
     public static void deleteAllProject(){
         List<String> allGuid = findAllGuidProject();
+        allGuid.addAll(findAllGuidProjectTestCloud2());
         for(String guid : allGuid)
         {
             if(!guidProjectAlert.contains(guid)){
