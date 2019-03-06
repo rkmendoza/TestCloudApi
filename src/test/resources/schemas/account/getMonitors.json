@@ -1,0 +1,34 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "monitors"
+  ],
+  "properties": {
+    "monitors": {
+      "$id": "#/properties/monitors",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/monitors/items",
+        "type": "object",
+        "properties": {
+          "tags": {
+            "$id": "#/properties/monitors/items/properties/tags",
+            "type": "array",
+            "items": {
+              "$id": "#/properties/monitors/items/properties/tags/items",
+              "type": "string",
+              "pattern": "^(.*)$"
+            }
+          },
+          "focus": {
+            "$id": "#/properties/monitors/items/properties/focus",
+            "type": "string",
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}

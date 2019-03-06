@@ -12,4 +12,4 @@ Feature: As a user of riskIQ platform I want to Get Monitors
     Given a valid user and key from riskIQ platform
     When users want to get monitors
     Then the api should response with code 200
-    And Check JSON schema "account/GetAccount.json"
+    And Check JSON schema "account/getMonitors.json"
