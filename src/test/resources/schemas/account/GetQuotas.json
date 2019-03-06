@@ -1,0 +1,371 @@
+{
+  "definitions": {},
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "required": [
+    "organization",
+    "user"
+  ],
+  "properties": {
+    "organization": {
+      "$id": "#/properties/organization",
+      "type": "object",
+      "required": [
+        "counts",
+        "freebies",
+        "guid",
+        "last_reset",
+        "limits",
+        "next_reset",
+        "organization",
+        "owner",
+        "profile",
+        "username"
+      ],
+      "properties": {
+        "counts": {
+          "$id": "#/properties/organization/properties/counts",
+          "type": "object",
+          "required": [
+            "basic_monitors",
+            "keyword_monitors",
+            "projects_private",
+            "projects_public",
+            "search_api",
+            "search_web"
+          ],
+          "properties": {
+            "basic_monitors": {
+              "$id": "#/properties/organization/properties/counts/properties/basic_monitors",
+              "type": "integer"
+            },
+            "keyword_monitors": {
+              "$id": "#/properties/organization/properties/counts/properties/keyword_monitors",
+              "type": "integer"
+            },
+            "projects_private": {
+              "$id": "#/properties/organization/properties/counts/properties/projects_private",
+              "type": "integer"
+            },
+            "projects_public": {
+              "$id": "#/properties/organization/properties/counts/properties/projects_public",
+              "type": "integer"
+            },
+            "search_api": {
+              "$id": "#/properties/organization/properties/counts/properties/search_api",
+              "type": "integer"
+            },
+            "search_web": {
+              "$id": "#/properties/organization/properties/counts/properties/search_web",
+              "type": "integer"
+            }
+          }
+        },
+        "freebies": {
+          "$id": "#/properties/organization/properties/freebies",
+          "type": "object",
+          "required": [
+            "search_api",
+            "search_web"
+          ],
+          "properties": {
+            "search_api": {
+              "$id": "#/properties/organization/properties/freebies/properties/search_api",
+              "type": "integer"
+            },
+            "search_web": {
+              "$id": "#/properties/organization/properties/freebies/properties/search_web",
+              "type": "integer"
+            }
+          }
+        },
+        "guid": {
+          "$id": "#/properties/organization/properties/guid",
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "last_reset": {
+          "$id": "#/properties/organization/properties/last_reset",
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "limits": {
+          "$id": "#/properties/organization/properties/limits",
+          "type": "object",
+          "required": [
+            "basic_monitors",
+            "keyword_monitors",
+            "monitor_frequency",
+            "monitor_results",
+            "projects_private",
+            "projects_public",
+            "search_api",
+            "search_web"
+          ],
+          "properties": {
+            "basic_monitors": {
+              "$id": "#/properties/organization/properties/limits/properties/basic_monitors",
+              "type": "integer"
+            },
+            "keyword_monitors": {
+              "$id": "#/properties/organization/properties/limits/properties/keyword_monitors",
+              "type": "integer"
+            },
+            "monitor_frequency": {
+              "$id": "#/properties/organization/properties/limits/properties/monitor_frequency",
+              "type": "string",
+              "pattern": "^(.*)$"
+            },
+            "monitor_results": {
+              "$id": "#/properties/organization/properties/limits/properties/monitor_results",
+              "type": "integer"
+            },
+            "projects_private": {
+              "$id": "#/properties/organization/properties/limits/properties/projects_private",
+              "type": "integer"
+            },
+            "projects_public": {
+              "$id": "#/properties/organization/properties/limits/properties/projects_public",
+              "type": "integer"
+            },
+            "search_api": {
+              "$id": "#/properties/organization/properties/limits/properties/search_api",
+              "type": "integer"
+            },
+            "search_web": {
+              "$id": "#/properties/organization/properties/limits/properties/search_web",
+              "type": "integer"
+            }
+          }
+        },
+        "next_reset": {
+          "$id": "#/properties/organization/properties/next_reset",
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "organization": {
+          "$id": "#/properties/organization/properties/organization",
+          "type": ["string","null"],
+          "pattern": "^(.*)$"
+        },
+        "owner": {
+          "$id": "#/properties/organization/properties/owner",
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "profile": {
+          "$id": "#/properties/organization/properties/profile",
+          "type": "object",
+          "required": [
+            "analysis",
+            "workflow"
+          ],
+          "properties": {
+            "analysis": {
+              "$id": "#/properties/organization/properties/profile/properties/analysis",
+              "type": "string",
+              "pattern": "^(.*)$"
+            },
+            "workflow": {
+              "$id": "#/properties/organization/properties/profile/properties/workflow",
+              "type": "string",
+              "pattern": "^(.*)$"
+            }
+          }
+        },
+        "username": {
+          "$id": "#/properties/organization/properties/username",
+          "type": ["string","null"],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "user": {
+      "$id": "#/properties/user",
+      "type": "object",
+      "required": [
+        "counts",
+        "freebies",
+        "guid",
+        "last_reset",
+        "limits",
+        "next_reset",
+        "organization",
+        "owner",
+        "profile",
+        "username"
+      ],
+      "properties": {
+        "counts": {
+          "$id": "#/properties/user/properties/counts",
+          "type": "object",
+          "required": [
+            "basic_monitors",
+            "keyword_monitors",
+            "projects_private",
+            "projects_public",
+            "search_api",
+            "search_web"
+          ],
+          "properties": {
+            "basic_monitors": {
+              "$id": "#/properties/user/properties/counts/properties/basic_monitors",
+              "type": "integer"
+            },
+            "keyword_monitors": {
+              "$id": "#/properties/user/properties/counts/properties/keyword_monitors",
+              "type": "integer"
+            },
+            "projects_private": {
+              "$id": "#/properties/user/properties/counts/properties/projects_private",
+              "type": "integer"
+            },
+            "projects_public": {
+              "$id": "#/properties/user/properties/counts/properties/projects_public",
+              "type": "integer"
+            },
+            "search_api": {
+              "$id": "#/properties/user/properties/counts/properties/search_api",
+              "type": "integer"
+            },
+            "search_web": {
+              "$id": "#/properties/user/properties/counts/properties/search_web",
+              "type": "integer"
+            }
+          }
+        },
+        "freebies": {
+          "$id": "#/properties/user/properties/freebies",
+          "type": "object",
+          "required": [
+            "search_api",
+            "search_web"
+          ],
+          "properties": {
+            "search_api": {
+              "$id": "#/properties/user/properties/freebies/properties/search_api",
+              "type": "integer"
+            },
+            "search_web": {
+              "$id": "#/properties/user/properties/freebies/properties/search_web",
+              "type": "integer"
+            }
+          }
+        },
+        "guid": {
+          "$id": "#/properties/user/properties/guid",
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "last_reset": {
+          "$id": "#/properties/user/properties/last_reset",
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "limits": {
+          "$id": "#/properties/user/properties/limits",
+          "type": "object",
+          "required": [
+            "basic_monitors",
+            "keyword_monitors",
+            "monitor_frequency",
+            "monitor_results",
+            "projects_private",
+            "projects_public",
+            "search_api",
+            "search_web"
+          ],
+          "properties": {
+            "basic_monitors": {
+              "$id": "#/properties/user/properties/limits/properties/basic_monitors",
+              "type": "integer"
+            },
+            "keyword_monitors": {
+              "$id": "#/properties/user/properties/limits/properties/keyword_monitors",
+              "type": "integer"
+            },
+            "monitor_frequency": {
+              "$id": "#/properties/user/properties/limits/properties/monitor_frequency",
+              "type": "string",
+              "pattern": "^(.*)$"
+            },
+            "monitor_results": {
+              "$id": "#/properties/user/properties/limits/properties/monitor_results",
+              "type": "integer"
+            },
+            "projects_private": {
+              "$id": "#/properties/user/properties/limits/properties/projects_private",
+              "type": "integer"
+            },
+            "projects_public": {
+              "$id": "#/properties/user/properties/limits/properties/projects_public",
+              "type": "integer"
+            },
+            "search_api": {
+              "$id": "#/properties/user/properties/limits/properties/search_api",
+              "type": "integer"
+            },
+            "search_web": {
+              "$id": "#/properties/user/properties/limits/properties/search_web",
+              "type": "integer"
+            }
+          }
+        },
+        "next_reset": {
+          "$id": "#/properties/user/properties/next_reset",
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "organization": {
+          "$id": "#/properties/user/properties/organization",
+          "type": ["string","null"],
+          "pattern": "^(.*)$"
+        },
+        "owner": {
+          "$id": "#/properties/user/properties/owner",
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "profile": {
+          "$id": "#/properties/user/properties/profile",
+          "type": "object",
+          "required": [
+            "analysis",
+            "workflow"
+          ],
+          "properties": {
+            "analysis": {
+              "$id": "#/properties/user/properties/profile/properties/analysis",
+              "type": "string",
+              "pattern": "^(.*)$"
+            },
+            "workflow": {
+              "$id": "#/properties/user/properties/profile/properties/workflow",
+              "type": "string",
+              "pattern": "^(.*)$"
+            }
+          }
+        },
+        "quotas": {
+          "$id": "#/properties/user/properties/quotas",
+          "type": "object",
+          "required": [
+            "account_type"
+          ],
+          "properties": {
+            "account_type": {
+              "$id": "#/properties/user/properties/quotas/properties/account_type",
+              "type": "string",
+              "pattern": "^(.*)$"
+            }
+          }
+        },
+        "username": {
+          "$id": "#/properties/user/properties/username",
+          "type": "string",
+          "pattern": "^(.*)$"
+        }
+      }
+    }
+  }
+}
