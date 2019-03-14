@@ -79,7 +79,7 @@ Feature: As a user of riskIQ platform I want to Add Tags
     Then the api should response with code 200
     And Check JSON schema "action/addTags.json"
 
-  @AddTagsArtifact1
+  @AddTagsArtifact
   Scenario: Check the response of Add Tags by wrong query param, and the visibility of project is private with the user of the same organization, the response retrieve code 404 and check with json schema
     Given a created project with values
       | key          | value                  |
