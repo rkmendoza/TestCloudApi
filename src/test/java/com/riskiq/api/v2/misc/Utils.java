@@ -46,6 +46,7 @@ public class Utils extends FlowData{
     public static String accountQuota = "";
     public static String accountSources = "";
     public static String accountTeamStream = "";
+    public static String actionsTags = "";
 
     public static void setParameterProperties(){
         try {
@@ -83,6 +84,7 @@ public class Utils extends FlowData{
         accountQuota = properties.getProperty("accountQuota");
         accountSources = properties.getProperty("accountSources");
         accountTeamStream = properties.getProperty("accountTeamStream");
+        actionsTags = properties.getProperty("actionsTags");
     }
 
 
