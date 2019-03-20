@@ -25,7 +25,7 @@ pipeline {
 
         stage('checkout') {
             steps {
-                git credentialsId: 'git-credentials', url: 'https://mauro-icox@bitbucket.org/riskiq/test-cloud.git', branch: 'Sprint3'
+                git credentialsId: 'git-credentials', url: 'https://mauro-icox@bitbucket.org/riskiq/test-cloud.git', branch: 'develop'
             }
         }
 
