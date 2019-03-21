@@ -29,7 +29,7 @@ Feature: Set project tags
     And Check JSON schema "project/ErrorMessage.json"
 
   @SetTags
-  Scenario: Check the response of Set project tags with an not exist GUID the response retrieve error message and code 404 error and check with json schema
+  Scenario: Check the response of Set project tags with an not exist GUID the response retrieve error message and code 400 error and check with json schema
     Given a created project with values
       | key          | value                  |
       | name         | @@namerandom           |
@@ -38,7 +38,7 @@ Feature: Set project tags
     When users in the same organization want Set project tags with the values
       | key          | value                  |
       | project      | ##noExistGuid          |
-    Then the api should response with code 404
+    Then the api should response with code 400
     And Check JSON schema "project/ErrorMessage.json"
 
   @SetTags
@@ -147,7 +147,7 @@ Feature: Set project tags
     And Check JSON schema "project/ErrorMessage.json"
 
   @SetTags
-  Scenario: Check the response of Set project tags with user not in the same organization, and the visibility is analyst, the response retrieve error message and code 403 error and check with json schema
+  Scenario: Check the response of Set project tags with user not in the same organization, and the visibility is analyst, the response retrieve error message and code 400 error and check with json schema
     Given a valid user and key from riskIQ platform
     And a created project with values
       | key         | value                  |
@@ -158,7 +158,7 @@ Feature: Set project tags
       | key         | value                  |
       | project     | ##guid                 |
       | tags        | @@randomTags3          |
-    Then the api should response with code 403
+    Then the api should response with code 400
     And Check JSON schema "project/ErrorMessage.json"
 
 

@@ -56,7 +56,7 @@ Feature: See a project or projects using search criteria
     When users want to get information of alerts with the values
       | key     | value         |
       | project | ##noExistGuid |
-    Then the api should response with code 404
+    Then the api should response with code 400
     And Check JSON schema "project/ErrorMessage.json"
 
   @GetAlerts

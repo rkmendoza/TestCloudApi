@@ -4,17 +4,10 @@ import com.riskiq.api.v2.FlowData;
 import com.riskiq.api.v2.impl.BodyElement;
 import com.riskiq.api.v2.impl.EndPoint;
 import com.riskiq.api.v2.impl.UserCredentials;
-import com.riskiq.api.v2.stepdefinitions.Hooks;
-import gherkin.ast.DataTable;
 import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
-import io.restassured.specification.RequestSenderOptions;
 import io.restassured.specification.RequestSpecification;
 import org.apache.commons.lang3.StringUtils;
-import org.json.simple.JSONObject;
-import org.junit.Test;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -23,17 +16,13 @@ import java.io.IOException;
 import java.security.SecureRandom;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-import static com.riskiq.api.v2.stepdefinitions.Hooks.getConfigVars;
-import static com.riskiq.api.v2.stepdefinitions.project.impl.Project.deleteProjectByGuid;
-import static com.riskiq.api.v2.stepdefinitions.project.impl.Project.findAllGuidProject;
-import static com.riskiq.api.v2.stepdefinitions.project.impl.Project.guidProjectAlert;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.collection.IsEmptyCollection.empty;
 import static org.hamcrest.core.Is.is;
-import static org.mortbay.jetty.HttpMethods.DELETE;
-import static org.mortbay.jetty.HttpMethods.GET;
 
 public class Utils extends FlowData{
 
@@ -51,13 +40,15 @@ public class Utils extends FlowData{
     public static String userPw5 = "";
     public static String userInvalidName = "";
     public static String userInvalidPw = "";
-
+    public static String accountClassification = "";
+    public static String accountMonitors = "";
+    public static String accountOrganization = "";
+    public static String accountQuota = "";
+    public static String accountSources = "";
+    public static String accountTeamStream = "";
 
     public static void setParameterProperties(){
-
         try {
-            System.out.println("Obteniendo configuracion from file ...");
-
             File file = new File(sfile);
             FileInputStream fileInput = new FileInputStream(file);
             properties.load(fileInput);
@@ -86,6 +77,12 @@ public class Utils extends FlowData{
         userInvalidName = properties.getProperty("userInvalidName");
         userInvalidPw = properties.getProperty("userInvalidPw");
         RestAssured.baseURI = properties.getProperty("baseURI");
+        accountClassification = properties.getProperty("accountClassification");
+        accountMonitors = properties.getProperty("accountMonitors");
+        accountOrganization = properties.getProperty("accountOrganization");
+        accountQuota = properties.getProperty("accountQuota");
+        accountSources = properties.getProperty("accountSources");
+        accountTeamStream = properties.getProperty("accountTeamStream");
     }
 
 
@@ -232,11 +229,10 @@ public class Utils extends FlowData{
             String random =  "";
             for(int i=0; i<numberTags; i++ ){
                 if(numberTags > 1 && i != numberTags-1){
-                    random += "tag."+generateRandomString() + " , ";
+                    random += "tag."+generateRandomString() + ",";
                 }else{
                     random += "tag."+generateRandomString();
                 }
-
             }
             bodyElement.setValue(random);
         }
@@ -288,6 +284,43 @@ public class Utils extends FlowData{
             case "wrongVisibility":
                 bodyElement.setValue(String.valueOf(getProject().wrongVisibility));
                 break;
+            case "wrongQuery":
+                bodyElement.setValue(String.valueOf(getProject().wrongQuery));
+                break;
+            case "wrongType":
+                bodyElement.setValue(String.valueOf(getProject().wrongType));
+                break;
+            case "guidArtifact":
+                bodyElement.setValue(String.valueOf(getArtifact().getGuidArtifact()));
+                break;
+            case "wrongUiArtifact":
+                bodyElement.setValue(String.valueOf(getProject().wrongUiArtifact));
+                break;
+            case "wrongProjectArtifact":
+                bodyElement.setValue(String.valueOf(getProject().wrongProjectArtifact));
+                break;
+            case "ownerArtifact":
+                bodyElement.setValue(String.valueOf(getArtifact().getOwner()));
+                break;
+            case "projectArtifact":
+                bodyElement.setValue(String.valueOf(getArtifact().getProject()));
+                break;
+            case "creatorArtifact":
+                bodyElement.setValue(String.valueOf(getArtifact().getCreator()));
+                break;
+            case "organizationArtifact":
+                bodyElement.setValue(String.valueOf(getArtifact().getOrganization()));
+                break;
+            case "queryArtifact":
+                bodyElement.setValue(String.valueOf(getArtifact().getQuery()));
+                break;
+            case "typeArtifact":
+                bodyElement.setValue(String.valueOf(getArtifact().getType()));
+                break;
+            case "guidBulKArtifact":
+                bodyElement.setValue(String.valueOf(getArtifact().getArtifacts().get(0)));
+                getArtifact().getArtifacts().remove(0);
+                break;
             default:
                 bodyElement.setValue("");
                 break;
@@ -312,6 +345,9 @@ public class Utils extends FlowData{
             case "creator":
                 field.setValue(String.valueOf(getProject().getCreator()));
                 break;
+            case "guidArtifact":
+                field.setValue(String.valueOf(getArtifact().getGuidArtifact()));
+                break;
             default:
                 field.setValue("");
                 break;
@@ -328,6 +364,23 @@ public class Utils extends FlowData{
         bodyElement.setValue(String.valueOf(properties.getProperty(key)));
 
         return bodyElement;
+    }
+
+    public static List<String> getGuidBulk(int cant, String json) {
+        List<String> artifactList = new ArrayList();
+        Pattern p = Pattern.compile("\"guid\": \"(.+)\",");
+        Matcher m = p.matcher(json);
+        String parseJson = "";
+        for (int i=1; i<=cant; i++){
+            if(m.find()){
+                parseJson = m.group(1);
+                String[] values = parseJson.split("\",");
+                if(values[0].length()>0)
+                    artifactList.add(values[0]);
+                m = p.matcher(parseJson);
+            }
+        }
+        return artifactList;
     }
 
     /*@Test

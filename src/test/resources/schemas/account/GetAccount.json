@@ -1,0 +1,151 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "verified",
+    "firstName",
+    "suppliedOrganization",
+    "event_code",
+    "accountStatus",
+    "firstActive",
+    "lastActive",
+    "user_hash",
+    "enterpriseUser",
+    "country",
+    "projectPrivateQuotaExceeded",
+    "phoneNumber",
+    "lastName",
+    "stateOrRegion",
+    "fullName",
+    "searchWebQuotaExceeded",
+    "user_id",
+    "searchApiQuotaExceeded",
+    "jobRole",
+    "approvedSources",
+    "username",
+    "projectPublicQuotaExceeded",
+    "organization"
+  ],
+  "properties": {
+    "verified": {
+      "$id": "#/properties/verified",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "firstName": {
+      "$id": "#/properties/firstName",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "suppliedOrganization": {
+      "$id": "#/properties/suppliedOrganization",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "event_code": {
+      "$id": "#/properties/event_code",
+      "type": "null"
+    },
+    "accountStatus": {
+      "$id": "#/properties/accountStatus",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "firstActive": {
+      "$id": "#/properties/firstActive",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "lastActive": {
+      "$id": "#/properties/lastActive",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "user_hash": {
+      "$id": "#/properties/user_hash",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "enterpriseUser": {
+      "$id": "#/properties/enterpriseUser",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "country": {
+      "$id": "#/properties/country",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "projectPrivateQuotaExceeded": {
+      "$id": "#/properties/projectPrivateQuotaExceeded",
+      "type": "boolean",
+      "enum": [true,false]
+    },
+    "phoneNumber": {
+      "$id": "#/properties/phoneNumber",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "lastName": {
+      "$id": "#/properties/lastName",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "stateOrRegion": {
+      "$id": "#/properties/stateOrRegion",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "fullName": {
+      "$id": "#/properties/fullName",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "searchWebQuotaExceeded": {
+      "$id": "#/properties/searchWebQuotaExceeded",
+      "type": "boolean",
+      "enum": [true,false]
+    },
+    "user_id": {
+      "$id": "#/properties/user_id",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "searchApiQuotaExceeded": {
+      "$id": "#/properties/searchApiQuotaExceeded",
+      "type": "boolean",
+      "enum": [true,false]
+    },
+    "jobRole": {
+      "$id": "#/properties/jobRole",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "approvedSources": {
+      "$id": "#/properties/approvedSources",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "admin": {
+      "$id": "#/properties/admin",
+      "type": "boolean",
+      "enum": [true,false]
+    },
+    "username": {
+      "$id": "#/properties/username",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "projectPublicQuotaExceeded": {
+      "$id": "#/properties/projectPublicQuotaExceeded",
+      "type": "boolean",
+      "enum": [true,false]
+    },
+    "organization": {
+      "$id": "#/properties/organization",
+      "type": "string",
+      "pattern": "^(.*)$"
+    }
+  }
+}
