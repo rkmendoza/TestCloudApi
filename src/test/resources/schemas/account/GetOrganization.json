@@ -1,0 +1,94 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "activeMembers",
+    "searchQuota",
+    "seats",
+    "watchQuota",
+    "active",
+    "id",
+    "registered",
+    "status",
+    "name",
+    "acceptableDomains",
+    "inactiveMembers",
+    "admins",
+    "lastActive"
+  ],
+  "properties": {
+    "activeMembers": {
+      "$id": "#/properties/activeMembers",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/activeMembers/items",
+        "type": "string",
+        "pattern": "^(.*)$"
+      }
+    },
+    "searchQuota": {
+      "$id": "#/properties/searchQuota",
+      "type": ["integer","null"]
+    },
+    "seats": {
+      "$id": "#/properties/seats",
+      "type": "integer"
+    },
+    "watchQuota": {
+      "$id": "#/properties/watchQuota",
+      "type": ["integer","null"]
+    },
+    "active": {
+      "$id": "#/properties/active",
+      "type": "boolean",
+      "enum": [true, false]
+    },
+    "id": {
+      "$id": "#/properties/id",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "registered": {
+      "$id": "#/properties/registered",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "status": {
+      "$id": "#/properties/status",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "acceptableDomains": {
+      "$id": "#/properties/acceptableDomains",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/acceptableDomains/items",
+        "pattern": "^(.*)$"
+      }
+    },
+    "inactiveMembers": {
+      "$id": "#/properties/inactiveMembers",
+      "type": "array"
+    },
+    "admins": {
+      "$id": "#/properties/admins",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/admins/items",
+        "type": "string",
+        "pattern": "^(.*)$"
+      }
+    },
+    "lastActive": {
+      "$id": "#/properties/lastActive",
+      "type": "string",
+      "pattern": "^(.*)$"
+    }
+  }
+}

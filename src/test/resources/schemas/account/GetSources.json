@@ -1,0 +1,92 @@
+{
+  "definitions": {},
+  "type": "object",
+  "required": [
+    "sources"
+  ],
+  "properties": {
+    "sources": {
+      "$id": "#/properties/sources",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/sources/items",
+        "type": "object",
+        "properties": {
+          "authRequired": {
+            "$id": "#/properties/sources/items/properties/authRequired",
+            "type": "boolean",
+            "enum": [true, false]
+          },
+          "authMethod": {
+            "$id": "#/properties/sources/items/properties/authMethod",
+            "type": "object",
+            "properties": {
+              "apiKey": {
+                "$id": "#/properties/sources/items/properties/authMethod/properties/apiKey",
+                "type": "string",
+                "pattern": "^(.*)$"
+              }
+            }
+          },
+          "active": {
+            "$id": "#/properties/sources/items/properties/active",
+            "type": "boolean",
+            "enum": [true, false]
+          },
+          "website": {
+            "$id": "#/properties/sources/items/properties/website",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "auth": {
+            "$id": "#/properties/sources/items/properties/auth",
+            "type": "boolean",
+            "enum": [true, false]
+          },
+          "description": {
+            "$id": "#/properties/sources/items/properties/description",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "source": {
+            "$id": "#/properties/sources/items/properties/source",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "label": {
+            "$id": "#/properties/sources/items/properties/label",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "configuration": {
+            "$id": "#/properties/sources/items/properties/configuration",
+            "type": "object"
+          },
+          "controllable": {
+            "$id": "#/properties/sources/items/properties/controllable",
+            "type": "boolean",
+            "enum": [true, false]
+          },
+          "type": {
+            "$id": "#/properties/sources/items/properties/type",
+            "type": "array",
+            "items": {
+              "$id": "#/properties/sources/items/properties/type/items",
+              "type": "string",
+              "pattern": "^(.*)$"
+            }
+          },
+          "access": {
+            "$id": "#/properties/sources/items/properties/access",
+            "type": "array",
+            "items": {
+              "$id": "#/properties/sources/items/properties/access/items",
+              "type": "string",
+              "pattern": "^(.*)$"
+            }
+          }
+        }
+      }
+    }
+  }
+}

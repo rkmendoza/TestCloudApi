@@ -9,7 +9,7 @@ pipeline {
 
     parameters {
         choice( name: 'Scenario',
-                choices: "All\nCreateProject\nDeleteProject\nFindProject\nUpdateProject\nAddTags\nRemoveTags\nSetTags\nGetAlerts\nCreateArtifact\nDeleteArtifact\nUpdateArtifact\nFindArtifact\nBulkCreateArtifact\nBulkUpdateArtifact\nBulkDeleteArtifact\nGetAccount\nGetHistory",
+                choices: "All\nCreateProject\nDeleteProject\nFindProject\nUpdateProject\nAddTags\nRemoveTags\nSetTags\nGetAlerts\nCreateArtifact\nDeleteArtifact\nUpdateArtifact\nFindArtifact\nBulkCreateArtifact\nBulkUpdateArtifact\nBulkDeleteArtifact\nGetAccount\nGetHistory\nGetItems\nGetMonitors\nGetOrganization\nGetQuotas\nGetSources\nGetTeamstream\nAddTagsArtifact",
                 description: 'Which test suite to run')
     }
 

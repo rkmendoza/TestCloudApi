@@ -40,7 +40,12 @@ public class Utils extends FlowData{
     public static String userPw5 = "";
     public static String userInvalidName = "";
     public static String userInvalidPw = "";
-
+    public static String accountClassification = "";
+    public static String accountMonitors = "";
+    public static String accountOrganization = "";
+    public static String accountQuota = "";
+    public static String accountSources = "";
+    public static String accountTeamStream = "";
 
     public static void setParameterProperties(){
         try {
@@ -72,6 +77,12 @@ public class Utils extends FlowData{
         userInvalidName = properties.getProperty("userInvalidName");
         userInvalidPw = properties.getProperty("userInvalidPw");
         RestAssured.baseURI = properties.getProperty("baseURI");
+        accountClassification = properties.getProperty("accountClassification");
+        accountMonitors = properties.getProperty("accountMonitors");
+        accountOrganization = properties.getProperty("accountOrganization");
+        accountQuota = properties.getProperty("accountQuota");
+        accountSources = properties.getProperty("accountSources");
+        accountTeamStream = properties.getProperty("accountTeamStream");
     }
 
 

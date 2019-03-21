@@ -25,7 +25,7 @@ public class Artifact {
     private  String  query;
     private  String  type;
     private  String  owner;
-    private  String  tagsArtifact;
+    private  List<String> tagsArtifact;
     private  List<String> Artifacts;
     private  Integer cant;
 

@@ -37,7 +37,7 @@ Feature: As a user of riskIQ platform I want to Get History
     Given a valid user and key from riskIQ platform
     When users want to get history with the values
       | key         | value                  |
-      | source      | %%ui                     |
+      | source      | %%web                  |
     Then the api should response with code 200
     And Check JSON schema "account/GetHistory.json"
 

@@ -1,0 +1,64 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "teamstream"
+  ],
+  "properties": {
+    "teamstream": {
+      "$id": "#/properties/teamstream",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/teamstream/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "context",
+          "source",
+          "type",
+          "username",
+          "guid",
+          "dt",
+          "focus"
+        ],
+        "properties": {
+          "context": {
+            "$id": "#/properties/teamstream/items/properties/context",
+            "type": "integer"
+          },
+          "source": {
+            "$id": "#/properties/teamstream/items/properties/source",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "type": {
+            "$id": "#/properties/teamstream/items/properties/type",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "username": {
+            "$id": "#/properties/teamstream/items/properties/username",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "guid": {
+            "$id": "#/properties/teamstream/items/properties/guid",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "dt": {
+            "$id": "#/properties/teamstream/items/properties/dt",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "focus": {
+            "$id": "#/properties/teamstream/items/properties/focus",
+            "type": "string",
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}
