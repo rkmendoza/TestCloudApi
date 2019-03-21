@@ -1,12 +1,10 @@
 package com.riskiq.api.v2.stepdefinitions;
 
 import com.riskiq.api.v2.FlowData;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
-import cucumber.api.java.en.When;
 import lombok.extern.log4j.Log4j;
 import org.apache.commons.lang3.StringUtils;
 
@@ -56,7 +54,7 @@ public class CommonSteps extends FlowData {
 
     @And("Check JSON schema \"([^\"}]*)\"$")
     public void response_equals(String schemeUrl){
-        json.body(matchesJsonSchemaInClasspath("schemas/"+schemeUrl));
+        json.body(matchesJsonSchemaInClasspath("schemas/" +schemeUrl));
     }
 
 }
