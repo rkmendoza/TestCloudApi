@@ -17,26 +17,30 @@ import static org.mortbay.jetty.HttpMethods.POST;
 public class Actions {
 
     //Generic Methods
-    /*
-    public static void Get(String Api){
-        response.set(rs.get().get(setMethodAndEndPoint(GET,Api)));
-    }
 
     public static void GetWithDataTable(String Api, DataTable dataTable){
-        response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).get(setMethodAndEndPoint(GET,Api)));
+        response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).get(setMethodAndEndPoint(GET,Api)));
     }
-    */
+
 
     public static void PostWithDataTable(String Api, DataTable dataTable){
-        response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).post(setMethodAndEndPoint(POST,"actions/tags")));
+        response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).post(setMethodAndEndPoint(POST,Api)));
         setArtifact(Artifact.with()
           .query(response.get().path("query"))
           .tagsArtifact(response.get().path("tags"))
           .create());
     }
 
+    public static void PostClassificationWithDataTable(String Api, DataTable dataTable){
+        response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).post(setMethodAndEndPoint(POST,Api)));
+        setArtifact(Artifact.with()
+          .query(response.get().path("query"))
+          .classification(response.get().path("classification"))
+          .create());
+    }
+
     public static void DeleteWithDataTable(String Api, DataTable dataTable){
-        response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).delete(setMethodAndEndPoint(DELETE,"actions/tags")));
+        response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).delete(setMethodAndEndPoint(DELETE,Api)));
         setArtifact(Artifact.with()
           .query(response.get().path("query"))
           .tagsArtifact(response.get().path("tags"))
@@ -54,44 +58,15 @@ public class Actions {
         DeleteWithDataTable(actionsTags, dataTable);
     }
 
-
-    /*
-    public static void GetItems(){
-        Get(accountClassification);
+    public static void SetClassification(DataTable dataTable){
+        PostClassificationWithDataTable(actionsClassification, dataTable);
     }
 
-    public static void GetItemsWithValues(DataTable dataTable){
-        GetWithDataTable(accountClassification, dataTable);
+    public static void GetClassification(DataTable dataTable){
+        GetWithDataTable(actionsClassification, dataTable);
     }
 
-    public static void GetMonitors(){
-        Get(accountMonitors);
-    }
 
-    public static void GetOrganization(){
-        Get(accountOrganization);
-    }
-
-    public static void GetQuota(){
-        Get(accountQuota);
-    }
-
-    public static void GetSources(){
-        Get(accountSources);
-    }
-
-    public static void GetSourcesWithValues(DataTable dataTable){
-        GetWithDataTable(accountSources, dataTable);
-    }
-
-    public static void GetTeamStream(){
-        Get(accountTeamStream);
-    }
-
-    public static void GetTeamStreamWithValues(DataTable dataTable){
-        GetWithDataTable(accountTeamStream, dataTable);
-    }
-    */
 
 
 }

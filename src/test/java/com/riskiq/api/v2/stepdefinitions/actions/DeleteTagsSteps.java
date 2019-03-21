@@ -2,13 +2,21 @@ package com.riskiq.api.v2.stepdefinitions.actions;
 
 import com.riskiq.api.v2.FlowData;
 import cucumber.api.DataTable;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 
 import static com.riskiq.api.v2.misc.Utils.*;
+import static com.riskiq.api.v2.stepdefinitions.actions.impl.Actions.AddTags;
 import static com.riskiq.api.v2.stepdefinitions.actions.impl.Actions.DeleteTags;
 
 
 public class DeleteTagsSteps extends FlowData  {
+
+  @Given("^Added Tags with the values$")
+  public void added_Tags_with_the_values(DataTable dataTable) {
+    rs.set(setCredentials(userName2, userPw2));
+    AddTags(dataTable);
+  }
 
   @When("^users with wrong credentials want Delete Tags with the values$")
   public void users_with_wrong_credentials_want_Delete_Tags_with_the_values(DataTable dataTable) {
@@ -18,7 +26,7 @@ public class DeleteTagsSteps extends FlowData  {
 
   @When("^users in the same organization want Delete Tags with the values$")
   public void users_in_the_same_organization_want_Delete_Tags_with_the_values(DataTable dataTable) {
-    rs.set(setCredentials(userName2, userPw2));
+    rs.set(setCredentials(userName1, userPw1));
     DeleteTags(dataTable);
   }
 

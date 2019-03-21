@@ -11,6 +11,7 @@ import java.util.List;
 
 import static com.riskiq.api.v2.FlowData.*;
 import static com.riskiq.api.v2.misc.Utils.getGuidBulk;
+import static com.riskiq.api.v2.misc.Utils.getQueryBulkClassification;
 import static com.riskiq.api.v2.misc.Utils.setMethodAndEndPoint;
 import static org.mortbay.jetty.HttpMethods.*;
 
@@ -24,9 +25,12 @@ public class Artifact {
     private  String  organization;
     private  String  query;
     private  String  type;
+    private  String  classification;
+    private  String  status;
     private  String  owner;
     private  List<String> tagsArtifact;
     private  List<String> Artifacts;
+    private  List<String> queryArtifacts;
     private  Integer cant;
 
     public static void createArtifact(DataTable dataTable) {
@@ -103,6 +107,19 @@ public class Artifact {
         }
     }
 
+    public static void setBulkClassification(int cant, String bodyJsonArtifact){
+        Integer status = 200;
+        response.set(rs.get().contentType(ContentType.TEXT).body(bodyJsonArtifact).post(setMethodAndEndPoint(POST,"artifact/bulk")));
+        if (status.equals(response.get().statusCode())) {
+            setArtifact(Artifact.with()
+              .Artifacts(getGuidBulk(cant, response.get().getBody().asString()))
+              .queryArtifacts(getQueryBulkClassification(cant, response.get().getBody().asString()))
+              .cant(cant)
+              .create());
+        }
+    }
+
+
     public static String dataDeleteBulkArtifact (){
         final String[] bodyArtifact = {""};
         getArtifact().getArtifacts().forEach((artifact)-> {
@@ -122,4 +139,5 @@ public class Artifact {
         bodyJson.set(String.format("\"artifacts\": [ %s ]", StringUtils.removeEnd(bodyArtifact,",")));
         return String.format("{ %s }", bodyJson.get());
     }
+
 }
