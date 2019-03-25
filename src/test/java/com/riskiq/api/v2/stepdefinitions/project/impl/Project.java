@@ -192,7 +192,7 @@ public class Project {
 
     public static void deleteAllProject(){
         List<String> allGuid = findAllGuidProject();
-        allGuid.addAll(findAllGuidProjectTestCloud2());
+        //allGuid.addAll(findAllGuidProjectTestCloud2());
         for(String guid : allGuid)
         {
             if(!guidProjectAlert.contains(guid)){

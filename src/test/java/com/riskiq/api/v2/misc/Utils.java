@@ -20,9 +20,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static com.riskiq.api.v2.stepdefinitions.project.impl.Project.deleteProjectByGuid;
-import static com.riskiq.api.v2.stepdefinitions.project.impl.Project.findAllGuidProject;
-import static com.riskiq.api.v2.stepdefinitions.project.impl.Project.guidProjectAlert;
+import static com.riskiq.api.v2.stepdefinitions.project.impl.Project.*;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.collection.IsEmptyCollection.empty;
@@ -428,6 +426,7 @@ public class Utils extends FlowData{
     @Test
     public void deleteAllProject() throws Throwable{
         List<String> allGuid = findAllGuidProject();
+        //allGuid.addAll(findAllGuidProjectTestCloud2());
         for(String guid : allGuid)
         {
             if(!guidProjectAlert.contains(guid)){
