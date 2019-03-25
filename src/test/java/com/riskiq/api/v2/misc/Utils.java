@@ -425,7 +425,7 @@ public class Utils extends FlowData{
 
 
 
-  /*  @Test
+    @Test
     public void deleteAllProject() throws Throwable{
         List<String> allGuid = findAllGuidProject();
         for(String guid : allGuid)
@@ -435,7 +435,7 @@ public class Utils extends FlowData{
             }
         }
 
-    }*/
+    }
 
 }
 
