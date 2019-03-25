@@ -91,7 +91,7 @@ Feature: As a user of riskIQ platform I want to Add Tags
       | query        | @@query                |
     When users in the same organization want Add Tags with the values
       | key          | value                  |
-      | query        | ##wrongQuery           |
+      | query        | %%wrongQuery           |
       | tags         | @@randomTags2          |
     Then the api should response with code 404
     And Check JSON schema "project/ErrorMessage.json"
