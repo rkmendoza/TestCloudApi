@@ -424,16 +424,8 @@ public class Utils extends FlowData{
 
 
     @Test
-    public void deleteAllProject() throws Throwable{
-        List<String> allGuid = findAllGuidProject();
-        //allGuid.addAll(findAllGuidProjectTestCloud2());
-        for(String guid : allGuid)
-        {
-            if(!guidProjectAlert.contains(guid)){
-                deleteProjectByGuid(guid);
-            }
-        }
-
+    public void deleteAllProjectTestCloud() throws Throwable{
+      deleteAllProject();
     }
 
 }

@@ -190,16 +190,29 @@ public class Project {
     }
 
 
-    public static void deleteAllProject(){
+    public static void deleteProjectTestCloud(){
         List<String> allGuid = findAllGuidProject();
-        //allGuid.addAll(findAllGuidProjectTestCloud2());
         for(String guid : allGuid)
         {
             if(!guidProjectAlert.contains(guid)){
                 deleteProjectByGuid(guid);
             }
         }
+    }
 
+    public static void deleteProjectTestCloud2(){
+        List<String> allGuid = findAllGuidProjectTestCloud2();
+        for(String guid : allGuid)
+        {
+            if(!guidProjectAlert.contains(guid)){
+                deleteProjectByGuid(guid);
+            }
+        }
+    }
+
+    public static void deleteAllProject(){
+        deleteProjectTestCloud();
+        deleteProjectTestCloud2();
     }
 
 }
