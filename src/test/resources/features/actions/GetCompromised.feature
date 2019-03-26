@@ -38,7 +38,7 @@ Feature: As a user of riskIQ platform I want to Get Compromised Status
       | key                | value                  |
       | query              | ##queryArtifact        |      
     Then the api should response with code 400
-    And Check JSON schema "action/getCompromisedStatus.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @GetCompromisedStatus
   Scenario: Check the response of Get Compromised Status with status true param, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
