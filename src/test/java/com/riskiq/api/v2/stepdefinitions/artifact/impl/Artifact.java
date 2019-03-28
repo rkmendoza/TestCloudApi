@@ -138,8 +138,9 @@ public class Artifact {
         });
         bodyJson.set(String.format("\"queries\": [ %s ]", StringUtils.removeEnd(bodyArtifact[0],",")));
         String jsonQuery  = bodyJson.get();
-        String jsonBulk   = jsonQuery+","+dataTableToJson(dataTable.asList(BodyElement.class)).replace("{","").replace("}","");
+        String jsonBulk   = jsonQuery +","+dataTableToJson(dataTable.asList(BodyElement.class)).replace("{","").replace("}","");
         bodyJson.set(jsonBulk);
+
         return String.format("{ %s }", bodyJson.get());
     }
 }

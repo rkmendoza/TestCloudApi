@@ -20,7 +20,7 @@ public class BulkClassificationSteps extends FlowData {
     }
 
 
-    @When("^Users of the same organization, which created the project want Set Bulk Classification Status with the values and the amount of (\\d+)$")
+    @When("^users of the same organization, which created the project want Set Bulk Classification Status with the values and the amount of (\\d+)$")
     public void users_of_the_same_organization_which_created_the_project_want_Set_Bulk_Set_Classification_Status_with_the_values_and_the_amount_of(int cant, DataTable dataTable) {
         setBulkClassification(cant, dataTableToJsonBulkClassification(cant, dataTable));
     }
