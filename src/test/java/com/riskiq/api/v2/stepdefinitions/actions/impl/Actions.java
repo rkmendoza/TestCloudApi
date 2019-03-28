@@ -56,7 +56,7 @@ public class Actions {
     }
 
     public static void setBulkClassification(int cant, String bodyJsonArtifact){
-       response.set(rs.get().contentType(ContentType.TEXT).body(bodyJsonArtifact).post(setMethodAndEndPoint(POST,actionsSetClassification)));
+       response.set(rs.get().contentType(ContentType.TEXT).body(bodyJsonArtifact).post(setMethodAndEndPoint(POST,actionsBulkClassification)));
         setArtifact(Artifact.with()
            .queryArtifacts(getQueryBulkClassification(cant, response.get().getBody().asString()))
            .classification(response.get().path("classification"))

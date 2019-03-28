@@ -53,7 +53,7 @@ public class Utils extends FlowData{
     public static String actionsCompromised = "";
     public static String actionsDynamicDns = "";
     public static String actionsMonitor = "";
-    public static String actionsSetClassification = "";
+    public static String actionsBulkClassification = "";
 
   public static void setParameterProperties(){
         try {
@@ -96,7 +96,7 @@ public class Utils extends FlowData{
         actionsCompromised = properties.getProperty("actionsCompromised");
         actionsDynamicDns = properties.getProperty("actionsDynamicDns");
         actionsMonitor = properties.getProperty("actionsMonitor");
-        actionsSetClassification = properties.getProperty("actionsSetClassification");
+        actionsBulkClassification = properties.getProperty("actionsBulkClassification");
     }
 
 
