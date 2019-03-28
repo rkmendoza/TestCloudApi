@@ -80,6 +80,7 @@ public class Artifact {
         if (status.equals(response.get().statusCode())) {
             setArtifact(Artifact.with()
                     .Artifacts(getGuidBulk(cant, response.get().getBody().asString()))
+                    .queryArtifacts(getQueryBulkClassification(cant, response.get().getBody().asString()))
                     .cant(cant)
                     .create());
         }
@@ -140,4 +141,13 @@ public class Artifact {
         return String.format("{ %s }", bodyJson.get());
     }
 
+    public static String dataTableToJsonBulkClassification(int cant, DataTable dataTable) {
+        final String[] bodyArtifact = {""};
+        getArtifact().getQueryArtifacts().forEach((query)-> {
+            bodyArtifact[0] += "\""+query+"\",";
+        });
+        //bodyJson.set(String.format("\"queries\": [ %s ]", StringUtils.removeEnd(bodyArtifact[0],",")).concat(dataTableToJson(dataTable.asList(BodyElement.class))));
+        bodyJson.set(String.format("\"queries\": [ %s ]", StringUtils.removeEnd(bodyArtifact[0],",")));
+        return String.format("{ %s }", bodyJson.get());
+    }
 }

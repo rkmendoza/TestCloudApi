@@ -55,6 +55,18 @@ public class Actions {
           .create());
     }
 
+    public static void setBulkClassification(int cant, String bodyJsonArtifact){
+      //  Integer status = 200;
+        response.set(rs.get().contentType(ContentType.TEXT).body(bodyJsonArtifact).post(setMethodAndEndPoint(POST,actionsSetClassification)));
+       // if (status.equals(response.get().statusCode())) {
+            setArtifact(Artifact.with()
+              .queryArtifacts(getQueryBulkClassification(cant, response.get().getBody().asString()))
+              .classification(response.get().path("classification"))
+              .cant(cant)
+              .create());
+      //  }
+    }
+
 
     //Class Methods
 
