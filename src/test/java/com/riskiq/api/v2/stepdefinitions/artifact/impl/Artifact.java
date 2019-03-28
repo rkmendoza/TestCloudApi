@@ -108,17 +108,6 @@ public class Artifact {
         }
     }
 
-    public static void setBulkClassification(int cant, String bodyJsonArtifact){
-        Integer status = 200;
-        response.set(rs.get().contentType(ContentType.TEXT).body(bodyJsonArtifact).post(setMethodAndEndPoint(POST,"artifact/bulk")));
-        if (status.equals(response.get().statusCode())) {
-            setArtifact(Artifact.with()
-              .Artifacts(getGuidBulk(cant, response.get().getBody().asString()))
-              .queryArtifacts(getQueryBulkClassification(cant, response.get().getBody().asString()))
-              .cant(cant)
-              .create());
-        }
-    }
 
 
     public static String dataDeleteBulkArtifact (){
