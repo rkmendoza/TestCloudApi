@@ -21,7 +21,7 @@ Feature: As a user of riskIQ platform I want to Get Compromised Status
     And Check JSON schema "project/ErrorMessage.json"
 
   @GetCompromisedStatus
-  Scenario: Check the response of Get Compromised Status with wrong status param, and the visibility of project is public with the user of the same organization, the response retrieve code 400 and check with json schema
+  Scenario: Check the response of Get Compromised Status with wrong status param, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -37,8 +37,8 @@ Feature: As a user of riskIQ platform I want to Get Compromised Status
     When users in the same organization want Get Compromised Status with the values
       | key                | value                  |
       | query              | ##queryArtifact        |      
-    Then the api should response with code 400
-    And Check JSON schema "project/ErrorMessage.json"
+    Then the api should response with code 200
+    And Check JSON schema "action/getCompromisedStatus.json"
 
   @GetCompromisedStatus
   Scenario: Check the response of Get Compromised Status with status true param, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -162,7 +162,7 @@ Feature: As a user of riskIQ platform I want to Get Compromised Status
     And Check JSON schema "action/getCompromisedStatus.json"
 
   @GetCompromisedStatus
-  Scenario: Check the response of Get Compromised Status with true param, and the visibility is private with the user not in the same organization, the response retrieve code 404 and check with json schema
+  Scenario: Check the response of Get Compromised Status with true param, and the visibility is private with the user not in the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -178,11 +178,11 @@ Feature: As a user of riskIQ platform I want to Get Compromised Status
     When user not in the same organization want Get Compromised Status with the values
       | key                | value                  |
       | query              | ##queryArtifact        |     
-    Then the api should response with code 404
-    And Check JSON schema "project/ErrorMessage.json"
+    Then the api should response with code 200
+    And Check JSON schema "action/getCompromisedStatus.json"
 
   @GetCompromisedStatus
-  Scenario: Check the response of Get Compromised Status with false param, and the visibility is private with the user not in the same organization, the response retrieve code 404 and check with json schema
+  Scenario: Check the response of Get Compromised Status with false param, and the visibility is private with the user not in the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -198,8 +198,8 @@ Feature: As a user of riskIQ platform I want to Get Compromised Status
     When user not in the same organization want Get Compromised Status with the values
       | key                | value                  |
       | query              | ##queryArtifact        |      
-    Then the api should response with code 404
-    And Check JSON schema "project/ErrorMessage.json"
+    Then the api should response with code 200
+    And Check JSON schema "action/getCompromisedStatus.json"
 
   @GetCompromisedStatus
   Scenario: Check the response of Get Compromised Status with true param, and the visibility of project is analyst with the user of the same organization, and the user created the project, the response retrieve code 200 and check with json schema
@@ -222,7 +222,7 @@ Feature: As a user of riskIQ platform I want to Get Compromised Status
     And Check JSON schema "action/getCompromisedStatus.json"
 
   @GetCompromisedStatus
-  Scenario: Check the response of Get Compromised Status with true param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 404 and check with json schema
+  Scenario: Check the response of Get Compromised Status with true param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -238,11 +238,11 @@ Feature: As a user of riskIQ platform I want to Get Compromised Status
     When users in the same organization want Get Compromised Status with the values
       | key                | value                  |
       | query              | ##queryArtifact        |    
-    Then the api should response with code 404
-    And Check JSON schema "project/ErrorMessage.json"
+    Then the api should response with code 200
+    And Check JSON schema "action/getCompromisedStatus.json"
 
   @GetCompromisedStatus
-  Scenario: Check the response of Get Compromised Status with true param, and the visibility is analyst with the user not in the same organization, the response retrieve code 404 and check with json schema
+  Scenario: Check the response of Get Compromised Status with true param, and the visibility is analyst with the user not in the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -258,8 +258,8 @@ Feature: As a user of riskIQ platform I want to Get Compromised Status
     When user not in the same organization want Get Compromised Status with the values
       | key                | value                  |
       | query              | ##queryArtifact        |     
-    Then the api should response with code 404
-    And Check JSON schema "project/ErrorMessage.json"
+    Then the api should response with code 200
+    And Check JSON schema "action/getCompromisedStatus.json"
 
   @GetCompromisedStatus
   Scenario: Check the response of Get Compromised Status with false param, and the visibility of project is analyst with the user of the same organization, and the user created the project, the response retrieve code 200 and check with json schema
@@ -282,7 +282,7 @@ Feature: As a user of riskIQ platform I want to Get Compromised Status
     And Check JSON schema "action/getCompromisedStatus.json"
 
   @GetCompromisedStatus
-  Scenario: Check the response of Get Compromised Status with false param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 404 and check with json schema
+  Scenario: Check the response of Get Compromised Status with false param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -298,11 +298,11 @@ Feature: As a user of riskIQ platform I want to Get Compromised Status
     When users in the same organization want Get Compromised Status with the values
       | key                | value                  |
       | query              | ##queryArtifact        |     
-    Then the api should response with code 404
-    And Check JSON schema "project/ErrorMessage.json"
+    Then the api should response with code 200
+    And Check JSON schema "action/getCompromisedStatus.json"
 
   @GetCompromisedStatus
-  Scenario: Check the response of Get Compromised Status with false param, and the visibility is analyst with the user not in the same organization, the response retrieve code 404 and check with json schema
+  Scenario: Check the response of Get Compromised Status with false param, and the visibility is analyst with the user not in the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -318,6 +318,6 @@ Feature: As a user of riskIQ platform I want to Get Compromised Status
     When user not in the same organization want Get Compromised Status with the values
       | key                | value                  |
       | query              | ##queryArtifact        |     
-    Then the api should response with code 404
-    And Check JSON schema "project/ErrorMessage.json"
+    Then the api should response with code 200
+    And Check JSON schema "action/getCompromisedStatus.json"
   
