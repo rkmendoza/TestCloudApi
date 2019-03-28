@@ -31,6 +31,7 @@ public class Artifact {
     private  List<String> tagsArtifact;
     private  List<String> Artifacts;
     private  List<String> queryArtifacts;
+    private  String  queryArtifactsJson;
     private  Integer cant;
 
     public static void createArtifact(DataTable dataTable) {
@@ -135,8 +136,10 @@ public class Artifact {
         getArtifact().getQueryArtifacts().forEach((query)-> {
             bodyArtifact[0] += "\""+query+"\",";
         });
-        //bodyJson.set(String.format("\"queries\": [ %s ]", StringUtils.removeEnd(bodyArtifact[0],",")).concat(dataTableToJson(dataTable.asList(BodyElement.class))));
         bodyJson.set(String.format("\"queries\": [ %s ]", StringUtils.removeEnd(bodyArtifact[0],",")));
+        String jsonQuery  = bodyJson.get();
+        String jsonBulk   = jsonQuery+","+dataTableToJson(dataTable.asList(BodyElement.class)).replace("{","").replace("}","");
+        bodyJson.set(jsonBulk);
         return String.format("{ %s }", bodyJson.get());
     }
 }

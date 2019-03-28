@@ -46,7 +46,6 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | query              | @@query                |
     When users in the same organization want Set Bulk Classification Status with the values and the amount of 2
       | key                | value                  |
-      | queries            | ##BulkQueryArtifact    |
       | classification     | malicious              |
     Then the api should response with code 200
     #And Check JSON schema "action/bulkClassificationStatus.json"
