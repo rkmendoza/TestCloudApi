@@ -18,7 +18,7 @@ Feature: As a user of riskIQ platform I want to Get Bulk Classification Status
     #And Check JSON schema "project/ErrorMessage.json"
 
   @GetBulkClassificationStatus
-  Scenario: Check the response of Get Bulk Classification Status with wrong classification param, and the visibility of project is public with the user of the same organization, the response retrieve code 400 and check with json schema
+  Scenario: Check the response of Get Bulk Classification Status with wrong classification param, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -31,7 +31,7 @@ Feature: As a user of riskIQ platform I want to Get Bulk Classification Status
       | key                | value                  |
       | classification     | WrongClassification    |
     When users in the same organization want Get Bulk Classification Status with the values and the amount of 2
-    Then the api should response with code 400
+    Then the api should response with code 200
     #And Check JSON schema "action/getBulkClassificationStatus.json"
 
   @GetBulkClassificationStatus
@@ -240,7 +240,7 @@ Feature: As a user of riskIQ platform I want to Get Bulk Classification Status
     #And Check JSON schema "action/getBulkClassificationStatus.json"
 
   @GetBulkClassificationStatus
-  Scenario: Check the response of Get Bulk Classification Status with malicious param, and the visibility is private with the user not in the same organization, the response retrieve code 404 and check with json schema
+  Scenario: Check the response of Get Bulk Classification Status with malicious param, and the visibility is private with the user not in the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -253,11 +253,11 @@ Feature: As a user of riskIQ platform I want to Get Bulk Classification Status
       | key                | value                  |
       | classification     | malicious              |
     When users not in the same organization want Get Bulk Classification Status with the values and the amount of 2
-    Then the api should response with code 404
+    Then the api should response with code 200
     #And Check JSON schema "project/ErrorMessage.json"
 
   @GetBulkClassificationStatus
-  Scenario: Check the response of Get Bulk Classification Status with suspicious param, and the visibility is private with the user not in the same organization, the response retrieve code 404 and check with json schema
+  Scenario: Check the response of Get Bulk Classification Status with suspicious param, and the visibility is private with the user not in the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -270,11 +270,11 @@ Feature: As a user of riskIQ platform I want to Get Bulk Classification Status
       | key                | value                  |
       | classification     | malicious              |
     When users not in the same organization want Get Bulk Classification Status with the values and the amount of 2
-    Then the api should response with code 404
+    Then the api should response with code 200
     #And Check JSON schema "project/ErrorMessage.json"
 
   @GetBulkClassificationStatus
-  Scenario: Check the response of Get Bulk Classification Status with non-malicious param, and the visibility is private with the user not in the same organization, the response retrieve code 404 and check with json schema
+  Scenario: Check the response of Get Bulk Classification Status with non-malicious param, and the visibility is private with the user not in the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -287,11 +287,11 @@ Feature: As a user of riskIQ platform I want to Get Bulk Classification Status
       | key                | value                  |
       | classification     | non-malicious          |
     When users not in the same organization want Get Bulk Classification Status with the values and the amount of 2
-    Then the api should response with code 404
+    Then the api should response with code 200
     #And Check JSON schema "project/ErrorMessage.json"
 
   @GetBulkClassificationStatus
-  Scenario: Check the response of Get Bulk Classification Status with unknown param, and the visibility is private with the user not in the same organization, the response retrieve code 404 and check with json schema
+  Scenario: Check the response of Get Bulk Classification Status with unknown param, and the visibility is private with the user not in the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -304,7 +304,7 @@ Feature: As a user of riskIQ platform I want to Get Bulk Classification Status
       | key                | value                  |
       | classification     | unknown                |
     When users not in the same organization want Get Bulk Classification Status with the values and the amount of 2
-    Then the api should response with code 404
+    Then the api should response with code 200
     #And Check JSON schema "project/ErrorMessage.json"
 
   @GetBulkClassificationStatus
@@ -325,7 +325,7 @@ Feature: As a user of riskIQ platform I want to Get Bulk Classification Status
     #And Check JSON schema "action/getBulkClassificationStatus.json"
 
   @GetBulkClassificationStatus
-  Scenario: Check the response of Get Bulk Classification Status with malicious param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 404 and check with json schema
+  Scenario: Check the response of Get Bulk Classification Status with malicious param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 400 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -338,11 +338,11 @@ Feature: As a user of riskIQ platform I want to Get Bulk Classification Status
       | key                | value                  |
       | classification     | malicious              |
     When users in the same organization want Get Bulk Classification Status with the values and the amount of 2
-    Then the api should response with code 404
+    Then the api should response with code 400
     #And Check JSON schema "project/ErrorMessage.json"
 
   @GetBulkClassificationStatus
-  Scenario: Check the response of Get Bulk Classification Status with malicious param, and the visibility is analyst with the user not in the same organization, the response retrieve code 404 and check with json schema
+  Scenario: Check the response of Get Bulk Classification Status with malicious param, and the visibility is analyst with the user not in the same organization, the response retrieve code 400 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -355,7 +355,7 @@ Feature: As a user of riskIQ platform I want to Get Bulk Classification Status
       | key                | value                  |
       | classification     | malicious              |
     When users not in the same organization want Get Bulk Classification Status with the values and the amount of 2
-    Then the api should response with code 404
+    Then the api should response with code 400
     #And Check JSON schema "project/ErrorMessage.json"
 
   @GetBulkClassificationStatus
@@ -376,7 +376,7 @@ Feature: As a user of riskIQ platform I want to Get Bulk Classification Status
     #And Check JSON schema "action/getBulkClassificationStatus.json"
 
   @GetBulkClassificationStatus
-  Scenario: Check the response of Get Bulk Classification Status with suspicious param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 404 and check with json schema
+  Scenario: Check the response of Get Bulk Classification Status with suspicious param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 400 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -389,11 +389,11 @@ Feature: As a user of riskIQ platform I want to Get Bulk Classification Status
       | key                | value                  |
       | classification     | suspicious             |
     When users in the same organization want Get Bulk Classification Status with the values and the amount of 2
-    Then the api should response with code 404
+    Then the api should response with code 400
     #And Check JSON schema "project/ErrorMessage.json"
 
   @GetBulkClassificationStatus
-  Scenario: Check the response of Get Bulk Classification Status with suspicious param, and the visibility is analyst with the user not in the same organization, the response retrieve code 404 and check with json schema
+  Scenario: Check the response of Get Bulk Classification Status with suspicious param, and the visibility is analyst with the user not in the same organization, the response retrieve code 400 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -406,7 +406,7 @@ Feature: As a user of riskIQ platform I want to Get Bulk Classification Status
       | key                | value                  |
       | classification     | suspicious             |
     When users not in the same organization want Get Bulk Classification Status with the values and the amount of 2
-    Then the api should response with code 404
+    Then the api should response with code 400
     #And Check JSON schema "project/ErrorMessage.json"
 
   @GetBulkClassificationStatus
@@ -427,7 +427,7 @@ Feature: As a user of riskIQ platform I want to Get Bulk Classification Status
     #And Check JSON schema "action/getBulkClassificationStatus.json"
 
   @GetBulkClassificationStatus
-  Scenario: Check the response of Get Bulk Classification Status with non-malicious param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 404 and check with json schema
+  Scenario: Check the response of Get Bulk Classification Status with non-malicious param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 400 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -440,11 +440,11 @@ Feature: As a user of riskIQ platform I want to Get Bulk Classification Status
       | key                | value                  |
       | classification     | non-malicious          |
     When users in the same organization want Get Bulk Classification Status with the values and the amount of 2
-    Then the api should response with code 404
+    Then the api should response with code 400
     #And Check JSON schema "project/ErrorMessage.json"
 
   @GetBulkClassificationStatus
-  Scenario: Check the response of Get Bulk Classification Status with non-malicious param, and the visibility is analyst with the user not in the same organization, the response retrieve code 404 and check with json schema
+  Scenario: Check the response of Get Bulk Classification Status with non-malicious param, and the visibility is analyst with the user not in the same organization, the response retrieve code 400 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -457,7 +457,7 @@ Feature: As a user of riskIQ platform I want to Get Bulk Classification Status
       | key                | value                  |
       | classification     | non-malicious          |
     When users not in the same organization want Get Bulk Classification Status with the values and the amount of 2
-    Then the api should response with code 404
+    Then the api should response with code 400
     #And Check JSON schema "project/ErrorMessage.json"
 
   @GetBulkClassificationStatus
@@ -478,7 +478,7 @@ Feature: As a user of riskIQ platform I want to Get Bulk Classification Status
     #And Check JSON schema "action/getBulkClassificationStatus.json"
 
   @GetBulkClassificationStatus
-  Scenario: Check the response of Get Bulk Classification Status with unknown param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 404 and check with json schema
+  Scenario: Check the response of Get Bulk Classification Status with unknown param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 400 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -491,11 +491,11 @@ Feature: As a user of riskIQ platform I want to Get Bulk Classification Status
       | key                | value                  |
       | classification     | unknown                |
     When users in the same organization want Get Bulk Classification Status with the values and the amount of 2
-    Then the api should response with code 404
+    Then the api should response with code 400
     #And Check JSON schema "project/ErrorMessage.json"
 
   @GetBulkClassificationStatus
-  Scenario: Check the response of Get Bulk Classification Status with unknown param, and the visibility is analyst with the user not in the same organization, the response retrieve code 404 and check with json schema
+  Scenario: Check the response of Get Bulk Classification Status with unknown param, and the visibility is analyst with the user not in the same organization, the response retrieve code 400 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -508,5 +508,5 @@ Feature: As a user of riskIQ platform I want to Get Bulk Classification Status
       | key                | value                  |
       | classification     | unknown                |
     When users not in the same organization want Get Bulk Classification Status with the values and the amount of 2
-    Then the api should response with code 404
+    Then the api should response with code 400
     #And Check JSON schema "project/ErrorMessage.json"
