@@ -57,22 +57,11 @@ public class Actions {
 
     public static void setBulkClassification(int cant, String bodyJsonArtifact){
        response.set(rs.get().contentType(ContentType.TEXT).body(bodyJsonArtifact).post(setMethodAndEndPoint(POST,actionsBulkClassification)));
-        setArtifact(Artifact.with()
-           //.queryArtifacts(getQueryBulkClassification(cant, response.get().getBody().asString()))
-          .query(response.get().path("query"))
-          .classification(response.get().path("classification"))
-           .cant(cant)
-           .create());
     }
 
     public static void getBulkClassification(int cant, String bodyJsonArtifact){
         response.set(rs.get().contentType(ContentType.TEXT).body(bodyJsonArtifact).get(setMethodAndEndPoint(GET,actionsBulkClassification)));
-        setArtifact(Artifact.with()
-          .queryArtifacts(getQueryBulkClassification(cant, response.get().getBody().asString()))
-          .cant(cant)
-          .create());
     }
-
 
     //Class Methods
 

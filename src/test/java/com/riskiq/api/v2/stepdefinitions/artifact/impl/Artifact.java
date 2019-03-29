@@ -145,16 +145,14 @@ public class Artifact {
     }
 
 
-    public static String dataTableToJsonGetBulkClassification(int cant) {
-
+    public static String dataTableToJsonGetBulkClassification() {
 
         final String[] bodyArtifact = {""};
         getArtifact().getQueryArtifacts().forEach((query)-> {
             bodyArtifact[0] += "\""+query+"\",";
         });
         bodyJson.set(String.format("\"query\": [ %s ]", StringUtils.removeEnd(bodyArtifact[0],",")));
-       return String.format("{ %s }", bodyJson.get());
+        return String.format("{ %s }", bodyJson.get());
     }
-
 
 }
