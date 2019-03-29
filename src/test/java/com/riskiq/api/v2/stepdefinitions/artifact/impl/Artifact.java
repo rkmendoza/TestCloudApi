@@ -110,7 +110,6 @@ public class Artifact {
     }
 
 
-
     public static String dataDeleteBulkArtifact (){
         final String[] bodyArtifact = {""};
         getArtifact().getArtifacts().forEach((artifact)-> {
@@ -137,10 +136,25 @@ public class Artifact {
             bodyArtifact[0] += "\""+query+"\",";
         });
         bodyJson.set(String.format("\"queries\": [ %s ]", StringUtils.removeEnd(bodyArtifact[0],",")));
+
         String jsonQuery  = bodyJson.get();
         String jsonBulk   = jsonQuery +","+dataTableToJson(dataTable.asList(BodyElement.class)).replace("{","").replace("}","");
         bodyJson.set(jsonBulk);
 
         return String.format("{ %s }", bodyJson.get());
     }
+
+
+    public static String dataTableToJsonGetBulkClassification(int cant) {
+
+
+        final String[] bodyArtifact = {""};
+        getArtifact().getQueryArtifacts().forEach((query)-> {
+            bodyArtifact[0] += "\""+query+"\",";
+        });
+        bodyJson.set(String.format("\"query\": [ %s ]", StringUtils.removeEnd(bodyArtifact[0],",")));
+       return String.format("{ %s }", bodyJson.get());
+    }
+
+
 }

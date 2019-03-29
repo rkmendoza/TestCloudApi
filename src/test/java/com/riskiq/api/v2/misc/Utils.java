@@ -337,7 +337,7 @@ public class Utils extends FlowData{
                 break;
             case "BulkQueryArtifact":
                 bodyElement.setValue(String.valueOf(getArtifact().getQueryArtifacts().get(0)));
-                getArtifact().getQueryArtifacts().remove(0);
+                //getArtifact().getQueryArtifacts().remove(0);
                 break;
             case "randomTags":
                 bodyElement.setValue(String.valueOf(getArtifact().getTagsArtifact().get(0)));
