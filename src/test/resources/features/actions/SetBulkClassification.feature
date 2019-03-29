@@ -14,7 +14,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | malicious              |
     Then the api should response with code 401
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with wrong classification param, and the visibility of project is public with the user of the same organization, the response retrieve code 400 and check with json schema
@@ -30,7 +30,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | WrongClassification    |
     Then the api should response with code 400
-    #And Check JSON schema "action/bulkClassificationStatus.json"
+    And Check JSON schema "action/ErrorMessage.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with classification malicious param, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -46,7 +46,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | malicious              |
     Then the api should response with code 200
-    #And Check JSON schema "action/bulkClassificationStatus.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with classification suspicious param, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -62,7 +62,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | suspicious             |
     Then the api should response with code 200
-    #And Check JSON schema "action/bulkClassificationStatus.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with classification non_malicious param, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -78,7 +78,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | non_malicious          |
     Then the api should response with code 200
-    #And Check JSON schema "action/bulkClassificationStatus.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with unknown param, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -94,7 +94,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | unknown                |
     Then the api should response with code 200
-    #And Check JSON schema "action/bulkClassificationStatus.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with malicious param, and the visibility is public with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -110,7 +110,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | malicious              |
     Then the api should response with code 200
-    #And Check JSON schema "action/bulkClassificationStatus.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
 
   @SetBulkClassificationStatus
@@ -127,7 +127,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | suspicious             |
     Then the api should response with code 200
-    #And Check JSON schema "action/bulkClassificationStatus.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with non_malicious param, and the visibility is public with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -143,7 +143,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | non_malicious          |
     Then the api should response with code 200
-    #And Check JSON schema "action/bulkClassificationStatus.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with unknown param, and the visibility is public with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -159,7 +159,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | unknown                |
     Then the api should response with code 200
-    #And Check JSON schema "action/bulkClassificationStatus.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with malicious param, and the visibility of project is private with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -175,7 +175,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | malicious              |
     Then the api should response with code 200
-    #And Check JSON schema "action/bulkClassificationStatus.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with suspicious param, and the visibility of project is private with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -191,7 +191,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | suspicious             |
     Then the api should response with code 200
-    #And Check JSON schema "action/bulkClassificationStatus.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with non_malicious param, and the visibility of project is private with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -207,7 +207,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | non_malicious          |
     Then the api should response with code 200
-    #And Check JSON schema "action/bulkClassificationStatus.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with unknown param, and the visibility of project is private with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -223,7 +223,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | unknown                |
     Then the api should response with code 200
-    #And Check JSON schema "action/bulkClassificationStatus.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with malicious param, and the visibility is private with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -239,7 +239,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | malicious              |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with suspicious param, and the visibility is private with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -255,7 +255,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | suspicious             |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with non_malicious param, and the visibility is private with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -271,7 +271,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | non_malicious          |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with unknown param, and the visibility is private with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -287,7 +287,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | unknown                |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with malicious param, and the visibility of project is analyst with the user of the same organization, and the user created the project, the response retrieve code 200 and check with json schema
@@ -303,7 +303,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | malicious              |
     Then the api should response with code 200
-    #And Check JSON schema "action/bulkClassificationStatus.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with malicious param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -319,7 +319,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | malicious              |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with malicious param, and the visibility is analyst with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -335,7 +335,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | malicious              |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with suspicious param, and the visibility of project is analyst with the user of the same organization, and the user created the project, the response retrieve code 200 and check with json schema
@@ -351,7 +351,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | suspicious             |
     Then the api should response with code 200
-    #And Check JSON schema "action/bulkClassificationStatus.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with suspicious param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -367,7 +367,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | suspicious             |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with suspicious param, and the visibility is analyst with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -383,7 +383,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | suspicious             |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with non_malicious param, and the visibility of project is analyst with the user of the same organization, and the user created the project, the response retrieve code 200 and check with json schema
@@ -399,7 +399,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | non_malicious          |
     Then the api should response with code 200
-    #And Check JSON schema "action/bulkClassificationStatus.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with non_malicious param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -415,7 +415,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | non_malicious          |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with non_malicious param, and the visibility is analyst with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -431,7 +431,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | non_malicious          |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with unknown param, and the visibility of project is analyst with the user of the same organization, and the user created the project, the response retrieve code 200 and check with json schema
@@ -447,7 +447,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | unknown                |
     Then the api should response with code 200
-    #And Check JSON schema "action/bulkClassificationStatus.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with unknown param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -463,7 +463,7 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | unknown                |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"
 
   @SetBulkClassificationStatus
   Scenario: Check the response of Set Bulk Classification Status with unknown param, and the visibility is analyst with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -479,4 +479,4 @@ Feature: As a user of riskIQ platform I want to Set Bulk Classification Status
       | key                | value                  |
       | classification     | unknown                |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "action/setBulkClassificationStatus.json"

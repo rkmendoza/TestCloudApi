@@ -1,0 +1,27 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "required": [
+    "status",
+    "success",
+    "error"
+  ],
+  "properties": {
+    "status": {
+      "$id": "#/properties/status",
+      "type": "integer"
+    },
+    "success": {
+      "$id": "#/properties/success",
+      "type": "boolean",
+      "enum": [true, false]
+    },
+    "error": {
+      "$id": "#/properties/error",
+      "type": ["string","null"],
+      "pattern": "^(.*)$"
+    }
+  }
+}
