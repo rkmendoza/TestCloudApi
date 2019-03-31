@@ -47,6 +47,10 @@ public class Actions {
           .create());
     }
 
+    public static void PostDynamicDnsWithDataTable(String Api, DataTable dataTable){
+        response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).post(setMethodAndEndPoint(POST,Api)));
+    }
+
     public static void DeleteWithDataTable(String Api, DataTable dataTable){
         response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).delete(setMethodAndEndPoint(DELETE,Api)));
         setArtifact(Artifact.with()
@@ -89,6 +93,13 @@ public class Actions {
         GetWithDataTable(actionsCompromised, dataTable);
     }
 
+    public static void SetDynamicDns(DataTable dataTable){
+        PostDynamicDnsWithDataTable(actionsDynamicDns, dataTable);
+    }
+
+    public static void GetDynamicDns(DataTable dataTable){
+        GetWithDataTable(actionsDynamicDns, dataTable);
+    }
 
 }
 
