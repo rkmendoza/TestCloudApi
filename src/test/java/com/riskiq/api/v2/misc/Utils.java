@@ -54,6 +54,7 @@ public class Utils extends FlowData{
     public static String actionsDynamicDns = "";
     public static String actionsMonitor = "";
     public static String actionsBulkClassification = "";
+    public static String actionsSinkhole = "";
 
   public static void setParameterProperties(){
         try {
@@ -97,6 +98,7 @@ public class Utils extends FlowData{
         actionsDynamicDns = properties.getProperty("actionsDynamicDns");
         actionsMonitor = properties.getProperty("actionsMonitor");
         actionsBulkClassification = properties.getProperty("actionsBulkClassification");
+        actionsSinkhole = properties.getProperty("actionsSinkhole");
     }
 
 

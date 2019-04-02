@@ -67,12 +67,6 @@ public class Artifact {
     public static void updateArtifact(DataTable dataTable){
         Integer status = 200;
         response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).post(setMethodAndEndPoint(POST,"artifact")));
-        if (status.equals(response.get().statusCode())) {
-            setArtifact(Artifact.with()
-                    .guidArtifact(response.get().path("guid"))
-                    .tagsArtifact(response.get().path("tags"))
-                    .create());
-        }
     }
 
     public static void createBulkArtifact(int cant, String bodyJsonArtifact){

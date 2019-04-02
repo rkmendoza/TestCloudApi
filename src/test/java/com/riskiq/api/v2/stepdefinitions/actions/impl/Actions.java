@@ -22,7 +22,6 @@ public class Actions {
         response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).get(setMethodAndEndPoint(GET,Api)));
     }
 
-
     public static void PostWithDataTable(String Api, DataTable dataTable){
         response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).post(setMethodAndEndPoint(POST,Api)));
         setArtifact(Artifact.with()
@@ -48,6 +47,10 @@ public class Actions {
     }
 
     public static void PostDynamicDnsWithDataTable(String Api, DataTable dataTable){
+        response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).post(setMethodAndEndPoint(POST,Api)));
+    }
+
+    public static void PostSinkholeWithDataTable(String Api, DataTable dataTable){
         response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).post(setMethodAndEndPoint(POST,Api)));
     }
 
@@ -99,6 +102,18 @@ public class Actions {
 
     public static void GetDynamicDns(DataTable dataTable){
         GetWithDataTable(actionsDynamicDns, dataTable);
+    }
+
+    public static void GetMonitor(DataTable dataTable){
+        GetWithDataTable(actionsMonitor, dataTable);
+    }
+
+    public static void SetSinkhole(DataTable dataTable){
+        PostSinkholeWithDataTable(actionsSinkhole, dataTable);
+    }
+
+    public static void GetSinkhole(DataTable dataTable){
+        GetWithDataTable(actionsSinkhole, dataTable);
     }
 
 }
