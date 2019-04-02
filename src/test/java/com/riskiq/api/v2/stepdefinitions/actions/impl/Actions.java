@@ -8,9 +8,7 @@ import lombok.Builder;
 import lombok.Data;
 
 import static com.riskiq.api.v2.misc.Utils.*;
-import static org.mortbay.jetty.HttpMethods.DELETE;
-import static org.mortbay.jetty.HttpMethods.GET;
-import static org.mortbay.jetty.HttpMethods.POST;
+import static org.mortbay.jetty.HttpMethods.*;
 
 @Data
 @Builder (builderMethodName = "with", buildMethodName = "create")
@@ -28,6 +26,10 @@ public class Actions {
           .query(response.get().path("query"))
           .tagsArtifact(response.get().path("tags"))
           .create());
+    }
+
+    public static void PutSetTagsWithDataTable(String Api, DataTable dataTable){
+        response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,Api)));
     }
 
     public static void PostClassificationWithDataTable(String Api, DataTable dataTable){
@@ -74,6 +76,10 @@ public class Actions {
 
     public static void AddTags(DataTable dataTable){
         PostWithDataTable(actionsTags, dataTable);
+    }
+
+    public static void SetTags(DataTable dataTable){
+        PutSetTagsWithDataTable(actionsTags, dataTable);
     }
 
     public static void DeleteTags(DataTable dataTable){
