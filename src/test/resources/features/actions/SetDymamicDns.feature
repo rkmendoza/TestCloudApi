@@ -49,7 +49,7 @@ Feature: As a user of riskIQ platform I want to Set Dynamic Dns Status
       | query              | ##queryArtifact        |
       | status             | true                   |
     Then the api should response with code 200
-    And  Check JSON schema "action/setCompromisedStatus.json"
+    And  Check JSON schema "action/setDynamicDnsStatus.json"
 
   @SetDynamicDnsStatus
   Scenario: Check the response of Set Dynamic Dns Status with status false param, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -118,7 +118,7 @@ Feature: As a user of riskIQ platform I want to Set Dynamic Dns Status
       | query              | ##queryArtifact        |
       | status             | true                   |
     Then the api should response with code 200
-    And  Check JSON schema "action/SetDynamicDnsStatus.json"
+    And  Check JSON schema "action/setDynamicDnsStatus.json"
 
   @SetDynamicDnsStatus
   Scenario: Check the response of Set Dynamic Dns Status with false param, and the visibility of project is private with the user of the same organization, the response retrieve code 200 and check with json schema
