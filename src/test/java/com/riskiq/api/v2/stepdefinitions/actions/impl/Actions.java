@@ -34,18 +34,10 @@ public class Actions {
 
     public static void PostClassificationWithDataTable(String Api, DataTable dataTable){
         response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).post(setMethodAndEndPoint(POST,Api)));
-        setArtifact(Artifact.with()
-          .query(response.get().path("query"))
-          .classification(response.get().path("classification"))
-          .create());
     }
 
     public static void PostCompromisedWithDataTable(String Api, DataTable dataTable){
         response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).post(setMethodAndEndPoint(POST,Api)));
-        setArtifact(Artifact.with()
-          .query(response.get().path("query"))
-          .status(response.get().path("status"))
-          .create());
     }
 
     public static void PostDynamicDnsWithDataTable(String Api, DataTable dataTable){
