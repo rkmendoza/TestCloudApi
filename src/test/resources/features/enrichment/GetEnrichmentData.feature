@@ -30,7 +30,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 401
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data by wrong query param, and the visibility of project is private with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -62,7 +62,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | %%wrongQuery           |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getClassificationStatus.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification malicious param, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -94,7 +94,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification suspicious param, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -126,7 +126,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification non-malicious param, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -158,7 +158,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification unknown param, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -190,7 +190,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with malicious param, and the visibility is public with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -222,7 +222,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
 
   @GetEnrichmentData
@@ -255,7 +255,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-     #And Check JSON schema "action/getClassificationStatus.json"
+     And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification non-malicious param, and the visibility is public with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -287,7 +287,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with unknown param, and the visibility is public with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -319,7 +319,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification malicious param, and the visibility of project is private with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -351,7 +351,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification suspicious param, and the visibility of project is private with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -383,7 +383,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification non-malicious param, and the visibility of project is private with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -415,7 +415,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification unknown param, and the visibility of project is private with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -447,7 +447,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification malicious param, and the visibility is private with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -479,7 +479,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification suspicious param, and the visibility is private with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -511,7 +511,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification non-malicious param, and the visibility is private with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -543,7 +543,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification unknown param, and the visibility is private with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -575,7 +575,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification malicious param, and the visibility of project is analyst with the user of the same organization, and the user created the project, the response retrieve code 200 and check with json schema
@@ -607,7 +607,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification malicious param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -639,7 +639,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification malicious param, and the visibility is analyst with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -671,7 +671,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification suspicious param, and the visibility of project is analyst with the user of the same organization, and the user created the project, the response retrieve code 200 and check with json schema
@@ -703,7 +703,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification suspicious param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -735,7 +735,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification suspicious param, and the visibility is analyst with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -767,7 +767,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification non-malicious param, and the visibility of project is analyst with the user of the same organization, and the user created the project, the response retrieve code 200 and check with json schema
@@ -799,7 +799,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification non-malicious param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -831,7 +831,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification non-malicious param, and the visibility is analyst with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -863,7 +863,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification unknown param, and the visibility of project is analyst with the user of the same organization, and the user created the project, the response retrieve code 200 and check with json schema
@@ -895,7 +895,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification unknown param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -927,7 +927,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
 
   @GetEnrichmentData
   Scenario: Check the response of Get Enrichment Data with classification unknown param, and the visibility is analyst with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -959,4 +959,4 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data
       | key                | value                  |
       | query              | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "action/getClassificationStatus.json"
+    And Check JSON schema "action/getEnrichmentData.json"
