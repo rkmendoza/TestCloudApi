@@ -8,6 +8,7 @@ import io.restassured.RestAssured;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import org.apache.commons.lang3.StringUtils;
+import org.junit.Test;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,6 +20,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static com.riskiq.api.v2.stepdefinitions.project.impl.Project.*;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.collection.IsEmptyCollection.empty;
@@ -46,8 +48,14 @@ public class Utils extends FlowData{
     public static String accountQuota = "";
     public static String accountSources = "";
     public static String accountTeamStream = "";
+    public static String actionsTags = "";
+    public static String actionsClassification = "";
+    public static String actionsCompromised = "";
+    public static String actionsDynamicDns = "";
+    public static String actionsMonitor = "";
+    public static String actionsBulkClassification = "";
 
-    public static void setParameterProperties(){
+  public static void setParameterProperties(){
         try {
             File file = new File(sfile);
             FileInputStream fileInput = new FileInputStream(file);
@@ -83,6 +91,12 @@ public class Utils extends FlowData{
         accountQuota = properties.getProperty("accountQuota");
         accountSources = properties.getProperty("accountSources");
         accountTeamStream = properties.getProperty("accountTeamStream");
+        actionsTags = properties.getProperty("actionsTags");
+        actionsClassification = properties.getProperty("actionsClassification");
+        actionsCompromised = properties.getProperty("actionsCompromised");
+        actionsDynamicDns = properties.getProperty("actionsDynamicDns");
+        actionsMonitor = properties.getProperty("actionsMonitor");
+        actionsBulkClassification = properties.getProperty("actionsBulkClassification");
     }
 
 
@@ -215,12 +229,12 @@ public class Utils extends FlowData{
         if(!bodyElement.getKey().equalsIgnoreCase("tags") && !bodyElement.getKey().equalsIgnoreCase("query")) {
             String[] value = bodyElement.getValue().split("@@");
             String random = value[1];
-            random += "_" + generateRandomString();
+            random += "." + generateRandomString();
             bodyElement.setValue(random);
         }else if(bodyElement.getKey().equalsIgnoreCase("query")){
             String[] value = bodyElement.getValue().split("@@");
             String random = value[1];
-            random += "_" + generateRandomString()+".org";
+            random += "." + generateRandomString()+".org";
             bodyElement.setValue(random);
         }else{
 
@@ -321,6 +335,14 @@ public class Utils extends FlowData{
                 bodyElement.setValue(String.valueOf(getArtifact().getArtifacts().get(0)));
                 getArtifact().getArtifacts().remove(0);
                 break;
+            case "BulkQueryArtifact":
+                bodyElement.setValue(String.valueOf(getArtifact().getQueryArtifacts().get(0)));
+                //getArtifact().getQueryArtifacts().remove(0);
+                break;
+            case "randomTags":
+                bodyElement.setValue(String.valueOf(getArtifact().getTagsArtifact().get(0)));
+                //getArtifact().getTagsArtifact().remove(0);
+                break;
             default:
                 bodyElement.setValue("");
                 break;
@@ -383,17 +405,30 @@ public class Utils extends FlowData{
         return artifactList;
     }
 
-    /*@Test
-    public void deleteAllProject() throws Throwable{
-        List<String> allGuid = findAllGuidProject();
-        for(String guid : allGuid)
-        {
-            if(!guidProjectAlert.contains(guid)){
-                deleteProjectByGuid(guid);
+    public static List<String> getQueryBulkClassification(int cant, String json) {
+        List<String> queryList = new ArrayList();
+        Pattern p = Pattern.compile("\"query\": \"(.+)\",");
+        Matcher m = p.matcher(json);
+        String parseJson = "";
+        for (int i=1; i<=cant; i++){
+            if(m.find()){
+                parseJson = m.group(1);
+                String[] values = parseJson.split("\",");
+                if(values[0].length()>0)
+                    queryList.add(values[0]);
+                m = p.matcher(parseJson);
             }
         }
+        return queryList;
+    }
 
-    }*/
+
+
+
+    @Test
+    public void deleteAllProjectTestCloud() throws Throwable{
+      deleteAllProject();
+    }
 
     
 }

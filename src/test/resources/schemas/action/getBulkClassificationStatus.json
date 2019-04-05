@@ -1,0 +1,31 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "required": [
+    "success",
+    "results"
+  ],
+  "properties": {
+    "success": {
+      "$id": "#/properties/success",
+      "type": "boolean"
+    },
+    "results": {
+      "$id": "#/properties/results",
+      "type": "object",
+      "properties": {
+        "additionalProperties": {
+          "type": "object",
+          "properties": {
+            "classification": {
+              "type": ["string","null"],
+              "pattern": "^(.*)$"
+            }
+          }
+        }
+      }
+    }
+  }
+}
