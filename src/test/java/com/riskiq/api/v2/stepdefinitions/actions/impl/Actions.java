@@ -74,6 +74,10 @@ public class Actions {
         PutSetTagsWithDataTable(actionsTags, dataTable);
     }
 
+    public static void GetTags(DataTable dataTable){
+        GetWithDataTable(actionsTags, dataTable);
+    }
+
     public static void DeleteTags(DataTable dataTable){
         DeleteWithDataTable(actionsTags, dataTable);
     }
