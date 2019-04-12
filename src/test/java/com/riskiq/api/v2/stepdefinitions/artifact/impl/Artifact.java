@@ -46,6 +46,7 @@ public class Artifact {
                     .organization(response.get().path("organization"))
                     .query(response.get().path("query"))
                     .type(response.get().path("type"))
+                    .tagsArtifact(response.get().path("tags"))
                     .create());
         }
     }

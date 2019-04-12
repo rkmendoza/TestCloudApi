@@ -56,6 +56,7 @@ public class Utils extends FlowData{
     public static String actionsBulkClassification = "";
     public static String actionsSinkhole = "";
     public static String enrichment = "";
+    public static String actionsTagsSearch = "";
 
   public static void setParameterProperties(){
         try {
@@ -101,6 +102,7 @@ public class Utils extends FlowData{
         actionsBulkClassification = properties.getProperty("actionsBulkClassification");
         actionsSinkhole = properties.getProperty("actionsSinkhole");
         enrichment = properties.getProperty("enrichment");
+        actionsTagsSearch = properties.getProperty("actionsTagsSearch");
     }
 
 
@@ -345,7 +347,7 @@ public class Utils extends FlowData{
                 break;
             case "randomTags":
                 bodyElement.setValue(String.valueOf(getArtifact().getTagsArtifact().get(0)));
-                //getArtifact().getTagsArtifact().remove(0);
+                getArtifact().getTagsArtifact().remove(0);
                 break;
             default:
                 bodyElement.setValue("");

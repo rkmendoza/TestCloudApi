@@ -118,5 +118,9 @@ public class Actions {
         GetWithDataTable(actionsSinkhole, dataTable);
     }
 
+    public static void SearchTags(DataTable dataTable){
+        GetWithDataTable(actionsTagsSearch, dataTable);
+    }
+
 }
 
