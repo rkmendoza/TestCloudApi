@@ -56,6 +56,9 @@ public class Utils extends FlowData{
     public static String actionsBulkClassification = "";
     public static String actionsSinkhole = "";
     public static String enrichment = "";
+    public static String enrichmentMalaware = "";
+    public static String enrichmentOsint = "";
+    public static String enrichmentSubdomains = "";
 
   public static void setParameterProperties(){
         try {
@@ -101,6 +104,9 @@ public class Utils extends FlowData{
         actionsBulkClassification = properties.getProperty("actionsBulkClassification");
         actionsSinkhole = properties.getProperty("actionsSinkhole");
         enrichment = properties.getProperty("enrichment");
+        enrichmentMalaware = properties.getProperty("enrichmentMalaware");
+        enrichmentOsint = properties.getProperty("enrichmentOsint");
+        enrichmentSubdomains = properties.getProperty("enrichmentSubdomains");
     }
 
 

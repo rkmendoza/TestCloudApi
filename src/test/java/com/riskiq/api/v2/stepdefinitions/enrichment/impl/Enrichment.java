@@ -32,5 +32,18 @@ public class Enrichment {
         GetWithDataTable(enrichment, dataTable);
     }
 
+    public static void GetMalware(DataTable dataTable){
+        GetWithDataTable(enrichmentMalaware, dataTable);
+    }
+
+    public static void GetOSINT(DataTable dataTable){
+    GetWithDataTable(enrichmentOsint, dataTable);
+  }
+
+    public static void GetSubdomains(DataTable dataTable){
+    GetWithDataTable(enrichmentSubdomains, dataTable);
+  }
+
+
 }
 
