@@ -59,6 +59,7 @@ public class Utils extends FlowData{
     public static String enrichmentMalaware = "";
     public static String enrichmentOsint = "";
     public static String enrichmentSubdomains = "";
+    public static String trackersUserTrackers = "";
 
   public static void setParameterProperties(){
         try {
@@ -107,6 +108,7 @@ public class Utils extends FlowData{
         enrichmentMalaware = properties.getProperty("enrichmentMalaware");
         enrichmentOsint = properties.getProperty("enrichmentOsint");
         enrichmentSubdomains = properties.getProperty("enrichmentSubdomains");
+        trackersUserTrackers = properties.getProperty("trackersUserTrackers");
     }
 
 
