@@ -8,9 +8,7 @@ import lombok.Builder;
 import lombok.Data;
 
 import static com.riskiq.api.v2.misc.Utils.*;
-import static org.mortbay.jetty.HttpMethods.DELETE;
-import static org.mortbay.jetty.HttpMethods.GET;
-import static org.mortbay.jetty.HttpMethods.POST;
+import static org.mortbay.jetty.HttpMethods.*;
 
 @Data
 @Builder (builderMethodName = "with", buildMethodName = "create")
@@ -22,7 +20,6 @@ public class Actions {
         response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).get(setMethodAndEndPoint(GET,Api)));
     }
 
-
     public static void PostWithDataTable(String Api, DataTable dataTable){
         response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).post(setMethodAndEndPoint(POST,Api)));
         setArtifact(Artifact.with()
@@ -31,20 +28,24 @@ public class Actions {
           .create());
     }
 
+    public static void PutSetTagsWithDataTable(String Api, DataTable dataTable){
+        response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,Api)));
+    }
+
     public static void PostClassificationWithDataTable(String Api, DataTable dataTable){
         response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).post(setMethodAndEndPoint(POST,Api)));
-        setArtifact(Artifact.with()
-          .query(response.get().path("query"))
-          .classification(response.get().path("classification"))
-          .create());
     }
 
     public static void PostCompromisedWithDataTable(String Api, DataTable dataTable){
         response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).post(setMethodAndEndPoint(POST,Api)));
-        setArtifact(Artifact.with()
-          .query(response.get().path("query"))
-          .status(response.get().path("status"))
-          .create());
+    }
+
+    public static void PostDynamicDnsWithDataTable(String Api, DataTable dataTable){
+        response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).post(setMethodAndEndPoint(POST,Api)));
+    }
+
+    public static void PostSinkholeWithDataTable(String Api, DataTable dataTable){
+        response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).post(setMethodAndEndPoint(POST,Api)));
     }
 
     public static void DeleteWithDataTable(String Api, DataTable dataTable){
@@ -69,6 +70,10 @@ public class Actions {
         PostWithDataTable(actionsTags, dataTable);
     }
 
+    public static void SetTags(DataTable dataTable){
+        PutSetTagsWithDataTable(actionsTags, dataTable);
+    }
+
     public static void DeleteTags(DataTable dataTable){
         DeleteWithDataTable(actionsTags, dataTable);
     }
@@ -89,6 +94,25 @@ public class Actions {
         GetWithDataTable(actionsCompromised, dataTable);
     }
 
+    public static void SetDynamicDns(DataTable dataTable){
+        PostDynamicDnsWithDataTable(actionsDynamicDns, dataTable);
+    }
+
+    public static void GetDynamicDns(DataTable dataTable){
+        GetWithDataTable(actionsDynamicDns, dataTable);
+    }
+
+    public static void GetMonitor(DataTable dataTable){
+        GetWithDataTable(actionsMonitor, dataTable);
+    }
+
+    public static void SetSinkhole(DataTable dataTable){
+        PostSinkholeWithDataTable(actionsSinkhole, dataTable);
+    }
+
+    public static void GetSinkhole(DataTable dataTable){
+        GetWithDataTable(actionsSinkhole, dataTable);
+    }
 
 }
 

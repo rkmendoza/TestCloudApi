@@ -1,0 +1,97 @@
+{
+  "definitions": {},
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "required": [
+    "subdomains",
+    "sinkhole",
+    "tld",
+    "primaryDomain",
+    "queryValue",
+    "queryType",
+    "everCompromised",
+    "tag_meta",
+    "classification",
+    "tags",
+    "dynamicDns"
+  ],
+  "properties": {
+    "subdomains": {
+      "$id": "#/properties/subdomains",
+      "type": "array"
+    },
+    "sinkhole": {
+      "$id": "#/properties/sinkhole",
+      "type": ["boolean","null"]
+    },
+    "tld": {
+      "$id": "#/properties/tld",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "primaryDomain": {
+      "$id": "#/properties/primaryDomain",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "queryValue": {
+      "$id": "#/properties/queryValue",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "queryType": {
+      "$id": "#/properties/queryType",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "everCompromised": {
+      "$id": "#/properties/everCompromised",
+      "type": ["boolean","null"]
+    },
+    "tag_meta": {
+      "$id": "#/properties/tag_meta",
+      "type": "object",
+      "properties": {
+        "additionalProperties": {
+          "$id": "#/properties/tag_meta/properties/mytag",
+          "type": "object",
+          "required": [
+            "creator",
+            "created_at"
+          ],
+          "properties": {
+            "creator": {
+              "$id": "#/properties/tag_meta/properties/mytag/properties/creator",
+              "type": "string",
+              "pattern": "^(.*)$"
+            },
+            "created_at": {
+              "$id": "#/properties/tag_meta/properties/mytag/properties/created_at",
+              "type": "string",
+              "pattern": "^(.*)$"
+            }
+          }
+        }
+      }
+    },
+    "classification": {
+      "$id": "#/properties/classification",
+      "type": ["string","null"],
+      "pattern": "^(.*)$"
+    },
+    "tags": {
+      "$id": "#/properties/tags",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/tags/items",
+        "type": "string",
+        "pattern": "^(.*)$"
+      }
+    },
+    "dynamicDns": {
+      "$id": "#/properties/dynamicDns",
+      "type": "boolean",
+      "enum": [true, false]
+    }
+  }
+}

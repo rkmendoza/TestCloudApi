@@ -1,0 +1,16 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "required": [
+    "dynamicDns"
+  ],
+  "properties": {
+    "dynamicDns": {
+      "$id": "#/properties/dynamicDns",
+      "type": "boolean",
+      "enum": [true, false]
+    }
+  }
+}
