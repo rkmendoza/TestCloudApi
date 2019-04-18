@@ -28,8 +28,12 @@ public class Whois {
         GetWithDataTable(whoisGet, dataTable);
     }
 
-    public static void GetSearchWhois(DataTable dataTable){
+    public static void GetSearchWhoisKeyword(DataTable dataTable){
         GetWithDataTable(whoisSearchKeyword, dataTable);
+    }
+
+    public static void GetSearchWhois(DataTable dataTable){
+        GetWithDataTable(whoisSearch, dataTable);
     }
 
 
