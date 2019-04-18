@@ -14,7 +14,7 @@ Feature: As a user of riskIQ platform I want to Get Subdomains
       | key          | value                  |
       | query        | ##queryArtifact        |
     Then the api should response with code 401
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @GetSubdomains
   Scenario: Check the response of Get Subdomains with user of the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -31,7 +31,7 @@ Feature: As a user of riskIQ platform I want to Get Subdomains
       | key         | value                  |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Create.json"
+    And Check JSON schema "enrichment/getSubdomains.json"
 
   @GetSubdomains
   Scenario: Check the response of Get Subdomains with user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -48,7 +48,7 @@ Feature: As a user of riskIQ platform I want to Get Subdomains
       | key         | value                  |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @GetSubdomains
   Scenario: Check the response of Get Subdomains with user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -65,7 +65,7 @@ Feature: As a user of riskIQ platform I want to Get Subdomains
       | key         | value                  |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Create.json"
+    And Check JSON schema "enrichment/getSubdomains.json"
 
   @GetSubdomains
   Scenario: Check the response of Get Subdomains with user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -82,7 +82,7 @@ Feature: As a user of riskIQ platform I want to Get Subdomains
       | key         | value                  |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @GetSubdomains
   Scenario: Check the response of Get Subdomains with user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -99,7 +99,7 @@ Feature: As a user of riskIQ platform I want to Get Subdomains
       | key         | value                  |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @GetSubdomains
   Scenario: Check the response of Get Subdomains with user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -116,7 +116,7 @@ Feature: As a user of riskIQ platform I want to Get Subdomains
       | key         | value                  |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "artifact/Create.json"
+    And Check JSON schema "enrichment/getSubdomains.json"
 
   @GetSubdomains
   Scenario: Check the response of Get Subdomains with user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -133,7 +133,7 @@ Feature: As a user of riskIQ platform I want to Get Subdomains
       | key         | value                  |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
 
 
