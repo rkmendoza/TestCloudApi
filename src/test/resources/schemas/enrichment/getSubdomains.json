@@ -1,0 +1,36 @@
+{
+  "definitions": {},
+  "type": "object",
+  "required": [
+    "success",
+    "subdomains",
+    "primaryDomain",
+    "queryValue"
+  ],
+  "properties": {
+    "success": {
+      "$id": "#/properties/success",
+      "type": "boolean",
+      "enum": [true, false]
+    },
+    "subdomains": {
+      "$id": "#/properties/subdomains",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/subdomains/items",
+        "type": "string",
+        "pattern": "^(.*)$"
+      }
+    },
+    "primaryDomain": {
+      "$id": "#/properties/primaryDomain",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "queryValue": {
+      "$id": "#/properties/queryValue",
+      "type": "string",
+      "pattern": "^(.*)$"
+    }
+  }
+}
