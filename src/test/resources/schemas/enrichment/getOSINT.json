@@ -1,0 +1,64 @@
+{
+  "definitions": {},
+  "type": "object",
+  "required": [
+    "success",
+    "results"
+  ],
+  "properties": {
+    "success": {
+      "$id": "#/properties/success",
+      "type": "boolean",
+      "enum": [true, false]
+    },
+    "results": {
+      "$id": "#/properties/results",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/results/items",
+        "type": "object",
+        "required": [
+          "inReport",
+          "source",
+          "sourceUrl",
+          "tags"
+        ],
+        "properties": {
+          "derived": {
+            "$id": "#/properties/results/items/properties/derived",
+            "type": "boolean",
+            "enum": [true, false]
+          },
+          "inReport": {
+            "$id": "#/properties/results/items/properties/inReport",
+            "type": "array",
+            "items": {
+              "$id": "#/properties/results/items/properties/inReport/items",
+              "type": "string",
+              "pattern": "^(.*)$"
+            }
+          },
+          "source": {
+            "$id": "#/properties/results/items/properties/source",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "sourceUrl": {
+            "$id": "#/properties/results/items/properties/sourceUrl",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "tags": {
+            "$id": "#/properties/results/items/properties/tags",
+            "type": "array",
+            "items": {
+              "$id": "#/properties/results/items/properties/tags/items",
+              "type": "string",
+              "pattern": "^(.*)$"
+            }
+          }
+        }
+      }
+    }
+  }
+}

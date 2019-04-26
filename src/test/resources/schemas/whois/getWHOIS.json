@@ -1,0 +1,155 @@
+{
+  "definitions": {},
+  "type": "object",
+  "properties": {
+    "tech": {
+      "$id": "#/properties/tech",
+      "type": "object",
+      "properties": {
+        "organization": {
+          "$id": "#/properties/tech/properties/organization",
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "email": {
+          "$id": "#/properties/tech/properties/email",
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "name": {
+          "$id": "#/properties/tech/properties/name",
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "telephone": {
+          "$id": "#/properties/tech/properties/telephone",
+          "type": "string",
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "whoisServer": {
+      "$id": "#/properties/whoisServer",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "registered": {
+      "$id": "#/properties/registered",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "registrar": {
+      "$id": "#/properties/registrar",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "domain": {
+      "$id": "#/properties/domain",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "registrant": {
+      "$id": "#/properties/registrant",
+      "type": "object",
+      "properties": {
+        "organization": {
+          "$id": "#/properties/registrant/properties/organization",
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "email": {
+          "$id": "#/properties/registrant/properties/email",
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "name": {
+          "$id": "#/properties/registrant/properties/name",
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "telephone": {
+          "$id": "#/properties/registrant/properties/telephone",
+          "type": "string",
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "billing": {
+      "$id": "#/properties/billing",
+      "type": "object"
+    },
+    "telephone": {
+      "$id": "#/properties/telephone",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "lastLoadedAt": {
+      "$id": "#/properties/lastLoadedAt",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "nameServers": {
+      "$id": "#/properties/nameServers",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/nameServers/items",
+        "type": "string",
+        "pattern": "^(.*)$"
+      }
+    },
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "registryUpdatedAt": {
+      "$id": "#/properties/registryUpdatedAt",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "admin": {
+      "$id": "#/properties/admin",
+      "type": "object",
+      "properties": {
+        "organization": {
+          "$id": "#/properties/admin/properties/organization",
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "email": {
+          "$id": "#/properties/admin/properties/email",
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "name": {
+          "$id": "#/properties/admin/properties/name",
+          "type": "string",
+          "pattern": "^(.*)$"
+        },
+        "telephone": {
+          "$id": "#/properties/admin/properties/telephone",
+          "type": "string",
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "organization": {
+      "$id": "#/properties/organization",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "zone": {
+      "$id": "#/properties/zone",
+      "type": "object"
+    },
+    "contactEmail": {
+      "$id": "#/properties/contactEmail",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "expiresAt": {
+      "$id": "#/properties/expiresAt",
+      "pattern": "^(.*)$"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "definitions": {},
+  "type": "object",
+  "required": [
+    "results",
+    "totalRecords",
+    "success"
+  ],
+  "properties": {
+    "results": {
+      "$id": "#/properties/results",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/results/items",
+        "type": "object",
+        "required": [
+          "lastSeen",
+          "firstSeen"
+        ],
+        "properties": {
+          "hostname": {
+            "$id": "#/properties/results/items/properties/hostname",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "lastSeen": {
+            "$id": "#/properties/results/items/properties/lastSeen",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "firstSeen": {
+            "$id": "#/properties/results/items/properties/firstSeen",
+            "type": "string",
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    },
+    "totalRecords": {
+      "$id": "#/properties/totalRecords",
+      "type": "integer"
+    },
+    "success": {
+      "$id": "#/properties/success",
+      "type": "boolean",
+      "enum": [true, false]
+    }
+  }
+}

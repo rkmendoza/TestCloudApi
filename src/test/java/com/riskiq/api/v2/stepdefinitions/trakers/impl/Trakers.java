@@ -1,18 +1,18 @@
-package com.riskiq.api.v2.stepdefinitions.enrichment.impl;
+package com.riskiq.api.v2.stepdefinitions.trakers.impl;
 
 import com.riskiq.api.v2.impl.BodyElement;
-import com.riskiq.api.v2.stepdefinitions.artifact.impl.Artifact;
 import cucumber.api.DataTable;
 import io.restassured.http.ContentType;
 import lombok.Builder;
 import lombok.Data;
 
 import static com.riskiq.api.v2.misc.Utils.*;
-import static org.mortbay.jetty.HttpMethods.*;
+import static org.mortbay.jetty.HttpMethods.GET;
+import static org.mortbay.jetty.HttpMethods.POST;
 
 @Data
 @Builder (builderMethodName = "with", buildMethodName = "create")
-public class Enrichment {
+public class Trakers {
 
 
     //Generic Methods
@@ -28,21 +28,11 @@ public class Enrichment {
 
     //Class Methods
 
-    public static void GetEnrichment(DataTable dataTable){
-        GetWithDataTable(enrichment, dataTable);
-    }
-
-    public static void GetMalware(DataTable dataTable){
-        GetWithDataTable(enrichmentMalaware, dataTable);
-    }
-
-    public static void GetOSINT(DataTable dataTable){
-    GetWithDataTable(enrichmentOsint, dataTable);
+    public static void GetUserTrakers(DataTable dataTable){
+    GetWithDataTable(trackersUserTrackers, dataTable);
   }
 
-    public static void GetSubdomains(DataTable dataTable){
-    GetWithDataTable(enrichmentSubdomains, dataTable);
-  }
+
 
 
 }

@@ -56,6 +56,13 @@ public class Utils extends FlowData{
     public static String actionsBulkClassification = "";
     public static String actionsSinkhole = "";
     public static String enrichment = "";
+    public static String enrichmentMalaware = "";
+    public static String enrichmentOsint = "";
+    public static String enrichmentSubdomains = "";
+    public static String trackersUserTrackers = "";
+    public static String whoisGet = "";
+    public static String whoisSearchKeyword = "";
+    public static String whoisSearch = "";
 
   public static void setParameterProperties(){
         try {
@@ -101,10 +108,17 @@ public class Utils extends FlowData{
         actionsBulkClassification = properties.getProperty("actionsBulkClassification");
         actionsSinkhole = properties.getProperty("actionsSinkhole");
         enrichment = properties.getProperty("enrichment");
+        enrichmentMalaware = properties.getProperty("enrichmentMalaware");
+        enrichmentOsint = properties.getProperty("enrichmentOsint");
+        enrichmentSubdomains = properties.getProperty("enrichmentSubdomains");
+        trackersUserTrackers = properties.getProperty("trackersUserTrackers");
+        whoisGet = properties.getProperty("whoisGet");
+        whoisSearchKeyword = properties.getProperty("whoisSearchKeyword");
+        whoisSearch = properties.getProperty("whoisSearch");
     }
 
 
-    public synchronized static ValidatableResponse matchJsonValue(Map.Entry<String, String> field, ValidatableResponse json) {
+  public synchronized static ValidatableResponse matchJsonValue(Map.Entry<String, String> field, ValidatableResponse json) {
 
         if (StringUtils.isNumeric(field.getValue())) {
             //value numeric
