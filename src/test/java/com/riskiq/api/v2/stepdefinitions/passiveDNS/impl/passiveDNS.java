@@ -1,4 +1,4 @@
-package com.riskiq.api.v2.stepdefinitions.hostAttributes.impl;
+package com.riskiq.api.v2.stepdefinitions.passiveDNS.impl;
 
 import com.riskiq.api.v2.impl.BodyElement;
 import cucumber.api.DataTable;
@@ -11,7 +11,7 @@ import static org.mortbay.jetty.HttpMethods.GET;
 
 @Data
 @Builder (builderMethodName = "with", buildMethodName = "create")
-public class hostAttributes {
+public class passiveDNS {
 
 
     //Generic Methods
@@ -22,17 +22,10 @@ public class hostAttributes {
 
     //Class Methods
 
-    public static void GetComponents(DataTable dataTable){
-        GetWithDataTable(hostAttributesComponents, dataTable);
+    public static void GetPassiveDNS(DataTable dataTable){
+        GetWithDataTable(dnsPassive, dataTable);
     }
 
-    public static void GetTrakers(DataTable dataTable){
-        GetWithDataTable(hostAttributesTrackers, dataTable);
-    }
-
-    public static void GetPairs(DataTable dataTable){
-        GetWithDataTable(hostAttributesPairs, dataTable);
-    }
 
 }
 
