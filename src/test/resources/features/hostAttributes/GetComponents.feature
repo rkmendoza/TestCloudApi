@@ -14,7 +14,7 @@ Feature: As a user of riskIQ platform I want to Get Components
       | key          | value                  |
       | query        | ##queryArtifact        |
     Then the api should response with code 401
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @GetComponents
   Scenario: Check the response of Get Components with user of the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -31,7 +31,7 @@ Feature: As a user of riskIQ platform I want to Get Components
       | key         | value                  |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "whois/getComponents.json"
+    And Check JSON schema "hostAttributes/GetComponents.json"
 
   @GetComponents
   Scenario: Check the response of Get Components with user of the same organization and start date and end date, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -50,7 +50,7 @@ Feature: As a user of riskIQ platform I want to Get Components
       | start           | %%attibutesStart   |
       | end             | %%attibutesEnd     |
     Then the api should response with code 200
-    #And Check JSON schema "whois/getComponents.json"
+    And Check JSON schema "hostAttributes/GetComponents.json"
 
   @GetComponents
   Scenario: Check the response of Get Components with user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -67,7 +67,7 @@ Feature: As a user of riskIQ platform I want to Get Components
       | key         | value                  |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "whois/getComponents.json"
+    And Check JSON schema "hostAttributes/GetComponents.json"
 
   @GetComponents
   Scenario: Check the response of Get Components with user not in the same organization and start date and end date, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -86,7 +86,7 @@ Feature: As a user of riskIQ platform I want to Get Components
       | start           | %%attibutesStart   |
       | end             | %%attibutesEnd     |
     Then the api should response with code 200
-    #And Check JSON schema "whois/getComponents.json"
+    And Check JSON schema "hostAttributes/GetComponents.json"
 
   @GetComponents
   Scenario: Check the response of Get Components with user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -103,7 +103,7 @@ Feature: As a user of riskIQ platform I want to Get Components
       | key         | value                  |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "whois/getComponents.json"
+    And Check JSON schema "hostAttributes/GetComponents.json"
 
   @GetComponents
   Scenario: Check the response of Get Components with user of the same organization and start date and end date, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -122,7 +122,7 @@ Feature: As a user of riskIQ platform I want to Get Components
       | start           | %%attibutesStart   |
       | end             | %%attibutesEnd     |
     Then the api should response with code 200
-    #And Check JSON schema "whois/getComponents.json"
+    And Check JSON schema "hostAttributes/GetComponents.json"
 
   @GetComponents
   Scenario: Check the response of Get Components with user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -139,7 +139,7 @@ Feature: As a user of riskIQ platform I want to Get Components
       | key         | value                  |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "whois/getComponents.json"
+    And Check JSON schema "hostAttributes/GetComponents.json"
 
   @GetComponents
   Scenario: Check the response of Get Components with user not in the same organization and start date and end date, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -158,7 +158,7 @@ Feature: As a user of riskIQ platform I want to Get Components
       | start           | %%attibutesStart   |
       | end             | %%attibutesEnd     |
     Then the api should response with code 200
-    #And Check JSON schema "whois/getComponents.json"
+    And Check JSON schema "hostAttributes/GetComponents.json"
 
   @GetComponents
   Scenario: Check the response of Get Components with user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -175,7 +175,7 @@ Feature: As a user of riskIQ platform I want to Get Components
       | key         | value                  |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "whois/getComponents.json"
+    And Check JSON schema "hostAttributes/GetComponents.json"
 
   @GetComponents
   Scenario: Check the response of Get Components with user of the same organization and start date and end date, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -194,7 +194,7 @@ Feature: As a user of riskIQ platform I want to Get Components
       | start           | %%attibutesStart   |
       | end             | %%attibutesEnd     |
     Then the api should response with code 200
-    #And Check JSON schema "whois/getComponents.json"
+    And Check JSON schema "hostAttributes/GetComponents.json"
 
   @GetComponents
   Scenario: Check the response of Get Components with user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -211,7 +211,7 @@ Feature: As a user of riskIQ platform I want to Get Components
       | key         | value                  |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "whois/getComponents.json"
+    And Check JSON schema "hostAttributes/GetComponents.json"
 
   @GetComponents
   Scenario: Check the response of Get Components with user of the same organization and the user created the project and start date and end date, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -230,7 +230,7 @@ Feature: As a user of riskIQ platform I want to Get Components
       | start           | %%attibutesStart   |
       | end             | %%attibutesEnd     |
     Then the api should response with code 200
-    #And Check JSON schema "whois/getComponents.json"
+    And Check JSON schema "hostAttributes/GetComponents.json"
 
   @GetComponents
   Scenario: Check the response of Get Components with user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -247,7 +247,7 @@ Feature: As a user of riskIQ platform I want to Get Components
       | key         | value                  |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    #And Check JSON schema "whois/getComponents.json"
+    And Check JSON schema "hostAttributes/GetComponents.json"
 
   @GetComponents
   Scenario: Check the response of Get Components with user not in the same organization and start date and end date, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -266,7 +266,7 @@ Feature: As a user of riskIQ platform I want to Get Components
       | start           | %%attibutesStart   |
       | end             | %%attibutesEnd     |
     Then the api should response with code 200
-    #And Check JSON schema "whois/getComponents.json"
+    And Check JSON schema "hostAttributes/GetComponents.json"
 
 
 
