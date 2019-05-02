@@ -15,12 +15,6 @@ import static org.mortbay.jetty.HttpMethods.DELETE;
 @Builder (builderMethodName = "with", buildMethodName = "create")
 public class bulkEnrichment {
 
-  //Generic Methods
-
-  public static void GetWithDataTable(String Api, DataTable dataTable){
-    response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).get(setMethodAndEndPoint(GET,Api)));
-  }
-
   //Class Methods
 
   public static void GetMalwareBulk(int cant, String bodyJsonArtifact){
@@ -30,6 +24,10 @@ public class bulkEnrichment {
   public static void GetOSINTBulk(int cant, String bodyJsonArtifact){
     response.set(rs.get().contentType(ContentType.TEXT).body(bodyJsonArtifact).get(setMethodAndEndPoint(GET,enrichmentBulkOsint)));
     System.out.println(response.get().prettyPrint());
+  }
+
+  public static void GetEnrichmentDataBulk(int cant, String bodyJsonArtifact){
+    response.set(rs.get().contentType(ContentType.TEXT).body(bodyJsonArtifact).get(setMethodAndEndPoint(GET,enrichmentBulk)));
   }
 
 }

@@ -70,6 +70,7 @@ public class Utils extends FlowData{
     public static String hostAttributesPairs = "";
     public static String hostAttributesTrackers = "";
     public static String dnsPassive = "";
+    public static String enrichmentBulk = "";
 
   public static void setParameterProperties(){
         try {
@@ -129,6 +130,7 @@ public class Utils extends FlowData{
         hostAttributesPairs = properties.getProperty("hostAttributesPairs");
         hostAttributesTrackers = properties.getProperty("hostAttributesTrackers");
         dnsPassive = properties.getProperty("dnsPassive");
+        enrichmentBulk = properties.getProperty("enrichmentBulk");
     }
 
 
