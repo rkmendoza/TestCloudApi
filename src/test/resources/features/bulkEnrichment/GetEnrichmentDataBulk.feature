@@ -323,6 +323,7 @@
       Then the api should response with code 200
       And Check JSON schema "bulkEnrichment/getEnrichmentDataBulk.json"
 
+<<<<<<< HEAD
     @GetEnrichmentDataBulk
     Scenario: Check the response of Get Enrichment Data Bulk with malicious param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 400 and check with json schema
       Given a created project with values
@@ -356,6 +357,41 @@
       When users not in the same organization want Get Enrichment Data Bulk with the values and the amount of 2
       Then the api should response with code 400
       And Check JSON schema "action/ErrorMessage.json"
+=======
+  @GetEnrichmentDataBulk
+  Scenario: Check the response of Get Enrichment Data Bulk with malicious param, and the visibility of project is analyst with the user of the same organization,     and check with json schema
+    Given a created project with values
+      | key                | value                  |
+      | name               | @@namerandom           |
+      | visibility         | analyst                |
+    And a created artifacts with the values and the amount of 2
+      | key                | value                  |
+      | project            | ##guid                 |
+      | query              | @@query                |
+    And created Bulk Classification Status with the values and the amount of 2
+      | key                | value                  |
+      | classification     | malicious              |
+    When users in the same organization want Get Enrichment Data Bulk with the values and the amount of 2
+    Then the api should response with code 200
+    #And Check JSON schema "action/ErrorMessage.json"
+
+  @GetEnrichmentDataBulk
+  Scenario: Check the response of Get Enrichment Data Bulk with malicious param, and the visibility is analyst with the user not in the same organization, the response retrieve code 200 and check with json schema
+    Given a created project with values
+      | key                | value                  |
+      | name               | @@namerandom           |
+      | visibility         | analyst                |
+    And a created artifacts with the values and the amount of 2
+      | key                | value                  |
+      | project            | ##guid                 |
+      | query              | @@query                |
+    And created Bulk Classification Status with the values and the amount of 2
+      | key                | value                  |
+      | classification     | malicious              |
+    When users not in the same organization want Get Enrichment Data Bulk with the values and the amount of 2
+    Then the api should response with code 200
+    #And Check JSON schema "action/ErrorMessage.json"
+>>>>>>> 6780ddf84fd48325ac1c72eafceb95c30ca584fe
 
     @GetEnrichmentDataBulk
     Scenario: Check the response of Get Enrichment Data Bulk with suspicious param, and the visibility of project is analyst with the user of the same organization, and the user created the project, the response retrieve code 200 and check with json schema
@@ -374,6 +410,7 @@
       Then the api should response with code 200
       And Check JSON schema "bulkEnrichment/getEnrichmentDataBulk.json"
 
+<<<<<<< HEAD
     @GetEnrichmentDataBulk
     Scenario: Check the response of Get Enrichment Data Bulk with suspicious param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 400 and check with json schema
       Given a created project with values
@@ -407,6 +444,41 @@
       When users not in the same organization want Get Enrichment Data Bulk with the values and the amount of 2
       Then the api should response with code 400
       And Check JSON schema "action/ErrorMessage.json"
+=======
+  @GetEnrichmentDataBulk
+  Scenario: Check the response of Get Enrichment Data Bulk with suspicious param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 200 and check with json schema
+    Given a created project with values
+      | key                | value                  |
+      | name               | @@namerandom           |
+      | visibility         | analyst                |
+    And a created artifacts with the values and the amount of 2
+      | key                | value                  |
+      | project            | ##guid                 |
+      | query              | @@query                |
+    And created Bulk Classification Status with the values and the amount of 2
+      | key                | value                  |
+      | classification     | suspicious             |
+    When users in the same organization want Get Enrichment Data Bulk with the values and the amount of 2
+    Then the api should response with code 200
+    #And Check JSON schema "action/ErrorMessage.json"
+
+  @GetEnrichmentDataBulk
+  Scenario: Check the response of Get Enrichment Data Bulk with suspicious param, and the visibility is analyst with the user not in the same organization, the response retrieve code 200 and check with json schema
+    Given a created project with values
+      | key                | value                  |
+      | name               | @@namerandom           |
+      | visibility         | analyst                |
+    And a created artifacts with the values and the amount of 2
+      | key                | value                  |
+      | project            | ##guid                 |
+      | query              | @@query                |
+    And created Bulk Classification Status with the values and the amount of 2
+      | key                | value                  |
+      | classification     | suspicious             |
+    When users not in the same organization want Get Enrichment Data Bulk with the values and the amount of 2
+    Then the api should response with code 200
+    #And Check JSON schema "action/ErrorMessage.json"
+>>>>>>> 6780ddf84fd48325ac1c72eafceb95c30ca584fe
 
     @GetEnrichmentDataBulk
     Scenario: Check the response of Get Enrichment Data Bulk with non-malicious param, and the visibility of project is analyst with the users of the same organization, and the user created the project, the response retrieve code 200 and check with json schema
@@ -425,39 +497,39 @@
       Then the api should response with code 200
       And Check JSON schema "bulkEnrichment/getEnrichmentDataBulk.json"
 
-    @GetEnrichmentDataBulk
-    Scenario: Check the response of Get Enrichment Data Bulk with non-malicious param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 400 and check with json schema
-      Given a created project with values
-        | key                | value                  |
-        | name               | @@namerandom           |
-        | visibility         | analyst                |
-      And a created artifacts with the values and the amount of 2
-        | key                | value                  |
-        | project            | ##guid                 |
-        | query              | @@query                |
-      And created Bulk Classification Status with the values and the amount of 2
-        | key                | value                  |
-        | classification     | non-malicious          |
-      When users in the same organization want Get Enrichment Data Bulk with the values and the amount of 2
-      Then the api should response with code 400
-      And Check JSON schema "action/ErrorMessage.json"
+  @GetEnrichmentDataBulk
+  Scenario: Check the response of Get Enrichment Data Bulk with non-malicious param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 200 and check with json schema
+    Given a created project with values
+      | key                | value                  |
+      | name               | @@namerandom           |
+      | visibility         | analyst                |
+    And a created artifacts with the values and the amount of 2
+      | key                | value                  |
+      | project            | ##guid                 |
+      | query              | @@query                |
+    And created Bulk Classification Status with the values and the amount of 2
+      | key                | value                  |
+      | classification     | non-malicious          |
+    When users in the same organization want Get Enrichment Data Bulk with the values and the amount of 2
+    Then the api should response with code 200
+    And Check JSON schema "bulkEnrichment/getEnrichmentDataBulk.json"
 
-    @GetEnrichmentDataBulk
-    Scenario: Check the response of Get Enrichment Data Bulk with non-malicious param, and the visibility is analyst with the user not in the same organization, the response retrieve code 400 and check with json schema
-      Given a created project with values
-        | key                | value                  |
-        | name               | @@namerandom           |
-        | visibility         | analyst                |
-      And a created artifacts with the values and the amount of 2
-        | key                | value                  |
-        | project            | ##guid                 |
-        | query              | @@query                |
-      And created Bulk Classification Status with the values and the amount of 2
-        | key                | value                  |
-        | classification     | non-malicious          |
-      When users not in the same organization want Get Enrichment Data Bulk with the values and the amount of 2
-      Then the api should response with code 400
-      And Check JSON schema "action/ErrorMessage.json"
+  @GetEnrichmentDataBulk
+  Scenario: Check the response of Get Enrichment Data Bulk with non-malicious param, and the visibility is analyst with the user not in the same organization, the response retrieve code 200 and check with json schema
+    Given a created project with values
+      | key                | value                  |
+      | name               | @@namerandom           |
+      | visibility         | analyst                |
+    And a created artifacts with the values and the amount of 2
+      | key                | value                  |
+      | project            | ##guid                 |
+      | query              | @@query                |
+    And created Bulk Classification Status with the values and the amount of 2
+      | key                | value                  |
+      | classification     | non-malicious          |
+    When users not in the same organization want Get Enrichment Data Bulk with the values and the amount of 2
+    Then the api should response with code 200
+    And Check JSON schema "bulkEnrichment/getEnrichmentDataBulk.json"
 
     @GetEnrichmentDataBulk
     Scenario: Check the response of Get Enrichment Data Bulk with unknown param, and the visibility of project is analyst with the users of the same organization, and the user created the project, the response retrieve code 200 and check with json schema
@@ -476,36 +548,36 @@
       Then the api should response with code 200
       And Check JSON schema "bulkEnrichment/getEnrichmentDataBulk.json"
 
-    @GetEnrichmentDataBulk
-    Scenario: Check the response of Get Enrichment Data Bulk with unknown param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 400 and check with json schema
-      Given a created project with values
-        | key                | value                  |
-        | name               | @@namerandom           |
-        | visibility         | analyst                |
-      And a created artifacts with the values and the amount of 2
-        | key                | value                  |
-        | project            | ##guid                 |
-        | query              | @@query                |
-      And created Bulk Classification Status with the values and the amount of 2
-        | key                | value                  |
-        | classification     | unknown                |
-      When users in the same organization want Get Enrichment Data Bulk with the values and the amount of 2
-      Then the api should response with code 400
-      And Check JSON schema "action/ErrorMessage.json"
+  @GetEnrichmentDataBulk
+  Scenario: Check the response of Get Enrichment Data Bulk with unknown param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 200 and check with json schema
+    Given a created project with values
+      | key                | value                  |
+      | name               | @@namerandom           |
+      | visibility         | analyst                |
+    And a created artifacts with the values and the amount of 2
+      | key                | value                  |
+      | project            | ##guid                 |
+      | query              | @@query                |
+    And created Bulk Classification Status with the values and the amount of 2
+      | key                | value                  |
+      | classification     | unknown                |
+    When users in the same organization want Get Enrichment Data Bulk with the values and the amount of 2
+    Then the api should response with code 200
+    And Check JSON schema "bulkEnrichment/getEnrichmentDataBulk.json"
 
-    @GetEnrichmentDataBulk
-    Scenario: Check the response of Get Enrichment Data Bulk with unknown param, and the visibility is analyst with the user not in the same organization, the response retrieve code 400 and check with json schema
-      Given a created project with values
-        | key                | value                  |
-        | name               | @@namerandom           |
-        | visibility         | analyst                |
-      And a created artifacts with the values and the amount of 2
-        | key                | value                  |
-        | project            | ##guid                 |
-        | query              | @@query                |
-      And created Bulk Classification Status with the values and the amount of 2
-        | key                | value                  |
-        | classification     | unknown                |
-      When users not in the same organization want Get Enrichment Data Bulk with the values and the amount of 2
-      Then the api should response with code 400
-      And Check JSON schema "action/ErrorMessage.json"
+  @GetEnrichmentDataBulk
+  Scenario: Check the response of Get Enrichment Data Bulk with unknown param, and the visibility is analyst with the user not in the same organization, the response retrieve code 200 and check with json schema
+    Given a created project with values
+      | key                | value                  |
+      | name               | @@namerandom           |
+      | visibility         | analyst                |
+    And a created artifacts with the values and the amount of 2
+      | key                | value                  |
+      | project            | ##guid                 |
+      | query              | @@query                |
+    And created Bulk Classification Status with the values and the amount of 2
+      | key                | value                  |
+      | classification     | unknown                |
+    When users not in the same organization want Get Enrichment Data Bulk with the values and the amount of 2
+    Then the api should response with code 200
+    And Check JSON schema "bulkEnrichment/getEnrichmentDataBulk.json"
