@@ -324,7 +324,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data Bulk
     #And Check JSON schema "action/getBulkClassificationStatus.json"
 
   @GetEnrichmentDataBulk
-  Scenario: Check the response of Get Enrichment Data Bulk with malicious param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 400 and check with json schema
+  Scenario: Check the response of Get Enrichment Data Bulk with malicious param, and the visibility of project is analyst with the user of the same organization,     and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -337,11 +337,11 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data Bulk
       | key                | value                  |
       | classification     | malicious              |
     When users in the same organization want Get Enrichment Data Bulk with the values and the amount of 2
-    Then the api should response with code 400
+    Then the api should response with code 200
     #And Check JSON schema "action/ErrorMessage.json"
 
   @GetEnrichmentDataBulk
-  Scenario: Check the response of Get Enrichment Data Bulk with malicious param, and the visibility is analyst with the user not in the same organization, the response retrieve code 400 and check with json schema
+  Scenario: Check the response of Get Enrichment Data Bulk with malicious param, and the visibility is analyst with the user not in the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -354,7 +354,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data Bulk
       | key                | value                  |
       | classification     | malicious              |
     When users not in the same organization want Get Enrichment Data Bulk with the values and the amount of 2
-    Then the api should response with code 400
+    Then the api should response with code 200
     #And Check JSON schema "action/ErrorMessage.json"
 
   @GetEnrichmentDataBulk
@@ -375,7 +375,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data Bulk
     #And Check JSON schema "action/getBulkClassificationStatus.json"
 
   @GetEnrichmentDataBulk
-  Scenario: Check the response of Get Enrichment Data Bulk with suspicious param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 400 and check with json schema
+  Scenario: Check the response of Get Enrichment Data Bulk with suspicious param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -388,11 +388,11 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data Bulk
       | key                | value                  |
       | classification     | suspicious             |
     When users in the same organization want Get Enrichment Data Bulk with the values and the amount of 2
-    Then the api should response with code 400
+    Then the api should response with code 200
     #And Check JSON schema "action/ErrorMessage.json"
 
   @GetEnrichmentDataBulk
-  Scenario: Check the response of Get Enrichment Data Bulk with suspicious param, and the visibility is analyst with the user not in the same organization, the response retrieve code 400 and check with json schema
+  Scenario: Check the response of Get Enrichment Data Bulk with suspicious param, and the visibility is analyst with the user not in the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -405,7 +405,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data Bulk
       | key                | value                  |
       | classification     | suspicious             |
     When users not in the same organization want Get Enrichment Data Bulk with the values and the amount of 2
-    Then the api should response with code 400
+    Then the api should response with code 200
     #And Check JSON schema "action/ErrorMessage.json"
 
   @GetEnrichmentDataBulk
@@ -426,7 +426,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data Bulk
     #And Check JSON schema "action/getBulkClassificationStatus.json"
 
   @GetEnrichmentDataBulk
-  Scenario: Check the response of Get Enrichment Data Bulk with non-malicious param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 400 and check with json schema
+  Scenario: Check the response of Get Enrichment Data Bulk with non-malicious param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -439,11 +439,11 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data Bulk
       | key                | value                  |
       | classification     | non-malicious          |
     When users in the same organization want Get Enrichment Data Bulk with the values and the amount of 2
-    Then the api should response with code 400
+    Then the api should response with code 200
     #And Check JSON schema "action/ErrorMessage.json"
 
   @GetEnrichmentDataBulk
-  Scenario: Check the response of Get Enrichment Data Bulk with non-malicious param, and the visibility is analyst with the user not in the same organization, the response retrieve code 400 and check with json schema
+  Scenario: Check the response of Get Enrichment Data Bulk with non-malicious param, and the visibility is analyst with the user not in the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -456,7 +456,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data Bulk
       | key                | value                  |
       | classification     | non-malicious          |
     When users not in the same organization want Get Enrichment Data Bulk with the values and the amount of 2
-    Then the api should response with code 400
+    Then the api should response with code 200
     #And Check JSON schema "action/ErrorMessage.json"
 
   @GetEnrichmentDataBulk
@@ -477,7 +477,7 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data Bulk
     #And Check JSON schema "action/getBulkClassificationStatus.json"
 
   @GetEnrichmentDataBulk
-  Scenario: Check the response of Get Enrichment Data Bulk with unknown param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 400 and check with json schema
+  Scenario: Check the response of Get Enrichment Data Bulk with unknown param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -490,11 +490,11 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data Bulk
       | key                | value                  |
       | classification     | unknown                |
     When users in the same organization want Get Enrichment Data Bulk with the values and the amount of 2
-    Then the api should response with code 400
+    Then the api should response with code 200
     #And Check JSON schema "action/ErrorMessage.json"
 
   @GetEnrichmentDataBulk
-  Scenario: Check the response of Get Enrichment Data Bulk with unknown param, and the visibility is analyst with the user not in the same organization, the response retrieve code 400 and check with json schema
+  Scenario: Check the response of Get Enrichment Data Bulk with unknown param, and the visibility is analyst with the user not in the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key                | value                  |
       | name               | @@namerandom           |
@@ -507,5 +507,5 @@ Feature: As a user of riskIQ platform I want to Get Enrichment Data Bulk
       | key                | value                  |
       | classification     | unknown                |
     When users not in the same organization want Get Enrichment Data Bulk with the values and the amount of 2
-    Then the api should response with code 400
+    Then the api should response with code 200
     #And Check JSON schema "action/ErrorMessage.json"
