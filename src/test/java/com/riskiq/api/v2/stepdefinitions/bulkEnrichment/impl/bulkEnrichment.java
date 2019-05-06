@@ -23,7 +23,6 @@ public class bulkEnrichment {
 
   public static void GetOSINTBulk(int cant, String bodyJsonArtifact){
     response.set(rs.get().contentType(ContentType.TEXT).body(bodyJsonArtifact).get(setMethodAndEndPoint(GET,enrichmentBulkOsint)));
-    System.out.println(response.get().prettyPrint());
   }
 
   public static void GetEnrichmentDataBulk(int cant, String bodyJsonArtifact){
