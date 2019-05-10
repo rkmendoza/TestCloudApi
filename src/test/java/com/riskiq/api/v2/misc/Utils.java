@@ -63,6 +63,14 @@ public class Utils extends FlowData{
     public static String whoisGet = "";
     public static String whoisSearchKeyword = "";
     public static String whoisSearch = "";
+    public static String enrichmentMalwareBulk = "";
+    public static String enrichmentDataBulk = "";
+    public static String enrichmentBulkOsint = "";
+    public static String hostAttributesComponents = "";
+    public static String hostAttributesPairs = "";
+    public static String hostAttributesTrackers = "";
+    public static String dnsPassive = "";
+    public static String enrichmentBulk = "";
 
   public static void setParameterProperties(){
         try {
@@ -115,6 +123,14 @@ public class Utils extends FlowData{
         whoisGet = properties.getProperty("whoisGet");
         whoisSearchKeyword = properties.getProperty("whoisSearchKeyword");
         whoisSearch = properties.getProperty("whoisSearch");
+        enrichmentMalwareBulk = properties.getProperty("enrichmentMalwareBulk");
+        enrichmentDataBulk = properties.getProperty("enrichmentDataBulk");
+        enrichmentBulkOsint = properties.getProperty("enrichmentBulkOsint");
+        hostAttributesComponents = properties.getProperty("hostAttributesComponents");
+        hostAttributesPairs = properties.getProperty("hostAttributesPairs");
+        hostAttributesTrackers = properties.getProperty("hostAttributesTrackers");
+        dnsPassive = properties.getProperty("dnsPassive");
+        enrichmentBulk = properties.getProperty("enrichmentBulk");
     }
 
 

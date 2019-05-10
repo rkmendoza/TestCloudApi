@@ -1,0 +1,62 @@
+{
+  "definitions": {},
+  "type": "object",
+  "required": [
+    "success",
+    "totalRecords",
+    "results"
+  ],
+  "properties": {
+    "success": {
+      "$id": "#/properties/success",
+      "type": "boolean",
+      "enum": [true, false]
+    },
+    "totalRecords": {
+      "$id": "#/properties/totalRecords",
+      "type": "integer"
+    },
+    "results": {
+      "$id": "#/properties/results",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/results/items",
+        "type": "object",
+        "required": [
+          "cause",
+          "lastSeen",
+          "child",
+          "firstSeen",
+          "parent"
+        ],
+        "properties": {
+          "cause": {
+            "$id": "#/properties/results/items/properties/cause",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "lastSeen": {
+            "$id": "#/properties/results/items/properties/lastSeen",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "child": {
+            "$id": "#/properties/results/items/properties/child",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "firstSeen": {
+            "$id": "#/properties/results/items/properties/firstSeen",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "parent": {
+            "$id": "#/properties/results/items/properties/parent",
+            "type": "string",
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}
