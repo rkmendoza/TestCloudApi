@@ -70,7 +70,11 @@ public class Utils extends FlowData{
     public static String hostAttributesPairs = "";
     public static String hostAttributesTrackers = "";
     public static String dnsPassive = "";
+    public static String dnsPassiveUnique = "";
     public static String enrichmentBulk = "";
+    public static String dnsSearchKeyword = "";
+    public static String sslCertificateHistory = "";
+    public static String sslCertificate = "";
 
   public static void setParameterProperties(){
         try {
@@ -131,6 +135,10 @@ public class Utils extends FlowData{
         hostAttributesTrackers = properties.getProperty("hostAttributesTrackers");
         dnsPassive = properties.getProperty("dnsPassive");
         enrichmentBulk = properties.getProperty("enrichmentBulk");
+        dnsPassiveUnique = properties.getProperty("dnsPassiveUnique");
+        dnsSearchKeyword = properties.getProperty("dnsSearchKeyword");
+        sslCertificateHistory = properties.getProperty("sslCertificateHistory");
+        sslCertificate = properties.getProperty("sslCertificate");
     }
 
 
