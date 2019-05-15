@@ -18,7 +18,6 @@ public class sslCertificates {
 
     public static void GetWithDataTable(String Api, DataTable dataTable){
         response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).get(setMethodAndEndPoint(GET,Api)));
-        System.out.println(response.get().prettyPrint());
     }
 
     //Class Methods
@@ -29,6 +28,14 @@ public class sslCertificates {
 
     public static void GetSSLCertificate(DataTable dataTable){
         GetWithDataTable(sslCertificate, dataTable);
+    }
+
+    public static void GetSearchSSLCertificatesbyKeyword(DataTable dataTable){
+        GetWithDataTable(sslCertificateSearchKeyword, dataTable);
+    }
+
+    public static void GetSearchSSLCertificates(DataTable dataTable){
+        GetWithDataTable(sslCertificateSearch, dataTable);
     }
 
 

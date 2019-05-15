@@ -75,6 +75,8 @@ public class Utils extends FlowData{
     public static String dnsSearchKeyword = "";
     public static String sslCertificateHistory = "";
     public static String sslCertificate = "";
+    public static String sslCertificateSearchKeyword = "";
+    public static String sslCertificateSearch = "";
 
   public static void setParameterProperties(){
         try {
@@ -139,6 +141,8 @@ public class Utils extends FlowData{
         dnsSearchKeyword = properties.getProperty("dnsSearchKeyword");
         sslCertificateHistory = properties.getProperty("sslCertificateHistory");
         sslCertificate = properties.getProperty("sslCertificate");
+        sslCertificateSearchKeyword = properties.getProperty("sslCertificateSearchKeyword");
+        sslCertificateSearch = properties.getProperty("sslCertificateSearch");
     }
 
 
