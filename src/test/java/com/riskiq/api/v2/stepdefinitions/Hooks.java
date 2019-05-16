@@ -29,10 +29,10 @@ public class Hooks extends FlowData{
 
     @After
     public static void afterScenario(Scenario scenario){
-        if(scenario.isFailed()) {
+        //if(scenario.isFailed()) {
                 String url = String.join("/", RestAssured.baseURI, getEndPoint().getEndpoint());
                 scenario.write(generateCurl(url, getEndPoint().getMethod(), bodyJson.get(), getUserCredentials().getUsername(), getUserCredentials().getPassword()));
-        }
+        //}
         deleteAllProject();
     }
 }

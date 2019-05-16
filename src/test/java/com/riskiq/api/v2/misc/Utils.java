@@ -57,6 +57,28 @@ public class Utils extends FlowData{
     public static String actionsSinkhole = "";
     public static String enrichment = "";
     public static String actionsTagsSearch = "";
+    public static String enrichmentMalaware = "";
+    public static String enrichmentOsint = "";
+    public static String enrichmentSubdomains = "";
+    public static String trackersUserTrackers = "";
+    public static String whoisGet = "";
+    public static String whoisSearchKeyword = "";
+    public static String whoisSearch = "";
+    public static String enrichmentMalwareBulk = "";
+    public static String enrichmentDataBulk = "";
+    public static String enrichmentBulkOsint = "";
+    public static String hostAttributesComponents = "";
+    public static String hostAttributesPairs = "";
+    public static String hostAttributesTrackers = "";
+    public static String dnsPassive = "";
+    public static String dnsPassiveUnique = "";
+    public static String enrichmentBulk = "";
+    public static String dnsSearchKeyword = "";
+    public static String sslCertificateHistory = "";
+    public static String sslCertificate = "";
+    public static String sslCertificateSearchKeyword = "";
+    public static String sslCertificateSearch = "";
+    public static String artifactTag = "";
 
   public static void setParameterProperties(){
         try {
@@ -103,10 +125,32 @@ public class Utils extends FlowData{
         actionsSinkhole = properties.getProperty("actionsSinkhole");
         enrichment = properties.getProperty("enrichment");
         actionsTagsSearch = properties.getProperty("actionsTagsSearch");
+        enrichmentMalaware = properties.getProperty("enrichmentMalaware");
+        enrichmentOsint = properties.getProperty("enrichmentOsint");
+        enrichmentSubdomains = properties.getProperty("enrichmentSubdomains");
+        trackersUserTrackers = properties.getProperty("trackersUserTrackers");
+        whoisGet = properties.getProperty("whoisGet");
+        whoisSearchKeyword = properties.getProperty("whoisSearchKeyword");
+        whoisSearch = properties.getProperty("whoisSearch");
+        enrichmentMalwareBulk = properties.getProperty("enrichmentMalwareBulk");
+        enrichmentDataBulk = properties.getProperty("enrichmentDataBulk");
+        enrichmentBulkOsint = properties.getProperty("enrichmentBulkOsint");
+        hostAttributesComponents = properties.getProperty("hostAttributesComponents");
+        hostAttributesPairs = properties.getProperty("hostAttributesPairs");
+        hostAttributesTrackers = properties.getProperty("hostAttributesTrackers");
+        dnsPassive = properties.getProperty("dnsPassive");
+        enrichmentBulk = properties.getProperty("enrichmentBulk");
+        dnsPassiveUnique = properties.getProperty("dnsPassiveUnique");
+        dnsSearchKeyword = properties.getProperty("dnsSearchKeyword");
+        sslCertificateHistory = properties.getProperty("sslCertificateHistory");
+        sslCertificate = properties.getProperty("sslCertificate");
+        sslCertificateSearchKeyword = properties.getProperty("sslCertificateSearchKeyword");
+        sslCertificateSearch = properties.getProperty("sslCertificateSearch");
+        artifactTag = properties.getProperty("artifactTag");
     }
 
 
-    public synchronized static ValidatableResponse matchJsonValue(Map.Entry<String, String> field, ValidatableResponse json) {
+  public synchronized static ValidatableResponse matchJsonValue(Map.Entry<String, String> field, ValidatableResponse json) {
 
         if (StringUtils.isNumeric(field.getValue())) {
             //value numeric

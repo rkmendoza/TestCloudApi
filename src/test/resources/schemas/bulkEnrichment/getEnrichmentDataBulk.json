@@ -1,0 +1,111 @@
+{
+  "definitions": {},
+  "type": "object",
+  "required": [
+    "results"
+  ],
+  "properties": {
+    "results": {
+      "$id": "#/properties/results",
+      "type": "object",
+      "properties": {
+        "additionalProperties": {
+          "$id": "#/properties/results/properties/riskiq.net",
+          "type": "object",
+          "required": [
+            "sinkhole",
+            "tld",
+            "primaryDomain",
+            "queryValue",
+            "queryType",
+            "everCompromised",
+            "tag_meta",
+            "dynamicDns",
+            "tags",
+            "classification"
+          ],
+          "properties": {
+            "sinkhole": {
+              "$id": "#/properties/results/properties/riskiq.net/properties/sinkhole",
+              "type": "boolean",
+              "enum": [true, false]
+            },
+            "tld": {
+              "$id": "#/properties/results/properties/riskiq.net/properties/tld",
+              "type": "string",
+              "pattern": "^(.*)$"
+            },
+            "primaryDomain": {
+              "$id": "#/properties/results/properties/riskiq.net/properties/primaryDomain",
+              "type": "string",
+              "pattern": "^(.*)$"
+            },
+            "queryValue": {
+              "$id": "#/properties/results/properties/riskiq.net/properties/queryValue",
+              "type": "string",
+              "pattern": "^(.*)$"
+            },
+            "queryType": {
+              "$id": "#/properties/results/properties/riskiq.net/properties/queryType",
+              "type": "string",
+              "pattern": "^(.*)$"
+            },
+            "everCompromised": {
+              "$id": "#/properties/results/properties/riskiq.net/properties/everCompromised",
+              "type": "boolean",
+              "enum": [true, false]
+            },
+            "tag_meta": {
+              "$id": "#/properties/results/properties/riskiq.net/properties/tag_meta",
+              "type": "object",
+              "required": [
+                "foobar"
+              ],
+              "properties": {
+                "foobar": {
+                  "$id": "#/properties/results/properties/riskiq.net/properties/tag_meta/properties/foobar",
+                  "type": "object",
+                  "required": [
+                    "creator",
+                    "created_at"
+                  ],
+                  "properties": {
+                    "creator": {
+                      "$id": "#/properties/results/properties/riskiq.net/properties/tag_meta/properties/foobar/properties/creator",
+                      "type": "string",
+                      "pattern": "^(.*)$"
+                    },
+                    "created_at": {
+                      "$id": "#/properties/results/properties/riskiq.net/properties/tag_meta/properties/foobar/properties/created_at",
+                      "type": "string",
+                      "pattern": "^(.*)$"
+                    }
+                  }
+                }
+              }
+            },
+            "dynamicDns": {
+              "$id": "#/properties/results/properties/riskiq.net/properties/dynamicDns",
+              "type": "boolean",
+              "enum": [true, false]
+            },
+            "tags": {
+              "$id": "#/properties/results/properties/riskiq.net/properties/tags",
+              "type": "array",
+              "items": {
+                "$id": "#/properties/results/properties/riskiq.net/properties/tags/items",
+                "type": "string",
+                "pattern": "^(.*)$"
+              }
+            },
+            "classification": {
+              "$id": "#/properties/results/properties/riskiq.net/properties/classification",
+              "type": "string",
+              "pattern": "^(.*)$"
+            }
+          }
+        }
+      }
+    }
+  }
+}

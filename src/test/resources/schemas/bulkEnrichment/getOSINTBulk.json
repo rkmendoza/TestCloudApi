@@ -1,0 +1,84 @@
+{
+  "definitions": {},
+  "type": "object",
+  "required": [
+    "success",
+    "results"
+  ],
+  "properties": {
+    "success": {
+      "$id": "#/properties/success",
+      "type": "boolean",
+      "enum": [true, false]
+    },
+    "results": {
+      "$id": "#/properties/results",
+      "type": "object",
+      "properties": {
+        "additionalProperties": {
+          "type": "object",
+          "required": [
+            "results",
+            "hasOsint"
+          ],
+          "properties": {
+            "results": {
+              "$id": "#/properties/results/properties/example.org/properties/results",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "derived",
+                  "tags",
+                  "source",
+                  "source_url",
+                  "in_report"
+                ],
+                "properties": {
+                  "derived": {
+                    "$id": "#/properties/results/properties/example.org/properties/results/items/properties/derived",
+                    "type": "boolean",
+                    "enum": [true, false]
+                  },
+                  "tags": {
+                    "$id": "#/properties/results/properties/example.org/properties/results/items/properties/tags",
+                    "type": "array",
+                    "items": {
+                      "$id": "#/properties/results/properties/example.org/properties/results/items/properties/tags/items",
+                      "type": "string",
+                      "pattern": "^(.*)$"
+                    }
+                  },
+                  "source": {
+                    "$id": "#/properties/results/properties/example.org/properties/results/items/properties/source",
+                    "type": "string",
+                    "pattern": "^(.*)$"
+                  },
+                  "source_url": {
+                    "$id": "#/properties/results/properties/example.org/properties/results/items/properties/source_url",
+                    "type": "string",
+                    "pattern": "^(.*)$"
+                  },
+                  "in_report": {
+                    "$id": "#/properties/results/properties/example.org/properties/results/items/properties/in_report",
+                    "type": "array",
+                    "items": {
+                      "$id": "#/properties/results/properties/example.org/properties/results/items/properties/in_report/items",
+                      "type": "string",
+                      "pattern": "^(.*)$"
+                    }
+                  }
+                }
+              }
+            },
+            "hasOsint": {
+              "$id": "#/properties/results/properties/example.org/properties/hasOsint",
+              "type": "boolean",
+              "enum": [true, false]
+            }
+          }
+        }
+      }
+    }
+  }
+}
