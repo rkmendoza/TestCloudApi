@@ -1,0 +1,45 @@
+{
+  "definitions": {},
+  "type": "object",
+  "required": [
+    "queryValue",
+    "results"
+  ],
+  "properties": {
+    "queryValue": {
+      "$id": "#/properties/queryValue",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "results": {
+      "$id": "#/properties/results",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/results/items",
+        "type": "object",
+        "required": [
+          "matchType",
+          "fieldMatch",
+          "focusPoint"
+        ],
+        "properties": {
+          "matchType": {
+            "$id": "#/properties/results/items/properties/matchType",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "fieldMatch": {
+            "$id": "#/properties/results/items/properties/fieldMatch",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "focusPoint": {
+            "$id": "#/properties/results/items/properties/focusPoint",
+            "type": "string",
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}
