@@ -23,17 +23,13 @@ public class TagArtifact {
 
     public static void PutSetTagsWithDataTable(String Api, DataTable dataTable){
       response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,Api)));
-      System.out.println(response.get().prettyPrint());
     }
 
-    /*public static void PostWithDataTable(String Api, DataTable dataTable){
+    public static void PostWithDataTable(String Api, DataTable dataTable){
       response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).post(setMethodAndEndPoint(POST,Api)));
-      setArtifact(Artifact.with()
-        .query(response.get().path("query"))
-        .tagsArtifact(response.get().path("tags"))
-        .create());
     }
 
+    /*
     public static void DeleteWithDataTable(String Api, DataTable dataTable){
       response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).delete(setMethodAndEndPoint(DELETE,Api)));
       setArtifact(Artifact.with()
@@ -48,10 +44,13 @@ public class TagArtifact {
         GetWithDataTable(artifactTag, dataTable);
     }
 
-  public static void SetArtifactTags(DataTable dataTable){
+   public static void SetArtifactTags(DataTable dataTable){
     PutSetTagsWithDataTable(artifactTag, dataTable);
   }
 
+   public static void UpdateArtifactTags(DataTable dataTable){
+     PostWithDataTable(artifactTag, dataTable);
+  }
 
 }
 
