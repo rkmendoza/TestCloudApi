@@ -11,7 +11,7 @@ import static com.riskiq.api.v2.stepdefinitions.actions.impl.Actions.SetTags;
 
 public class GetTagsSteps extends FlowData  {
 
-  @When("^users with wrong credentials want Get Tags with the values$")
+  /*@When("^users with wrong credentials want Get Tags with the values$")
   public void users_with_wrong_credentials_want_Get_Tags_with_the_values(DataTable dataTable) {
     rs.set(setCredentials(userInvalidName, userInvalidPw));
     GetTags(dataTable);
@@ -35,5 +35,5 @@ public class GetTagsSteps extends FlowData  {
     rs.set(setCredentials(userName2, userPw2));
     GetTags(dataTable);
   }
-
+*/
 }
