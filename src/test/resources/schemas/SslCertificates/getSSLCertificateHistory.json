@@ -1,0 +1,55 @@
+{
+  "definitions": {},
+  "type": "object",
+  "required": [
+    "results",
+    "success"
+  ],
+  "properties": {
+    "results": {
+      "$id": "#/properties/results",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/results/items",
+        "type": "object",
+        "required": [
+          "sha1",
+          "firstSeen",
+          "ipAddresses",
+          "lastSeen"
+        ],
+        "properties": {
+          "sha1": {
+            "$id": "#/properties/results/items/properties/sha1",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "firstSeen": {
+            "$id": "#/properties/results/items/properties/firstSeen",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "ipAddresses": {
+            "$id": "#/properties/results/items/properties/ipAddresses",
+            "type": "array",
+            "items": {
+              "$id": "#/properties/results/items/properties/ipAddresses/items",
+              "type": "string",
+              "pattern": "^(.*)$"
+            }
+          },
+          "lastSeen": {
+            "$id": "#/properties/results/items/properties/lastSeen",
+            "type": "string",
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    },
+    "success": {
+      "$id": "#/properties/success",
+      "type": "boolean",
+      "enum": [true, false]
+    }
+  }
+}
