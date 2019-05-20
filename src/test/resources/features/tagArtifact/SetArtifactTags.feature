@@ -19,7 +19,7 @@ Feature: As a user of riskIQ platform I want to Set Artifact Tags
     #And Check JSON schema "project/ErrorMessage.json"
 
   @SetArtifactTags
-  Scenario: Check the response of Set Artifact Tags by query param, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
+  Scenario: Check the response of Set Artifact Tags, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
     When users in the same organization want Set Artifact Tags with the values
       | key          | value                  |
       | artifact     | %%artifactWithAlert    |
@@ -28,7 +28,7 @@ Feature: As a user of riskIQ platform I want to Set Artifact Tags
     #And Check JSON schema "action/addTags.json"
 
   @SetArtifactTags
-  Scenario: Check the response of Set Artifact Tags by query param, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
+  Scenario: Check the response of Set Artifact Tags, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key          | value                  |
       | name         | @@namerandom           |
@@ -45,7 +45,7 @@ Feature: As a user of riskIQ platform I want to Set Artifact Tags
     #And Check JSON schema "action/addTags.json"
 
   @SetArtifactTags
-  Scenario: Check the response of Set Artifact Tags by query param, and the visibility is public with the user not in the same organization, the response retrieve code 403 and check with json schema
+  Scenario: Check the response of Set Artifact Tags, and the visibility is public with the user not in the same organization, the response retrieve code 403 and check with json schema
     Given a created project with values
       | key          | value                  |
       | name         | @@namerandom           |
@@ -62,7 +62,7 @@ Feature: As a user of riskIQ platform I want to Set Artifact Tags
     #And Check JSON schema "action/addTags.json"
 
   @SetArtifactTags
-  Scenario: Check the response of Set Artifact Tags by query param, and the visibility of project is private with the user of the same organization, the response retrieve code 200 and check with json schema
+  Scenario: Check the response of Set Artifact Tags, and the visibility of project is private with the user of the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key          | value                  |
       | name         | @@namerandom           |
@@ -96,7 +96,7 @@ Feature: As a user of riskIQ platform I want to Set Artifact Tags
     #And Check JSON schema "project/ErrorMessage.json"
 
   @SetArtifactTags
-  Scenario: Check the response of Set Artifact Tags by query param, and the visibility is private with the user not in the same organization, the response retrieve code 403 and check with json schema
+  Scenario: Check the response of Set Artifact Tags, and the visibility is private with the user not in the same organization, the response retrieve code 403 and check with json schema
     Given a created project with values
       | key          | value                  |
       | name         | @@namerandom           |
@@ -113,7 +113,7 @@ Feature: As a user of riskIQ platform I want to Set Artifact Tags
     #And Check JSON schema "project/ErrorMessage.json"
 
   @SetArtifactTags
-  Scenario: Check the response of Set Artifact Tags by query param, and the visibility of project is analyst with the user of the same organization, and the user created the project, the response retrieve code 404 and check with json schema
+  Scenario: Check the response of Set Artifact Tags, and the visibility of project is analyst with the user of the same organization, and the user created the project, the response retrieve code 404 and check with json schema
     Given a created project with values
       | key          | value                  |
       | name         | @@namerandom           |
@@ -130,7 +130,7 @@ Feature: As a user of riskIQ platform I want to Set Artifact Tags
     #And Check JSON schema "action/addTags.json"
 
   @SetArtifactTags
-  Scenario: Check the response of Set Artifact Tags by query param, and the visibility of project is analyst with the user of the same organization, the response retrieve code 404 and check with json schema
+  Scenario: Check the response of Set Artifact Tags, and the visibility of project is analyst with the user of the same organization, the response retrieve code 404 and check with json schema
     Given a created project with values
       | key          | value                  |
       | name         | @@namerandom           |
@@ -147,7 +147,7 @@ Feature: As a user of riskIQ platform I want to Set Artifact Tags
     #And Check JSON schema "action/addTags.json"
 
   @SetArtifactTags
-  Scenario: Check the response of Set Artifact Tags by query param, and the visibility is analyst with the user not in the same organization, the response retrieve code 404 and check with json schema
+  Scenario: Check the response of Set Artifact Tags, and the visibility is analyst with the user not in the same organization, the response retrieve code 404 and check with json schema
     Given a created project with values
       | key          | value                  |
       | name         | @@namerandom           |

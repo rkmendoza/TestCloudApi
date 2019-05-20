@@ -29,14 +29,11 @@ public class TagArtifact {
       response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).post(setMethodAndEndPoint(POST,Api)));
     }
 
-    /*
     public static void DeleteWithDataTable(String Api, DataTable dataTable){
+
       response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).delete(setMethodAndEndPoint(DELETE,Api)));
-      setArtifact(Artifact.with()
-        .query(response.get().path("query"))
-        .tagsArtifact(response.get().path("tags"))
-        .create());
-    }*/
+      System.out.println(response.get().prettyPrint());
+    }
 
     //Class Methods
 
@@ -50,6 +47,10 @@ public class TagArtifact {
 
    public static void UpdateArtifactTags(DataTable dataTable){
      PostWithDataTable(artifactTag, dataTable);
+  }
+
+   public static void RemoveArtifactTags(DataTable dataTable){
+     DeleteWithDataTable(artifactTag, dataTable);
   }
 
 }
