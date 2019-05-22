@@ -9,7 +9,7 @@
   "properties": {
     "queryValue": {
       "$id": "#/properties/queryValue",
-      "type": "string",
+      "type": ["null","string"],
       "pattern": "^(.*)$"
     },
     "results": {
@@ -21,17 +21,17 @@
         "properties": {
           "issuerCountry": {
             "$id": "#/properties/results/items/properties/issuerCountry",
-            "type": "string",
+            "type": ["null","string"],
             "pattern": "^(.*)$"
           },
           "subjectCommonName": {
             "$id": "#/properties/results/items/properties/subjectCommonName",
-            "type": "string",
+            "type": ["null","string"],
             "pattern": "^(.*)$"
           },
           "subjectOrganizationName": {
             "$id": "#/properties/results/items/properties/subjectOrganizationName",
-            "type": "string",
+            "type": ["null","string"],
             "pattern": "^(.*)$"
           },
           "subjectOrganizationUnitName": {
@@ -48,7 +48,7 @@
           },
           "fingerprint": {
             "$id": "#/properties/results/items/properties/fingerprint",
-            "type": "string",
+            "type": ["null","string"],
             "pattern": "^(.*)$"
           },
           "issuerStateOrProvinceName": {
@@ -57,17 +57,17 @@
           },
           "issuerCommonName": {
             "$id": "#/properties/results/items/properties/issuerCommonName",
-            "type": "string",
+            "type": ["null","string"],
             "pattern": "^(.*)$"
           },
           "subjectLocalityName": {
             "$id": "#/properties/results/items/properties/subjectLocalityName",
-            "type": "string",
+            "type": ["null","string"],
             "pattern": "^(.*)$"
           },
           "issueDate": {
             "$id": "#/properties/results/items/properties/issueDate",
-            "type": "string",
+            "type": ["null","string"],
             "pattern": "^(.*)$"
           },
           "subjectEmailAddress": {
@@ -76,12 +76,12 @@
           },
           "subjectProvince": {
             "$id": "#/properties/results/items/properties/subjectProvince",
-            "type": "string",
+            "type": ["null","string"],
             "pattern": "^(.*)$"
           },
           "subjectStateOrProvinceName": {
             "$id": "#/properties/results/items/properties/subjectStateOrProvinceName",
-            "type": "string",
+            "type": ["null","string"],
             "pattern": "^(.*)$"
           },
           "issuerEmailAddress": {
@@ -98,12 +98,12 @@
           },
           "issuerOrganizationUnitName": {
             "$id": "#/properties/results/items/properties/issuerOrganizationUnitName",
-            "type": "string",
+            "type": ["null","string"],
             "pattern": "^(.*)$"
           },
           "serialNumber": {
             "$id": "#/properties/results/items/properties/serialNumber",
-            "type": "string",
+            "type": ["null","string"],
             "pattern": "^(.*)$"
           },
           "issuerSurname": {
@@ -120,7 +120,7 @@
           },
           "subjectStreetAddress": {
             "$id": "#/properties/results/items/properties/subjectStreetAddress",
-            "type": "string",
+            "type": ["null","string"],
             "pattern": "^(.*)$"
           },
           "issuerSerialNumber": {
@@ -129,22 +129,22 @@
           },
           "issuerOrganizationName": {
             "$id": "#/properties/results/items/properties/issuerOrganizationName",
-            "type": "string",
+            "type": ["null","string"],
             "pattern": "^(.*)$"
           },
           "sslVersion": {
             "$id": "#/properties/results/items/properties/sslVersion",
-            "type": "string",
+            "type": ["null","string"],
             "pattern": "^(.*)$"
           },
           "sha1": {
             "$id": "#/properties/results/items/properties/sha1",
-            "type": "string",
+            "type": ["null","string"],
             "pattern": "^(.*)$"
           },
           "expirationDate": {
             "$id": "#/properties/results/items/properties/expirationDate",
-            "type": "string",
+            "type": ["null","string"],
             "pattern": "^(.*)$"
           },
           "issuerGivenName": {
@@ -153,7 +153,7 @@
           },
           "subjectCountry": {
             "$id": "#/properties/results/items/properties/subjectCountry",
-            "type": "string",
+            "type": ["null","string"],
             "pattern": "^(.*)$"
           }
         }
