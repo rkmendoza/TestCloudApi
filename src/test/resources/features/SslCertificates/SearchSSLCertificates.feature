@@ -33,7 +33,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerSurname          |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerSurname and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -51,7 +51,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerSurname          |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerSurname and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -69,7 +69,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerSurname          |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerSurname and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -87,7 +87,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerSurname          |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerSurname and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -105,7 +105,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerSurname          |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerSurname and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -123,7 +123,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerSurname          |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerSurname and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -141,7 +141,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerSurname          |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectOrganizationName and user of the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -159,7 +159,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectOrganizationName|
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectOrganizationName and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -177,7 +177,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectOrganizationName|
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectOrganizationName and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -195,7 +195,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectOrganizationName|
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectOrganizationName and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -213,7 +213,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectOrganizationName|
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectOrganizationName and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -231,7 +231,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectOrganizationName|
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectOrganizationName and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -249,7 +249,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectOrganizationName|
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectOrganizationName and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -285,7 +285,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerCountry          |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerCountry and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -303,7 +303,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerCountry          |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerCountry and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -321,7 +321,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerCountry          |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerCountry and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -339,7 +339,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerCountry          |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerCountry and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -357,7 +357,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerCountry          |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerCountry and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -375,7 +375,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerCountry          |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerCountry and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -393,7 +393,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerCountry          |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
 
   @GetSearchSSLCertificates
@@ -412,7 +412,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerOrganizationUnitName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerOrganizationUnitName and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -430,7 +430,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerOrganizationUnitName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerOrganizationUnitName and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -448,7 +448,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerOrganizationUnitName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerOrganizationUnitName and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -466,7 +466,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerOrganizationUnitName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerOrganizationUnitName and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -484,7 +484,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerOrganizationUnitName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerOrganizationUnitName and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -502,7 +502,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerOrganizationUnitName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerOrganizationUnitName and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -520,7 +520,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerOrganizationUnitName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
 
   @GetSearchSSLCertificates
@@ -539,7 +539,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | fingerprint            |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: fingerprint and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -557,7 +557,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | fingerprint            |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: fingerprint and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -575,7 +575,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | fingerprint            |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: fingerprint and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -593,7 +593,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | fingerprint            |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: fingerprint and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -611,7 +611,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | fingerprint            |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: fingerprint and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -629,7 +629,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | fingerprint            |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: fingerprint and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -647,7 +647,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | fingerprint            |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
 
   @GetSearchSSLCertificates
@@ -666,7 +666,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectOrganizationUnitName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectOrganizationUnitName and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -684,7 +684,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectOrganizationUnitName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectOrganizationUnitName and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -702,7 +702,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectOrganizationUnitName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectOrganizationUnitName and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -720,7 +720,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectOrganizationUnitName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectOrganizationUnitName and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -738,7 +738,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectOrganizationUnitName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectOrganizationUnitName and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -756,7 +756,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectOrganizationUnitName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectOrganizationUnitName and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -774,7 +774,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectOrganizationUnitName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: serialNumber and user of the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -792,7 +792,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | serialNumber           |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: serialNumber and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -810,7 +810,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | serialNumber           |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: serialNumber and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -828,7 +828,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | serialNumber           |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: serialNumber and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -846,7 +846,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | serialNumber           |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: serialNumber and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -864,7 +864,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | serialNumber           |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: serialNumber and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -882,7 +882,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | serialNumber           |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: serialNumber and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -900,7 +900,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | serialNumber           |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
 
   @GetSearchSSLCertificates
@@ -919,7 +919,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectEmailAddress    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectEmailAddress and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -937,7 +937,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectEmailAddress    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectEmailAddress and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -955,7 +955,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectEmailAddress    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectEmailAddress and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -973,7 +973,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectEmailAddress    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectEmailAddress and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -991,7 +991,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectEmailAddress    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectEmailAddress and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -1009,7 +1009,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectEmailAddress    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectEmailAddress and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -1027,7 +1027,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectEmailAddress    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
 
   @GetSearchSSLCertificates
@@ -1046,7 +1046,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectCountry         |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectCountry and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -1064,7 +1064,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectCountry         |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectCountry and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -1082,7 +1082,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectCountry         |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectCountry and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -1100,7 +1100,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectCountry         |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectCountry and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -1118,7 +1118,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectCountry         |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectCountry and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -1136,7 +1136,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectCountry         |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectCountry and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -1154,7 +1154,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectCountry         |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerGivenName and user of the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -1172,7 +1172,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerGivenName        |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerGivenName and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -1190,7 +1190,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerGivenName        |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerGivenName and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -1208,7 +1208,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerGivenName        |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerGivenName and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -1226,7 +1226,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerGivenName        |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerGivenName and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -1244,7 +1244,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerGivenName        |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerGivenName and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -1262,7 +1262,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerGivenName        |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerGivenName and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -1280,7 +1280,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerGivenName        |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
 
   @GetSearchSSLCertificates
@@ -1299,7 +1299,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectCommonName      |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectCommonName and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -1317,7 +1317,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectCommonName      |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectCommonName and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -1335,7 +1335,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectCommonName      |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectCommonName and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -1353,7 +1353,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectCommonName      |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectCommonName and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -1371,7 +1371,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectCommonName      |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectCommonName and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -1389,7 +1389,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectCommonName      |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectCommonName and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -1407,7 +1407,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectCommonName      |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
 
   @GetSearchSSLCertificates
@@ -1426,7 +1426,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerCommonName       |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerCommonName and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -1444,7 +1444,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerCommonName       |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerCommonName and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -1462,7 +1462,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerCommonName       |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerCommonName and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -1480,7 +1480,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerCommonName       |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerCommonName and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -1498,7 +1498,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerCommonName       |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerCommonName and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -1516,7 +1516,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerCommonName       |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerCommonName and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -1534,7 +1534,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerCommonName       |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
 
   @GetSearchSSLCertificates
@@ -1553,7 +1553,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerStateOrProvinceName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerStateOrProvinceName and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -1571,7 +1571,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerStateOrProvinceName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerStateOrProvinceName and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -1589,7 +1589,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerStateOrProvinceName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerStateOrProvinceName and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -1607,7 +1607,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerStateOrProvinceName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerStateOrProvinceName and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -1625,7 +1625,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerStateOrProvinceName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerStateOrProvinceName and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -1643,7 +1643,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerStateOrProvinceName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerStateOrProvinceName and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -1661,7 +1661,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerStateOrProvinceName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
 
   @GetSearchSSLCertificates
@@ -1680,7 +1680,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerProvince         |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerProvince and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -1698,7 +1698,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerProvince         |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerProvince and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -1716,7 +1716,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerProvince         |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerProvince and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -1734,7 +1734,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerProvince         |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerProvince and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -1752,7 +1752,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerProvince         |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerProvince and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -1770,7 +1770,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerProvince         |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerProvince and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -1788,7 +1788,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerProvince         |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
 
   @GetSearchSSLCertificates
@@ -1807,7 +1807,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectStateOrProvinceName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectStateOrProvinceName and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -1825,7 +1825,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectStateOrProvinceName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectStateOrProvinceName and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -1843,7 +1843,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectStateOrProvinceName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectStateOrProvinceName and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -1861,7 +1861,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectStateOrProvinceName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectStateOrProvinceName and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -1879,7 +1879,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectStateOrProvinceName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectStateOrProvinceName and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -1897,7 +1897,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectStateOrProvinceName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectStateOrProvinceName and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -1915,7 +1915,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectStateOrProvinceName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: sha1 and user of the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -1933,7 +1933,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | sha1                   |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: sha1 and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -1951,7 +1951,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | sha1                   |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: sha1 and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -1969,7 +1969,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | sha1                   |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: sha1 and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -1987,7 +1987,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | sha1                   |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: sha1 and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2005,7 +2005,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | sha1                   |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: sha1 and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2023,7 +2023,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | sha1                   |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: sha1 and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2041,7 +2041,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | sha1                   |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
 
   @GetSearchSSLCertificates
@@ -2060,7 +2060,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectStreetAddress   |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectStreetAddress and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -2078,7 +2078,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectStreetAddress   |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectStreetAddress and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -2096,7 +2096,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectStreetAddress   |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectStreetAddress and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -2114,7 +2114,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectStreetAddress   |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectStreetAddress and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2132,7 +2132,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectStreetAddress   |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectStreetAddress and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2150,7 +2150,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectStreetAddress   |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectStreetAddress and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2168,7 +2168,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectStreetAddress   |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
 
   @GetSearchSSLCertificates
@@ -2187,7 +2187,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectSerialNumber    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectSerialNumber and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -2205,7 +2205,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectSerialNumber    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectSerialNumber and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -2223,7 +2223,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectSerialNumber    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectSerialNumber and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -2241,7 +2241,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectSerialNumber    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectSerialNumber and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2259,7 +2259,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectSerialNumber    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectSerialNumber and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2277,7 +2277,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectSerialNumber    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectSerialNumber and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2295,7 +2295,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectSerialNumber    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
 
   @GetSearchSSLCertificates
@@ -2314,7 +2314,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerOrganizationName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerOrganizationName and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -2332,7 +2332,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerOrganizationName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerOrganizationName and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -2350,7 +2350,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerOrganizationName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerOrganizationName and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -2368,7 +2368,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerOrganizationName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerOrganizationName and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2386,7 +2386,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerOrganizationName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerOrganizationName and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2404,7 +2404,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerOrganizationName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerOrganizationName and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2422,7 +2422,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerOrganizationName |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
 
   @GetSearchSSLCertificates
@@ -2441,7 +2441,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectSurname         |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectSurname and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -2459,7 +2459,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectSurname         |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectSurname and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -2477,7 +2477,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectSurname         |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectSurname and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -2495,7 +2495,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectSurname         |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectSurname and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2513,7 +2513,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectSurname         |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectSurname and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2531,7 +2531,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectSurname         |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectSurname and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2549,7 +2549,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectSurname         |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectLocalityName and user of the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -2567,7 +2567,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectLocalityName    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectLocalityName and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -2585,7 +2585,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectLocalityName    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectLocalityName and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -2603,7 +2603,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectLocalityName    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectLocalityName and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -2621,7 +2621,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectLocalityName    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectLocalityName and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2639,7 +2639,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectLocalityName    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectLocalityName and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2657,7 +2657,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectLocalityName    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectLocalityName and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2675,7 +2675,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectLocalityName    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
 
   @GetSearchSSLCertificates
@@ -2694,7 +2694,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerStreetAddress    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerStreetAddress and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -2712,7 +2712,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerStreetAddress    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerStreetAddress and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -2730,7 +2730,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerStreetAddress    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerStreetAddress and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -2748,7 +2748,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerStreetAddress    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerStreetAddress and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2766,7 +2766,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerStreetAddress    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerStreetAddress and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2784,7 +2784,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerStreetAddress    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerStreetAddress and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2802,7 +2802,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerStreetAddress    |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
 
   @GetSearchSSLCertificates
@@ -2821,7 +2821,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerLocalityName     |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerLocalityName and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -2839,7 +2839,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerLocalityName     |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerLocalityName and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -2857,7 +2857,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerLocalityName     |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerLocalityName and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -2875,7 +2875,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerLocalityName     |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerLocalityName and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2893,7 +2893,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerLocalityName     |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerLocalityName and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2911,7 +2911,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerLocalityName     |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerLocalityName and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -2929,7 +2929,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerLocalityName     |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
 
   @GetSearchSSLCertificates
@@ -2948,7 +2948,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectGivenName       |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectGivenName and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -2966,7 +2966,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectGivenName       |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectGivenName and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -2984,7 +2984,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectGivenName       |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectGivenName and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -3002,7 +3002,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectGivenName       |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectGivenName and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -3020,7 +3020,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectGivenName       |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectGivenName and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -3038,7 +3038,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectGivenName       |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectGivenName and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -3056,7 +3056,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectGivenName       |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
 
   @GetSearchSSLCertificates
@@ -3075,7 +3075,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectProvince        |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectProvince and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -3093,7 +3093,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectProvince        |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectProvince and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -3111,7 +3111,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectProvince        |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectProvince and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -3129,7 +3129,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectProvince        |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectProvince and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -3147,7 +3147,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectProvince        |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectProvince and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -3165,7 +3165,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectProvince        |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: subjectProvince and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -3183,7 +3183,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | subjectProvince        |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
 
   @GetSearchSSLCertificates
@@ -3202,7 +3202,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerSerialNumber     |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerSerialNumber and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -3220,7 +3220,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerSerialNumber     |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerSerialNumber and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -3238,7 +3238,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerSerialNumber     |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerSerialNumber and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -3256,7 +3256,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerSerialNumber     |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerSerialNumber and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -3274,7 +3274,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerSerialNumber     |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerSerialNumber and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -3292,7 +3292,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerSerialNumber     |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerSerialNumber and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -3310,7 +3310,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerSerialNumber     |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
 
   @GetSearchSSLCertificates
@@ -3329,7 +3329,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerEmailAddress     |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerEmailAddress and user not in the same organization, and the visibility is public, the response retrieve code 200 and check with json schema
@@ -3347,7 +3347,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerEmailAddress     |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerEmailAddress and user of the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -3365,7 +3365,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerEmailAddress     |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerEmailAddress and user not in the same organization, and the visibility is private, the response retrieve code 200 and check with json schema
@@ -3383,7 +3383,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerEmailAddress     |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerEmailAddress and user of the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -3401,7 +3401,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerEmailAddress     |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerEmailAddress and user of the same organization and the user created the project, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -3419,7 +3419,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerEmailAddress     |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
   @GetSearchSSLCertificates
   Scenario: Check the response of Get Search SSL Certificates with parameter field: issuerEmailAddress and user not in the same organization, and the visibility is analyst, the response retrieve code 200 and check with json schema
@@ -3437,7 +3437,7 @@ Feature: As a user of riskIQ platform I want to Get Search SSL Certificates
       | field       | issuerEmailAddress     |
       | query       | ##queryArtifact        |
     Then the api should response with code 200
-    And Check JSON schema "SslCertificates/getSearchSSLCertificatesKeyword.json"
+    And Check JSON schema "SslCertificates/getSearchSSLCertificates.json"
 
 
 

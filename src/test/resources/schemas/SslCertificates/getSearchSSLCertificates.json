@@ -1,0 +1,168 @@
+{
+  "definitions": {},
+  "type": "object",
+  "required": [
+    "queryValue",
+    "results",
+    "success"
+  ],
+  "properties": {
+    "queryValue": {
+      "$id": "#/properties/queryValue",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "results": {
+      "$id": "#/properties/results",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/results/items",
+        "type": "object",
+        "properties": {
+          "issuerCountry": {
+            "$id": "#/properties/results/items/properties/issuerCountry",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "subjectCommonName": {
+            "$id": "#/properties/results/items/properties/subjectCommonName",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "subjectOrganizationName": {
+            "$id": "#/properties/results/items/properties/subjectOrganizationName",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "subjectOrganizationUnitName": {
+            "$id": "#/properties/results/items/properties/subjectOrganizationUnitName",
+            "type": ["null","string"]
+          },
+          "subjectGivenName": {
+            "$id": "#/properties/results/items/properties/subjectGivenName",
+            "type": ["null","string"]
+          },
+          "subjectSurname": {
+            "$id": "#/properties/results/items/properties/subjectSurname",
+            "type": ["null","string"]
+          },
+          "fingerprint": {
+            "$id": "#/properties/results/items/properties/fingerprint",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "issuerStateOrProvinceName": {
+            "$id": "#/properties/results/items/properties/issuerStateOrProvinceName",
+            "type": ["null","string"]
+          },
+          "issuerCommonName": {
+            "$id": "#/properties/results/items/properties/issuerCommonName",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "subjectLocalityName": {
+            "$id": "#/properties/results/items/properties/subjectLocalityName",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "issueDate": {
+            "$id": "#/properties/results/items/properties/issueDate",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "subjectEmailAddress": {
+            "$id": "#/properties/results/items/properties/subjectEmailAddress",
+            "type": ["null","string"]
+          },
+          "subjectProvince": {
+            "$id": "#/properties/results/items/properties/subjectProvince",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "subjectStateOrProvinceName": {
+            "$id": "#/properties/results/items/properties/subjectStateOrProvinceName",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "issuerEmailAddress": {
+            "$id": "#/properties/results/items/properties/issuerEmailAddress",
+            "type": ["null","string"]
+          },
+          "subjectSerialNumber": {
+            "$id": "#/properties/results/items/properties/subjectSerialNumber",
+            "type": ["null","string"]
+          },
+          "issuerProvince": {
+            "$id": "#/properties/results/items/properties/issuerProvince",
+            "type": ["null","string"]
+          },
+          "issuerOrganizationUnitName": {
+            "$id": "#/properties/results/items/properties/issuerOrganizationUnitName",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "serialNumber": {
+            "$id": "#/properties/results/items/properties/serialNumber",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "issuerSurname": {
+            "$id": "#/properties/results/items/properties/issuerSurname",
+            "type": ["null","string"]
+          },
+          "issuerStreetAddress": {
+            "$id": "#/properties/results/items/properties/issuerStreetAddress",
+            "type": ["null","string"]
+          },
+          "issuerLocalityName": {
+            "$id": "#/properties/results/items/properties/issuerLocalityName",
+            "type": ["null","string"]
+          },
+          "subjectStreetAddress": {
+            "$id": "#/properties/results/items/properties/subjectStreetAddress",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "issuerSerialNumber": {
+            "$id": "#/properties/results/items/properties/issuerSerialNumber",
+            "type": ["null","string"]
+          },
+          "issuerOrganizationName": {
+            "$id": "#/properties/results/items/properties/issuerOrganizationName",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "sslVersion": {
+            "$id": "#/properties/results/items/properties/sslVersion",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "sha1": {
+            "$id": "#/properties/results/items/properties/sha1",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "expirationDate": {
+            "$id": "#/properties/results/items/properties/expirationDate",
+            "type": "string",
+            "pattern": "^(.*)$"
+          },
+          "issuerGivenName": {
+            "$id": "#/properties/results/items/properties/issuerGivenName",
+            "type": ["null","string"]
+          },
+          "subjectCountry": {
+            "$id": "#/properties/results/items/properties/subjectCountry",
+            "type": "string",
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    },
+    "success": {
+      "$id": "#/properties/success",
+      "type": "boolean",
+      "enum":[true, false]
+    }
+  }
+}
