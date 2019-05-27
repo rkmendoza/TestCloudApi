@@ -391,6 +391,9 @@ public class Utils extends FlowData{
                 bodyElement.setValue(String.valueOf(getArtifact().getTagsArtifact().get(0)));
                 getArtifact().getTagsArtifact().remove(0);
                 break;
+            case "tagsArtifact":
+                bodyElement.setValue(String.valueOf(getArtifact().getTagsArtifact().get(0)));
+                break;
             default:
                 bodyElement.setValue("");
                 break;
