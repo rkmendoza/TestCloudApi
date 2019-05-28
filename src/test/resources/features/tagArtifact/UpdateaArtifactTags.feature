@@ -12,8 +12,7 @@ Feature: As a user of riskIQ platform I want to Update artifact tags
       | query       | @@query                 |
       | type        | %%typeComponent         |
       | tags        | @@randomTags2           |
-    And a invalid user and invalid key from riskIQ platform
-    When users want to Update artifact tags with the values
+    When users with wrong credentials want to Update artifact tags with the values
       | key          | value                  |
       | artifact     | ##guidArtifact         |
       | tags         | @@randomTags2          |

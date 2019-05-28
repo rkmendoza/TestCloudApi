@@ -10,7 +10,6 @@ Feature: As a user of riskIQ platform I want to Set Artifact Tags
       | key          | value                  |
       | project      | ##guid                 |
       | query        | @@query                |
-    And a invalid user and invalid key from riskIQ platform
     When users with wrong credentials want Set Artifact Tags with the values
       | key          | value                  |
       | artifact     | ##guidArtifact         |
