@@ -19,9 +19,9 @@ Feature: As a user of riskIQ platform I want to Remove Artifact Tags
       | artifact     | ##guidArtifact         |
       | tags         | ##randomTags           |
     Then the api should response with code 401
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
-   @RemoveArtifactTags1
+   @RemoveArtifactTags
   Scenario: Check the response of Remove Artifact Tags, and the visibility of project is public with the user of the same organization, the response retrieve code 200 and check with json schema
     Given a created project with values
       | key          | value                  |
@@ -37,7 +37,7 @@ Feature: As a user of riskIQ platform I want to Remove Artifact Tags
       | artifact     | ##guidArtifact         |
       | tags         | ##tagsArtifact         |
     Then the api should response with code 200
-    #And Check JSON schema "action/deleteTags.json"
+    And Check JSON schema "tagsArtifact/removeArtifactTags.json"
 
   @RemoveArtifactTags
   Scenario: Check the response of Remove Artifact Tags, and the visibility is public with the user not in the same organization, the response retrieve code 200 and check with json schema
@@ -58,7 +58,7 @@ Feature: As a user of riskIQ platform I want to Remove Artifact Tags
       | artifact     | ##guidArtifact         |
       | tags         | ##randomTags           |
     Then the api should response with code 200
-    #And Check JSON schema "action/deleteTags.json"
+    And Check JSON schema "tagsArtifact/removeArtifactTags.json"
 
   @RemoveArtifactTags
   Scenario: Check the response of Remove Artifact Tags, and the visibility of project is private with the user of the same organization, the response retrieve code 200 and check with json schema
@@ -79,7 +79,7 @@ Feature: As a user of riskIQ platform I want to Remove Artifact Tags
       | artifact     | ##guidArtifact         |
       | tags         | ##randomTags           |
     Then the api should response with code 200
-    #And Check JSON schema "action/deleteTags.json"
+    And Check JSON schema "tagsArtifact/removeArtifactTags.json"
 
   @RemoveArtifactTags
   Scenario: Check the response of Remove Artifact Tags by wrong param, and the visibility of project is private with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -100,7 +100,7 @@ Feature: As a user of riskIQ platform I want to Remove Artifact Tags
       | artifact     | %%wrongArtifact        |
       | tags         | ##randomTags           |
     Then the api should response with code 400
-    #And Check JSON schema "project/ErrorMessage.json"
+    And Check JSON schema "project/ErrorMessage.json"
 
   @RemoveArtifactTags
   Scenario: Check the response of Remove Artifact Tags, and the visibility is private with the user not in the same organization, the response retrieve code 404 and check with json schema
@@ -121,7 +121,7 @@ Feature: As a user of riskIQ platform I want to Remove Artifact Tags
       | artifact     | ##guidArtifact         |
       | tags         | ##randomTags           |
     Then the api should response with code 200
-    #And Check JSON schema "action/deleteTags.json"
+    And Check JSON schema "tagsArtifact/removeArtifactTags.json"
 
   @RemoveArtifactTags
   Scenario: Check the response of Remove Artifact Tags, and the visibility of project is analyst with the user of the same organization, and the user created the project, the response retrieve code 200 and check with json schema
@@ -142,7 +142,7 @@ Feature: As a user of riskIQ platform I want to Remove Artifact Tags
       | artifact     | ##guidArtifact         |
       | tags         | ##randomTags           |
     Then the api should response with code 200
-    #And Check JSON schema "action/deleteTags.json"
+    And Check JSON schema "tagsArtifact/removeArtifactTags.json"
 
   @RemoveArtifactTags
   Scenario: Check the response of Remove Artifact Tags, and the visibility of project is analyst with the user of the same organization, the response retrieve code 404 and check with json schema
@@ -163,7 +163,7 @@ Feature: As a user of riskIQ platform I want to Remove Artifact Tags
       | artifact     | ##guidArtifact         |
       | tags         | ##randomTags           |
     Then the api should response with code 200
-    #And Check JSON schema "action/deleteTags.json"
+    And Check JSON schema "tagsArtifact/removeArtifactTags.json"
 
   @RemoveArtifactTags
   Scenario: Check the response of Remove Artifact Tags, and the visibility is analyst with the user not in the same organization, the response retrieve code 404 and check with json schema
@@ -184,7 +184,7 @@ Feature: As a user of riskIQ platform I want to Remove Artifact Tags
       | artifact     | ##guidArtifact         |
       | tags         | ##randomTags           |
     Then the api should response with code 200
-    #And Check JSON schema "action/deleteTags.json"
+    And Check JSON schema "tagsArtifact/removeArtifactTags.json"
 
 
  
