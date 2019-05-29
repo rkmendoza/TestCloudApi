@@ -11,8 +11,9 @@ import static com.riskiq.api.v2.stepdefinitions.tagArtifact.impl.TagArtifact.Upd
 
 public class UpdateArtifactTagsSteps extends FlowData  {
 
-  @When("^users want to Update artifact tags with the values$")
-  public void users_want_to_Update_artifact_tags_with_the_values(DataTable dataTable) throws Throwable {
+  @When("^users with wrong credentials want to Update artifact tags with the values$")
+  public void users_with_wrong_credentials_want_to_Update_artifact_tags_with_the_values(DataTable dataTable) throws Throwable {
+    rs.set(setCredentials(userInvalidName, userInvalidPw));
     UpdateArtifactTags(dataTable);
   }
 

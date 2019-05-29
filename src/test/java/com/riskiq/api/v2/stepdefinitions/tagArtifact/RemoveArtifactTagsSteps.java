@@ -12,12 +12,6 @@ import static com.riskiq.api.v2.stepdefinitions.tagArtifact.impl.TagArtifact.Rem
 
 public class RemoveArtifactTagsSteps extends FlowData  {
 
-  /*@Given("^Added Tags with the values$")
-  public void added_Tags_with_the_values(DataTable dataTable) {
-    rs.set(setCredentials(userName2, userPw2));
-    AddTags(dataTable);
-  }*/
-
   @When("^users with wrong credentials want Remove Artifact Tags with the values$")
   public void users_with_wrong_credentials_want_Remove_Artifact_Tags_with_the_values(DataTable dataTable) {
     rs.set(setCredentials(userInvalidName, userInvalidPw));
