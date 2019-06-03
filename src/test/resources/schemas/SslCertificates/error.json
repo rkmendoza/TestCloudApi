@@ -1,0 +1,25 @@
+{
+  "definitions": {},
+  "type": "object",
+  "required": [
+    "error",
+    "success",
+    "results"
+  ],
+  "properties": {
+    "error": {
+      "$id": "#/properties/error",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "success": {
+      "$id": "#/properties/success",
+      "type": "boolean",
+      "enum": [true, false]
+    },
+    "results": {
+      "$id": "#/properties/results",
+      "type": "array"
+    }
+  }
+}

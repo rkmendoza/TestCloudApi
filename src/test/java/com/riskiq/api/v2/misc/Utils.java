@@ -70,7 +70,14 @@ public class Utils extends FlowData{
     public static String hostAttributesPairs = "";
     public static String hostAttributesTrackers = "";
     public static String dnsPassive = "";
+    public static String dnsPassiveUnique = "";
     public static String enrichmentBulk = "";
+    public static String dnsSearchKeyword = "";
+    public static String sslCertificateHistory = "";
+    public static String sslCertificate = "";
+    public static String sslCertificateSearchKeyword = "";
+    public static String sslCertificateSearch = "";
+    public static String artifactTag = "";
 
   public static void setParameterProperties(){
         try {
@@ -131,6 +138,13 @@ public class Utils extends FlowData{
         hostAttributesTrackers = properties.getProperty("hostAttributesTrackers");
         dnsPassive = properties.getProperty("dnsPassive");
         enrichmentBulk = properties.getProperty("enrichmentBulk");
+        dnsPassiveUnique = properties.getProperty("dnsPassiveUnique");
+        dnsSearchKeyword = properties.getProperty("dnsSearchKeyword");
+        sslCertificateHistory = properties.getProperty("sslCertificateHistory");
+        sslCertificate = properties.getProperty("sslCertificate");
+        sslCertificateSearchKeyword = properties.getProperty("sslCertificateSearchKeyword");
+        sslCertificateSearch = properties.getProperty("sslCertificateSearch");
+        artifactTag = properties.getProperty("artifactTag");
     }
 
 
@@ -375,7 +389,7 @@ public class Utils extends FlowData{
                 break;
             case "randomTags":
                 bodyElement.setValue(String.valueOf(getArtifact().getTagsArtifact().get(0)));
-                //getArtifact().getTagsArtifact().remove(0);
+                getArtifact().getTagsArtifact().remove(0);
                 break;
             default:
                 bodyElement.setValue("");
