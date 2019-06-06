@@ -1,0 +1,90 @@
+{
+  "definitions": {},
+  "type": "object",
+  "required": [
+    "system_tags",
+    "tag_meta",
+    "success",
+    "user_tags"
+  ],
+  "properties": {
+    "tags": {
+      "$id": "#/properties/tags",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/tags/items",
+        "type": "string",
+        "pattern": "^(.*)$"
+      }
+    },
+    "system_tags": {
+      "$id": "#/properties/system_tags",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/system_tags/items",
+        "type": "string",
+        "pattern": "^(.*)$"
+      }
+    },
+    "tag_meta": {
+      "$id": "#/properties/tag_meta",
+      "type": "object",
+      "properties": {
+        "bar": {
+          "$id": "#/properties/tag_meta/properties/bar",
+          "type": "object",
+          "required": [
+            "creator",
+            "created_at"
+          ],
+          "properties": {
+            "creator": {
+              "$id": "#/properties/tag_meta/properties/bar/properties/creator",
+              "type": "string",
+              "pattern": "^(.*)$"
+            },
+            "created_at": {
+              "$id": "#/properties/tag_meta/properties/bar/properties/created_at",
+              "type": "string",
+              "pattern": "^(.*)$"
+            }
+          }
+        },
+        "baz": {
+          "$id": "#/properties/tag_meta/properties/baz",
+          "type": "object",
+          "required": [
+            "creator",
+            "created_at"
+          ],
+          "properties": {
+            "creator": {
+              "$id": "#/properties/tag_meta/properties/baz/properties/creator",
+              "type": "string",
+              "pattern": "^(.*)$"
+            },
+            "created_at": {
+              "$id": "#/properties/tag_meta/properties/baz/properties/created_at",
+              "type": "string",
+              "pattern": "^(.*)$"
+            }
+          }
+        }
+      }
+    },
+    "success": {
+      "$id": "#/properties/success",
+      "type": "boolean",
+      "enum": [true, false]
+    },
+    "user_tags": {
+      "$id": "#/properties/user_tags",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/user_tags/items",
+        "type": "string",
+        "pattern": "^(.*)$"
+      }
+    }
+  }
+}

@@ -277,12 +277,12 @@ public class Utils extends FlowData{
         if(!bodyElement.getKey().equalsIgnoreCase("tags") && !bodyElement.getKey().equalsIgnoreCase("query")) {
             String[] value = bodyElement.getValue().split("@@");
             String random = value[1];
-            random += "." + generateRandomString();
+            random += generateRandomString();
             bodyElement.setValue(random);
         }else if(bodyElement.getKey().equalsIgnoreCase("query")){
             String[] value = bodyElement.getValue().split("@@");
             String random = value[1];
-            random += "." + generateRandomString()+".org";
+            random += generateRandomString()+".org";
             bodyElement.setValue(random);
         }else{
 
@@ -291,9 +291,9 @@ public class Utils extends FlowData{
             String random =  "";
             for(int i=0; i<numberTags; i++ ){
                 if(numberTags > 1 && i != numberTags-1){
-                    random += "tag."+generateRandomString() + ",";
+                    random += "tag"+generateRandomString() + ",";
                 }else{
-                    random += "tag."+generateRandomString();
+                    random += "tag"+generateRandomString();
                 }
             }
             bodyElement.setValue(random);
@@ -389,7 +389,7 @@ public class Utils extends FlowData{
                 break;
             case "randomTags":
                 bodyElement.setValue(String.valueOf(getArtifact().getTagsArtifact().get(0)));
-                getArtifact().getTagsArtifact().remove(0);
+                //getArtifact().getTagsArtifact().remove(0);
                 break;
             default:
                 bodyElement.setValue("");
