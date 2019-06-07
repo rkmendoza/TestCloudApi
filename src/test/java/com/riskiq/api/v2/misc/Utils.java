@@ -70,7 +70,14 @@ public class Utils extends FlowData{
     public static String hostAttributesPairs = "";
     public static String hostAttributesTrackers = "";
     public static String dnsPassive = "";
+    public static String dnsPassiveUnique = "";
     public static String enrichmentBulk = "";
+    public static String dnsSearchKeyword = "";
+    public static String sslCertificateHistory = "";
+    public static String sslCertificate = "";
+    public static String sslCertificateSearchKeyword = "";
+    public static String sslCertificateSearch = "";
+    public static String artifactTag = "";
 
   public static void setParameterProperties(){
         try {
@@ -131,6 +138,13 @@ public class Utils extends FlowData{
         hostAttributesTrackers = properties.getProperty("hostAttributesTrackers");
         dnsPassive = properties.getProperty("dnsPassive");
         enrichmentBulk = properties.getProperty("enrichmentBulk");
+        dnsPassiveUnique = properties.getProperty("dnsPassiveUnique");
+        dnsSearchKeyword = properties.getProperty("dnsSearchKeyword");
+        sslCertificateHistory = properties.getProperty("sslCertificateHistory");
+        sslCertificate = properties.getProperty("sslCertificate");
+        sslCertificateSearchKeyword = properties.getProperty("sslCertificateSearchKeyword");
+        sslCertificateSearch = properties.getProperty("sslCertificateSearch");
+        artifactTag = properties.getProperty("artifactTag");
     }
 
 
@@ -263,12 +277,12 @@ public class Utils extends FlowData{
         if(!bodyElement.getKey().equalsIgnoreCase("tags") && !bodyElement.getKey().equalsIgnoreCase("query")) {
             String[] value = bodyElement.getValue().split("@@");
             String random = value[1];
-            random += "." + generateRandomString();
+            random += generateRandomString();
             bodyElement.setValue(random);
         }else if(bodyElement.getKey().equalsIgnoreCase("query")){
             String[] value = bodyElement.getValue().split("@@");
             String random = value[1];
-            random += "." + generateRandomString()+".org";
+            random += generateRandomString()+".org";
             bodyElement.setValue(random);
         }else{
 
@@ -277,9 +291,9 @@ public class Utils extends FlowData{
             String random =  "";
             for(int i=0; i<numberTags; i++ ){
                 if(numberTags > 1 && i != numberTags-1){
-                    random += "tag."+generateRandomString() + ",";
+                    random += "tag"+generateRandomString() + ",";
                 }else{
-                    random += "tag."+generateRandomString();
+                    random += "tag"+generateRandomString();
                 }
             }
             bodyElement.setValue(random);

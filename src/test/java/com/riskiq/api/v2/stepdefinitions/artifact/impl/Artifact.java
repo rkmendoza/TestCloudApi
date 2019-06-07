@@ -36,7 +36,7 @@ public class Artifact {
 
     public static void createArtifact(DataTable dataTable) {
         Integer status = 200;
-        response.set(rs.get().contentType(ContentType.JSON).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,"artifact")));
+        response.set(rs.get().contentType(ContentType.TEXT).body(dataTableToJson(dataTable.asList(BodyElement.class))).put(setMethodAndEndPoint(PUT,"artifact")));
         if (status.equals(response.get().statusCode())) {
             setArtifact(Artifact.with()
                     .guidArtifact(response.get().path("guid"))
@@ -46,6 +46,7 @@ public class Artifact {
                     .organization(response.get().path("organization"))
                     .query(response.get().path("query"))
                     .type(response.get().path("type"))
+                    .tagsArtifact(response.get().path("user_tags"))
                     .create());
         }
     }

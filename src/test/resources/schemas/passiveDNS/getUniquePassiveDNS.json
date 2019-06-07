@@ -1,0 +1,52 @@
+{
+  "definitions": {},
+  "type": "object",
+  "required": [
+    "pager",
+    "frequency",
+    "total",
+    "queryValue",
+    "results",
+    "queryType"
+  ],
+  "properties": {
+    "pager": {
+      "$id": "#/properties/pager",
+      "type": ["null", "integer"]
+    },
+    "frequency": {
+      "$id": "#/properties/frequency",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/frequency/items",
+        "type": "array",
+        "items": {
+          "$id": "#/properties/frequency/items/items",
+          "type": ["integer", "string"]
+        }
+      }
+    },
+    "total": {
+      "$id": "#/properties/total",
+      "type": "integer"
+    },
+    "queryValue": {
+      "$id": "#/properties/queryValue",
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "results": {
+      "$id": "#/properties/results",
+      "type": "array",
+      "items": {
+        "$id": "#/properties/results/items",
+        "type": "string",
+        "pattern": "^(.*)$"
+      }
+    },
+    "queryType": {
+      "$id": "#/properties/queryType",
+      "pattern": "^(.*)$"
+    }
+  }
+}
